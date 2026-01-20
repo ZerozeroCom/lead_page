@@ -253,8 +253,25 @@
     // }
 
     document.addEventListener("DOMContentLoaded", () => {
-      if (!window.LANG) return;
-
+      console.log("準備")
+      if (!window.LANG) {
+        console.log("檢查檔案就緒")
+        checklangfile()
+        return;
+      };
+      langChange();
+    });
+    function checklangfile() {
+      setTimeout(()=>{
+        if (!window.LANG) {
+          checklangfile()
+        }else{
+          langChange()
+        }
+      },100);
+    }
+    function langChange() {
+      console.log("開始變更")
       document.getElementById("pageTitle").textContent = window.LANG.app["pageTitle"];
       document.getElementById("headerTitle").textContent = window.LANG.app["headerTitle"];
 
@@ -298,4 +315,4 @@
       for (let i = 0; i < 5; i++) {
         document.getElementById("foot-notice"+i).textContent = window.LANG.footer["item"+i];
       }
-    });
+    }

@@ -2,6 +2,7 @@ import express from 'express'
 import fetch from 'node-fetch'
 import dotenv from 'dotenv'
 import crypto from 'crypto'
+import { getStoredDomain, setStoredDomain } from './domainStore.js';
 
 dotenv.config()
 
@@ -107,8 +108,58 @@ app.post('/api/submit', async (req, res) => {
     }
 })
 
-app.get('/health', (_, res) => {
-  res.send('ok')
+app.get('/healthz', async (req, res) => {
+    try {
+        // 1️⃣ 取得實際連線域名
+        const incomingDomain =
+          req.headers['x-forwarded-host'] ||
+          req.headers['host'];
+    
+        if (!incomingDomain) {
+          return res.status(400).send('missing host');
+        }
+    
+        const storedDomain = getStoredDomain();
+        console.log(storedDomain ,incomingDomain )
+        // 2️⃣ 比對
+        if (storedDomain !== incomingDomain) {
+          const signed_at = Math.floor(Date.now() / 1000);
+          const params = {
+            domain_name:incomingDomain,
+            signed_at
+         }
+          const signature = generateSignature(params, API_KEY)
+          const payload = {
+            ...params,
+            signature
+        }
+    
+          // 3️⃣ 呼叫後端 API 同步
+          const resp = await fetch(
+            TARGET_URL+ '/api/register/domain_name',
+            {
+              method: 'PATCH',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-Applicant-IP': req.ip,
+              },
+              body: JSON.stringify(payload)
+            }
+          );
+    
+          if (!resp.ok && resp.status !== 204) {
+            throw new Error(`sync failed: ${resp.status}`);
+          }
+    
+          // 4️⃣ 更新本地持久化
+          setStoredDomain(incomingDomain);
+        }
+    
+        res.send('ok');
+      } catch (err) {
+        console.error('[healthz]', err);
+        res.status(500).send('unhealthy');
+      }
 })
 
 app.listen(3000)
