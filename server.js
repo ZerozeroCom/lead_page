@@ -1,6 +1,7 @@
 import express from 'express'
 import fetch from 'node-fetch'
 import dotenv from 'dotenv'
+import crypto from 'crypto'
 
 dotenv.config()
 
@@ -11,14 +12,71 @@ app.use(express.json({ limit: '100kb' }))
 const TARGET_URL = process.env.TARGET_URL
 const API_KEY = process.env.API_KEY
 
-app.post('/api/forward', async (req, res) => {
+app.get('/api/register/:orderId', async (req, res) => {
+    const registerOrderId = req.params.orderId
+  
+    try {
+      const clientIp = getClientIp(req)
+      const signedAt = Math.floor(Date.now() / 1000)
+  
+      const params = {
+        register_order_id: registerOrderId,
+        signed_at: signedAt
+      }
+  
+      const signature = generateSignature(
+        params,
+        API_KEY
+      )
+  
+      const payload = {
+        ...params,
+        signature
+      }
+  
+      const response = await fetch(
+        TARGET_URL+'/api/register/query_order',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+            'X-Applicant-IP': clientIp
+          },
+          body: JSON.stringify(payload)
+        }
+      )
+  
+      // ⛔ 429 直接顯示錯誤頁（不要讓前端重試）
+      if (response.status === 429) {
+        return res.status(429).send('Too many requests')
+      }
+      console.log(response)
+      // 先確認狀態
+        if (!response.ok) {
+            const text = await response.text()
+            return res.status(response.status).send(text)
+        }
+    
+      // 只有 200 才 parse JSON
+        const data = await response.json()
+        return res.json(data)
+
+    } catch (err) {
+      console.error(err)
+      res.status(500).send('Server error')
+    }
+  })
+
+app.post('/api/submit', async (req, res) => {
   try {
+    const clientIp = getClientIp(req)
+
     const params = {
         ...req.body
     }
 
     // 產生 signature
-    const signature = generateSignature(params, process.env.API_KEY)
+    const signature = generateSignature(params, API_KEY)
 
     // 最終 payload
     const payload = {

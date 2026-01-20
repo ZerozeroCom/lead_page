@@ -1,34 +1,11 @@
-(function () {
+
     "use strict";
 
-    // -----------------------------
-    // Minimal configuration
-    // -----------------------------
     var INITIAL_SECONDS = 10 * 60; // 10 minutes
-
-    // Optional: allow overriding order info via query string.
-    // Example: payment_confirmation_vanilla.html?orderId=PA123&amount=100
-    var params = new URLSearchParams(window.location.search);
-    var orderId = params.get("orderId") || "PA202601151335601905";
-    var amount = params.get("amount") || "100";
-
-    document.getElementById("orderId").textContent = orderId;
-    document.getElementById("orderAmount").textContent = amount;
-
-    // Optional: prefill form via query string.
-    // Example: ?bankName=XX銀行&accountNumber=1234&payerName=王小明
-    var bankNamePrefill = params.get("bankName") || "";
-    var accountNumberPrefill = params.get("accountNumber") || "";
-    var payerNamePrefill = params.get("payerName") || "";
 
     var bankNameEl = document.getElementById("bankName");
     var accountNumberEl = document.getElementById("accountNumber");
     var payerNameEl = document.getElementById("payerName");
-
-    bankNameEl.value = bankNamePrefill;
-    accountNumberEl.value = accountNumberPrefill;
-    payerNameEl.value = payerNamePrefill;
-
     // -----------------------------
     // Countdown (minimal business logic)
     // -----------------------------
@@ -209,7 +186,7 @@
       return ok;
     }
 
-    payerForm.addEventListener("submit", function (e) {
+    document.addEventListener("submit", function (e) {
       e.preventDefault();
 
       if (isExpired) return;
@@ -220,15 +197,53 @@
       setFormDisabled(true);
       setLoading(true);
 
-      window.setTimeout(function () {
-        setLoading(false);
-        // Re-enable unless expired
-        if (!isExpired) setFormDisabled(false);
+      // window.setTimeout(function () {
+      //   setLoading(false);
+      //   // Re-enable unless expired
+      //   if (!isExpired) setFormDisabled(false);
 
-        // In a real integration, you would POST to your API here.
-        // Keep it minimal: just show success.
-        window.alert("提交成功！");
-      }, 3000);
+      //   // In a real integration, you would POST to your API here.
+      //   // Keep it minimal: just show success.
+      //   window.alert("提交成功！");
+      // }, 3000);
+      const pathParts = window.location.pathname.split("/").filter(Boolean);
+      const order = pathParts[pathParts.length - 1];
+      var bn = (bankNameEl.value || "").trim();
+      var an = (accountNumberEl.value || "").trim();
+      var pn = (payerNameEl.value || "").trim();
+        // 收集表單資料
+        let data = {
+          register_order_id:order,
+          payment_bank_name:bn,
+          payment_bank_account_number:an,
+          payment_bank_account_name:pn,
+          signed_at:Math.floor(Date.now() / 1000)
+        }
+        // 發送到 Node API
+        fetch("/api/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(res => {
+          setLoading(false);
+
+          if (!isExpired) setFormDisabled(false);
+
+          if (res.success) {
+            alert("提交成功！");
+          } else {
+            alert("提交失敗：" + (res.message || "未知錯誤"));
+          }
+        })
+        .catch(err => {
+          setLoading(false);
+          if (!isExpired) setFormDisabled(false);
+          alert("提交失敗：" + err.message);
+        });
     });
 
     // If already expired for any reason, ensure UI sync.
@@ -236,4 +251,3 @@
       window.clearInterval(countdownTimer);
       setExpiredUI(true);
     }
-  })();
