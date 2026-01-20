@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>付款資訊確認</title>
+  <title id="pageTitle">付款資訊確認</title>
+  <link href="/res_o.css" rel="stylesheet">
+  <script src="/init.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="/res_o.css" rel="stylesheet">
-  <script src="/init.js"></script>
 </head>
 <body>
   <!-- Loading overlay -->
@@ -18,20 +18,20 @@
       <path d="M22 12a10 10 0 0 1-10 10" fill="none" stroke="#234a8f" stroke-width="4" stroke-linecap="round" />
     </svg>
     <div>
-      <div style="font-size:18px;font-weight:700;">系統處理中</div>
-      <div style="margin-top:6px;font-size:13px;color:var(--muted-foreground);">請勿關閉或離開此頁面</div>
+      <div id="processingTitle" style="font-size:18px;font-weight:700;">系統處理中</div>
+      <div id="processingHint" style="margin-top:6px;font-size:13px;color:var(--muted-foreground);">請勿關閉或離開此頁面</div>
     </div>
   </div>
 
   <!-- Expired overlay -->
-  <div id="expiredOverlay" class="overlay expired" aria-hidden="true" role="alert">
+  <!-- <div id="expiredOverlay" class="overlay expired" aria-hidden="true" role="alert">
     <div class="expired-card">
-      <p>操作已逾時，請重新發起付款</p>
+      <p id="expiredMessage">操作已逾時，請重新發起付款</p>
     </div>
-  </div>
+  </div> -->
 
   <div class="container">
-    <header class="payment-header">付款資訊確認</header>
+    <header id="headerTitle" class="payment-header">付款資訊確認</header>
   </div>
 
   <main class="container">
@@ -48,35 +48,35 @@
             </svg>
           </div>
           <div>
-            <h2 class="title">付款訊息</h2>
-            <p class="subtitle">請詳閱以下注意事項</p>
+            <h2 id="paymentInfo-title" class="title">付款訊息</h2>
+            <p id="paymentInfo-subtitle" class="subtitle">請詳閱以下注意事項</p>
           </div>
         </div>
 
-        <div id="timerBadge" class="timer-badge" aria-live="polite">
-          <p class="timer-label">剩餘時間</p>
+        <!-- <div id="timerBadge" class="timer-badge" aria-live="polite">
+          <p id="paymentInfo-timeRemaining" class="timer-label">剩餘時間</p>
           <p id="timerValue" class="timer-value">10:00</p>
-        </div>
+        </div> -->
       </div>
     </section>
 
     <!-- Notice section -->
     <section class="card section notice" style="padding-top: 12px; padding-bottom: 12px;">
-      <p class="warning">1. 請確認您即將使用的付款帳戶資訊是否正確</p>
-      <p class="info">2. 請填寫實際轉帳所使用的銀行帳戶資料</p>
-      <p class="warning">3. 資訊填寫錯誤可能導致款項無法及時入帳！</p>
-      <p class="warning">4. 請在限定時間內完成操作，超時將無法繼續！</p>
-      <p class="info">5. 付款完成後請勿重複操作</p>
+      <p id="head-notice1" class="warning">1. 請確認您即將使用的付款帳戶資訊是否正確</p>
+      <p id="head-notice2" class="info">2. 請填寫實際轉帳所使用的銀行帳戶資料</p>
+      <p id="head-notice3" class="warning">3. 資訊填寫錯誤可能導致款項無法及時入帳！</p>
+      <p id="head-notice4" class="warning">4. 請在限定時間內完成操作，超時將無法繼續！</p>
+      <p id="head-notice5" class="info">5. 付款完成後請勿重複操作</p>
     </section>
 
     <!-- Order info -->
     <section class="card section">
-      <h3 class="order-title">訂單詳細資訊</h3>
-      <div class="order-card" role="group" aria-label="訂單詳細資訊">
+      <h3 id="order-sectionTitle" class="order-title">訂單詳細資訊</h3>
+      <div class="order-card" role="group" aria-label="Order Details">
         <div class="info-row">
-          <div class="info-label">訂單號</div>
-          <div id="orderId" class="info-value">PA202601151335601905</div>
-          <button class="copy-button" data-copy-target="#orderId" aria-label="複製訂單號" title="複製">
+          <div id="order-orderIdLabel" class="info-label">訂單號</div>
+          <div id="orderId" class="info-value">PA202600000000000000</div>
+          <button class="copy-button" data-copy-target="#orderId" aria-label="Copy Order ID" title="複製">
             <span class="copy-icon" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 8V6C8 4.89543 8.89543 4 10 4H18C19.1046 4 20 4.89543 20 6V14C20 15.1046 19.1046 16 18 16H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -86,9 +86,9 @@
           </button>
         </div>
         <div class="info-row">
-          <div class="info-label">訂單金額</div>
-          <div id="orderAmount" class="info-value">100</div>
-          <button class="copy-button" data-copy-target="#orderAmount" aria-label="複製訂單金額" title="複製">
+          <div id="order-orderAmountLabel" class="info-label">訂單金額</div>
+          <div id="orderAmount" class="info-value"> </div>
+          <button class="copy-button" data-copy-target="#orderAmount" aria-label="Copy Order Amount" title="複製">
             <span class="copy-icon" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 8V6C8 4.89543 8.89543 4 10 4H18C19.1046 4 20 4.89543 20 6V14C20 15.1046 19.1046 16 18 16H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -103,26 +103,26 @@
     <!-- Form -->
     <section class="card section" style="padding-top: 0;">
       <form id="payerForm">
-        <div class="order-card" style="padding: 14px;">
+        <div class="order-card" style="padding: 14px; margin-bottom: 12px;">
           <div class="field">
-            <label for="bankName">付款銀行名稱 <span class="required">*</span></label>
+            <label id="form-bankNameLabel" for="bankName">付款銀行名稱 <span class="required">*</span></label>
             <input id="bankName" name="bankName" type="text" placeholder="請輸入實際轉帳所使用的銀行名稱" autocomplete="off" />
             <p id="errBankName" class="error-text" style="display:none;"></p>
           </div>
 
           <div class="field">
-            <label for="accountNumber">付款帳戶號碼 <span class="required">*</span></label>
+            <label id="form-accountNumberLabel" for="accountNumber">付款帳戶號碼 <span class="required">*</span></label>
             <input id="accountNumber" name="accountNumber" type="text" inputmode="numeric" placeholder="請輸入實際轉帳所使用的銀行帳戶號碼" autocomplete="off" />
             <p id="errAccountNumber" class="error-text" style="display:none;"></p>
           </div>
 
           <div class="field" style="margin-bottom: 0;">
-            <label for="payerName">付款人名稱 <span class="required">*</span></label>
+            <label id="form-payerNameLabel" for="payerName">付款人名稱 <span class="required">*</span></label>
             <input id="payerName" name="payerName" type="text" placeholder="請輸入實際轉帳帳戶的戶名" autocomplete="off" />
             <p id="errPayerName" class="error-text" style="display:none;"></p>
           </div>
 
-          <p class="helper">請輸入您實際轉帳所使用的銀行資訊，以協助系統完成對帳。</p>
+          <p id="form-helper" class="helper">請輸入您實際轉帳所使用的銀行資訊，以協助系統完成對帳。</p>
         </div>
 
         <button id="submitBtn" class="primary-btn" type="submit">
@@ -140,12 +140,12 @@
 
   <div class="container">
     <footer class="payment-footer">
-      <h4>溫馨提醒</h4>
+      <h4 id="foot-notice0">溫馨提醒</h4>
       <ul>
-        <li>請確認付款資訊正確無誤後再進行操作。</li>
-        <li>付款後請勿儲存該帳戶信息。</li>
-        <li>若長時間未到帳，請聯系在線客服。</li>
-        <li>訂單超時請重新建單，請勿超時支付，避免金金受損，我司概不負責。</li>
+        <li id="foot-notice1">請確認付款資訊正確無誤後再進行操作。</li>
+        <li id="foot-notice2">付款後請勿儲存該帳戶信息。</li>
+        <li id="foot-notice3">若長時間未到帳，請聯系在線客服。</li>
+        <li id="foot-notice4">訂單超時請重新建單，請勿超時支付，避免金金受損，我司概不負責。</li>
       </ul>
     </footer>
   </div>

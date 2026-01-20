@@ -1,7 +1,7 @@
 
     "use strict";
 
-    var INITIAL_SECONDS = 10 * 60; // 10 minutes
+    // var INITIAL_SECONDS = 10 * 60; // 10 minutes
 
     var bankNameEl = document.getElementById("bankName");
     var accountNumberEl = document.getElementById("accountNumber");
@@ -9,50 +9,50 @@
     // -----------------------------
     // Countdown (minimal business logic)
     // -----------------------------
-    var secondsLeft = INITIAL_SECONDS;
-    var isExpired = false;
+    // var secondsLeft = INITIAL_SECONDS;
+    // var isExpired = false;
 
-    var timerBadge = document.getElementById("timerBadge");
-    var timerValue = document.getElementById("timerValue");
-    var expiredOverlay = document.getElementById("expiredOverlay");
+    // var timerBadge = document.getElementById("timerBadge");
+    // var timerValue = document.getElementById("timerValue");
+    // var expiredMessage = document.getElementById("expiredMessage");
 
-    function pad2(n) {
-      return String(n).padStart(2, "0");
-    }
+    // function pad2(n) {
+    //   return String(n).padStart(2, "0");
+    // }
 
-    function formatTime(sec) {
-      var m = Math.floor(sec / 60);
-      var s = sec % 60;
-      return pad2(m) + ":" + pad2(s);
-    }
+    // function formatTime(sec) {
+    //   var m = Math.floor(sec / 60);
+    //   var s = sec % 60;
+    //   return pad2(m) + ":" + pad2(s);
+    // }
 
-    function setExpiredUI(expired) {
-      isExpired = expired;
-      if (expired) {
-        timerBadge.classList.add("expired");
-        timerValue.classList.add("expired");
-        expiredOverlay.classList.add("visible");
-        expiredOverlay.setAttribute("aria-hidden", "false");
-        setFormDisabled(true);
-        setSubmitState("expired");
-      }
-    }
+    // function setExpiredUI(expired) {
+    //   isExpired = expired;
+    //   if (expired) {
+    //     timerBadge.classList.add("expired");
+    //     timerValue.classList.add("expired");
+    //     expiredMessage.classList.add("visible");
+    //     expiredMessage.setAttribute("aria-hidden", "false");
+    //     setFormDisabled(true);
+    //     setSubmitState("expired");
+    //   }
+    // }
 
-    function tick() {
-      if (secondsLeft <= 0) {
-        setExpiredUI(true);
-        return;
-      }
-      secondsLeft -= 1;
-      timerValue.textContent = formatTime(secondsLeft);
-      if (secondsLeft <= 0) {
-        setExpiredUI(true);
-      }
-    }
+    // function tick() {
+    //   if (secondsLeft <= 0) {
+    //     setExpiredUI(true);
+    //     return;
+    //   }
+    //   secondsLeft -= 1;
+    //   timerValue.textContent = formatTime(secondsLeft);
+    //   if (secondsLeft <= 0) {
+    //     setExpiredUI(true);
+    //   }
+    // }
 
     // Initialize display
-    timerValue.textContent = formatTime(secondsLeft);
-    var countdownTimer = window.setInterval(tick, 1000);
+    // timerValue.textContent = formatTime(secondsLeft);
+    // var countdownTimer = window.setInterval(tick, 1000);
 
     // -----------------------------
     // Copy buttons
@@ -83,10 +83,10 @@
           flashCopied(btn);
         }).catch(function () {
           // Fallback
-          window.prompt("複製以下內容：", text);
+          window.prompt(window.LANG.order["copyPrompt"], text);
         });
       } else {
-        window.prompt("複製以下內容：", text);
+        window.prompt(window.LANG.order["copyPrompt"], text);
       }
     });
 
@@ -127,19 +127,19 @@
         loadingOverlay.classList.add("visible");
         loadingOverlay.setAttribute("aria-hidden", "false");
         submitSpinner.style.display = "inline-flex";
-        submitText.textContent = "系統處理中，請勿關閉或離開此頁面";
+        submitText.textContent = window.LANG.overlay["processingButtonText"];
       } else {
         loadingOverlay.classList.remove("visible");
         loadingOverlay.setAttribute("aria-hidden", "true");
         submitSpinner.style.display = "none";
-        submitText.textContent = "確認送出";
+        submitText.textContent = window.LANG.form["submit"];
       }
     }
 
     function setSubmitState(state) {
       // state: normal | submitting | expired
       if (state === "expired") {
-        submitText.textContent = "操作已逾時";
+        submitText.textContent = window.LANG.form["submitExpired"];
         submitSpinner.style.display = "none";
       }
     }
@@ -166,20 +166,20 @@
       clearError(payerNameEl, errPayerName);
 
       if (!bn) {
-        showError(bankNameEl, errBankName, "請輸入付款銀行名稱");
+        showError(bankNameEl, errBankName, window.LANG.validation["bankNameRequired"]);
         ok = false;
       }
 
       if (!an) {
-        showError(accountNumberEl, errAccountNumber, "請輸入付款帳戶號碼");
+        showError(accountNumberEl, errAccountNumber, window.LANG.validation["accountNumberRequired"]);
         ok = false;
       } else if (!/^\d+$/.test(an)) {
-        showError(accountNumberEl, errAccountNumber, "付款帳戶號碼格式不正確，請重新確認");
+        showError(accountNumberEl, errAccountNumber, window.LANG.validation["accountNumberInvalid"]);
         ok = false;
       }
 
       if (!pn) {
-        showError(payerNameEl, errPayerName, "請輸入付款人姓名");
+        showError(payerNameEl, errPayerName, window.LANG.validation["payerNameRequired"]);
         ok = false;
       }
 
@@ -234,7 +234,7 @@
           if (!isExpired) setFormDisabled(false);
 
           if (res.success) {
-            alert("提交成功！");
+            alert(window.LANG.paymentInfo["submitSuccess"]);
           } else {
             alert("提交失敗：" + (res.message || "未知錯誤"));
           }
@@ -246,8 +246,56 @@
         });
     });
 
-    // If already expired for any reason, ensure UI sync.
-    if (secondsLeft <= 0) {
-      window.clearInterval(countdownTimer);
-      setExpiredUI(true);
-    }
+    // // If already expired for any reason, ensure UI sync.
+    // if (secondsLeft <= 0) {
+    //   window.clearInterval(countdownTimer);
+    //   setExpiredUI(true);
+    // }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      if (!window.LANG) return;
+
+      document.getElementById("pageTitle").textContent = window.LANG.app["pageTitle"];
+      document.getElementById("headerTitle").textContent = window.LANG.app["headerTitle"];
+
+      document.getElementById("processingTitle").textContent = window.LANG.overlay["processingTitle"];
+      document.getElementById("processingHint").textContent = window.LANG.overlay["processingHint"];
+      // document.getElementById("expiredMessage").textContent = window.LANG.overlay["expiredMessage"];
+
+      document.getElementById("paymentInfo-title").textContent = window.LANG.paymentInfo["title"];
+      document.getElementById("paymentInfo-subtitle").textContent = window.LANG.paymentInfo["subtitle"];
+      // document.getElementById("paymentInfo-timeRemaining").textContent = window.LANG.paymentInfo["timeRemaining"];
+
+      document.getElementById("order-sectionTitle").textContent = window.LANG.order["sectionTitle"];
+      document.getElementById("order-orderIdLabel").textContent = window.LANG.order["orderIdLabel"];
+      document.getElementById("order-orderAmountLabel").textContent = window.LANG.order["orderAmountLabel"];
+      let elements = document.getElementsByClassName("copy-button");
+      // HTMLCollection 不能直接 forEach，需要用 for 或轉成 Array
+      for (let i = 0; i < elements.length; i++) {
+        const btn = elements[i];
+        if (window.LANG.order) {
+          btn.title = window.LANG.order["pageTitle"];
+        }
+      }
+
+
+      document.getElementById("form-bankNameLabel").textContent = window.LANG.form["bankNameLabel"];
+      document.getElementById("form-accountNumberLabel").textContent = window.LANG.form["accountNumberLabel"];
+      document.getElementById("form-payerNameLabel").textContent = window.LANG.form["payerNameLabel"];
+      document.getElementById("form-helper").textContent = window.LANG.form["helper"];
+      document.getElementById("submitText").textContent = window.LANG.form["submit"];
+      // document.getElementById("expiredMessage").textContent = window.LANG.form["submitExpired"];
+
+      document.getElementById("bankName").placeholder = window.LANG.form["bankNamePlaceholder"];
+      document.getElementById("accountNumber").placeholder = window.LANG.form["accountNumberPlaceholder"];
+      document.getElementById("payerName").placeholder = window.LANG.form["payerNamePlaceholder"];
+      
+      
+      for (let i = 1; i < 6; i++) {
+        document.getElementById("head-notice"+i).textContent = window.LANG.notice["item"+i];
+      }
+
+      for (let i = 0; i < 5; i++) {
+        document.getElementById("foot-notice"+i).textContent = window.LANG.footer["item"+i];
+      }
+    });
