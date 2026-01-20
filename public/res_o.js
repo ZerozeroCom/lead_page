@@ -189,7 +189,7 @@
     document.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      if (isExpired) return;
+      // if (isExpired) return;
 
       if (!validate()) return;
 
@@ -231,7 +231,7 @@
         .then(res => {
           setLoading(false);
 
-          if (!isExpired) setFormDisabled(false);
+          // if (!isExpired) setFormDisabled(false);
 
           if (res.success) {
             alert(window.LANG.paymentInfo["submitSuccess"]);
@@ -241,7 +241,7 @@
         })
         .catch(err => {
           setLoading(false);
-          if (!isExpired) setFormDisabled(false);
+          // if (!isExpired) setFormDisabled(false);
           alert("提交失敗：" + err.message);
         });
     });

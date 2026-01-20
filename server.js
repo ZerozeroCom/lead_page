@@ -84,8 +84,7 @@ app.post('/api/submit', async (req, res) => {
         ...params,
         signature
     }
-
-    const response = await fetch(TARGET_URL, {
+    const response = await fetch(TARGET_URL+'/api/register/receipt_order/submission', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
