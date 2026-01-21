@@ -107,7 +107,7 @@ app.post('/api/submit', async (req, res) => {
     }
 })
 
-app.get('/healthz', async (req, res) => {
+app.get('/healthz_web', async (req, res) => {
     try {
         // 1️⃣ 取得實際連線域名
         const incomingDomain =
