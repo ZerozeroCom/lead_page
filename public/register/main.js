@@ -233,11 +233,7 @@
 
           // if (!isExpired) setFormDisabled(false);
 
-          if (text == "OK" ) {
-            window.location.reload();
-          } else {
-            alert("提交失敗：" + (text || "未知錯誤"));
-          }
+          window.location.reload();
         })
         .catch(err => {
           setLoading(false);
