@@ -9,16 +9,16 @@ npm install
 
 打包
 
-npx esbuild public/res_o.js --minify --bundle --outfile=build/main.js
+npx esbuild public/register/main.js --minify --bundle --outfile=build/register/main.js
 
-npx esbuild public/init.js --minify --bundle --outfile=build/init.js  
+npx esbuild public/register/init.js --minify --bundle --outfile=build/register/init.js  
 
-npx esbuild public/lang/en.js --minify --bundle --outfile=build/lang/en.js
-npx esbuild public/lang/th-TH.js --minify --bundle --outfile=build/lang/th-TH.js
-npx esbuild public/lang/zh-CN.js --minify --bundle --outfile=build/lang/zh-CN.js
-npx esbuild public/lang/zh-TW.js --minify --bundle --outfile=build/lang/zh-TW.js
+npx esbuild public/register/lang/en.js --minify --bundle --outfile=build/register/lang/en.js
+npx esbuild public/register/lang/th-TH.js --minify --bundle --outfile=build/register/lang/th-TH.js
+npx esbuild public/register/lang/zh-CN.js --minify --bundle --outfile=build/register/lang/zh-CN.js
+npx esbuild public/register/lang/zh-TW.js --minify --bundle --outfile=build/register/lang/zh-TW.js
 
-npx esbuild public/res_o.css --minify --bundle --outfile=build/main.css
+npx esbuild public/register/main.css --minify --bundle --outfile=build/register/main.css
 
 npx html-minifier-terser public/index.html --collapse-whitespace --remove-comments  --remove-optional-tags --minify-css true --minify-js true -o build/index.html
 
