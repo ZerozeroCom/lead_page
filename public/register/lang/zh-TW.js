@@ -61,5 +61,11 @@ window.LANG = {
     "item2": "付款後請勿儲存該帳戶信息。",
     "item3": "若長時間未到帳，請聯系在線客服。",
     "item4": "訂單超時請重新建單，請勿超時支付，避免金金受損，我司概不負責。"
+  },
+  "paymentFields": {
+    "receipt_bank_name": "收款銀行名稱",
+    "receipt_branch_name": "收款分行",
+    "receipt_bank_account_number": "收款帳戶號碼",
+    "receipt_bank_account_name": "收款人名稱"
   }
 };

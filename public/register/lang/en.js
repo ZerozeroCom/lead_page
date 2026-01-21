@@ -61,5 +61,11 @@ window.LANG = {
     "item2": "Do not save the account information after completing the payment.",
     "item3": "If the funds are not credited for an extended period, please contact online customer support.",
     "item4": "If the order times out, please create a new order. Do not make payments after timeout to avoid loss of funds. The company shall not be held responsible."
+  },
+  "paymentFields": {
+    "receipt_bank_name": "Receiving Bank Name",
+    "receipt_branch_name": "Receiving Bank Branch",
+    "receipt_bank_account_number": "Receiving Account Number",
+    "receipt_bank_account_name": "Account Holder Name"
   }
 };

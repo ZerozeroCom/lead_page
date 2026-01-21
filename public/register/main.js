@@ -227,16 +227,16 @@
           },
           body: JSON.stringify(data)
         })
-        .then(res => res.json())
-        .then(res => {
+        .then(res => res.text())
+        .then(text  => {
           setLoading(false);
 
           // if (!isExpired) setFormDisabled(false);
 
-          if (res.success) {
-            alert(window.LANG.paymentInfo["submitSuccess"]);
+          if (text == "OK" ) {
+            window.location.reload();
           } else {
-            alert("提交失敗：" + (res.message || "未知錯誤"));
+            alert("提交失敗：" + (text || "未知錯誤"));
           }
         })
         .catch(err => {

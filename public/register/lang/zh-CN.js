@@ -61,5 +61,11 @@ window.LANG = {
     "item2": "付款后请勿保存该账户信息。",
     "item3": "若长时间未到账，请联系在线客服。",
     "item4": "订单超时请重新下单，请勿超时支付，避免资金受损，本司概不负责。"
+  },
+  "paymentFields": {
+    "receipt_bank_name": "收款银行名称",
+    "receipt_branch_name": "收款支行",
+    "receipt_bank_account_number": "收款账户号码",
+    "receipt_bank_account_name": "收款人姓名"
   }
 };

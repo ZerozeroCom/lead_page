@@ -93,14 +93,12 @@ app.post('/api/submit', async (req, res) => {
         body: JSON.stringify(payload)
     })
 
-    const text = await response.text()
-
-    // 429 原樣回傳給前端（很重要）
-    if (response.status === 429) {
-      return res.status(429).send(text)
+    if (response.status === 204) {
+        return res.status(200).send("OK")
     }
-
-    res.status(response.status).send(text)
+    const text = await response.text()
+    return res.status(response.status).send(text)
+    
     } catch (err) {
         console.error(err)
         res.status(502).json({ error: 'Bad gateway' })
