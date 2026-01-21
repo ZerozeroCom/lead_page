@@ -35,5 +35,5 @@ else if (lang.startsWith("zh-CN")) langFile = "zh-CN.js";
 else if (lang.startsWith("th")) langFile = "th-TH.js";
 
 const script = document.createElement("script");
-script.src = `/lang/${langFile}`;
+script.src = `/register/lang/${langFile}`;
 document.head.appendChild(script);

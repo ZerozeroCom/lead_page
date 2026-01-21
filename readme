@@ -21,3 +21,8 @@ npx esbuild public/lang/zh-TW.js --minify --bundle --outfile=build/lang/zh-TW.js
 npx esbuild public/res_o.css --minify --bundle --outfile=build/main.css
 
 npx html-minifier-terser public/index.html --collapse-whitespace --remove-comments  --remove-optional-tags --minify-css true --minify-js true -o build/index.html
+
+
+
+連入部屬機指令
+gcloud compute ssh cashflow-x520 --project=runner-test-416601 --zone=asia-east1-a --tunnel-through-iap
