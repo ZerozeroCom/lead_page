@@ -65,9 +65,13 @@ function viewInit(data) {
           ptitle.textContent = "";
           document.getElementById("processingHint").textContent = "";
         }
-        const div = document.createElement('div');
-        div.textContent = params.merchant_order_id;
-        ptitle.insertAdjacentElement('afterend', div);
+        const existingDiv = document.getElementById('OrderIdNewDiv');
+        if (!existingDiv) {
+          const div = document.createElement('div');
+          div.id = 'OrderIdNewDiv';  // 固定 ID
+          div.textContent = params.merchant_order_id;
+          ptitle.insertAdjacentElement('afterend', div);
+        }
       }else{
         setTimeout(()=>{
           getOrder()
