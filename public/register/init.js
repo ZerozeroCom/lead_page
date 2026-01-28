@@ -57,13 +57,17 @@ function viewInit(data) {
       loadingOverlay.setAttribute("aria-hidden", "false");
       document.getElementById("loadingSvg").style.display = "none";
       if(['matching_failed','completed','failed'].includes(params.transaction_status)){
+        let ptitle = document.getElementById("processingTitle");
         if(params.transaction_status != 'completed'){
-          document.getElementById("processingTitle").textContent = window.LANG.overlay["InfoUnavailable"];
+          ptitle.textContent = window.LANG.overlay["InfoUnavailable"];
           document.getElementById("processingHint").textContent = window.LANG.overlay["retryOrSupport"];
         }else{
-          document.getElementById("processingTitle").textContent = "";
+          ptitle.textContent = "";
           document.getElementById("processingHint").textContent = "";
         }
+        const div = document.createElement('div');
+        div.textContent = params.merchant_order_id;
+        ptitle.insertAdjacentElement('afterend', div);
       }else{
         setTimeout(()=>{
           getOrder()
