@@ -11,12 +11,12 @@ window.LANG = {
     "processingTitle": "Processing",
     "processingHint": "Please do not close or leave this page",
     "processingButtonText": "Processing, please do not close or leave this page",
-    "expiredMessage": "The operation has timed out. Please initiate the payment again."
+    "InfoUnavailable": "The system was unable to retrieve the payment information.",
+    "retryOrSupport": "Please initiate the payment again or contact customer support for assistance."
   },
   "paymentInfo": {
     "title": "Payment Information",
-    "subtitle": "Please carefully read the following instructions",
-    "timeRemaining": "Time Remaining"
+    "subtitle": "Please carefully read the following instructions"
   },
   "notice": {
     "item1": "1. Please confirm that the payment account information you are about to use is correct.",
@@ -36,21 +36,15 @@ window.LANG = {
     "copyPrompt": "Copy the following content:"
   },
   "form": {
-    "bankNameLabel": "Paying Bank Name",
-    "bankNamePlaceholder": "Please enter the bank name actually used for the transfer",
     "accountNumberLabel": "Paying Account Number",
     "accountNumberPlaceholder": "Please enter the bank account number actually used for the transfer",
-    "payerNameLabel": "Payer Name",
-    "payerNamePlaceholder": "Please enter the account holder name of the paying account",
     "helper": "Please enter the bank information actually used for the transfer to assist the system with reconciliation.",
     "submit": "Confirm and Submit",
     "submitExpired": "Operation Timed Out"
   },
   "validation": {
-    "bankNameRequired": "Please enter the paying bank name",
     "accountNumberRequired": "Please enter the paying account number",
-    "accountNumberInvalid": "The paying account number format is incorrect. Please check and try again.",
-    "payerNameRequired": "Please enter the payer name"
+    "accountNumberInvalid": "The paying account number format is incorrect. Please check and try again."
   },
   "feedback": {
     "submitSuccess": "Submission successful!"

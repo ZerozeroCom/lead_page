@@ -11,12 +11,12 @@ window.LANG = {
     "processingTitle": "系统处理中",
     "processingHint": "请勿关闭或离开此页面",
     "processingButtonText": "系统处理中，请勿关闭或离开此页面",
-    "expiredMessage": "操作已超时，请重新发起付款"
+    "InfoUnavailable": "系统未能获取付款信息",
+    "retryOrSupport": "请重新发起付款或联系在线客服协助处理。"
   },
   "paymentInfo": {
     "title": "付款信息",
-    "subtitle": "请仔细阅读以下注意事项",
-    "timeRemaining": "剩余时间"
+    "subtitle": "请仔细阅读以下注意事项"
   },
   "notice": {
     "item1": "1. 请确认您即将使用的付款账户信息是否正确",
@@ -36,21 +36,15 @@ window.LANG = {
     "copyPrompt": "复制以下内容："
   },
   "form": {
-    "bankNameLabel": "付款银行名称",
-    "bankNamePlaceholder": "请输入实际转账所使用的银行名称",
     "accountNumberLabel": "付款账户号码",
     "accountNumberPlaceholder": "请输入实际转账所使用的银行账户号码",
-    "payerNameLabel": "付款人名称",
-    "payerNamePlaceholder": "请输入实际转账账户的户名",
     "helper": "请输入您实际转账所使用的银行信息，以协助系统完成对账。",
     "submit": "确认提交",
     "submitExpired": "操作已超时"
   },
   "validation": {
-    "bankNameRequired": "请输入付款银行名称",
     "accountNumberRequired": "请输入付款账户号码",
-    "accountNumberInvalid": "付款账户号码格式不正确，请重新确认",
-    "payerNameRequired": "请输入付款人姓名"
+    "accountNumberInvalid": "付款账户号码格式不正确，请重新确认"
   },
   "feedback": {
     "submitSuccess": "提交成功！"

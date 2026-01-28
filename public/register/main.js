@@ -99,9 +99,7 @@
     var submitSpinner = document.getElementById("submitSpinner");
     var submitText = document.getElementById("submitText");
 
-    var errBankName = document.getElementById("errBankName");
     var errAccountNumber = document.getElementById("errAccountNumber");
-    var errPayerName = document.getElementById("errPayerName");
 
     function showError(inputEl, errEl, message) {
       inputEl.classList.add("error-input");
@@ -116,9 +114,7 @@
     }
 
     function setFormDisabled(disabled) {
-      bankNameEl.disabled = disabled;
       accountNumberEl.disabled = disabled;
-      payerNameEl.disabled = disabled;
       submitBtn.disabled = disabled;
     }
 
@@ -152,23 +148,12 @@
       clearError(accountNumberEl, errAccountNumber);
     });
 
-    bankNameEl.addEventListener("input", function () { clearError(bankNameEl, errBankName); });
-    payerNameEl.addEventListener("input", function () { clearError(payerNameEl, errPayerName); });
 
     function validate() {
       var ok = true;
-      var bn = (bankNameEl.value || "").trim();
       var an = (accountNumberEl.value || "").trim();
-      var pn = (payerNameEl.value || "").trim();
 
-      clearError(bankNameEl, errBankName);
       clearError(accountNumberEl, errAccountNumber);
-      clearError(payerNameEl, errPayerName);
-
-      if (!bn) {
-        showError(bankNameEl, errBankName, window.LANG.validation["bankNameRequired"]);
-        ok = false;
-      }
 
       if (!an) {
         showError(accountNumberEl, errAccountNumber, window.LANG.validation["accountNumberRequired"]);
@@ -178,10 +163,6 @@
         ok = false;
       }
 
-      if (!pn) {
-        showError(payerNameEl, errPayerName, window.LANG.validation["payerNameRequired"]);
-        ok = false;
-      }
 
       return ok;
     }
@@ -249,9 +230,7 @@
     // }
 
     document.addEventListener("DOMContentLoaded", () => {
-      console.log("準備")
       if (!window.LANG) {
-        console.log("檢查檔案就緒")
         checklangfile()
         return;
       };
@@ -267,7 +246,6 @@
       },100);
     }
     function langChange() {
-      console.log("開始變更")
       document.getElementById("pageTitle").textContent = window.LANG.app["pageTitle"];
       document.getElementById("headerTitle").textContent = window.LANG.app["headerTitle"];
 
@@ -292,16 +270,15 @@
       }
 
 
-      document.getElementById("form-bankNameLabel").textContent = window.LANG.form["bankNameLabel"];
+    
       document.getElementById("form-accountNumberLabel").textContent = window.LANG.form["accountNumberLabel"];
-      document.getElementById("form-payerNameLabel").textContent = window.LANG.form["payerNameLabel"];
+  
       document.getElementById("form-helper").textContent = window.LANG.form["helper"];
       document.getElementById("submitText").textContent = window.LANG.form["submit"];
       // document.getElementById("expiredMessage").textContent = window.LANG.form["submitExpired"];
 
-      document.getElementById("bankName").placeholder = window.LANG.form["bankNamePlaceholder"];
+
       document.getElementById("accountNumber").placeholder = window.LANG.form["accountNumberPlaceholder"];
-      document.getElementById("payerName").placeholder = window.LANG.form["payerNamePlaceholder"];
       
       
       for (let i = 1; i < 6; i++) {

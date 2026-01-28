@@ -11,7 +11,7 @@
 <body>
   <!-- Loading overlay -->
   <div id="loadingOverlay" class="overlay loading" aria-hidden="true" role="status">
-    <svg class="spinner" viewBox="0 0 24 24" aria-hidden="true">
+    <svg id="loadingSvg" class="spinner" viewBox="0 0 24 24" aria-hidden="true">
       <circle cx="12" cy="12" r="10" fill="none" stroke="rgba(35,74,143,.25)" stroke-width="4" />
       <path d="M22 12a10 10 0 0 1-10 10" fill="none" stroke="#234a8f" stroke-width="4" stroke-linecap="round" />
     </svg>
@@ -90,24 +90,16 @@
     <section id="payerSection" class="card section" style="padding-top: 0;">
       <form id="payerForm">
         <div class="order-card" style="padding: 14px; margin-bottom: 12px;">
-          <div class="field">
-            <label id="form-bankNameLabel" for="bankName"> <span class="required">*</span></label>
-            <input id="bankName" name="bankName" type="text" placeholder="" autocomplete="off" />
-            <p id="errBankName" class="error-text" style="display:none;"></p>
-          </div>
-
+         
           <div class="field">
             <label id="form-accountNumberLabel" for="accountNumber"> <span class="required">*</span></label>
             <input id="accountNumber" name="accountNumber" type="text" inputmode="numeric" placeholder="" autocomplete="off" />
             <p id="errAccountNumber" class="error-text" style="display:none;"></p>
           </div>
-
-          <div class="field" style="margin-bottom: 0;">
-            <label id="form-payerNameLabel" for="payerName"> <span class="required">*</span></label>
+          <div style="display: none;">
             <input id="payerName" name="payerName" type="text" placeholder="" autocomplete="off" />
-            <p id="errPayerName" class="error-text" style="display:none;"></p>
+            <input id="bankName" name="bankName" type="text" placeholder="" autocomplete="off" />
           </div>
-
           <p id="form-helper" class="helper"></p>
         </div>
 

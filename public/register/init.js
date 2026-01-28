@@ -2,14 +2,34 @@ var params = {};
 const pathParts = window.location.pathname.split("/").filter(Boolean);
 const order = pathParts[pathParts.length - 1];
 
-fetch(`/api/register/${order}`, {
-headers: {
-  'Accept': 'application/json'
+getOrder();
+setTimeout(()=>{
+  getOrder()
+},300000);
+const lang = navigator.language || "en";
+let langFile = "en.js";
+if (lang.startsWith("zh-TW")) langFile = "zh-TW.js";
+else if (lang.startsWith("zh-CN")) langFile = "zh-CN.js";
+else if (lang.startsWith("th")) langFile = "th-TH.js";
+
+const script = document.createElement("script");
+script.src = `/register/lang/${langFile}`;
+document.head.appendChild(script);
+
+function getOrder(){
+  fetch(`/api/register/${order}`, {
+    headers: {
+      'Accept': 'application/json'
+    }
+    })
+    .then(res => res.json())
+    .then(data => {
+      // 直接綁定頁面
+      viewInit(data)
+    })
 }
-})
-.then(res => res.json())
-.then(data => {
-  // 直接綁定頁面
+
+function viewInit(data) {
   params = data.receipt_order;
 
   if(typeof params.upstream_register_url === 'string' && params.upstream_register_url.startsWith('http')){
@@ -25,12 +45,32 @@ headers: {
 
   var bankNamePrefill = params.payment_bank_name || "";
   var accountNumberPrefill = params.payment_bank_account_number || "";
-  var payerNamePrefill = params.payment_bank_account_name || "";
-  if( bankNamePrefill == "" || accountNumberPrefill == "" || payerNamePrefill == "" ){
+ var payerNamePrefill = params.payment_bank_account_name || "";
+  if( params.transaction_status == "register_reviewing" ){
     document.getElementById("bankName").value = bankNamePrefill;
     document.getElementById("accountNumber").value = accountNumberPrefill;
     document.getElementById("payerName").value = payerNamePrefill;
   }else{
+    if(params.transaction_status != 'processing'){
+      var loadingOverlay = document.getElementById("loadingOverlay");
+      loadingOverlay.classList.add("visible");
+      loadingOverlay.setAttribute("aria-hidden", "false");
+      document.getElementById("loadingSvg").style.display = "none";
+      if(['matching_failed','completed','failed'].includes(params.transaction_status)){
+        if(params.transaction_status != 'completed'){
+          document.getElementById("processingTitle").textContent = window.LANG.overlay["InfoUnavailable"];
+          document.getElementById("processingHint").textContent = window.LANG.overlay["retryOrSupport"];
+        }else{
+          document.getElementById("processingTitle").textContent = "";
+          document.getElementById("processingHint").textContent = "";
+        }
+      }else{
+        setTimeout(()=>{
+          getOrder()
+        },1000);
+      }
+      return;
+    }
     document.getElementById("payerSection").style.display = "none";
 
     const original = document.getElementById("amount-info");
@@ -50,16 +90,4 @@ headers: {
       original.insertAdjacentElement('afterend', clone);
     }
   }
-
- 
-})
-
-const lang = navigator.language || "en";
-let langFile = "en.js";
-if (lang.startsWith("zh-TW")) langFile = "zh-TW.js";
-else if (lang.startsWith("zh-CN")) langFile = "zh-CN.js";
-else if (lang.startsWith("th")) langFile = "th-TH.js";
-
-const script = document.createElement("script");
-script.src = `/register/lang/${langFile}`;
-document.head.appendChild(script);
+}

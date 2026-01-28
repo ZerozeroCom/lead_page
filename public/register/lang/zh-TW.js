@@ -11,12 +11,12 @@ window.LANG = {
     "processingTitle": "系統處理中",
     "processingHint": "請勿關閉或離開此頁面",
     "processingButtonText": "系統處理中，請勿關閉或離開此頁面",
-    "expiredMessage": "操作已逾時，請重新發起付款"
+    "InfoUnavailable": "系統未能取得付款資訊",
+    "retryOrSupport": "請重新發起付款或聯繫客服協助處理。"
   },
   "paymentInfo": {
     "title": "付款訊息",
-    "subtitle": "請詳閱以下注意事項",
-    "timeRemaining": "剩餘時間"
+    "subtitle": "請詳閱以下注意事項"
   },
   "notice": {
     "item1": "1. 請確認您即將使用的付款帳戶資訊是否正確",
@@ -36,21 +36,15 @@ window.LANG = {
     "copyPrompt": "複製以下內容："
   },
   "form": {
-    "bankNameLabel": "付款銀行名稱",
-    "bankNamePlaceholder": "請輸入實際轉帳所使用的銀行名稱",
     "accountNumberLabel": "付款帳戶號碼",
     "accountNumberPlaceholder": "請輸入實際轉帳所使用的銀行帳戶號碼",
-    "payerNameLabel": "付款人名稱",
-    "payerNamePlaceholder": "請輸入實際轉帳帳戶的戶名",
     "helper": "請輸入您實際轉帳所使用的銀行資訊，以協助系統完成對帳。",
     "submit": "確認送出",
     "submitExpired": "操作已逾時"
   },
   "validation": {
-    "bankNameRequired": "請輸入付款銀行名稱",
     "accountNumberRequired": "請輸入付款帳戶號碼",
-    "accountNumberInvalid": "付款帳戶號碼格式不正確，請重新確認",
-    "payerNameRequired": "請輸入付款人姓名"
+    "accountNumberInvalid": "付款帳戶號碼格式不正確，請重新確認"
   },
   "feedback": {
     "submitSuccess": "提交成功！"
