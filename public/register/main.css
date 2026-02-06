@@ -303,7 +303,7 @@
   }
 
   .overlay.expired {
-    background: rgba(220,38,38,.82);
+    background: rgba(245, 247, 251, .78);
     backdrop-filter: blur(6px);
     padding: 24px;
   }
@@ -320,12 +320,23 @@
 
   .expired-card p {
     margin: 0;
-    color: var(--destructive);
     font-size: 18px;
     font-weight: 800;
     line-height: 1.4;
   }
-
+  .expired-card .big-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    background: rgba(220, 38, 38, .10);
+    color: #dc2626;
+    font-weight: 1000;
+    font-size: 26px;
+  }
   .spinner {
     width: 44px;
     height: 44px;

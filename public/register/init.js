@@ -3,9 +3,7 @@ const pathParts = window.location.pathname.split("/").filter(Boolean);
 const order = pathParts[pathParts.length - 1];
 
 getOrder();
-setTimeout(()=>{
-  getOrder()
-},300000);
+
 const lang = navigator.language || "en";
 let langFile = "en.js";
 if (lang.startsWith("zh-TW")) langFile = "zh-TW.js";
@@ -50,6 +48,11 @@ function viewInit(data) {
     document.getElementById("bankName").value = bankNamePrefill;
     document.getElementById("accountNumber").value = accountNumberPrefill;
     document.getElementById("payerName").value = payerNamePrefill;
+      var updated_at = (params.updated_at+300) - Math.floor(Date.now()/1000);
+      if (updated_at <= 0 ){
+        updated_at = -2;
+      }
+      document.getElementById("updated_at").value = updated_at;
   }else{
     if(params.transaction_status != 'processing'){
       var loadingOverlay = document.getElementById("loadingOverlay");
@@ -80,7 +83,7 @@ function viewInit(data) {
       return;
     }
     document.getElementById("payerSection").style.display = "none";
-
+    document.getElementById("updated_at").value = -2;
     const original = document.getElementById("amount-info");
    
     let arr = ["receipt_branch_name","receipt_bank_name","receipt_bank_account_number","receipt_bank_account_name"]

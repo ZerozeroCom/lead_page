@@ -1,7 +1,7 @@
 
     "use strict";
 
-    // var INITIAL_SECONDS = 10 * 60; // 10 minutes
+    var INITIAL_SECONDS = 5 * 60; // 5 minutes
 
     var bankNameEl = document.getElementById("bankName");
     var accountNumberEl = document.getElementById("accountNumber");
@@ -9,50 +9,61 @@
     // -----------------------------
     // Countdown (minimal business logic)
     // -----------------------------
-    // var secondsLeft = INITIAL_SECONDS;
-    // var isExpired = false;
+    var secondsLeft = INITIAL_SECONDS;
+    var isExpired = false;
 
-    // var timerBadge = document.getElementById("timerBadge");
-    // var timerValue = document.getElementById("timerValue");
-    // var expiredMessage = document.getElementById("expiredMessage");
+    var timerBadge = document.getElementById("timerBadge");
+    var timerValue = document.getElementById("timerValue");
+    var expiredOverlay = document.getElementById("expiredOverlay");
+    var expiredMessage = document.getElementById("expiredMessage");
 
-    // function pad2(n) {
-    //   return String(n).padStart(2, "0");
-    // }
+    function pad2(n) {
+      return String(n).padStart(2, "0");
+    }
 
-    // function formatTime(sec) {
-    //   var m = Math.floor(sec / 60);
-    //   var s = sec % 60;
-    //   return pad2(m) + ":" + pad2(s);
-    // }
+    function formatTime(sec) {
+      var m = Math.floor(sec / 60);
+      var s = sec % 60;
+      return pad2(m) + ":" + pad2(s);
+    }
 
-    // function setExpiredUI(expired) {
-    //   isExpired = expired;
-    //   if (expired) {
-    //     timerBadge.classList.add("expired");
-    //     timerValue.classList.add("expired");
-    //     expiredMessage.classList.add("visible");
-    //     expiredMessage.setAttribute("aria-hidden", "false");
-    //     setFormDisabled(true);
-    //     setSubmitState("expired");
-    //   }
-    // }
+    function setExpiredUI(expired) {
+      isExpired = expired;
+      if (expired) {
+        clearInterval(countdownTimer);
+        timerBadge.classList.add("expired");
+        timerValue.classList.add("expired");
+        expiredOverlay.classList.add("visible");
+        expiredOverlay.setAttribute("aria-hidden", "false");
+        setFormDisabled(true);
+        setSubmitState("expired");
+      }
+    }
 
-    // function tick() {
-    //   if (secondsLeft <= 0) {
-    //     setExpiredUI(true);
-    //     return;
-    //   }
-    //   secondsLeft -= 1;
-    //   timerValue.textContent = formatTime(secondsLeft);
-    //   if (secondsLeft <= 0) {
-    //     setExpiredUI(true);
-    //   }
-    // }
+    function tick() {
+      secondsLeft = document.getElementById("updated_at").value;
+      if (secondsLeft == -1){
+        return;
+      }
+      if (secondsLeft == -2){
+        setSubmitState("expired");
+        clearInterval(countdownTimer);
+        return;
+      }
+      if (secondsLeft <= 0) {
+        setExpiredUI(true);
+        return;
+      }
+      secondsLeft -= 1;
+      document.getElementById("updated_at").value = secondsLeft;
+      timerValue.textContent = formatTime(secondsLeft);
+      if (secondsLeft <= 0) {
+        setExpiredUI(true);
+      }
+    }
 
     // Initialize display
-    // timerValue.textContent = formatTime(secondsLeft);
-    // var countdownTimer = window.setInterval(tick, 1000);
+    var countdownTimer = window.setInterval(tick, 1000);
 
     // -----------------------------
     // Copy buttons
@@ -170,7 +181,7 @@
     document.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      // if (isExpired) return;
+      if (isExpired) return;
 
       if (!validate()) return;
 
@@ -224,10 +235,10 @@
     });
 
     // // If already expired for any reason, ensure UI sync.
-    // if (secondsLeft <= 0) {
-    //   window.clearInterval(countdownTimer);
-    //   setExpiredUI(true);
-    // }
+    if (secondsLeft <= 0) {
+      window.clearInterval(countdownTimer);
+      setExpiredUI(true);
+    }
 
     document.addEventListener("DOMContentLoaded", () => {
       if (!window.LANG) {
@@ -251,11 +262,10 @@
 
       document.getElementById("processingTitle").textContent = window.LANG.overlay["processingTitle"];
       document.getElementById("processingHint").textContent = window.LANG.overlay["processingHint"];
-      // document.getElementById("expiredMessage").textContent = window.LANG.overlay["expiredMessage"];
 
       document.getElementById("paymentInfo-title").textContent = window.LANG.paymentInfo["title"];
       document.getElementById("paymentInfo-subtitle").textContent = window.LANG.paymentInfo["subtitle"];
-      // document.getElementById("paymentInfo-timeRemaining").textContent = window.LANG.paymentInfo["timeRemaining"];
+      document.getElementById("paymentInfo-timeRemaining").textContent = window.LANG.paymentInfo["timeRemaining"];
 
       document.getElementById("order-sectionTitle").textContent = window.LANG.order["sectionTitle"];
       document.getElementById("order-orderIdLabel").textContent = window.LANG.order["orderIdLabel"];
@@ -275,7 +285,9 @@
   
       document.getElementById("form-helper").textContent = window.LANG.form["helper"];
       document.getElementById("submitText").textContent = window.LANG.form["submit"];
-      // document.getElementById("expiredMessage").textContent = window.LANG.form["submitExpired"];
+      document.getElementById("expiredMessage").textContent = window.LANG.form["submitExpired"];
+      document.getElementById("expiredMessage2").textContent = window.LANG.overlay["expiredMessage"];
+      
 
 
       document.getElementById("accountNumber").placeholder = window.LANG.form["accountNumberPlaceholder"];

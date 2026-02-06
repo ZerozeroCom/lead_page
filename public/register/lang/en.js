@@ -11,12 +11,14 @@ window.LANG = {
     "processingTitle": "Processing",
     "processingHint": "Please do not close or leave this page",
     "processingButtonText": "Processing, please do not close or leave this page",
+    "expiredMessage": "The operation has timed out. Please initiate the payment again.",
     "InfoUnavailable": "The system was unable to retrieve the payment information.",
     "retryOrSupport": "Please initiate the payment again or contact customer support for assistance."
   },
   "paymentInfo": {
     "title": "Payment Information",
-    "subtitle": "Please carefully read the following instructions"
+    "subtitle": "Please carefully read the following instructions",
+    "timeRemaining": "Time Remaining"
   },
   "notice": {
     "item1": "1. Please confirm that the payment account information you are about to use is correct.",

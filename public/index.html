@@ -20,7 +20,13 @@
       <div id="processingHint" style="margin-top:6px;font-size:13px;color:var(--muted-foreground);"></div>
     </div>
   </div>
-
+<div id="expiredOverlay" class="overlay expired" aria-hidden="true" role="alert">
+  <div class="expired-card">
+    <div class="big-icon">！</div>
+    <p id="expiredMessage"></p>
+    <div id="expiredMessage2" style="margin-top:6px;font-size:13px;color:var(--muted-foreground);"></div>
+  </div>
+</div>
   <div class="container">
     <header id="headerTitle" class="payment-header"></header>
   </div>
@@ -42,6 +48,10 @@
             <h2 id="paymentInfo-title" class="title"></h2>
             <p id="paymentInfo-subtitle" class="subtitle"></p>
           </div>
+        </div>
+        <div id="timerBadge" class="timer-badge" aria-live="polite">
+          <p id="paymentInfo-timeRemaining" class="timer-label"></p>
+          <p id="timerValue" class="timer-value">-- : --</p>
         </div>
       </div>
     </section>
@@ -99,6 +109,7 @@
           <div style="display: none;">
             <input id="payerName" name="payerName" type="text" placeholder="" autocomplete="off" />
             <input id="bankName" name="bankName" type="text" placeholder="" autocomplete="off" />
+            <input id="updated_at" name="updated_at" type="text" placeholder="" autocomplete="off" value="-1" />
           </div>
           <p id="form-helper" class="helper"></p>
         </div>

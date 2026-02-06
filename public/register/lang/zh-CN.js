@@ -11,12 +11,14 @@ window.LANG = {
     "processingTitle": "系统处理中",
     "processingHint": "请勿关闭或离开此页面",
     "processingButtonText": "系统处理中，请勿关闭或离开此页面",
+    "expiredMessage": "操作已超时，请重新发起付款",
     "InfoUnavailable": "系统未能获取付款信息",
     "retryOrSupport": "请重新发起付款或联系在线客服协助处理。"
   },
   "paymentInfo": {
     "title": "付款信息",
-    "subtitle": "请仔细阅读以下注意事项"
+    "subtitle": "请仔细阅读以下注意事项",
+    "timeRemaining": "剩余时间"
   },
   "notice": {
     "item1": "1. 请确认您即将使用的付款账户信息是否正确",
