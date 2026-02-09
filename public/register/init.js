@@ -1,7 +1,7 @@
 var params = {};
 const pathParts = window.location.pathname.split("/").filter(Boolean);
 const order = pathParts[pathParts.length - 1];
-
+setLoading(true);
 getOrder();
 
 const lang = navigator.language || "en";
@@ -20,8 +20,16 @@ function getOrder(){
       'Accept': 'application/json'
     }
     })
-    .then(res => res.json())
+    .then(res => {
+        if (res.status !== 200) {
+            console.warn(res);
+            setTimeout(window.location.reload(), 3000);
+            return Promise.reject("error");
+        } 
+        return res.json();
+    })
     .then(data => {
+      setLoading(false);
       // 直接綁定頁面
       viewInit(data)
     })
@@ -101,4 +109,35 @@ function viewInit(data) {
       original.insertAdjacentElement('afterend', clone);
     }
   }
+}
+
+function setLoading(loading) {
+  waitForElement("#loadingOverlay", (loadingOverlay) => {
+      if (loading) {
+          loadingOverlay.classList.add("visible");
+          loadingOverlay.setAttribute("aria-hidden", "false");
+      } else {
+          loadingOverlay.classList.remove("visible");
+          loadingOverlay.setAttribute("aria-hidden", "true");
+      }
+  });
+}
+function waitForElement(selector, callback) {
+    const el = document.querySelector(selector);
+    if (el) {
+        callback(el);
+    } else {
+       let tempOverlay = document.createElement("div");
+        tempOverlay.className = "overlay temp-overlay";
+        document.documentElement.appendChild(tempOverlay);
+        // 每 50ms 再試一次
+        const interval = setInterval(() => {
+            const elRetry = document.querySelector(selector);
+            if (elRetry) {
+               tempOverlay.remove();
+                clearInterval(interval);
+                callback(elRetry);
+            }
+        }, 50);
+    }
 }
