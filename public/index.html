@@ -101,9 +101,10 @@
       <form id="payerForm">
         <div class="order-card" style="padding: 14px; margin-bottom: 12px;">
          
-          <div class="field">
+          <div class="field" style="position: relative;">
             <label id="form-accountNumberLabel" for="accountNumber"> <span class="required">*</span></label>
             <input id="accountNumber" name="accountNumber" type="text" inputmode="numeric" placeholder="" autocomplete="off" />
+            <div class="placeholder" id="accountNumberPlaceholder" style="display: block;"></div>
             <p id="errAccountNumber" class="error-text" style="display:none;"></p>
           </div>
           <div style="display: none;">

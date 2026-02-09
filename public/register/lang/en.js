@@ -11,7 +11,8 @@ window.LANG = {
     "processingTitle": "Processing",
     "processingHint": "Please do not close or leave this page",
     "processingButtonText": "Processing, please do not close or leave this page",
-    "expiredMessage": "The operation has timed out. Please initiate the payment again.",
+    "paymentExpiredTitle": "Payment Time Expired",
+    "expiredMessage": "This payment has exceeded the valid time limit. Please initiate a new payment request.",
     "InfoUnavailable": "The system was unable to retrieve the payment information.",
     "retryOrSupport": "Please initiate the payment again or contact customer support for assistance."
   },
@@ -42,6 +43,7 @@ window.LANG = {
     "accountNumberPlaceholder": "Please enter the bank account number actually used for the transfer",
     "helper": "Please enter the bank information actually used for the transfer to assist the system with reconciliation.",
     "submit": "Confirm and Submit",
+    "accountLastFiveHint": "Please enter only the last five digits of the account number.",
     "submitExpired": "Operation Timed Out"
   },
   "validation": {

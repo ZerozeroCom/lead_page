@@ -6,6 +6,7 @@
     var bankNameEl = document.getElementById("bankName");
     var accountNumberEl = document.getElementById("accountNumber");
     var payerNameEl = document.getElementById("payerName");
+    var accountNumberPlaceholder =document.getElementById("accountNumberPlaceholder");
     // -----------------------------
     // Countdown (minimal business logic)
     // -----------------------------
@@ -155,10 +156,22 @@
     accountNumberEl.addEventListener("input", function () {
       var v = accountNumberEl.value || "";
       var cleaned = v.replace(/\s+/g, "");
+      syncPlaceholder();
       if (cleaned !== v) accountNumberEl.value = cleaned;
       clearError(accountNumberEl, errAccountNumber);
     });
 
+    function syncPlaceholder(){
+      accountNumberPlaceholder.style.display = accountNumberEl.value ? 'none' : 'block';
+    }
+    accountNumberEl.addEventListener('input', ()=>{
+      // remove whitespaces
+      accountNumberEl.value = accountNumberEl.value.replace(/\s/g,'');
+      syncPlaceholder();
+      if (errEl.style.display !== 'none') setError('');
+    });
+    accountNumberEl.addEventListener('focus', syncPlaceholder);
+    accountNumberEl.addEventListener('blur', syncPlaceholder);
 
     function validate() {
       var ok = true;
@@ -285,13 +298,10 @@
   
       document.getElementById("form-helper").textContent = window.LANG.form["helper"];
       document.getElementById("submitText").textContent = window.LANG.form["submit"];
-      document.getElementById("expiredMessage").textContent = window.LANG.form["submitExpired"];
+      document.getElementById("expiredMessage").textContent = window.LANG.overlay["paymentExpiredTitle"];
       document.getElementById("expiredMessage2").textContent = window.LANG.overlay["expiredMessage"];
-      
 
-
-      document.getElementById("accountNumber").placeholder = window.LANG.form["accountNumberPlaceholder"];
-      
+      accountNumberPlaceholder.innerHTML  = `${window.LANG.form["accountNumberPlaceholder"]}<span style="color:red">（${window.LANG.form["accountLastFiveHint"]}）</span>`;
       
       for (let i = 1; i < 6; i++) {
         document.getElementById("head-notice"+i).textContent = window.LANG.notice["item"+i];

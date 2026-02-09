@@ -11,7 +11,8 @@ window.LANG = {
     "processingTitle": "系統處理中",
     "processingHint": "請勿關閉或離開此頁面",
     "processingButtonText": "系統處理中，請勿關閉或離開此頁面",
-    "expiredMessage": "操作已逾時，請重新發起付款",
+    "paymentExpiredTitle": "付款時間已逾時",
+    "expiredMessage": "本次付款已超過有效時間，請重新發起付款請求。",
     "InfoUnavailable": "系統未能取得付款資訊",
     "retryOrSupport": "請重新發起付款或聯繫客服協助處理。"
   },
@@ -42,6 +43,7 @@ window.LANG = {
     "accountNumberPlaceholder": "請輸入實際轉帳所使用的銀行帳戶號碼",
     "helper": "請輸入您實際轉帳所使用的銀行資訊，以協助系統完成對帳。",
     "submit": "確認送出",
+    "accountLastFiveHint": "僅填寫帳號後五碼即可",
     "submitExpired": "操作已逾時"
   },
   "validation": {

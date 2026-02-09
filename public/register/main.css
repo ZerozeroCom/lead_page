@@ -219,7 +219,17 @@
     color: rgba(42,52,69,.65);
     cursor: not-allowed;
   }
-
+  .placeholder {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      color: rgb(107, 114, 128);
+      pointer-events: none;
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: calc(100% - 24px);
+  }
   .error-input {
     border-color: var(--destructive) !important;
     box-shadow: 0 0 0 4px rgba(220,38,38,.10) !important;
@@ -349,4 +359,8 @@
     .section { padding: 16px 14px; }
     .timer-badge { min-width: 106px; padding: 10px 10px; }
     .info-label { width: 78px; }
+    input {min-height: 80px;}
+    .placeholder {
+      top:35%;
+    }
   }
