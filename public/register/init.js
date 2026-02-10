@@ -14,6 +14,9 @@ const script = document.createElement("script");
 script.src = `/register/lang/${langFile}`;
 document.head.appendChild(script);
 
+let retryCount = 0;
+const MAX_RETRY = 5;
+
 function getOrder(){
   fetch(`/api/register/${order}`, {
     headers: {
@@ -21,9 +24,17 @@ function getOrder(){
     }
     })
     .then(res => {
+        if (res.status == 403) {
+          alert("無法取得資訊，金鑰錯誤或IP錯誤");
+          return Promise.reject("403 forbidden");
+        }
         if (res.status !== 200) {
-            console.warn(res);
-            setTimeout(window.location.reload(), 3000);
+            retryCount++;
+            if (retryCount >= MAX_RETRY) {
+                alert(`连线失败次数过多，请稍后再试 \n max retry reache \n ถึงจำนวนครั้งการลองใหม่สูงสุดแล้ว`);
+                return Promise.reject("max retry reached");
+            }
+            setTimeout(getOrder, 3000);
             return Promise.reject("error");
         } 
         return res.json();
