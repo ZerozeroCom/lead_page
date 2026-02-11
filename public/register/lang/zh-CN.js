@@ -51,6 +51,9 @@ window.LANG = {
     "accountNumberInvalid": "付款账户号码格式不正确，请重新确认"
   },
   "feedback": {
+    "orderErr":"查无指定的订单，请确认网址是否正确",
+    "retry":"连线失败次数过多，请稍后再试",
+    "err":"　　　错误，请关闭页面",
     "submitSuccess": "提交成功！"
   },
   "footer": {

@@ -26,13 +26,28 @@ function getOrder(){
     .then(res => {
         if (res.status == 403) {
           alert("無法取得資訊，金鑰錯誤或IP錯誤");
+          errorPage();
           return Promise.reject("403 forbidden");
+        }
+        if (res.status == 400) {
+          return res.json().then(data => {
+              let error = "Bad Request"
+              if(data.code == 20013){
+                alert(window.LANG.feedback["orderErr"] || error);
+              }else{
+                alert(data.message || error);
+              }
+              errorPage();
+              return Promise.reject(error);
+          });
         }
         if (res.status !== 200) {
             retryCount++;
             if (retryCount >= MAX_RETRY) {
-                alert(`连线失败次数过多，请稍后再试 \n max retry reache \n ถึงจำนวนครั้งการลองใหม่สูงสุดแล้ว`);
-                return Promise.reject("max retry reached");
+              let err = "Max retry reached"
+                alert(window.LANG.feedback["retry"] || err);
+                errorPage();
+                return Promise.reject(err);
             }
             setTimeout(getOrder, 3000);
             return Promise.reject("error");
@@ -45,7 +60,10 @@ function getOrder(){
       viewInit(data)
     })
 }
-
+function errorPage(){
+  let message = window.LANG.feedback["err"] || "";
+  document.body.innerHTML = `<h1>${message}</h1>`;
+}
 function viewInit(data) {
   params = data.receipt_order;
 
@@ -67,7 +85,7 @@ function viewInit(data) {
     document.getElementById("bankName").value = bankNamePrefill;
     document.getElementById("accountNumber").value = accountNumberPrefill;
     document.getElementById("payerName").value = payerNamePrefill;
-      var updated_at = (params.updated_at+300) - Math.floor(Date.now()/1000);
+      var updated_at = ( (params.updated_at || 0) +300) - Math.floor(Date.now()/1000);
       if (updated_at <= 0 ){
         updated_at = -2;
       }

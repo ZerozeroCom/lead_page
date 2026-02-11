@@ -51,6 +51,9 @@ window.LANG = {
     "accountNumberInvalid": "The paying account number format is incorrect. Please check and try again."
   },
   "feedback": {
+    "orderErr": "The specified order was not found, please check if the URL is correct",
+    "retry":"Too many connection failures, please try again later",
+    "err":"　　　Error, please close this page",
     "submitSuccess": "Submission successful!"
   },
   "footer": {

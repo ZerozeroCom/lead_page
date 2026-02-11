@@ -51,6 +51,9 @@ window.LANG = {
     "accountNumberInvalid": "付款帳戶號碼格式不正確，請重新確認"
   },
   "feedback": {
+    "orderErr":"查無指定的訂單，請確認網址是否正確",
+    "retry":"連線失敗次數過多，請稍後再試",
+    "err":"　　　錯誤，請關閉頁面",
     "submitSuccess": "提交成功！"
   },
   "footer": {
