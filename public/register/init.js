@@ -81,15 +81,11 @@ function viewInit(data) {
   var bankNamePrefill = params.payment_bank_name || "";
   var accountNumberPrefill = params.payment_bank_account_number || "";
  var payerNamePrefill = params.payment_bank_account_name || "";
-  if( params.transaction_status == "register_reviewing" ){
+  if( params.transaction_status == "register_reviewing"){
     document.getElementById("bankName").value = bankNamePrefill;
     document.getElementById("accountNumber").value = accountNumberPrefill;
     document.getElementById("payerName").value = payerNamePrefill;
-      var updated_at = ( (params.updated_at || 0) +300) - Math.floor(Date.now()/1000);
-      if (updated_at <= 0 ){
-        updated_at = -2;
-      }
-      document.getElementById("updated_at").value = updated_at;
+    document.getElementById("updated_at").value = params.updated_at || -1;
   }else{
     if(params.transaction_status != 'processing'){
       var loadingOverlay = document.getElementById("loadingOverlay");

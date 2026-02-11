@@ -42,21 +42,16 @@
     }
 
     function tick() {
-      secondsLeft = document.getElementById("updated_at").value;
-      if (secondsLeft == -1){
+      var updateTime = document.getElementById("updated_at").value;
+      if (updateTime == -1){
         return;
       }
-      if (secondsLeft == -2){
+      if (updateTime == -2){
         setSubmitState("expired");
         clearInterval(countdownTimer);
         return;
       }
-      if (secondsLeft <= 0) {
-        setExpiredUI(true);
-        return;
-      }
-      secondsLeft -= 1;
-      document.getElementById("updated_at").value = secondsLeft;
+      var secondsLeft = (parseInt(updateTime, 10) +300 ) - Math.floor(Date.now()/1000);
       timerValue.textContent = formatTime(secondsLeft);
       if (secondsLeft <= 0) {
         setExpiredUI(true);
@@ -64,7 +59,7 @@
     }
 
     // Initialize display
-    var countdownTimer = window.setInterval(tick, 1000);
+    var countdownTimer = window.setInterval(tick, 333);
 
     // -----------------------------
     // Copy buttons
@@ -158,18 +153,13 @@
       var cleaned = v.replace(/\s+/g, "");
       syncPlaceholder();
       if (cleaned !== v) accountNumberEl.value = cleaned;
-      clearError(accountNumberEl, errAccountNumber);
+      validate();
     });
 
     function syncPlaceholder(){
       accountNumberPlaceholder.style.display = accountNumberEl.value ? 'none' : 'block';
     }
-    accountNumberEl.addEventListener('input', ()=>{
-      // remove whitespaces
-      accountNumberEl.value = accountNumberEl.value.replace(/\s/g,'');
-      syncPlaceholder();
-      if (errEl.style.display !== 'none') setError('');
-    });
+
     accountNumberEl.addEventListener('focus', syncPlaceholder);
     accountNumberEl.addEventListener('blur', syncPlaceholder);
 
@@ -178,7 +168,6 @@
       var an = (accountNumberEl.value || "").trim();
 
       clearError(accountNumberEl, errAccountNumber);
-
       if (!an) {
         showError(accountNumberEl, errAccountNumber, window.LANG.validation["accountNumberRequired"]);
         ok = false;
@@ -232,7 +221,14 @@
           },
           body: JSON.stringify(data)
         })
-        .then(res => res.text())
+        .then(res => {
+          if (!res.ok) {
+            let message = window.LANG.feedback["err"] || "";
+            document.body.innerHTML = `<h1>${message}</h1>`;
+            return Promise.reject("fail");
+          }
+          return res.text()
+        })
         .then(text  => {
           setLoading(false);
 
