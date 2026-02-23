@@ -65,6 +65,37 @@
       <p id="head-notice5" class="info"></p>
     </section>
 
+     <!-- Form -->
+    <section id="payerSection" class="card section" style="padding-top: 0;">
+      <form id="payerForm">
+        <div class="order-card" style="padding: 14px; margin-bottom: 12px;">
+         
+          <div class="field" style="position: relative;">
+            <label id="form-accountNumberLabel" for="accountNumber"> <span class="required">*</span></label>
+            <input id="accountNumber" name="accountNumber" type="text" inputmode="numeric" placeholder="" autocomplete="off" />
+            <div class="placeholder" id="accountNumberPlaceholder" style="display: block;"></div>
+            <div id="errAccountNumber" class="error-text"></div>
+          </div>
+          <div style="display: none;">
+            <input id="payerName" name="payerName" type="text" placeholder="" autocomplete="off" />
+            <input id="bankName" name="bankName" type="text" placeholder="" autocomplete="off" />
+            <input id="updated_at" name="updated_at" type="text" value="-1" />
+            <input id="signed_at" name="signed_at" type="text"/>
+          </div>
+          <p id="form-helper" class="helper"></p>
+        </div>
+
+        <button id="submitBtn" class="primary-btn" type="submit">
+          <span id="submitSpinner" style="display:none;" aria-hidden="true">
+            <svg class="spinner" style="width:18px;height:18px;" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4" />
+              <path d="M22 12a10 10 0 0 1-10 10" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span id="submitText"></span>
+        </button>
+      </form>
+    </section>
     <!-- Order info -->
     <section class="card section">
       <h3 id="order-sectionTitle" class="order-title"></h3>
@@ -96,36 +127,7 @@
       </div>
     </section>
 
-    <!-- Form -->
-    <section id="payerSection" class="card section" style="padding-top: 0;">
-      <form id="payerForm">
-        <div class="order-card" style="padding: 14px; margin-bottom: 12px;">
-         
-          <div class="field" style="position: relative;">
-            <label id="form-accountNumberLabel" for="accountNumber"> <span class="required">*</span></label>
-            <input id="accountNumber" name="accountNumber" type="text" inputmode="numeric" placeholder="" autocomplete="off" />
-            <div class="placeholder" id="accountNumberPlaceholder" style="display: block;"></div>
-            <div id="errAccountNumber" class="error-text"></div>
-          </div>
-          <div style="display: none;">
-            <input id="payerName" name="payerName" type="text" placeholder="" autocomplete="off" />
-            <input id="bankName" name="bankName" type="text" placeholder="" autocomplete="off" />
-            <input id="updated_at" name="updated_at" type="text" placeholder="" autocomplete="off" value="-1" />
-          </div>
-          <p id="form-helper" class="helper"></p>
-        </div>
-
-        <button id="submitBtn" class="primary-btn" type="submit">
-          <span id="submitSpinner" style="display:none;" aria-hidden="true">
-            <svg class="spinner" style="width:18px;height:18px;" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4" />
-              <path d="M22 12a10 10 0 0 1-10 10" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
-            </svg>
-          </span>
-          <span id="submitText"></span>
-        </button>
-      </form>
-    </section>
+   
   </main>
 
   <div class="container">

@@ -1,7 +1,9 @@
 var params = {};
 const pathParts = window.location.pathname.split("/").filter(Boolean);
 const order = pathParts[pathParts.length - 1];
-setLoading(true);
+ waitForElement("#loadingOverlay", () => {
+     setLoading(true);
+});
 getOrder();
 
 const lang = navigator.language || "en";
@@ -85,9 +87,10 @@ function viewInit(data) {
     document.getElementById("bankName").value = bankNamePrefill;
     document.getElementById("accountNumber").value = accountNumberPrefill;
     document.getElementById("payerName").value = payerNamePrefill;
-    document.getElementById("updated_at").value = params.updated_at || -1;
+    document.getElementById("updated_at").value = (params.updated_at+300) - params.signed_at || -1;
+    document.getElementById("signed_at").value = params.signed_at || Math.floor(Date.now()/1000);
   }else{
-    if(params.transaction_status != 'processing'){
+    if( params.transaction_status != 'processing'){
       var loadingOverlay = document.getElementById("loadingOverlay");
       loadingOverlay.classList.add("visible");
       loadingOverlay.setAttribute("aria-hidden", "false");
@@ -116,7 +119,7 @@ function viewInit(data) {
       return;
     }
     document.getElementById("payerSection").style.display = "none";
-    document.getElementById("updated_at").value = -2;
+    document.getElementById("updated_at").value = -1;
     const original = document.getElementById("amount-info");
    
     let arr = ["receipt_branch_name","receipt_bank_name","receipt_bank_account_number","receipt_bank_account_name"]
@@ -137,15 +140,14 @@ function viewInit(data) {
 }
 
 function setLoading(loading) {
-  waitForElement("#loadingOverlay", (loadingOverlay) => {
-      if (loading) {
-          loadingOverlay.classList.add("visible");
-          loadingOverlay.setAttribute("aria-hidden", "false");
-      } else {
-          loadingOverlay.classList.remove("visible");
-          loadingOverlay.setAttribute("aria-hidden", "true");
-      }
-  });
+   const loadingOverlay = document.getElementById("loadingOverlay");
+  if (loading) {
+      loadingOverlay.classList.add("visible");
+      loadingOverlay.setAttribute("aria-hidden", "false");
+  } else {
+      loadingOverlay.classList.remove("visible");
+      loadingOverlay.setAttribute("aria-hidden", "true");
+  }
 }
 function waitForElement(selector, callback) {
     const el = document.querySelector(selector);

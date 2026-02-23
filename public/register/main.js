@@ -42,8 +42,10 @@
     }
 
     function tick() {
+      var delta = document.getElementById("signed_at").value;
       var updateTime = document.getElementById("updated_at").value;
-      if (updateTime == -1){
+      
+      if (updateTime == -1 || delta === null) {
         return;
       }
       if (updateTime == -2){
@@ -51,7 +53,9 @@
         clearInterval(countdownTimer);
         return;
       }
-      var secondsLeft = (parseInt(updateTime, 10) +300 ) - Math.floor(Date.now()/1000);
+      
+      var secondsLeft = (parseInt(updateTime, 10) ) - ( Math.floor(Date.now()/1000) - delta);
+
       timerValue.textContent = formatTime(secondsLeft);
       if (secondsLeft <= 0) {
         setExpiredUI(true);
@@ -142,6 +146,10 @@
     function setSubmitState(state) {
       // state: normal | submitting | expired
       if (state === "expired") {
+        const div = document.createElement('div');
+        div.id = 'OrderIdNewDiv2';  // 固定 ID
+        div.textContent = params.merchant_order_id;
+        expiredMessage.insertAdjacentElement('afterend', div);
         submitText.textContent = window.LANG.form["submitExpired"];
         submitSpinner.style.display = "none";
       }
@@ -269,8 +277,12 @@
       document.getElementById("pageTitle").textContent = window.LANG.app["pageTitle"];
       document.getElementById("headerTitle").textContent = window.LANG.app["headerTitle"];
 
-      document.getElementById("processingTitle").textContent = window.LANG.overlay["processingTitle"];
-      document.getElementById("processingHint").textContent = window.LANG.overlay["processingHint"];
+      if (document.getElementById("processingTitle").textContent === "") {
+        document.getElementById("processingTitle").textContent = window.LANG.overlay["processingTitle"];
+      }
+      if (document.getElementById("processingHint").textContent === "") {
+        document.getElementById("processingHint").textContent = window.LANG.overlay["processingHint"];
+      }
 
       document.getElementById("paymentInfo-title").textContent = window.LANG.paymentInfo["title"];
       document.getElementById("paymentInfo-subtitle").textContent = window.LANG.paymentInfo["subtitle"];
