@@ -83,12 +83,13 @@ function viewInit(data) {
   var bankNamePrefill = params.payment_bank_name || "";
   var accountNumberPrefill = params.payment_bank_account_number || "";
  var payerNamePrefill = params.payment_bank_account_name || "";
+
   if( params.transaction_status == "register_reviewing"){
     document.getElementById("bankName").value = bankNamePrefill;
     document.getElementById("accountNumber").value = accountNumberPrefill;
     document.getElementById("payerName").value = payerNamePrefill;
     document.getElementById("updated_at").value = (params.updated_at+300) - params.signed_at || -1;
-    document.getElementById("signed_at").value = params.signed_at || Math.floor(Date.now()/1000);
+    document.getElementById("signed_at").value = Math.floor(Date.now()/1000);
   }else{
     if( params.transaction_status != 'processing'){
       var loadingOverlay = document.getElementById("loadingOverlay");

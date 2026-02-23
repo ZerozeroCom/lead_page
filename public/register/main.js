@@ -54,8 +54,7 @@
         return;
       }
       
-      var secondsLeft = (parseInt(updateTime, 10) ) - ( Math.floor(Date.now()/1000) - delta);
-
+      var secondsLeft = (parseInt(updateTime, 10) ) - ( Math.floor(Date.now()/1000) - delta  );
       timerValue.textContent = formatTime(secondsLeft);
       if (secondsLeft <= 0) {
         setExpiredUI(true);
