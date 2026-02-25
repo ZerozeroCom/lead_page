@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="./main.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Loading overlay -->
+  <div id="loadingOverlay" class="overlay loading" aria-hidden="true" role="status">
+    <svg class="spinner" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" fill="none" stroke="rgba(35,74,143,.25)" stroke-width="4" />
+      <path d="M22 12a10 10 0 0 1-10 10" fill="none" stroke="#234a8f" stroke-width="4" stroke-linecap="round" />
+    </svg>
+    <div>
+    </div>
+  </div>
+
+  <!-- Expired overlay -->
+  <div id="expiredOverlay" class="overlay expired" aria-hidden="true" role="alert">
+    <div class="expired-card">
+      <p></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <header class="payment-header"></header>
+  </div>
+
+  <main class="container">
+    <!-- Payment info -->
+    <section class="card section">
+      <div class="row">
+        <div class="payment-info-left">
+          <div class="icon-badge" aria-hidden="true">
+            <!-- Credit card icon -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notice section -->
+    <section class="card section notice" style="padding-top: 12px; padding-bottom: 12px;">
+      <p class="warning"></p>
+      <p class="info"></p>
+      <p class="warning"></p>
+      <p class="warning"></p>
+      <p class="info"></p>
+    </section>
+
+    <!-- Order info -->
+    <section class="card section">
+      <h3 class="order-title"></h3>
+    </section>
+
+    <!-- Form -->
+    <section class="card section" style="padding-top: 0;">
+      <form id="payerForm" novalidate>
+      </form>
+    </section>
+  </main>
+
+  <div class="container">
+    <footer class="payment-footer">
+    
+    </footer>
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>
