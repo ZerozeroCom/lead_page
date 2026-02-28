@@ -1,42 +1,254 @@
-:root{--container:1100px;--accent:#ff6b6b;--muted:#6b7280}
-*{box-sizing:border-box}
-body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
-.container{max-width:var(--container);margin:0 auto;padding:0 1rem}
-.site-header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:40}
-.site-header .container{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem}
-.site-nav a{margin-left:1rem;color:var(--muted);text-decoration:none}
-.hero{padding:4rem 0;text-align:center;background:linear-gradient(180deg,#fff,#f9fafb)}
-.hero h1{font-size:clamp(1.6rem,3.6vw,2.8rem);margin:0 0 .5rem}
-.lead{color:var(--muted);font-size:1.05rem}
-.btn-primary{display:inline-block;padding:.6rem 1rem;background:var(--accent);color:#fff;border-radius:999px;text-decoration:none}
-.section{padding:3rem 0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.article img{max-width:100%;height:auto;display:block}
-.site-footer{padding:2rem 0;text-align:center;color:var(--muted);font-size:.9rem}
+html {
+  height: 100%;
+  overflow: hidden; /* 關鍵：這會隱藏系統預設的滾動條 */
+}
+body {
+  position: relative;
+  margin: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  height: 100%;
+  overflow-y: auto;  /* 讓 body 在垂直內容溢出時產生滾動條 */
+  overflow-x: hidden; /* 防止左右出現莫名的小抖動 */
+  
+  /* 如果你要搭配磁吸效果，這行必須跟著搬家 */
+  scroll-snap-type: y mandatory;
+  
+  /* 確保平滑滾動依然有效 */
+  scroll-behavior: smooth;
+  
+  /* 慣性滾動（針對 iOS Safari 優化） */
+  -webkit-overflow-scrolling: touch;
+}
+section.page {
+  /* 關鍵屬性：磁吸點設在元素中心 */
+  scroll-snap-align: center;
+  
+  /* 避免磁吸太敏感，可以增加停止點 */
+  scroll-snap-stop: always;
+  
+  width: 100%;
+ 
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0); /* 針對舊版瀏覽器 */
+  clip-path: inset(50%);  /* 現代瀏覽器標準 */
+  white-space: nowrap;
+  border: 0;
+}
 
-/* Image utilities (ignore actual file loading; style only) */
-.img-responsive{width:100%;height:auto;display:block}
-.img-cover{width:100%;height:220px;object-fit:cover;display:block}
-.img-round{border-radius:12px;overflow:hidden}
-.hero-bg{width:100%;height:320px;background-position:center;background-size:cover;background-repeat:no-repeat}
+#game-section {
+  position: relative;
+  height: 100vh;
 
-/* Responsive */
-@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero{padding:3rem 0}}
-@media (max-width:600px){.grid{grid-template-columns:1fr}.site-header .container{padding:.5rem 1rem}}
+}
+/* 讓 picture 容器填滿背景 */
+.game-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* 墊在內容下面 */
+}
 
-/* Desktop vs Mobile image helpers used by raw.mhtml */
-.pc-img{display:block}
-.m-img{display:none}
-@media (max-width:900px){.pc-img{display:none}.m-img{display:block}}
+/* 讓圖片表現得像 background-size: cover */
+.game-bg-img {
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
-/* Common placeholder image block (no external image loaded) */
-.image-placeholder{background-color:#f3f4f6;display:block;width:100%;height:100%;min-height:60px;border-radius:8px}
+.site-header{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+.logo-inline{
+    display: inline-block;
+    width: auto;
+    margin: auto 0;
+}
+.akaerocore_logo img{
+    display: block;
+    padding-left: 56px;
+    width: 402px;
+    height: auto;
+}
+.logo-inline:last-child{
+    margin-left: auto;
+    padding-right: 56px;
+}
+.logo-img img{
+    display: block;
+    width: 378px;
+    margin-left: auto;
+    height: auto;
+}
+#game-section {
+    position: relative;
+    pointer-events: none;
+}
 
-/* Character / product thumbnails */
-.chara-img{width:100%;height:auto;display:block}
-.cb-img{width:120px;height:120px;object-fit:cover}
-.pr-img{width:100%;max-width:480px;display:block}
+#game-section button {
+  pointer-events: auto;
+}
 
-/* small utilities */
-.hidden{display:none!important}
-.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+.slogan-block{
+   position: absolute;
+  left: 50%;
+   bottom: 50%;
+   transform: translateX(-50%) translateY(75%); 
+   display: block;
+  text-align: center;
+}
+
+.slogan_img{
+margin: 0 auto;
+}
+
+.slogan_img img{
+    width: 800px;
+    height: 328px;
+    
+}
+
+.btn-group{
+    margin-top: -48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* 下排按鈕置中 */
+    gap: 16px;
+}
+.btn-row {
+  display: flex;
+  gap: 20px;                 /* 上排左右間距 */
+  justify-content: center;
+}
+
+/* === 共用按鈕樣式 === */
+.btn {
+  padding: 14px 36px;
+  border-radius: 14px;
+  font-weight: 700;
+    font-style: Bold;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1px;
+    color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+/* === 左上 STEAM === */
+.btn-steam {
+  background: linear-gradient(180deg, #DF7797 0%, #F4B7C6 100%);
+  box-shadow: 0px 5px 0px 0px #D9829D;
+  border: 2px solid #FFB8CD;
+  -webkit-text-stroke: 2px #A3354B;
+  font-family: Inter;
+    
+
+}
+
+/* === 右上 DLsite === */
+.btn-dl {
+  background: linear-gradient(180deg, #8E7EBD 0%, #B6A2D5 100%);
+  box-shadow: 0px 5px 0px 0px #9281BF;
+    border: 2px solid #E9B6FF;
+    -webkit-text-stroke: 2px #9347B8;
+
+}
+
+/* === 下排下載 === */
+.btn-download {
+  background: linear-gradient(180deg, #FFA552 0%, #FFCB3B 100%);
+  box-shadow: 0px 5px 0px 0px #F58B1F;
+  border: 2px solid #FFE2B8;
+-webkit-text-stroke: 2px #C55B0B;
+}
+
+/* === Hover 效果 === */
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+/* === Active 點擊 === */
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+.SVG-36px{
+    height: 36px;
+    width: 36px;
+}
+#game-intro-card{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.panel_border{
+     position: relative;
+    height: 80vh;
+    display: block;
+
+    overflow:hidden;
+}
+.panel_border img{
+    height:100%;
+    object-fit: contain;
+}
+
+.panel_border_wrapper{
+    position: absolute;
+    padding-top: 10%;
+    height:100%;
+    width:100%;
+    top: 0%;
+    text-align: center;
+}
+.intro-card{
+    padding: 0 20%;
+}
+.intro-card p{
+    margin-top: 0px;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: medium;
+    font-size: 20px;
+    line-height: 37px;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #3C2B51;
+}
+.intro-card h3{
+    margin:0;
+}
+#promo_video{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

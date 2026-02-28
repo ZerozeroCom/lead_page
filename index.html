@@ -1,132 +1,276 @@
-
 <!doctype html>
 <html lang="zh-TW">
 	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="stylesheet" href="./main.css" />
+    </head>
+    <body>
+        <header class="site-header">
+			<a class="logo-inline" href="https://www.akaerocore.com/" target="_blank">
+                <picture class="akaerocore_logo">
+                    <source srcset="./public/img/akaerocore_logo.avif" media="(min-width: 1024px)" type="image/avif">
+                    <source srcset="./public/img/akaerocore_logo.webp" media="(min-width: 1024px)" type="image/webp">
+                    <source srcset="./public/img/akaerocore_logo_m.webp" type="image/webp">
+                    <img src="./public/img/akaerocore_logo.png" alt="Akarecore" >
+                </picture>
+            </a>
+            <h1 class="logo-inline">
+                <picture class="logo-img" aria-hidden="true">
+                    <source srcset="./public/img/logo-tc.avif" media="(min-width: 1024px)" type="image/avif">
+                    <source srcset="./public/img/logo-tc.webp" media="(min-width: 1024px)" type="image/webp">
+                    <source srcset="./public/img/logo-tc_m.webp" type="image/webp">
+                    <img src="./public/img/logo-tc.png" alt="遊戲標題 - 幸福家裡蹲的養成方法" class="logo-img">
+                </picture>
+                <span class="visually-hidden">幸福家裡蹲的養成方法 －遊戲介紹頁</span>
+            </h1>
+		</header>
+        <main class="app" itemscope itemtype="https://schema.org/VideoGame">
+			<section id="game-section" class=" page">
+                <picture class="game-bg-wrapper">
+                    <source srcset="./public/img/main_bg_1.avif" media="(min-width: 1024px)" type="image/avif">
+                    <source srcset="./public/img/main_bg_1.webp" media="(min-width: 1024px)" type="image/webp">
+                    <source srcset="./public/img/main_bg_m_1.webp" type="image/webp">
+                    <img src="./public/img/main_bg_1.png" alt="背景大圖" class="game-bg-img">
+                </picture>
+                <div class="slogan-block">
+                    <h2>
+                        <picture aria-hidden="true" class="slogan_img">
+                            <source srcset="./public/img/main_slogan_tc.avif" media="(min-width: 1024px)" type="image/avif">
+                            <source srcset="./public/img/main_slogan_tc.webp" media="(min-width: 1024px)" type="image/webp">
+                            <source srcset="./public/img/main_slogan_tc_m.webp" type="image/webp">
+                            <img src="./public/img/main_slogan_tc.png" alt="遊戲標語藝術字">
+                        </picture>
+                        <span class="visually-hidden">把人生的喜悅交給無知的尼特醬吧</span>
+                    </h2>
+                    <nav class="btn-group">
+                        <div class="btn-row">
+                            <button class="btn btn-steam">
+                            前往 
+                            <svg class="SVG-36px" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.28 3.1709C16.609 0.290479 23.0743 0.281842 28.4041 3.11426C34.6576 6.43771 38.5245 13.0943 38.4285 20.2529C38.3465 26.3491 35.4035 32.0964 30.449 35.6182C24.2665 40.0128 16.0654 40.142 9.75464 35.9004H9.75366C6.0223 33.3894 3.28333 29.5906 2.06421 25.1699L1.5144 23.1758L3.4187 23.9834L10.1384 26.834L10.6257 27.041L10.6277 27.0527L11.6589 27.4854L13.2224 28.1416L13.5994 28.2998L13.8455 28.4033C14.3981 28.6352 15.0175 28.5463 15.5125 28.1582C16.0099 27.7681 16.2728 27.1491 16.1892 26.4688C16.1137 25.8545 15.7338 25.305 15.2312 25.0879L12.9119 24.0869L11.9548 23.6738L11.9431 23.6826L11.4314 23.4658L2.03979 19.4785L1.38159 19.1992L1.43335 18.4863C1.89991 12.0349 5.64864 6.21477 11.28 3.1709ZM29.1521 10.8203C27.4404 9.41033 25.039 9.16591 23.073 10.2363C21.2182 11.2464 20.0399 13.2443 20.071 15.4287L20.0759 15.7412L19.9011 16.001L15.8162 22.0791C16.4524 22.2504 17.0529 22.5558 17.573 22.9854C18.3959 23.6649 18.9301 24.5578 19.1755 25.5137H19.2361L24.9285 21.3438L25.2009 21.1436L25.5388 21.1504C26.9185 21.1766 28.2438 20.6938 29.2771 19.7959C32.0098 17.421 31.9479 13.1106 29.1541 10.8223L29.1521 10.8203ZM22.0632 11.2559C24.0554 9.41886 27.0707 9.3557 29.1326 11.1123C31.6789 13.2817 31.7501 17.2442 29.2517 19.501C27.1629 21.3877 24.0246 21.3276 22.0027 19.4062C19.6742 17.1935 19.7015 13.4336 22.0632 11.2559ZM25.5505 12.96C24.8651 13.0015 24.2129 13.3589 23.7996 13.9727V13.9736C23.3209 14.6847 23.231 15.5892 23.6208 16.4199C23.9334 17.0859 24.5864 17.6137 25.3591 17.7236C26.1457 17.8355 26.8948 17.5442 27.4128 16.9404C28.1788 16.0475 28.1916 14.7032 27.4402 13.7949C26.9619 13.217 26.2721 12.9163 25.5505 12.96Z" fill="white" stroke="#A3354B" stroke-width="2"/>
+                            </svg>STEAM
+                            </button>
 
-		<!-- SEO (editable via PAGE_DATA) -->
-		<title id="meta-title">單頁骨架範例</title>
-		<meta id="meta-description" name="description" content="單頁骨架（僅結構與圖片 CSS）" />
-		<meta name="keywords" content="單頁,骨架,RWD,SEO" />
-		<meta name="robots" content="index, follow" />
-		<link rel="canonical" href="https://example.com/" id="meta-canonical" />
+                            <button class="btn btn-dl">
+                            前往 DLsite
+                            </button>
+                        </div>
+                        <button class="btn btn-download">
+                            STEAM版 Patch下載
+                        </button>
+                    </nav>
+                </div>
+            </section>
+            <section id="game-intro-card" class="page">
+                <picture aria-hidden="true" class="panel_border">
+                    <source srcset="./public/img/panel_border.avif" media="(min-width: 1024px)" type="image/avif">
+                    <source srcset="./public/img/panel_border.webp" media="(min-width: 1024px)" type="image/webp">
+                    <source srcset="./public/img/panel_border_m.webp" type="image/webp">
+                    <img src="./public/img/panel_border.png" alt="內容區塊邊框裝飾圖" class="panel_border">
+                     <div class="panel_border_wrapper">
+                        <article class="intro-card" itemprop="description">
+                            <h3>
+                                <svg width="375" height="66" viewBox="0 0 375 66" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <!-- 文字填色漸層 -->
+                                        <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#FFEBA8"/>
+                                        <stop offset="100%" stop-color="#FFF5FA"/>
+                                        </linearGradient>
 
-		<!-- Open Graph / Twitter (ids updated by main.js) -->
-		<meta property="og:type" content="website" />
-		<meta property="og:title" content="" id="og-title" />
-		<meta property="og:description" content="" id="og-description" />
-		<meta property="og:url" content="" id="og-url" />
-		<meta property="og:image" content="" id="og-image" />
+                                        <!-- 文字描邊漸層 -->
+                                        <linearGradient id="strokeGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#590F5D"/>
+                                        <stop offset="100%" stop-color="#731FBC"/>
+                                        </linearGradient>
+                                    </defs>
 
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="" id="twitter-title" />
-		<meta name="twitter:description" content="" id="twitter-description" />
-		<meta name="twitter:image" content="" id="twitter-image" />
+                                    <text x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
+                                            font-weight="900" font-size="46" letter-spacing="1"
+                                            fill="url(#fillGrad)" stroke="url(#strokeGrad)" stroke-width="2" text-anchor="middle" dominant-baseline="middle">
+                                        這難道就是緣分？
+                                    </text>
+                                </svg>
+                            </h3>
+                            <p>在偶然之間，我居然與她相遇了，那個小小的她，是我從來沒想過能夠相遇的對象</p>
+                        </article>
+                        <article class="intro-card" itemprop="description">
+                            <h3>
+                                 <svg width="611" height="66" viewBox="0 0 611 66" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <!-- 文字填色漸層 -->
+                                        <linearGradient id="fillGrad2" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#FFADD3"/>
+                                        <stop offset="100%" stop-color="#FFF5FA"/>
+                                        </linearGradient>
+                                        <!-- 文字描邊漸層 -->
+                                        <linearGradient id="strokeGrad2" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#924096"/>
+                                        <stop offset="100%" stop-color="#FF69C3"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <text x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
+                                            font-weight="900" font-size="46" letter-spacing="1"
+                                            fill="url(#fillGrad2)" stroke="url(#strokeGrad2)" stroke-width="2" text-anchor="middle" dominant-baseline="middle">
+                                        不幸的少女意外闖進你的生活
+                                    </text>
+                                </svg>
+                            </h3>
+                            <p>遭遇雙親失蹤的雫，因親戚無法照顧而被你收養。這位突然來到你家的少女，過去似乎不太幸運。</p>
+                        </article>
+                        <article class="intro-card" itemprop="description">
+                            <h3>
+                                <svg width="375" height="66" viewBox="0 0 375 66" xmlns="http://www.w3.org/2000/svg">
+                                    <text x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
+                                            font-weight="900" font-size="46" letter-spacing="1"
+                                            fill="url(#fillGrad)" stroke="url(#strokeGrad)" stroke-width="2" text-anchor="middle" dominant-baseline="middle">
+                                        改寫與她的生活
+                                    </text>
+                                </svg>
+                            </h3>
+                            <p>玩家透過與雫的互動，逐步打開她的心房。透過<span itemprop="featureList">知識系統</span>，教導雫成長。玩家可以<span itemprop="featureList">賺錢購買書本和食物</span>，增加她的知識。隨著關係加深，可觸發<span itemprop="featureList">特別互動</span>。</p>
+                        </article>
+                        <article class="intro-card" itemprop="description">
+                            <h3>
+                                 <svg width="423" height="66" viewBox="0 0 423 66" xmlns="http://www.w3.org/2000/svg">
 
-		<link rel="stylesheet" href="/main.css" />
+                                    <text x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
+                                            font-weight="900" font-size="46" letter-spacing="1"
+                                            fill="url(#fillGrad2)" stroke="url(#strokeGrad2)" stroke-width="2" text-anchor="middle" dominant-baseline="middle">
+                                        一起探索大人的世界
+                                    </text>
+                                </svg>
+                            </h3>
+                            <p>剛剛成為家里蹲的雫醬還完全不懂大人的知識。一開始要慢慢花時間教育她。</p>
+                        </article>
+                    </div>
+                </picture>
+            </section>
+            <section id="promo_video" class="page">
+                <div>
+                    <picture aria-hidden="true" class="panel_border">
+                        <source srcset="./public/img/video_border.avif" media="(min-width: 1024px)" type="image/avif">
+                        <source srcset="./public/img/video_border.webp" media="(min-width: 1024px)" type="image/webp">
+                        <source srcset="./public/img/video_border_m.webp" type="image/webp">
+                        <img src="./public/img/video_border.png" alt="內容區塊邊框裝飾圖" class="panel_border">
+                    </picture>
+                    <video controls muted loop class="video-placeholder" aria-hidden="true">
+                        <source src="./public/video/幸せなニートの育て方withVOICE.mp4" type="video/mp4">
+                        你的瀏覽器不支援影片播放。
+                    </video>
+                </div>
+            </section>
+            <section id="p4" class=" page chat-section" itemprop="description">
+                <h2 class="visually-hidden">遊戲玩法系統與收錄內容介紹</h2>
+                <!-- AOS 區塊-->
+                <div class="chat-row">
+                    <div class="avatar"><img src="shizuku-head.png" alt="雫"></div>
+                    <div class="bubble bubble-left">
+                    <div class="chat-name">雫</div>
+                    <p>和家里蹲醬的同居生活。從交流開始,逐漸培養好關係,再教導無知的家里蹲醬人生的喜悅,兩人幸福生活下去的故事。</p>
+                    </div>
+                </div>
+                <div class="chat-row reverse">
+                    <div class="avatar"><img src="shizuku-head2.png" alt="雫"></div>
+                    <div class="bubble bubble-right">
+                    <p>正因是兩人同居生活才能做的事情，可以做的事包括:一起洗澡、侵入廁所、睡覺時惡作劇等等。</p>
+                    </div>
+                </div>
+                <div class="chat-row ">
+                    <div class="avatar"><img src="shizuku-head3.png" alt="雫"></div>
+                    <div class="bubble bubble-left">
+                    <p>點擊想要觸摸的地方進行「觸摸」,與她交心以後能夠「盯著看」或「舔一舔」……也可以使用大人的玩具。</p>
+                    </div>
+                </div>
+                <div class="chat-row reverse">
+                    <div class="avatar"><img src="shizuku-head3.png" alt="雫"></div>
+                    <div class="bubble bubble-right">
+                    <p>教給雫醬各種體位和知識,找到讓兩人獲得幸福的理想愛愛吧。</p>
+                    </div>
+                </div>
+                <div class="chat-row ">
+                    <div class="avatar"><img src="shizuku-head3.png" alt="雫"></div>
+                    <div class="bubble bubble-left">
+                    <p>日常CG約20張、HCG約35張(包含插畫)、+差分合計約1000張以上。</p>
+                    </div>
+                </div>
+            </section>
+            <section id="character-info" class="page" itemprop="character" itemscope itemtype="https://schema.org/Person">
+                <article class="character-item">
+                    <h2>
+                        <span class="visually-hidden">作品登場女主角介紹：雫</span>
+                    </h2>
+                    <figure>
+                        <img src="shizuku.webp" alt="角色立繪：性格內向的少女 雫" itemprop="image">
+                    </figure>
+                    <div class="content-wrapper">
+                        <h3 itemprop="name">雫<span itemprop="jobTitle" >(家里蹲少女)</span></h3>
+                        <div itemprop="description">
+                            <p>
+                                在一個寧靜的小鎮上，住著一位名叫雫的少女。她性格內向，對陌生人有些害羞，但與熟悉的人相處時卻非常真誠。雫的過去並不如意，曾經經歷過一些不幸的事件，這讓她對生活的理解變得格外稚嫩。她對於性知識幾乎一無所知，對於未來充滿了迷茫。
+                            </p>
+                            <p>
+                                最近，雫的生活發生了變化。因為家庭的原因，於是與你開始了共同生活。因為隨時隨地都在一起，因此開始了一場未知的旅程。
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <section id="gallery" class="page gallery-section">
+                <h2 class="visually-hidden">遊戲精選 CG 預覽</h2>
+                <div class="gallery-grid">
+                    <figure class="gallery-item">
+                    <img src="preview-cg1.webp" 
+                        alt="雫在窗邊的日常場景" 
+                        loading="lazy" 
+                        width="600" height="400">
+                    <figcaption class="visually-hidden">雫在窗邊的日常場景 - 遊戲截圖</figcaption>
+                    </figure>
 
-		<!-- JSON-LD placeholder (populated by main.js) -->
-		<script type="application/ld+json" id="ld-json">{}</script>
-	</head>
-	<body>
-		<!-- Skeleton derived from raw.mhtml (text removed; images not loaded) -->
-		<div class="app">
-			<section id="p1" class="p1 page">
-				<a class="akaerocore-logo" id="akaerocore-logo" href="#" aria-hidden="true"></a>
-				<div class="p1-container">
-					<div class="p1-slogan pc-img image-placeholder" aria-hidden="true"></div>
-					<div class="p1-slogan m-img image-placeholder" aria-hidden="true"></div>
-					<div class="p1-btn-container">
-						<div class="p1-steam-btn">
-							<a class="target-element btn-placeholder" href="#" aria-hidden="true"></a>
-							<a class="target-element btn-placeholder" href="#" aria-hidden="true"></a>
-						</div>
-						<div class="p1-dlsite-btn">
-							<a class="target-element btn-placeholder" href="#" aria-hidden="true"></a>
-						</div>
-					</div>
-				</div>
-			</section>
+                    <figure class="gallery-item">
+                    <img src="preview-cg2.webp" 
+                        alt="與雫一起洗澡的互動畫面" 
+                        loading="lazy" 
+                        width="600" height="400">
+                    </figure>
+                    
+                    </div>
+            </section>
+            <section id="summary" class="page summary-section">
+                <div class="summary-cover">
+                    <img src="cover-cg.webp" alt="遊戲標題：雫醬的教育生活" itemprop="image">
+                </div>
 
-			<section id="p2" class="p2 page">
-				<div class="p2-container">
-					<div class="p2-content">
-						<div class="p2-content-container">
-							<div class="p2-slogan pc-img image-placeholder" aria-hidden="true"></div>
-							<div class="p2-slogan m-img image-placeholder" aria-hidden="true"></div>
-							<div class="p2-text image-placeholder" aria-hidden="true"></div>
-						</div>
-						<div class="p2-video">
-							<div class="p2-video-container">
-								<video autoplay muted loop playsinline class="video-placeholder" aria-hidden="true"></video>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+                <div class="summary-info">
+                    <h2 class="game-title" itemprop="name">幸福家裡蹲的養成方法</h2>
+                    
+                    <ul class="spec-list">
+                    <li><strong>價格：</strong> <span class="price">NT$ 355</span></li>
+                    <li><strong>預計遊戲時長：</strong> <span>約 2.5 ~ 3 小時</span></li>
+                    <hr>
+                    <li><strong>開發廠商</strong> <span itemprop="author">るりりソフト</span></li>
+                    <li><strong>支援語系</strong> <span>繁體中文、日語、英語</span></li>
+                    <li><strong>遊戲配音</strong> <span>日語, 完整語音</span></li>
+                    <li class="game-tags"><span class="tag">休閒</span><span class="tag">獨立製作</span><span class="tag">角色扮演</span><span class="tag">模擬</span></li>
+                    </ul>
 
-			<section id="p3" class="p3 page">
-				<div class="p3-container">
-					<div class="p3-slogan pc-img image-placeholder" aria-hidden="true"></div>
-					<div class="p3-board">
-						<div class="p3-board-container">
-							<div class="note pc-img image-placeholder" aria-hidden="true"></div>
-						</div>
-						<div class="p3-board-bg pc-img image-placeholder" aria-hidden="true"></div>
-					</div>
-				</div>
-			</section>
-
-			<section id="p4" class="p4 page">
-				<div class="p4-container">
-					<div class="chara-container">
-						<div class="chara-tab">
-							<ul>
-								<li id="c-tab-1" class="active"><a href="#c-1"><span class="pc-img image-placeholder"></span><span class="m-img image-placeholder"></span></a></li>
-								<li id="c-tab-2"><a href="#c-2"><span class="pc-img image-placeholder"></span><span class="m-img image-placeholder"></span></a></li>
-								<li id="c-tab-3"><a href="#c-3"><span class="pc-img image-placeholder"></span><span class="m-img image-placeholder"></span></a></li>
-								<li id="c-tab-4"><a href="#c-4"><span class="pc-img image-placeholder"></span><span class="m-img image-placeholder"></span></a></li>
-							</ul>
-						</div>
-						<div class="chara-content">
-							<div id="c-1" class="chara-box" style="display:block">
-								<div class="chara-box-container">
-									<div class="chara-left">
-										<div class="c-name image-placeholder pc-img" aria-hidden="true"></div>
-									</div>
-									<div class="chara-right">
-										<div class="chara-img image-placeholder" aria-hidden="true"></div>
-									</div>
-								</div>
-							</div>
-							<div id="c-2" class="chara-box" style="display:none"></div>
-							<div id="c-3" class="chara-box" style="display:none"></div>
-							<div id="c-4" class="chara-box" style="display:none"></div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<section id="p5" class="p5 page">
-				<div class="p5-container">
-					<div class="product-container">
-						<div class="pr-img image-placeholder pc-img" aria-hidden="true"></div>
-						<div class="product-content">
-							<div class="product-info image-placeholder" aria-hidden="true"></div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</div>
-
-		<footer class="site-footer">
-			<div class="container">
-				<p id="footer-text">© 你的品牌</p>
-			</div>
-		</footer>
-
-		<!-- main.js: contains PAGE_DATA, applyPageData(renderer) and utilities -->
-		<script src="/main.js" defer></script>
-	</body>
+                    <div class="store-buttons">
+                    <a href="#" class="btn btn-steam">前往 Steam</a>
+                    <a href="#" class="btn btn-dlsite">前往 DLsite</a>
+                    <a href="#" class="btn btn-steam-patch">Steam版 Patch下載</a>
+                    </div>
+                </div>
+            </section>
+            <footer class="site-footer">
+                <div class="container">
+                    <img src="./18x.png" alt="18禁警告圖示" class="age-warning">
+                    <div>
+                        <p id="footer-text">本網站與遊戲包含成人與限制級內容。所有角色皆為十八歲以上成年人。請注意遊玩時間，保持理性與節制。</p>
+                        <p id="">© 2025 akaeroCore Co., Ltd. All rights reserved.</p>
+                    </div>
+                    <img src="./akaeroCore" alt="發行商" >
+                </div>
+            </footer>
+        </main>
+        <script src="./main.js" defer></script>
+    </body>
 </html>
