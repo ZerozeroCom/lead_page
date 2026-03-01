@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="zh-TW">
 	<head>
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="./main.css" />
     </head>
     <body>
@@ -146,51 +147,105 @@
                 </picture>
             </section>
             <section id="promo_video" class="page">
-                <div>
-                    <picture aria-hidden="true" class="panel_border">
+                <div  class="video_container">
+                    <picture aria-hidden="true" class="video_border_wrapper">
                         <source srcset="./public/img/video_border.avif" media="(min-width: 1024px)" type="image/avif">
                         <source srcset="./public/img/video_border.webp" media="(min-width: 1024px)" type="image/webp">
                         <source srcset="./public/img/video_border_m.webp" type="image/webp">
-                        <img src="./public/img/video_border.png" alt="內容區塊邊框裝飾圖" class="panel_border">
+                        <img src="./public/img/video_border.png" alt="內容區塊邊框裝飾圖">
                     </picture>
-                    <video controls muted loop class="video-placeholder" aria-hidden="true">
+                    <video controls muted loop aria-hidden="true">
                         <source src="./public/video/幸せなニートの育て方withVOICE.mp4" type="video/mp4">
                         你的瀏覽器不支援影片播放。
                     </video>
                 </div>
+                <picture aria-hidden="true" class="section_bg">
+                    <source srcset="./public/img/section_bg.avif" media="(min-width: 1024px)" type="image/avif">
+                    <source srcset="./public/img/section_bg.webp" media="(min-width: 1024px)" type="image/webp">
+                    <source srcset="./public/img/section_bg_m.webp" type="image/webp">
+                    <img src="./public/img/section_bg.png" alt="影片區塊背景圖">
+                </picture>
             </section>
-            <section id="p4" class=" page chat-section" itemprop="description">
+            <section id="game-system" class=" page chat-section" itemprop="description">
                 <h2 class="visually-hidden">遊戲玩法系統與收錄內容介紹</h2>
                 <!-- AOS 區塊-->
+                 <div class="absolute property-1"  data-native-aos="fade-up-left">
+                    <picture id="property-1" class="photo gradient_Borden " >
+                        <source srcset="./public/img/property-1.avif" media="(min-width: 1024px)" type="image/avif">
+                        <source srcset="./public/img/property-1.webp" media="(min-width: 1024px)" type="image/webp">
+                        <source srcset="./public/img/property-1_m.webp" type="image/webp">
+                        <img src="./public/img/property-1.png" alt="遊戲主介面UI 與房間裡的雫" itemprop="image">
+                        <div class="paper_clip"></div>
+                    </picture>
+                </div>
                 <div class="chat-row">
-                    <div class="avatar"><img src="shizuku-head.png" alt="雫"></div>
+                    <div class="avatar">
+                        <picture id="head-1" class="round gradient_Borden " >
+                            <source srcset="./public/img/head-1.avif" media="(min-width: 1024px)" type="image/avif">
+                            <source srcset="./public/img/head-1.webp" media="(min-width: 1024px)" type="image/webp">
+                            <source srcset="./public/img/head-1_m.webp" type="image/webp">
+                            <img src="./public/img/head-1.png" alt="角色頭像：性格內向的少女 雫" itemprop="image">
+                        </picture>
+                    </div>
                     <div class="bubble bubble-left">
-                    <div class="chat-name">雫</div>
-                    <p>和家里蹲醬的同居生活。從交流開始,逐漸培養好關係,再教導無知的家里蹲醬人生的喜悅,兩人幸福生活下去的故事。</p>
+                        <span class="arrow-inner"></span>
+                        <p>和家里蹲醬的同居生活。從交流開始,逐漸培養好關係,再教導無知的家里蹲醬人生的喜悅,兩人幸福生活下去的故事。</p>
                     </div>
                 </div>
                 <div class="chat-row reverse">
-                    <div class="avatar"><img src="shizuku-head2.png" alt="雫"></div>
+                    <div class="avatar">
+                        <picture id="head-2" class="round gradient_Borden " >
+                            <source srcset="./public/img/head-2.avif" media="(min-width: 1024px)" type="image/avif">
+                            <source srcset="./public/img/head-2.webp" media="(min-width: 1024px)" type="image/webp">
+                            <source srcset="./public/img/head-2_m.webp" type="image/webp">
+                            <img src="./public/img/head-2.png" alt="角色頭像：幸福的少女 雫" itemprop="image">
+                        </picture>
+                    </div>
                     <div class="bubble bubble-right">
+                        <span class="arrow-inner"></span>
                     <p>正因是兩人同居生活才能做的事情，可以做的事包括:一起洗澡、侵入廁所、睡覺時惡作劇等等。</p>
                     </div>
                 </div>
                 <div class="chat-row ">
-                    <div class="avatar"><img src="shizuku-head3.png" alt="雫"></div>
+                    <div class="avatar">
+                        <picture id="head-3" class="round gradient_Borden " >
+                            <source srcset="./public/img/head-3.avif" media="(min-width: 1024px)" type="image/avif">
+                            <source srcset="./public/img/head-3.webp" media="(min-width: 1024px)" type="image/webp">
+                            <source srcset="./public/img/head-3_m.webp" type="image/webp">
+                            <img src="./public/img/head-3.png" alt="角色頭像：害羞的少女 雫" itemprop="image">
+                        </picture>
+                    </div>
                     <div class="bubble bubble-left">
-                    <p>點擊想要觸摸的地方進行「觸摸」,與她交心以後能夠「盯著看」或「舔一舔」……也可以使用大人的玩具。</p>
+                        <span class="arrow-inner"></span>
+                    <p itemprop="interactivityType">點擊想要觸摸的地方進行「觸摸」,與她交心以後能夠「盯著看」或「舔一舔」……也可以使用大人的玩具。</p>
                     </div>
                 </div>
                 <div class="chat-row reverse">
-                    <div class="avatar"><img src="shizuku-head3.png" alt="雫"></div>
+                    <div class="avatar">
+                        <picture id="head-4" class="round gradient_Borden " >
+                            <source srcset="./public/img/head-4.avif" media="(min-width: 1024px)" type="image/avif">
+                            <source srcset="./public/img/head-4.webp" media="(min-width: 1024px)" type="image/webp">
+                            <source srcset="./public/img/head-4_m.webp" type="image/webp">
+                            <img src="./public/img/head-4.png" alt="角色頭像：恬靜的少女 雫" itemprop="image">
+                        </picture>
+                    </div>
                     <div class="bubble bubble-right">
+                        <span class="arrow-inner"></span>
                     <p>教給雫醬各種體位和知識,找到讓兩人獲得幸福的理想愛愛吧。</p>
                     </div>
                 </div>
                 <div class="chat-row ">
-                    <div class="avatar"><img src="shizuku-head3.png" alt="雫"></div>
+                    <div class="avatar">
+                        <picture id="head-5" class="round gradient_Borden " >
+                            <source srcset="./public/img/head-5.avif" media="(min-width: 1024px)" type="image/avif">
+                            <source srcset="./public/img/head-5.webp" media="(min-width: 1024px)" type="image/webp">
+                            <source srcset="./public/img/head-5_m.webp" type="image/webp">
+                            <img src="./public/img/head-5.png" alt="角色頭像：難為情的 雫" itemprop="image">
+                        </picture>
+                    </div>
                     <div class="bubble bubble-left">
-                    <p>日常CG約20張、HCG約35張(包含插畫)、+差分合計約1000張以上。</p>
+                        <span class="arrow-inner"></span>
+                    <p itemprop="additionalProperty">日常CG約20張、HCG約35張(包含插畫)、+差分合計約1000張以上。</p>
                     </div>
                 </div>
             </section>
@@ -200,77 +255,193 @@
                         <span class="visually-hidden">作品登場女主角介紹：雫</span>
                     </h2>
                     <figure>
-                        <img src="shizuku.webp" alt="角色立繪：性格內向的少女 雫" itemprop="image">
-                    </figure>
-                    <div class="content-wrapper">
-                        <h3 itemprop="name">雫<span itemprop="jobTitle" >(家里蹲少女)</span></h3>
-                        <div itemprop="description">
-                            <p>
-                                在一個寧靜的小鎮上，住著一位名叫雫的少女。她性格內向，對陌生人有些害羞，但與熟悉的人相處時卻非常真誠。雫的過去並不如意，曾經經歷過一些不幸的事件，這讓她對生活的理解變得格外稚嫩。她對於性知識幾乎一無所知，對於未來充滿了迷茫。
-                            </p>
-                            <p>
-                                最近，雫的生活發生了變化。因為家庭的原因，於是與你開始了共同生活。因為隨時隨地都在一起，因此開始了一場未知的旅程。
-                            </p>
+                        <picture class="main_character">
+                            <source srcset="./public/img/main_character.avif" media="(min-width: 1024px)" type="image/avif">
+                            <source srcset="./public/img/main_character.webp" media="(min-width: 1024px)" type="image/webp">
+                            <source srcset="./public/img/main_character_m.webp" type="image/webp">
+                            <img src="./public/img/main_character.png" alt="角色立繪：性格內向的少女 雫" itemprop="image">
+                        </picture>
+                        <div class="content-wrapper">
+                            <h3 class="visually-hidden" itemprop="name">雫<span itemprop="jobTitle" >(家里蹲少女)</span></h3>
+                             <svg aria-hidden="true" width="320" height="66" viewBox="0 0 320 66" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
+                                        font-weight="900" font-size="46" letter-spacing="1"
+                                        fill="url(#fillGrad)" stroke="url(#strokeGrad)" stroke-width="2" text-anchor="middle" dominant-baseline="middle">
+                                    雫(家里蹲少女)
+                                </text>
+                            </svg>
+                            <div class="gradient_Borden introduce" itemprop="description">
+                                <p>
+                                    在一個寧靜的小鎮上，住著一位名叫雫的少女。她性格內向，對陌生人有些害羞，但與熟悉的人相處時卻非常真誠。雫的過去並不如意，曾經經歷過一些不幸的事件，這讓她對生活的理解變得格外稚嫩。她對於性知識幾乎一無所知，對於未來充滿了迷茫。
+                                </p>
+                                <p>
+                                    最近，雫的生活發生了變化。因為家庭的原因，於是與你開始了共同生活。因為隨時隨地都在一起，因此開始了一場未知的旅程。
+                                </p>
+                                <div class="corner corner-img0"></div>
+                                <div class="corner corner-img3"></div>
+                            </div>
                         </div>
-                    </div>
+                    </figure>
                 </article>
             </section>
             <section id="gallery" class="page gallery-section">
                 <h2 class="visually-hidden">遊戲精選 CG 預覽</h2>
-                <div class="gallery-grid">
-                    <figure class="gallery-item">
-                    <img src="preview-cg1.webp" 
-                        alt="雫在窗邊的日常場景" 
-                        loading="lazy" 
-                        width="600" height="400">
-                    <figcaption class="visually-hidden">雫在窗邊的日常場景 - 遊戲截圖</figcaption>
-                    </figure>
+                <figure class="cg absolute preview-cg1">
+                    <picture id="preview-cg1" class="photo gradient_Borden " >
+                        <source srcset="./public/img/preview-cg1.avif" media="(min-width: 1024px)" type="image/avif">
+                        <source srcset="./public/img/preview-cg1.webp" media="(min-width: 1024px)" type="image/webp">
+                        <source srcset="./public/img/preview-cg1_m.webp" type="image/webp">
+                        <img class="zoomable" src="./public/img/preview-cg1.jpg" loading="lazy"  alt="預覽h-cg 雫 射滿全身" itemprop="image">
+                        <div class="paper_clip"></div>
+                    </picture>
+                    <figcaption class="visually-hidden">h-cg 雫</figcaption>
+                </figure>
 
-                    <figure class="gallery-item">
-                    <img src="preview-cg2.webp" 
-                        alt="與雫一起洗澡的互動畫面" 
-                        loading="lazy" 
-                        width="600" height="400">
-                    </figure>
-                    
-                    </div>
+                <figure class="cg absolute preview-cg2">
+                    <picture id="preview-cg2" class="photo gradient_Borden" >
+                        <source srcset="./public/img/preview-cg2.avif" media="(min-width: 1024px)" type="image/avif">
+                        <source srcset="./public/img/preview-cg2.webp" media="(min-width: 1024px)" type="image/webp">
+                        <source srcset="./public/img/preview-cg2_m.webp" type="image/webp">
+                        <img class="zoomable" src="./public/img/preview-cg2.png" loading="lazy"  alt="預覽h-cg 雫 正常位" itemprop="image">
+                        <div class="paper_clip"></div>
+                    </picture>
+                    <figcaption class="visually-hidden">h-cg 雫</figcaption>
+                </figure>
+
+                <figure class="cg absolute preview-cg3">
+                    <picture id="preview-cg3" class="photo gradient_Borden " >
+                        <source srcset="./public/img/preview-cg3.avif" media="(min-width: 1024px)" type="image/avif">
+                        <source srcset="./public/img/preview-cg3.webp" media="(min-width: 1024px)" type="image/webp">
+                        <source srcset="./public/img/preview-cg3_m.webp" type="image/webp">
+                        <img class="zoomable" src="./public/img/preview-cg3.jpg" loading="lazy"  alt="預覽cg 雫 房間內的黃昏" itemprop="image">
+                        <div class="paper_clip"></div>
+                    </picture>
+                    <figcaption class="visually-hidden">h-cg 雫</figcaption>
+                </figure>
+
+                <figure class="cg absolute preview-cg4">
+                    <picture id="preview-cg4" class="photo gradient_Borden " >
+                        <source srcset="./public/img/preview-cg4.avif" media="(min-width: 1024px)" type="image/avif">
+                        <source srcset="./public/img/preview-cg4.webp" media="(min-width: 1024px)" type="image/webp">
+                        <source srcset="./public/img/preview-cg4_m.webp" type="image/webp">
+                        <img class="zoomable" src="./public/img/preview-cg4.png" loading="lazy"  alt="預覽h-cg 雫 口交" itemprop="image">
+                        <div class="paper_clip"></div>
+                    </picture>
+                    <figcaption class="visually-hidden">h-cg 雫</figcaption>
+                </figure>
+
+                <figure class="cg absolute preview-cg5">
+                    <picture id="preview-cg5" class="photo gradient_Borden " >
+                        <source srcset="./public/img/preview-cg5.avif" media="(min-width: 1024px)" type="image/avif">
+                        <source srcset="./public/img/preview-cg5.webp" media="(min-width: 1024px)" type="image/webp">
+                        <source srcset="./public/img/preview-cg5_m.webp" type="image/webp">
+                        <img class="zoomable" src="./public/img/preview-cg5.jpg" loading="lazy"  alt="預覽cg 雫 晚上的對話" itemprop="image">
+                        <div class="paper_clip"></div>
+                    </picture>
+                    <figcaption class="visually-hidden">h-cg 雫</figcaption>
+                </figure>
+
+                <figure class="cg absolute preview-cg6">
+                    <picture id="preview-cg6" class="photo gradient_Borden " >
+                        <source srcset="./public/img/preview-cg6.avif" media="(min-width: 1024px)" type="image/avif">
+                        <source srcset="./public/img/preview-cg6.webp" media="(min-width: 1024px)" type="image/webp">
+                        <source srcset="./public/img/preview-cg6_m.webp" type="image/webp">
+                        <img class="zoomable" src="./public/img/preview-cg6.jpg" loading="lazy"  alt="預覽h-cg 雫 迷茫的事後" itemprop="image">
+                        <div class="paper_clip"></div>
+                    </picture>
+                    <figcaption class="visually-hidden">h-cg 雫</figcaption>
+                </figure>
+
+                <figure class="cg absolute preview-cg7">
+                    <picture id="preview-cg7" class="photo gradient_Borden " >
+                        <source srcset="./public/img/preview-cg7.avif" media="(min-width: 1024px)" type="image/avif">
+                        <source srcset="./public/img/preview-cg7.webp" media="(min-width: 1024px)" type="image/webp">
+                        <source srcset="./public/img/preview-cg7_m.webp" type="image/webp">
+                        <img class="zoomable" src="./public/img/preview-cg7.png" loading="lazy"  alt="預覽cg 雫 元氣的打招呼" itemprop="image">
+                        <div class="paper_clip"></div>
+                    </picture>
+                    <figcaption class="visually-hidden">h-cg 雫</figcaption>
+                </figure>
             </section>
             <section id="summary" class="page summary-section">
-                <div class="summary-cover">
-                    <img src="cover-cg.webp" alt="遊戲標題：雫醬的教育生活" itemprop="image">
-                </div>
-
-                <div class="summary-info">
-                    <h2 class="game-title" itemprop="name">幸福家裡蹲的養成方法</h2>
-                    
-                    <ul class="spec-list">
-                    <li><strong>價格：</strong> <span class="price">NT$ 355</span></li>
-                    <li><strong>預計遊戲時長：</strong> <span>約 2.5 ~ 3 小時</span></li>
-                    <hr>
-                    <li><strong>開發廠商</strong> <span itemprop="author">るりりソフト</span></li>
-                    <li><strong>支援語系</strong> <span>繁體中文、日語、英語</span></li>
-                    <li><strong>遊戲配音</strong> <span>日語, 完整語音</span></li>
-                    <li class="game-tags"><span class="tag">休閒</span><span class="tag">獨立製作</span><span class="tag">角色扮演</span><span class="tag">模擬</span></li>
-                    </ul>
-
-                    <div class="store-buttons">
-                    <a href="#" class="btn btn-steam">前往 Steam</a>
-                    <a href="#" class="btn btn-dlsite">前往 DLsite</a>
-                    <a href="#" class="btn btn-steam-patch">Steam版 Patch下載</a>
+                <div class="row max-w-1064">
+                    <div class="summary-cover">
+                        <picture id="summary-cover"  class=""  aria-hidden="true">
+                            <source srcset="./public/img/preview-cg6.avif" media="(min-width: 1024px)" type="image/avif">
+                            <!-- <source srcset="./public/img/preview-cg6.webp" media="(min-width: 1024px)" type="image/webp">
+                            <source srcset="./public/img/preview-cg6_m.webp" type="image/webp"> -->
+                            <img src="./public/img/preview-cg6.jpg" alt="遊戲視覺圖與標題：幸福家裡蹲的養成方法" itemprop="image">
+                        </picture>
+                    </div>
+                    <div class="summary-info ">
+                        <h2 class="game-title" itemprop="name">
+                            <picture id="logo-border"  class=""  aria-hidden="true">
+                                <source srcset="./public/img/info_title_border.avif" media="(min-width: 1024px)" type="image/avif">
+                                <!-- <source srcset="./public/img/info_title_border.webp" media="(min-width: 1024px)" type="image/webp">
+                                <source srcset="./public/img/info_title_border_m.webp" type="image/webp"> -->
+                                <img src="./public/img/info_title_border.png" alt="裝飾邊框" itemprop="image">
+                            </picture>
+                            <svg  id="logo-title-art" width="423" height="66" viewBox="0 0 423 66" xmlns="http://www.w3.org/2000/svg">
+                                <text x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
+                                        font-weight="900" font-size="38" letter-spacing="1"
+                                        fill="url(#fillGrad2)" stroke="url(#strokeGrad2)" stroke-width="2" text-anchor="middle" dominant-baseline="middle">
+                                    幸福家裡蹲的養成方法
+                                </text>
+                            </svg>
+                        </h2>
+                        <ul class="spec-list gradient_Borden">
+                            <li><strong>價格：</strong> <span class="price">NT$ 355</span></li>
+                            <li><strong>預計遊戲時長：</strong> <span>約 2.5 ~ 3 小時</span></li>
+                            <hr>
+                            <!-- <li><strong class="border">開發廠商</strong> <span itemprop="author">るりりソフト</span></li> -->
+                            <li><strong class="border">發行廠商</strong> <span>akaeroCore</span></li>
+                            <li><strong class="border">支援語系</strong> <span>繁體中文、日語、英語</span></li>
+                            <li><strong class="border">遊戲配音</strong> <span>日語, 完整語音</span></li>
+                            <li class="game-tags"><strong class="border">遊戲類型</strong><span class="tag">休閒</span>,<span class="tag">獨立製作</span>,<span class="tag">角色扮演</span>,<span class="tag">模擬</span></li>
+                        </ul>
                     </div>
                 </div>
+                 <nav class="btn-group">
+                    <div class="btn-row">
+                        <button class="btn btn-steam">
+                        前往 
+                        <svg class="SVG-36px" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.28 3.1709C16.609 0.290479 23.0743 0.281842 28.4041 3.11426C34.6576 6.43771 38.5245 13.0943 38.4285 20.2529C38.3465 26.3491 35.4035 32.0964 30.449 35.6182C24.2665 40.0128 16.0654 40.142 9.75464 35.9004H9.75366C6.0223 33.3894 3.28333 29.5906 2.06421 25.1699L1.5144 23.1758L3.4187 23.9834L10.1384 26.834L10.6257 27.041L10.6277 27.0527L11.6589 27.4854L13.2224 28.1416L13.5994 28.2998L13.8455 28.4033C14.3981 28.6352 15.0175 28.5463 15.5125 28.1582C16.0099 27.7681 16.2728 27.1491 16.1892 26.4688C16.1137 25.8545 15.7338 25.305 15.2312 25.0879L12.9119 24.0869L11.9548 23.6738L11.9431 23.6826L11.4314 23.4658L2.03979 19.4785L1.38159 19.1992L1.43335 18.4863C1.89991 12.0349 5.64864 6.21477 11.28 3.1709ZM29.1521 10.8203C27.4404 9.41033 25.039 9.16591 23.073 10.2363C21.2182 11.2464 20.0399 13.2443 20.071 15.4287L20.0759 15.7412L19.9011 16.001L15.8162 22.0791C16.4524 22.2504 17.0529 22.5558 17.573 22.9854C18.3959 23.6649 18.9301 24.5578 19.1755 25.5137H19.2361L24.9285 21.3438L25.2009 21.1436L25.5388 21.1504C26.9185 21.1766 28.2438 20.6938 29.2771 19.7959C32.0098 17.421 31.9479 13.1106 29.1541 10.8223L29.1521 10.8203ZM22.0632 11.2559C24.0554 9.41886 27.0707 9.3557 29.1326 11.1123C31.6789 13.2817 31.7501 17.2442 29.2517 19.501C27.1629 21.3877 24.0246 21.3276 22.0027 19.4062C19.6742 17.1935 19.7015 13.4336 22.0632 11.2559ZM25.5505 12.96C24.8651 13.0015 24.2129 13.3589 23.7996 13.9727V13.9736C23.3209 14.6847 23.231 15.5892 23.6208 16.4199C23.9334 17.0859 24.5864 17.6137 25.3591 17.7236C26.1457 17.8355 26.8948 17.5442 27.4128 16.9404C28.1788 16.0475 28.1916 14.7032 27.4402 13.7949C26.9619 13.217 26.2721 12.9163 25.5505 12.96Z" fill="white" stroke="#A3354B" stroke-width="2"/>
+                        </svg>STEAM
+                        </button>
+
+                        <button class="btn btn-dl">
+                        前往 DLsite
+                        </button>
+                    </div>
+                    <button class="btn btn-download">
+                        STEAM版 Patch下載
+                    </button>
+                </nav>
             </section>
-            <footer class="site-footer">
-                <div class="container">
-                    <img src="./18x.png" alt="18禁警告圖示" class="age-warning">
+            <footer id="site-footer">
+                <div class="row">
+                    <picture id="age-warning">
+                        <source srcset="./public/img/18x.avif"  type="image/avif">
+                        <!-- <source srcset="./public/img/18x.webp" type="image/webp"> -->
+                        <img src="./public/img/18x.png" alt="18禁警告圖示" itemprop="image">
+                    </picture>
                     <div>
                         <p id="footer-text">本網站與遊戲包含成人與限制級內容。所有角色皆為十八歲以上成年人。請注意遊玩時間，保持理性與節制。</p>
                         <p id="">© 2025 akaeroCore Co., Ltd. All rights reserved.</p>
                     </div>
-                    <img src="./akaeroCore" alt="發行商" >
+                    <picture class="akaerocore_logo">
+                        <source srcset="./public/img/akaerocore_logo.avif" media="(min-width: 1024px)" type="image/avif">
+                        <source srcset="./public/img/akaerocore_logo.webp" media="(min-width: 1024px)" type="image/webp">
+                        <source srcset="./public/img/akaerocore_logo_m.webp" type="image/webp">
+                        <img src="./public/img/akaerocore_logo.png" alt="發行商 Akarecore" >
+                    </picture>
                 </div>
             </footer>
         </main>
         <script src="./main.js" defer></script>
+        <div id="lightbox" class="lightbox" onclick="this.classList.remove('active')">
+            <img id="lightbox-img" src="" alt="放大圖">
+        </div>
     </body>
 </html>

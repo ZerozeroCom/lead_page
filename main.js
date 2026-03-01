@@ -27,6 +27,62 @@ window.PAGE_DATA = {
   footer: '本網站與遊戲包含成人與限制級內容。所有角色皆為十八歲以上成年人。請注意遊玩時間，保持理性與節制。'
 };
 
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    root: null, // 以視窗為準
+    threshold: 0.1, // 元素出現 10% 面積時觸發
+    rootMargin: "0px 0px -50px 0px" // 提早或延遲觸發（底部往內縮 50px，增加視覺舒適感）
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // 進入視窗：加上動畫類別
+        entry.target.classList.add("aos-animate");
+        
+        // 如果你只想要動畫跑一次（不重複），可以解除監測
+        // observer.unobserve(entry.target); 
+      } else {
+        // 離開視窗：移除類別（如果你想要往回捲動時動畫重跑）
+        entry.target.classList.remove("aos-animate");
+      }
+    });
+  }, observerOptions);
+
+  // 選取所有帶有自定義標籤的元素並開始監測
+  const targetElements = document.querySelectorAll('[data-native-aos]');
+  targetElements.forEach(el => observer.observe(el));
+});
+
+let isProcessing = false; // 冷卻旗標
+// 監控所有帶有放大需求的圖片點擊
+document.addEventListener('click', (e) => {
+    // 檢查點擊的元素是否有指定類別 (zoomable)
+    if (e.target.classList.contains('zoomable') && !isProcessing) {
+        const lightbox = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        
+        // 這會讓彈窗顯示當前解析度下最輕量的 AVIF 或 WebP
+        lbImg.src = e.target.currentSrc;
+        lightbox.classList.add('active');// 防止頁面在彈窗開啟時還能捲動
+        document.body.style["overflow-y"] = 'hidden';
+        // 設定 1 秒後解除鎖定，防止連點
+        setTimeout(() => {
+            isProcessing = false;
+        }, 1000);
+    }
+});
+// 點擊遮罩關閉
+document.getElementById('lightbox').addEventListener('click', () => {
+  if (isProcessing) return; // 如果還在跑打開動畫，先不準關閉
+    isProcessing = true;
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style["overflow-y"] = 'auto'; // 恢復捲動
+    setTimeout(() => {
+        isProcessing = false;
+    }, 500); // 關閉動畫通常較快，設 0.5 秒即可
+});
+
 function applyPageData(data){
   // 基本 meta
   document.title = data.site.title || document.title;
