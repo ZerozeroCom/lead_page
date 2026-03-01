@@ -27,32 +27,7 @@ window.PAGE_DATA = {
   footer: '本網站與遊戲包含成人與限制級內容。所有角色皆為十八歲以上成年人。請注意遊玩時間，保持理性與節制。'
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  const observerOptions = {
-    root: null, // 以視窗為準
-    threshold: 0.1, // 元素出現 10% 面積時觸發
-    rootMargin: "0px 0px -50px 0px" // 提早或延遲觸發（底部往內縮 50px，增加視覺舒適感）
-  };
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // 進入視窗：加上動畫類別
-        entry.target.classList.add("aos-animate");
-        
-        // 如果你只想要動畫跑一次（不重複），可以解除監測
-        // observer.unobserve(entry.target); 
-      } else {
-        // 離開視窗：移除類別（如果你想要往回捲動時動畫重跑）
-        entry.target.classList.remove("aos-animate");
-      }
-    });
-  }, observerOptions);
-
-  // 選取所有帶有自定義標籤的元素並開始監測
-  const targetElements = document.querySelectorAll('[data-native-aos]');
-  targetElements.forEach(el => observer.observe(el));
-});
 
 let isProcessing = false; // 冷卻旗標
 // 監控所有帶有放大需求的圖片點擊
@@ -231,3 +206,129 @@ document.querySelectorAll('.chat-row').forEach(row => {
   row.classList.add('fade-in-hidden'); // 初始隱藏
   observer.observe(row);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const track = document.getElementById('game-system');
+  const cards = document.querySelectorAll('.intro-effect');
+  console.log(track);
+   console.log(cards);
+  function onScroll() {
+    const rect = track.getBoundingClientRect();
+    console.log(rect);
+    const progress = -rect.top / (rect.height - window.innerHeight);
+    const step = Math.floor(progress * cards.length);
+    const clampedStep = Math.max(0, Math.min(step, cards.length - 1));
+ console.log(progress,step,clampedStep);
+    if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
+      cards.forEach((card, index) => {
+         console.log(card,index);
+        if (index === clampedStep) {
+          card.classList.add('active');
+          card.classList.remove('exit');
+        } else if (index < clampedStep) {
+          card.classList.add('exit');
+          card.classList.remove('active');
+        } else {
+          card.classList.remove('active', 'exit');
+        }
+      });
+    }
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+
+      // 控制卡片滾動監聽
+      if (entry.target.id === "game-system") {
+        if (entry.isIntersecting) {
+          document.querySelector('body').addEventListener('scroll', onScroll, { passive: true });
+        } else {
+          document.querySelector('body').removeEventListener('scroll', onScroll);
+        }
+      }
+
+      // 控制 AOS
+      if (entry.target.hasAttribute("data-native-aos")) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("aos-animate");
+        } else {
+          entry.target.classList.remove("aos-animate");
+        }
+      }
+
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+  });
+
+  // 觀察區塊
+  observer.observe(track);
+
+  // 觀察 AOS 元素
+  document.querySelectorAll('[data-native-aos]')
+    .forEach(el => observer.observe(el));
+
+});
+
+
+// // 捲動效果控制
+// document.querySelector('body').addEventListener('scroll', () => {
+//   const track = document.getElementById('game-system');
+//   const cards = document.querySelectorAll('.intro-effect');
+//   console.log(cards);
+//   // 1. 計算當前區塊的捲動進度 (0 ~ 1)
+//   const rect = track.getBoundingClientRect();
+//   console.log(rect);
+//   const progress = -rect.top / (rect.height - window.innerHeight);
+//   console.log(progress);
+//   // 2. 根據進度決定現在該顯示哪一張 (假設 4 張卡片)
+//   // 進度 0~0.25 第一張, 0.25~0.5 第二張...
+//   const step = Math.floor(progress * cards.length);
+//   console.log(step);
+//   const clampedStep = Math.max(0, Math.min(step, cards.length - 1));
+//  console.log(clampedStep);
+//   if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
+//     console.log(rect.top,'<= 0 ? &&',rect.bottom ,">=", window.innerHeight);
+//     cards.forEach((card, index) => {
+//       console.log(card,index);
+//       if (index === clampedStep) {
+//         card.classList.add('active');
+//         card.classList.remove('exit');
+//       } else if (index < clampedStep) {
+//         card.classList.add('exit');
+//         card.classList.remove('active');
+//       } else {
+//         card.classList.remove('active', 'exit');
+//       }
+//     });
+//   }
+// }, { passive: true });
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const observerOptions = {
+//     root: null, // 以視窗為準
+//     threshold: 0.1, // 元素出現 10% 面積時觸發
+//     rootMargin: "0px 0px -50px 0px" // 提早或延遲觸發（底部往內縮 50px，增加視覺舒適感）
+//   };
+
+//   const observer = new IntersectionObserver((entries, observer) => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         // 進入視窗：加上動畫類別
+//         entry.target.classList.add("aos-animate");
+        
+//         // 如果你只想要動畫跑一次（不重複），可以解除監測
+//         // observer.unobserve(entry.target); 
+//       } else {
+//         // 離開視窗：移除類別（如果你想要往回捲動時動畫重跑）
+//         entry.target.classList.remove("aos-animate");
+//       }
+//     });
+//   }, observerOptions);
+
+//   // 選取所有帶有自定義標籤的元素並開始監測
+//   const targetElements = document.querySelectorAll('[data-native-aos]');
+//   targetElements.forEach(el => observer.observe(el));
+// });

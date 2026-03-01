@@ -509,13 +509,6 @@ ul hr{
     border-right-width: 0px;
     border-left-width: 0px;
 }
-#game-system{
-    position:relative;
-    display: flex;
-  flex-direction: column;
-  justify-content: center; /* 垂直置中 */
-  align-items: center;     /* 水平置中 */
-}
 .absolute{
     position: absolute;
 }
@@ -874,4 +867,41 @@ flex-direction:row-reverse;
     100% 0%,  /* 右上 */
     100% 100% /* 右下 */
   );
+}
+
+.scroll-track{
+    height: 400vh; /* 捲動長度：高度越高，動畫前進的速度越慢(越細膩) */
+  position: relative;
+    scroll-snap-align: none;
+}
+.sticky-content {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.intro-effect {
+  position: absolute; /* 讓所有卡片疊在一起，由 JS 控制顯示 */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+  pointer-events: none; /* 隱藏時不可點擊 */
+}
+
+/* 啟動狀態 */
+.intro-effect.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* 離開狀態 (往回捲時的過場) */
+.intro-effect.exit {
+  opacity: 0;
+  transform: translateY(-50px);
 }
