@@ -89,6 +89,7 @@ section.page {
     right: 0;
     padding-top: 24px;
     padding-bottom: 24px;
+    z-index: 5;
 }
 .logo-inline{
     display: inline-block;
@@ -98,7 +99,8 @@ section.page {
 .akaerocore_logo img{
     display: block;
     padding-left: 56px;
-    width: 402px;
+    height: clamp(27px, 5vw, 68px);
+     width:clamp(162px, 23vw, 402px);
     height: auto;
 }
 .logo-inline:last-child{
@@ -107,7 +109,8 @@ section.page {
 }
 .logo-img img{
     display: block;
-    width: 378px;
+    height: clamp(70px, 10vw, 178px);
+     width:clamp(148px, 21vw, 378px);
     margin-left: auto;
     height: auto;
 }
@@ -134,9 +137,8 @@ margin: 0 auto;
 }
 
 .slogan_img img{
-    width: 800px;
-    height: 328px;
-    
+    height: clamp(161px, 22vw, 328px);
+     width:clamp(395px, 48vw, 800px);
 }
 
 .btn-group{
@@ -154,12 +156,14 @@ margin: 0 auto;
 
 /* === 共用按鈕樣式 === */
 .btn {
+    height: clamp(42px, 6vw, 84px);
+    width:clamp(185px, 29vw, 370px);
   padding: 14px 36px;
   border-radius: 14px;
   font-weight: 700;
     font-style: Bold;
-    font-size: 32px;
-    line-height: 36px;
+    font-size: clamp(18px, 4vw, 32px);
+    line-height: clamp(20px, 4vw, 36px);
     letter-spacing: 1px;
     color: #fff;
   cursor: pointer;
@@ -189,6 +193,8 @@ margin: 0 auto;
 
 /* === 下排下載 === */
 .btn-download {
+     min-width: 288px;
+     max-width: 80vw;
   background: linear-gradient(180deg, #FFA552 0%, #FFCB3B 100%);
   box-shadow: 0px 5px 0px 0px #F58B1F;
   border: 2px solid #FFE2B8;
@@ -221,45 +227,98 @@ margin: 0 auto;
      position: relative;
     height: 80vh;
     display: block;
-
-    overflow:hidden;
+    width: 100%;
+    max-width:1268px ;
 }
-.panel_border img{
-    height:100%;
-    object-fit: contain;
+.panel_border::before{
+content: '';
+position: absolute;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    background-image: image-set(
+        url("./public/img/panel_border.avif") type("image/avif"),
+        url("./public/img/panel_border.webp") type("image/webp"),
+        url("./public/img/panel_border.png") type("image/png")
+    );
+    background-size: contain;
+    background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
+    background-position: center; /* 確保圖片縮窄後依然居中 */
+    left: 50%;
+     top: 50%;
+    transform: translateX(-50%) translatey(-50%); 
+    z-index: 0;
+}
+.panel_border::after{
+    content: '';
+position: absolute;
+ height: 40%;
+    width: 40%;
+    left: 105px;
+    bottom: 120px;
+ background-image: image-set(
+        url("./public/img/sakura-L.avif") type("image/avif"),
+        url("./public/img/sakura-L.webp") type("image/webp"),
+        url("./public/img/sakura-L.png") type("image/png")
+    );
+    background-size: contain;
+    background-repeat: no-repeat;
+     rotate:-33.81deg;
+     }
+.extra-deco{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    pointer-events: none; /* 避免影響影片操作 */
+}
+.extra-deco::after{
+content: '';
+position: absolute;
+ height: 40%;
+    width: 40%;
+    right: 30px;
+    top:51px;
+ background-image: image-set(
+        url("./public/img/sakura-inside-R.avif") type("image/avif"),
+        url("./public/img/sakura-inside-R.webp") type("image/webp"),
+        url("./public/img/sakura-inside-R.png") type("image/png")
+    );
+    background-size: contain;
+    background-repeat: no-repeat;
+     rotate:49.89deg;
 }
 
 .panel_border_wrapper{
     position: absolute;
-    padding-top: 10%;
+    padding-top: 8%;
     height:100%;
     width:100%;
     top: 0%;
     text-align: center;
 }
+
 .intro-card{
     padding: 0 20%;
 }
+.word_art{
+  font-size: clamp(24px, 4vw, 46px);  
+  height: clamp(45px, 4vw, 66px); 
+}
 .intro-card p{
+    max-width: 80%;
     margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
     font-family: Inter;
     font-weight: 500;
     font-style: medium;
-    font-size: 20px;
-    line-height: 37px;
+    font-size: clamp(16px, 4vw, 20px);
+    line-height:  clamp(24px, 4vw, 37px);
     letter-spacing: 1px;
     text-align: center;
     color: #3C2B51;
 }
 .intro-card h3{
     margin:0;
-}
-#promo_video{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* 從頂端開始排列 */
-  align-items: center; /* 水平置中，如需拉滿改為 stretch */
-  padding-top: 5%; /* 可依需求微調上方間距 */
 }
 
 .section_bg{
@@ -278,32 +337,44 @@ margin: 0 auto;
    object-fit: cover; /* 以 cover 顯示，並靠底部對齊 */
    object-position: bottom center;
 }
+#promo_video{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 從頂端開始排列 */
+  align-items: center; /* 水平置中，如需拉滿改為 stretch */
+  padding-top: 5%; /* 可依需求微調上方間距 */
+}
+
 .video_container{
     position: relative;
-    height: 80%;
-    width: 100%;
+    max-height: 549px;
+    max-width: 986px;
+    width: 940px;
      display: flex;
      justify-content: center;
-    overflow:hidden;
 }
-.video_border_wrapper{
+.video_container::before{
+    content: '';
+    height: 125%;
+    width: 125%;
     position: absolute;
-    height:100%;
-    top: 0%;
+    background-image: image-set(
+        url("./public/img/video_border.avif") type("image/avif"),
+        url("./public/img/video_border.webp") type("image/webp"),
+        url("./public/img/video_border.png") type("image/png")
+    );
+    top: 50%;
+    background-size: 86% 100%; /* 寬度縮到 80%，高度維持 100% */
+    background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
+    background-position: center; /* 確保圖片縮窄後依然居中 */
     left: 50%;
-   transform: translateX(-50%); 
+    transform: translateX(-50%) translatey(-50%); 
     pointer-events: none; /* 避免影響影片操作 */
-  z-index: 2; }
-.video_border_wrapper img{
-    height:100%;
-    object-fit: contain;
 }
+
 .video_container video{
     height: 100%;
-    position: relative;
-    box-sizing: border-box;
     z-index: 5;
-    padding: 2% 3%;
     border-radius: 12px;
 }
 
@@ -586,25 +657,25 @@ li strong.border {
     #property-1{
         transform: rotate(5.93deg);
         top:-10vh;
-        right: -25vh;
+        right: -17vw;
     }
     #property-2{
-        left: -25vh;
+        left: -17vw;
         top:-10vh;
         transform: rotate(-5.93deg);
     }
     #property-3{
         transform: rotate(5.93deg);
-        right: -25vh;
+        right: -17vw;
         top:-10vh;
     }
     #property-4{
         transform: rotate(-5.93deg);
-        left: -25vh;
+        left: -17vw;
         top:-10vh;
     }
     #property-5{
-        right: -25vh;
+        right: -17vw;
         top:-10vh;
         transform: rotate(5.93deg);
     }
@@ -932,6 +1003,16 @@ right:3%;
   position: relative;
     scroll-snap-align: none;
 }
+.sticky-track::before{
+    content: '';
+    position: absolute;
+    background-image: image-set(
+        url("./public/img/texture_bg_1.avif") type("image/avif"),
+        url("./public/img/texture_bg_1.webp") type("image/webp"),
+        url("./public/img/texture_bg_1.png") type("image/png")
+    );
+    rotate:(38deg);
+}
 .sticky-content {
   position: sticky;
   top: 0;
@@ -942,6 +1023,8 @@ right:3%;
   align-items: center;
   overflow: visible;
 }
+
+
 .intro-effect {
   position: absolute; 
 }

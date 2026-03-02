@@ -62,15 +62,11 @@
                 </div>
             </section>
             <section id="game-intro-card" class="page">
-                <picture aria-hidden="true" class="panel_border">
-                    <source srcset="./public/img/panel_border.avif" media="(min-width: 1024px)" type="image/avif">
-                    <source srcset="./public/img/panel_border.webp" media="(min-width: 1024px)" type="image/webp">
-                    <source srcset="./public/img/panel_border_m.webp" type="image/webp">
-                    <img src="./public/img/panel_border.png" alt="內容區塊邊框裝飾圖" class="panel_border">
-                     <div class="panel_border_wrapper">
+                <div class="panel_border">
+                    <div class="panel_border_wrapper">
                         <article class="intro-card" itemprop="description">
                             <h3>
-                                <svg width="375" height="66" viewBox="0 0 375 66" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="word_art" width="375" viewBox="0 0 375 66" xmlns="http://www.w3.org/2000/svg">
                                     <defs>
                                         <!-- 文字填色漸層 -->
                                         <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
@@ -86,7 +82,7 @@
                                     </defs>
 
                                     <text x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
-                                            font-weight="900" font-size="46" letter-spacing="1"
+                                            font-weight="900"  letter-spacing="1"
                                             fill="url(#fillGrad)" stroke="url(#strokeGrad)" stroke-width="2" text-anchor="middle" dominant-baseline="middle">
                                         這難道就是緣分？
                                     </text>
@@ -96,7 +92,7 @@
                         </article>
                         <article class="intro-card" itemprop="description">
                             <h3>
-                                 <svg width="611" height="66" viewBox="0 0 611 66" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="word_art" width="611" viewBox="0 0 611 66" xmlns="http://www.w3.org/2000/svg">
                                     <defs>
                                         <!-- 文字填色漸層 -->
                                         <linearGradient id="fillGrad2" x1="0" y1="0" x2="0" y2="1">
@@ -110,7 +106,7 @@
                                         </linearGradient>
                                     </defs>
                                     <text x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
-                                            font-weight="900" font-size="46" letter-spacing="1"
+                                            font-weight="900" letter-spacing="1"
                                             fill="url(#fillGrad2)" stroke="url(#strokeGrad2)" stroke-width="2" text-anchor="middle" dominant-baseline="middle">
                                         不幸的少女意外闖進你的生活
                                     </text>
@@ -120,9 +116,9 @@
                         </article>
                         <article class="intro-card" itemprop="description">
                             <h3>
-                                <svg width="375" height="66" viewBox="0 0 375 66" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="word_art" width="375"  viewBox="0 0 375 66" xmlns="http://www.w3.org/2000/svg">
                                     <text x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
-                                            font-weight="900" font-size="46" letter-spacing="1"
+                                            font-weight="900" letter-spacing="1"
                                             fill="url(#fillGrad)" stroke="url(#strokeGrad)" stroke-width="2" text-anchor="middle" dominant-baseline="middle">
                                         改寫與她的生活
                                     </text>
@@ -132,10 +128,10 @@
                         </article>
                         <article class="intro-card" itemprop="description">
                             <h3>
-                                 <svg width="423" height="66" viewBox="0 0 423 66" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="word_art" width="423"  viewBox="0 0 423 66" xmlns="http://www.w3.org/2000/svg">
 
                                     <text x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
-                                            font-weight="900" font-size="46" letter-spacing="1"
+                                            font-weight="900" letter-spacing="1"
                                             fill="url(#fillGrad2)" stroke="url(#strokeGrad2)" stroke-width="2" text-anchor="middle" dominant-baseline="middle">
                                         一起探索大人的世界
                                     </text>
@@ -144,27 +140,16 @@
                             <p>剛剛成為家里蹲的雫醬還完全不懂大人的知識。一開始要慢慢花時間教育她。</p>
                         </article>
                     </div>
-                </picture>
+                </div>
+                <div class="extra-deco"></div>
             </section>
             <section id="promo_video" class="page">
                 <div  class="video_container">
-                    <picture aria-hidden="true" class="video_border_wrapper">
-                        <source srcset="./public/img/video_border.avif" media="(min-width: 1024px)" type="image/avif">
-                        <source srcset="./public/img/video_border.webp" media="(min-width: 1024px)" type="image/webp">
-                        <source srcset="./public/img/video_border_m.webp" type="image/webp">
-                        <img src="./public/img/video_border.png" alt="內容區塊邊框裝飾圖">
-                    </picture>
-                    <video controls muted loop aria-hidden="true">
+                    <video controls muted loop aria-hidden="true" class="video_border_wrapper" >
                         <source src="./public/video/幸せなニートの育て方withVOICE.mp4" type="video/mp4">
                         你的瀏覽器不支援影片播放。
                     </video>
                 </div>
-                <picture aria-hidden="true" class="section_bg">
-                    <source srcset="./public/img/section_bg.avif" media="(min-width: 1024px)" type="image/avif">
-                    <source srcset="./public/img/section_bg.webp" media="(min-width: 1024px)" type="image/webp">
-                    <source srcset="./public/img/section_bg_m.webp" type="image/webp">
-                    <img src="./public/img/section_bg.png" alt="影片區塊背景圖">
-                </picture>
             </section>
             <section id="game-system" class=" page scroll-track" itemprop="description">
                 <div class="sticky-content">
@@ -303,7 +288,7 @@
                             <h3 class="visually-hidden" itemprop="name">雫<span itemprop="jobTitle" >(家里蹲少女)</span></h3>
                              <svg aria-hidden="true" width="320" height="66" viewBox="0 0 320 66" xmlns="http://www.w3.org/2000/svg">
                                 <text x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
-                                        font-weight="900" font-size="46" letter-spacing="1"
+                                        font-weight="900" letter-spacing="1"
                                         fill="url(#fillGrad)" stroke="url(#strokeGrad)" stroke-width="2" text-anchor="middle" dominant-baseline="middle">
                                     雫(家里蹲少女)
                                 </text>
