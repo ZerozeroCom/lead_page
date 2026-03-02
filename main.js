@@ -211,28 +211,94 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const track = document.getElementById('game-system');
   const cards = document.querySelectorAll('.intro-effect');
-  console.log(track);
-   console.log(cards);
   function onScroll() {
     const rect = track.getBoundingClientRect();
-    console.log(rect);
+    console.log('rect',rect);
+     console.log(window.innerHeight);
     const progress = -rect.top / (rect.height - window.innerHeight);
-    const step = Math.floor(progress * cards.length);
-    const clampedStep = Math.max(0, Math.min(step, cards.length - 1));
+    const step = Math.floor(progress * 5);
+    const clampedStep = Math.max(0, Math.min(step, 4));
  console.log(progress,step,clampedStep);
-    if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
-      cards.forEach((card, index) => {
-         console.log(card,index);
-        if (index === clampedStep) {
-          card.classList.add('active');
-          card.classList.remove('exit');
-        } else if (index < clampedStep) {
-          card.classList.add('exit');
-          card.classList.remove('active');
-        } else {
-          card.classList.remove('active', 'exit');
-        }
-      });
+    if (rect.top <= 0 && rect.bottom >= window.innerHeight && clampedStep > -1) {
+      switch (clampedStep) {
+        case 0:
+          cards[0].classList.add('active');
+          cards[0].classList.remove('exit');
+          cards[1].classList.add('active');
+          cards[1].classList.remove('exit');
+          cards[2].classList.add('exit');
+          cards[2].classList.remove('active');
+          cards[3].classList.add('exit');
+          cards[3].classList.remove('active');
+          break;
+        case 1:
+          cards[0].classList.add('exit');
+          cards[0].classList.remove('active');
+          cards[1].classList.add('exit');
+          cards[1].classList.remove('active');
+          cards[2].classList.add('active');
+          cards[2].classList.remove('exit');
+          cards[3].classList.add('active');
+          cards[3].classList.remove('exit');
+          cards[4].classList.add('exit');
+          cards[4].classList.remove('active');
+          cards[5].classList.add('exit');
+          cards[5].classList.remove('active');
+          break;
+        case 2:
+          cards[2].classList.add('exit');
+          cards[2].classList.remove('active');
+          cards[3].classList.add('exit');
+          cards[3].classList.remove('active');
+          cards[4].classList.add('active');
+          cards[4].classList.remove('exit');
+          cards[5].classList.add('active');
+          cards[5].classList.remove('exit');
+          cards[6].classList.add('exit');
+          cards[6].classList.remove('active');
+          cards[7].classList.add('exit');
+          cards[7].classList.remove('active');
+          break;
+        case 3:
+          cards[4].classList.add('exit');
+          cards[4].classList.remove('active');
+          cards[5].classList.add('exit');
+          cards[5].classList.remove('active');
+          cards[6].classList.add('active');
+          cards[6].classList.remove('exit');
+          cards[7].classList.add('active');
+          cards[7].classList.remove('exit');
+          cards[8].classList.add('exit');
+          cards[8].classList.remove('active');
+          cards[9].classList.add('exit');
+          cards[9].classList.remove('active');
+          break;
+        case 4:
+          cards[6].classList.add('exit');
+          cards[6].classList.remove('active');
+          cards[7].classList.add('exit');
+          cards[7].classList.remove('active');
+          cards[8].classList.add('active');
+          cards[8].classList.remove('exit');
+          cards[9].classList.add('active');
+          cards[9].classList.remove('exit');
+          cards[6].classList.add('exit');
+          cards[6].classList.remove('active');
+          cards[7].classList.add('exit');
+          cards[7].classList.remove('active');
+          break;
+      }
+      // cards.forEach((card, index) => {
+      //   if (index === clampedStep || (index - 1)  === clampedStep ) {
+      //     card.classList.add('active');
+      //     card.classList.remove('exit');
+      //   } else if (index === (clampedStep+1) || (index - 1) ===(clampedStep+1)  ) {
+      //     card.classList.add('exit');
+      //     card.classList.remove('active');
+      //   } else {
+      //     card.classList.remove('active', 'exit');
+      //   }
+      // });
     }
   }
 
