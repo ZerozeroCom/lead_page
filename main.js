@@ -1,7 +1,7 @@
 window.PAGE_DATA = {
   site: {
-    title: '單頁敘述範例 — 你的品牌',
-    description: '以語意化標籤與簡潔內容為主的一頁式架構範例。',
+    title: '幸福家裡蹲的養成方法',
+    description: '幸福家裡蹲的養成方法 把人生的喜悅交給無知的尼特醬吧',
     url: 'https://example.com/',
     logo: '/logo.png'
   },
@@ -219,75 +219,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const step = Math.floor(progress * 5);
     const clampedStep = Math.max(0, Math.min(step, 4));
  console.log(progress,step,clampedStep);
-    if (rect.top <= 0 && rect.bottom >= window.innerHeight && clampedStep > -1) {
-      switch (clampedStep) {
-        case 0:
-          cards[0].classList.add('active');
-          cards[0].classList.remove('exit');
-          cards[1].classList.add('active');
-          cards[1].classList.remove('exit');
-          cards[2].classList.add('exit');
-          cards[2].classList.remove('active');
-          cards[3].classList.add('exit');
-          cards[3].classList.remove('active');
-          break;
-        case 1:
-          cards[0].classList.add('exit');
-          cards[0].classList.remove('active');
-          cards[1].classList.add('exit');
-          cards[1].classList.remove('active');
-          cards[2].classList.add('active');
-          cards[2].classList.remove('exit');
-          cards[3].classList.add('active');
-          cards[3].classList.remove('exit');
-          cards[4].classList.add('exit');
-          cards[4].classList.remove('active');
-          cards[5].classList.add('exit');
-          cards[5].classList.remove('active');
-          break;
-        case 2:
-          cards[2].classList.add('exit');
-          cards[2].classList.remove('active');
-          cards[3].classList.add('exit');
-          cards[3].classList.remove('active');
-          cards[4].classList.add('active');
-          cards[4].classList.remove('exit');
-          cards[5].classList.add('active');
-          cards[5].classList.remove('exit');
-          cards[6].classList.add('exit');
-          cards[6].classList.remove('active');
-          cards[7].classList.add('exit');
-          cards[7].classList.remove('active');
-          break;
-        case 3:
-          cards[4].classList.add('exit');
-          cards[4].classList.remove('active');
-          cards[5].classList.add('exit');
-          cards[5].classList.remove('active');
-          cards[6].classList.add('active');
-          cards[6].classList.remove('exit');
-          cards[7].classList.add('active');
-          cards[7].classList.remove('exit');
-          cards[8].classList.add('exit');
-          cards[8].classList.remove('active');
-          cards[9].classList.add('exit');
-          cards[9].classList.remove('active');
-          break;
-        case 4:
-          cards[6].classList.add('exit');
-          cards[6].classList.remove('active');
-          cards[7].classList.add('exit');
-          cards[7].classList.remove('active');
-          cards[8].classList.add('active');
-          cards[8].classList.remove('exit');
-          cards[9].classList.add('active');
-          cards[9].classList.remove('exit');
-          cards[6].classList.add('exit');
-          cards[6].classList.remove('active');
-          cards[7].classList.add('exit');
-          cards[7].classList.remove('active');
-          break;
+    if(rect.top > 1){
+        cards[0].classList.remove('aos-animate');
+        cards[1].classList.remove('aos-animate');
+    }
+    if (rect.top < 1 && rect.bottom >= window.innerHeight && clampedStep > -1) {
+
+      let index = clampedStep*2;
+      if (index>0){
+        cards[index-1].classList.remove('aos-animate');
+        cards[index-2].classList.remove('aos-animate');
       }
+      cards[index].classList.add('aos-animate');
+      cards[index+1].classList.add('aos-animate');
+      if(index<=6){
+        cards[index+2].classList.remove('aos-animate');
+        cards[index+3].classList.remove('aos-animate');
+      }
+  
       // cards.forEach((card, index) => {
       //   if (index === clampedStep || (index - 1)  === clampedStep ) {
       //     card.classList.add('active');
@@ -313,16 +262,6 @@ document.addEventListener("DOMContentLoaded", () => {
           document.querySelector('body').removeEventListener('scroll', onScroll);
         }
       }
-
-      // 控制 AOS
-      if (entry.target.hasAttribute("data-native-aos")) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("aos-animate");
-        } else {
-          entry.target.classList.remove("aos-animate");
-        }
-      }
-
     });
   }, {
     threshold: 0.1,
