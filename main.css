@@ -659,6 +659,19 @@ li strong.border {
         top:-10vh;
         right: -17vw;
     }
+
+    .property-1::after{
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-image: image-set(
+        url("./public/img/texture_bg_1.avif") type("image/avif"),
+        url("./public/img/texture_bg_1.webp") type("image/webp"),
+        url("./public/img/texture_bg_1.png") type("image/png")
+    );
+    rotate:(38deg);
+}
     #property-2{
         left: -17vw;
         top:-10vh;
@@ -1003,16 +1016,7 @@ right:3%;
   position: relative;
     scroll-snap-align: none;
 }
-.sticky-track::before{
-    content: '';
-    position: absolute;
-    background-image: image-set(
-        url("./public/img/texture_bg_1.avif") type("image/avif"),
-        url("./public/img/texture_bg_1.webp") type("image/webp"),
-        url("./public/img/texture_bg_1.png") type("image/png")
-    );
-    rotate:(38deg);
-}
+
 .sticky-content {
   position: sticky;
   top: 0;
