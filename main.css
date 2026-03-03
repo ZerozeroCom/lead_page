@@ -156,6 +156,10 @@ margin: 0 auto;
 
 /* === 共用按鈕樣式 === */
 .btn {
+    display: inline-flex;  /* 讓按鈕寬度隨內容縮放，同時啟用 Flex */
+    align-items: center;   /* 垂直置中：解決 SVG 偏上或偏下的問題 */
+    justify-content: center; /* 水平置中：解決偏一邊的問題 */
+    gap: 8px;
     height: clamp(42px, 6vw, 84px);
     width:clamp(185px, 29vw, 370px);
   padding: 14px 36px;
@@ -397,6 +401,9 @@ position: absolute;
 .character-item figure{
     height: 100%;
     position: relative;
+    max-width: 1049px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .main_character {
     height: 100%;
@@ -404,16 +411,135 @@ position: absolute;
     justify-content: center;
     align-items: center;
 }
+.main_character::before{
+position: absolute;
+    content: '';
+    top:0%;
+    right: 22%;
+    width: clamp(200px, 14vw, 337px);
+    height: clamp(277px, 20vw, 466px);
+    transform: rotate(63.17deg);
+    z-index: 2;
+    background-size: contain; 
+    background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
+    background-position: center; /* 確保圖片縮窄後依然居中 */
+    background-image: url("./public/img/sakura-L.png"); /* fallback */
+    background-image: image-set(
+        url("./public/img/sakura-L.avif") type("image/avif"),
+        url("./public/img/sakura-L.webp") type("image/webp"),
+        url("./public/img/sakura-L.png") type("image/png")
+    );
+}
+.main_character::after{
+    position: absolute;
+    content: '';
+    top:55%;
+    left: 32%;
+    width: clamp(289px, 25vw, 489px);
+    height: clamp(176px, 15vw, 298px);
+    transform: rotate(-18.25deg);
+    opacity: 0.6;
+    z-index: 1;
+    background-size: contain; 
+    background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
+    background-position: center; /* 確保圖片縮窄後依然居中 */
+    background-image: url("./public/img/texture_bg_1.png"); /* fallback */
+    background-image: image-set(
+        url("./public/img/texture_bg_1.avif") type("image/avif"),
+        url("./public/img/texture_bg_1.webp") type("image/webp"),
+        url("./public/img/texture_bg_1.png") type("image/png")
+    );
+}
 .main_character img{
     height: 85%;
-    margin-right: 10%;
+    margin-right: 13%;
+    z-index:2;
 }
 .content-wrapper{
     position: absolute;
-    top:40%;
-    left: 50%;
+    width: 464px;
+    height: 558px;
+    top:50%;
+    right: 0;
+    transform: translatey(-50%); 
+    z-index: 2;
 }
 
+.content-wrapper::before{
+position: absolute;
+    content: '';
+    bottom:-25%;
+    right: -10%;
+    width: clamp(200px, 14vw, 337px);
+    height: clamp(277px, 20vw, 466px);
+    transform: rotate(-129.66deg);
+    z-index: 0;
+    background-size: contain; 
+    background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
+    background-position: center; /* 確保圖片縮窄後依然居中 */
+    background-image: url("./public/img/sakura-L.png"); /* fallback */
+    background-image: image-set(
+        url("./public/img/sakura-L.avif") type("image/avif"),
+        url("./public/img/sakura-L.webp") type("image/webp"),
+        url("./public/img/sakura-L.png") type("image/png")
+    );
+}
+.word_art_2{
+  font-size: clamp(32px, 4vw, 46px);  
+  height: clamp(40px, 4vw, 66px); 
+}
+.summary-background{
+    top:50%;
+    left: 50%;
+    transform:translateX(-50%) translateY(-35%); 
+    position: absolute;
+    width: 1486px;
+    height: 382px;
+    background: linear-gradient(90deg, rgba(110, 101, 150, 0) 0%, #6E6596 50%, rgba(110, 101, 150, 0) 100%);
+    z-index: 0;
+    border-width: 4px, 0px, 4px, 0px;
+    border-style: solid;
+    border-image-source: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 50%, rgba(255, 255, 255, 0) 100%);
+}
+.summary-background::before{
+    position: absolute;
+    content: '';
+    top:-40%;
+    left: 30%;
+    width: clamp(289px, 25vw, 489px);
+    height: clamp(176px, 15vw, 298px);
+    transform: rotate(-130deg);
+    opacity: 0.8;
+    z-index: 1;
+    background-size: contain; 
+    background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
+    background-position: center; /* 確保圖片縮窄後依然居中 */
+    background-image: url("./public/img/texture_bg_1.png"); /* fallback */
+    background-image: image-set(
+        url("./public/img/texture_bg_1.avif") type("image/avif"),
+        url("./public/img/texture_bg_1.webp") type("image/webp"),
+        url("./public/img/texture_bg_1.png") type("image/png")
+    );
+}
+.summary-background::after{
+    position: absolute;
+    content: '';
+    top:-40%;
+    left: 25%;
+    width: clamp(100px, 20vw, 196px);
+    height: clamp(139px, 26vw, 273px);
+    transform: rotate(-145.29deg);
+    z-index: 2;
+    background-size: contain; 
+    background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
+    background-position: center; /* 確保圖片縮窄後依然居中 */
+    background-image: url("./public/img/sakura-L.png"); /* fallback */
+    background-image: image-set(
+        url("./public/img/sakura-L.avif") type("image/avif"),
+        url("./public/img/sakura-L.webp") type("image/webp"),
+        url("./public/img/sakura-L.png") type("image/png")
+    );
+}
 .paper_clip{
     position: absolute;
     width: 46px;
@@ -496,11 +622,14 @@ position: absolute;
         color: #3C2B51;
         line-height: 37px;
         letter-spacing: 1px;
+        border-radius: 16px;
     }
     #gallery{
         height: 80vh;
         position: relative;
-        anchor-name: --stage; /* 定義父元素為錨點 */
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
     }
     #summary{
         height: 80vh;
@@ -586,11 +715,29 @@ ul hr{
     #summary-cover{
          display: block;
         width: 100%;
-        max-width: 579px;
-        overflow:hidden;
     }
     #summary-cover img{
-        width: 100%;
+        width: clamp(349px, 20vw, 427px);
+        height: clamp(349px, 20vw, 427px);
+        background-size: cover;
+        position:relative;
+        z-index: 2;
+    }
+    .summary-cover-border{
+        top: 2%;
+        left:4%;
+        position: absolute;
+        transform: translateX(50%) ;
+        z-index: 1;
+        background-size: contain;
+        width: clamp(375px, 20vw, 459px);
+        height: clamp(374px, 20vw, 457px);
+        background-image: url("./public/img/preview_border.png"); /* fallback */
+        background-image: image-set(
+            url("./public/img/preview_border.avif") type("image/avif"),
+            url("./public/img/preview_border.webp") type("image/webp"),
+            url("./public/img/preview_border.png") type("image/png")
+        );
     }
     #site-footer{
         background: linear-gradient(90deg, rgba(93, 95, 150, 0.3) 0%, #5D5F96 50%, rgba(93, 95, 150, 0.3) 100%);
@@ -749,8 +896,8 @@ li strong.border {
     transform: rotate(10.96deg);
 }
 .preview-cg1{
-    left:20%;
-     top:0%;
+    left:30%;
+     top:10%;
      transform: translateX(-20%) translateY(-20%);
     z-index: 2;
 }
@@ -771,9 +918,9 @@ li strong.border {
     transform: rotate(10.79deg);
 }
 .preview-cg3{
-    left:25%;
-    top:55%;
-    transform: translateX(-50%) translateY(10%);
+    left:20%;
+    top:45%;
+    transform: translateX(-40%) translateY(10%);
     z-index: 6;
 }
 #preview-cg4{
@@ -799,7 +946,7 @@ li strong.border {
     
     right:1%;
     /* transform: translateX(50%); */
-    top:-15%;
+    top:0;
     z-index: 3;
 }
 #preview-cg6{
@@ -821,7 +968,7 @@ li strong.border {
 }
 .preview-cg7{
     left:30%;
-    top:60%;
+    top:50%;
     transform: translateX(-5%) translateY(15%);
     z-index: 5;
 }
