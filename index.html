@@ -63,6 +63,54 @@
                         </button>
                     </nav>
                 </div>
+                <div class="left-say hide">
+                    <picture aria-hidden="true" class="mini_character_1">
+                        <source srcset="./public/img/mini_character_1.avif" media="(min-width: 1024px)" type="image/avif">
+                        <source srcset="./public/img/mini_character_1.webp" type="image/webp">
+                        <img src="./public/img/mini_character_1.png" alt="遊戲標語藝術字">
+                    </picture>
+                    <svg  id="say_1" width="55" height="612" viewBox="0 0 55 612" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="strokeGrad3" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#FF2CA4"/>
+                                <stop offset="100%" stop-color="#731FBC"/>
+                                </linearGradient>
+                            </defs>
+                            <text class="art-word" x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
+                                    font-weight="900" font-size="38" letter-spacing="1"
+                                    fill="url(#fillGrad)" stroke="url(#strokeGrad3)" stroke-width="4" text-anchor="middle" dominant-baseline="middle">
+                                す ご く 退 屈 だ な 。
+                            </text>
+                        </svg>
+                        <svg  id="say_2" width="55" height="612" viewBox="0 0 55 612" xmlns="http://www.w3.org/2000/svg">
+                            <text class="art-word" x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
+                                    font-weight="900" font-size="38" letter-spacing="1"
+                                    fill="url(#fillGrad)" stroke="url(#strokeGrad3)" stroke-width="4" text-anchor="middle" dominant-baseline="middle">
+                                家 に 一 人 で い る と
+                            </text>
+                        </svg>
+                </div>
+                <div class="right-say hide">
+                    <picture aria-hidden="true" class="mini_character_2">
+                        <source srcset="./public/img/mini_character_2.avif" media="(min-width: 1024px)" type="image/avif">
+                        <source srcset="./public/img/mini_character_2.webp" type="image/webp">
+                        <img src="./public/img/mini_character_2.png" alt="遊戲標語藝術字">
+                    </picture>
+                    <svg  id="say_3" width="55" height="612" viewBox="0 0 55 612" xmlns="http://www.w3.org/2000/svg">
+                            <text class="art-word" x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
+                                    font-weight="900" font-size="38" letter-spacing="1"
+                                    fill="url(#fillGrad)" stroke="url(#strokeGrad3)" stroke-width="4" text-anchor="middle" dominant-baseline="middle">
+                                帰 っ て き た の ？
+                        </text>
+                    </svg>
+                    <svg  id="say_4" width="55" height="612" viewBox="0 0 55 612" xmlns="http://www.w3.org/2000/svg">
+                            <text class="art-word" x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
+                                    font-weight="900" font-size="38" letter-spacing="1"
+                                    fill="url(#fillGrad)" stroke="url(#strokeGrad3)" stroke-width="4" text-anchor="middle" dominant-baseline="middle">
+                                ず っ と あ な た の そ ば に い た い
+                        </text>
+                    </svg>
+                </div>
             </section>
             <section id="game-intro-card" class="page">
                 <div class="panel_border">
@@ -156,6 +204,8 @@
                 </div>
             </section>
             <section id="game-system" class=" page scroll-track" itemprop="description">
+                <div class="game_bg1"></div>
+                <div class="game_bg2"></div>
                 <div class="sticky-content">
                     <h2 class="visually-hidden">遊戲玩法系統與收錄內容介紹</h2>
                     <!-- AOS 區塊-->
@@ -283,13 +333,6 @@
                     </h2>
                     <figure>
                         <div class="summary-background">
-                            <svg  id="say_3" class="art-word" width="423" height="66" viewBox="0 0 423 60" xmlns="http://www.w3.org/2000/svg">
-                                <text x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
-                                        font-weight="900" font-size="38" letter-spacing="1"
-                                        fill="url(#fillGrad2)" stroke="url(#strokeGrad2)" stroke-width="2" text-anchor="middle" dominant-baseline="middle">
-                                    お 兄 ち ゃ ん ！ 一 緒 に い て ！
-                                </text>
-                            </svg>
                         </div>
                         <picture class="main_character">
                             <source srcset="./public/img/main_character.avif" media="(min-width: 1024px)" type="image/avif">
@@ -297,6 +340,13 @@
                             <source srcset="./public/img/main_character_m.webp" type="image/webp">
                             <img src="./public/img/main_character.png" alt="角色立繪：性格內向的少女 雫" itemprop="image">
                         </picture>
+                        <svg  id="say_5" width="55" height="612" viewBox="0 0 55 612" xmlns="http://www.w3.org/2000/svg">
+                            <text class="art-word" x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
+                                    font-weight="900" font-size="38" letter-spacing="1"
+                                    fill="url(#fillGrad)" stroke="url(#strokeGrad3)" stroke-width="4" text-anchor="middle" dominant-baseline="middle">
+                                お 兄 ち ゃ ん ！ 一 緒 に い て ！
+                            </text>
+                        </svg>
                         <div class="content-wrapper">
                             <h3 class="visually-hidden" itemprop="name">雫<span itemprop="jobTitle" >(家里蹲少女)</span></h3>
                              <svg aria-hidden="true" width="320" height="66" viewBox="0 0 320 60" xmlns="http://www.w3.org/2000/svg">

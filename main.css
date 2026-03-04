@@ -63,6 +63,135 @@ section.page {
   position: relative;
 
 }
+.game_bg1{
+    position: absolute;
+    width: 100%;
+    height: 133vh;
+}
+.game_bg1::after{
+    position: absolute;
+    content: '';
+    top:75vh;
+    left: -25%;
+    width: clamp(695px, 90vw, 1728px);
+    aspect-ratio: 16 / 9;
+    height: auto;
+    transform: rotate(59.18deg);
+    opacity: 0.6;
+    z-index: 0;
+    background-size: contain; 
+    background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
+    background-position: center; /* 確保圖片縮窄後依然居中 */
+    background-image: url("./public/img/texture_bg_1.png"); /* fallback */
+    background-image: image-set(
+        url("./public/img/texture_bg_1.avif") type("image/avif"),
+        url("./public/img/texture_bg_1.webp") type("image/webp"),
+        url("./public/img/texture_bg_1.png") type("image/png")
+        );
+}
+.game_bg2{
+    position: absolute;
+    width: 100%;
+    height: 133vh;
+}
+.game_bg2::after{
+    position: absolute;
+    content: '';
+    top:250vh;
+    left: 0%;
+    width: clamp(695px, 90vw, 1728px);
+    aspect-ratio: 16 / 9;
+    height: auto;
+    transform: rotate(-38.49deg);
+    opacity: 0.6;
+    z-index: 0;
+    background-size: contain; 
+    background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
+    background-position: center; /* 確保圖片縮窄後依然居中 */
+    background-image: url("./public/img/texture_bg_1.png"); /* fallback */
+    background-image: image-set(
+        url("./public/img/texture_bg_1.avif") type("image/avif"),
+        url("./public/img/texture_bg_1.webp") type("image/webp"),
+        url("./public/img/texture_bg_1.png") type("image/png")
+        );
+}
+
+.hide {
+    display: none;
+}
+.mini_character_1{
+    margin-top: 35vh;
+    position:relative;
+    display: block;
+    width: 273px;
+    height: 315px;
+    rotate:14.51deg;
+    z-index: 30;
+}
+.mini_character_1 img{
+    width: 100%;
+  height: 100%;
+}
+#say_1{
+    position: absolute;
+    rotate:-5.07deg;
+    top:-20px;
+    left:25%;
+    z-index: 30;
+}
+#say_2{
+    position: absolute;
+    rotate:-11.55deg;
+    top:100px;
+    left:14%;
+    z-index: 30;
+}
+.mini_character_2{
+    margin-top: 25vh;
+    position:relative;
+    display: block;
+width: 177px;
+    height: 329px;
+    rotate:-36.44deg;
+    z-index: 30;
+}
+.mini_character_2 img{
+    width: 100%;
+  height: 100%;
+}
+#say_3{
+    position: absolute;
+    rotate:5.28deg;
+    top:10px;
+    left:45%;
+    z-index: 30;
+}
+#say_4{
+    position: absolute;
+    rotate:9.3deg;
+    top:180px;
+    left:56%;
+    z-index: 30;
+}
+@media (min-width: 1600px) {
+.left-say{
+    display: block;
+    position: fixed;
+     height: 100%;
+     top: 0;
+     left: 0;
+     pointer-events: none; /* 避免影響操作 */
+}
+.right-say{
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 177px;
+     top: 0;
+     right: 0;
+     pointer-events: none; /* 避免影響操作 */
+}
+}
 /* 讓 picture 容器填滿背景 */
 .game-bg-wrapper {
   position: absolute;
@@ -568,6 +697,19 @@ position: absolute;
   font-size: clamp(32px, 4vw, 46px);  
   height: clamp(40px, 4vw, 66px); 
 }
+
+#say_5{
+    position: absolute;
+    rotate:11.18deg;
+    top:34%;
+    left:46%;
+    z-index: 30;
+}
+.art-word{
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    letter-spacing:-0.2em;
+}
 .summary-background{
     top:50%;
     left: 50%;
@@ -981,18 +1123,6 @@ li strong.border {
         right: -17vw;
     }
 
-    .property-1::after{
-    content: '';
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    background-image: image-set(
-        url("./public/img/texture_bg_1.avif") type("image/avif"),
-        url("./public/img/texture_bg_1.webp") type("image/webp"),
-        url("./public/img/texture_bg_1.png") type("image/png")
-    );
-    rotate:(38deg);
-}
     #property-2{
         left: -17vw;
         top:-10vh;
