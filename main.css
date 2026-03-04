@@ -250,7 +250,7 @@ position: absolute;
     left: 50%;
      top: 50%;
     transform: translateX(-50%) translatey(-50%); 
-    z-index: 0;
+    z-index: 1;
 }
 .panel_border::after{
     content: '';
@@ -267,12 +267,48 @@ position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
      rotate:-33.81deg;
+     z-index: 1;
      }
 .extra-deco{
     position: absolute;
     height: 100%;
     width: 100%;
     pointer-events: none; /* 避免影響影片操作 */
+}
+.extra-deco::before{
+content: '';
+position: absolute;
+    height: 50vh;
+    aspect-ratio: 12 / 7;
+    right: 30px;
+    bottom:-13%;
+ background-image: image-set(
+        url("./public/img/texture_bg_1.avif") type("image/avif"),
+        url("./public/img/texture_bg_1.webp") type("image/webp"),
+        url("./public/img/texture_bg_1.png") type("image/png")
+    );
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 0;
+    opacity: 0.6;
+     rotate:22.78deg;
+}
+.extra-deco2{
+position: absolute;
+    height: 30vh;
+    aspect-ratio: 12 / 7;
+    left: 10%;
+    top:0%;
+ background-image: image-set(
+        url("./public/img/texture_bg_1.avif") type("image/avif"),
+        url("./public/img/texture_bg_1.webp") type("image/webp"),
+        url("./public/img/texture_bg_1.png") type("image/png")
+    );
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 0;
+    opacity: 0.6;
+     rotate:-5.4deg;
 }
 .extra-deco::after{
 content: '';
@@ -298,6 +334,7 @@ position: absolute;
     width:100%;
     top: 0%;
     text-align: center;
+    z-index: 2;
 }
 
 .intro-card{
@@ -329,28 +366,32 @@ position: absolute;
     margin:0;
 }
 
-.section_bg{
-  position: absolute;
-  bottom: 0; /* 貼齊父容器底部 */
-  left: 0;
-  width: 100%;
-  height: auto; /* 以圖片原比例或由 img 控制高度 */
-  z-index: 0; /* 放於內容後方但不被整個頁面背景覆蓋 */
-  pointer-events: none;
-}
-.section_bg img{
-   display: block;
-   width: 100%;
-   height: auto;
-   object-fit: cover; /* 以 cover 顯示，並靠底部對齊 */
-   object-position: bottom center;
-}
+
 #promo_video{
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* 從頂端開始排列 */
   align-items: center; /* 水平置中，如需拉滿改為 stretch */
   padding-top: 5%; /* 可依需求微調上方間距 */
+}
+#promo_video::after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    bottom: 15%;
+    left: 0;
+    position: absolute;
+    background-image: url("./public/img/section_bg.png"); /* fallback */
+    background-image: image-set(
+        url("./public/img/section_bg.avif") type("image/avif"),
+        url("./public/img/section_bg.webp") type("image/webp"),
+        url("./public/img/section_bg.png") type("image/png")
+    );
+    background-size: contain; 
+    background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
+    background-position: bottom center; /* 確保圖片縮窄後依然居中 */
+    pointer-events: none; /* 避免影響影片操作 */
 }
 
 .video_container{
@@ -366,6 +407,7 @@ position: absolute;
     height: 125%;
     width: 125%;
     position: absolute;
+    background-image: url("./public/img/video_border.png"); /* fallback */
     background-image: image-set(
         url("./public/img/video_border.avif") type("image/avif"),
         url("./public/img/video_border.webp") type("image/webp"),
@@ -379,7 +421,41 @@ position: absolute;
     transform: translateX(-50%) translatey(-50%); 
     pointer-events: none; /* 避免影響影片操作 */
 }
+.video_container::after{
+    content: '';
+    z-index: 3;
 
+position: absolute;
+ height: 40%;
+    width: auto;
+    aspect-ratio: 10 / 7;
+    left: -175px;
+    bottom: -40%;
+ background-image: image-set(
+        url("./public/img/sakura-inside-L.avif") type("image/avif"),
+        url("./public/img/sakura-inside-L.webp") type("image/webp"),
+        url("./public/img/sakura-inside-L.png") type("image/png")
+    );
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sakura {
+    z-index: 5;
+position: absolute;
+ height: 40%;
+    width: auto;
+    aspect-ratio: 10 / 7;
+    right: -202px;
+    bottom: -26%;
+ background-image: image-set(
+        url("./public/img/sakura-inside-R.avif") type("image/avif"),
+        url("./public/img/sakura-inside-R.webp") type("image/webp"),
+        url("./public/img/sakura-inside-R.png") type("image/png")
+    );
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 .video_container video{
     height: 100%;
     z-index: 5;
@@ -634,6 +710,46 @@ position: absolute;
         max-width: 1440px;
         margin-left: auto;
         margin-right: auto;
+    }
+    #gallery::before{
+    position: absolute;
+    content: '';
+    top:15%;
+    left: 0cm;
+    width: clamp(695px, 54vw, 1054px);
+    height: clamp(424px, 32vw, 642px);
+    transform: rotate(-128.49deg);
+    opacity: 0.6;
+    z-index: 1;
+    background-size: contain; 
+    background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
+    background-position: center; /* 確保圖片縮窄後依然居中 */
+    background-image: url("./public/img/texture_bg_1.png"); /* fallback */
+    background-image: image-set(
+        url("./public/img/texture_bg_1.avif") type("image/avif"),
+        url("./public/img/texture_bg_1.webp") type("image/webp"),
+        url("./public/img/texture_bg_1.png") type("image/png")
+        );
+    }
+    #gallery::after{
+    position: absolute;
+    content: '';
+    top:10%;
+    left: 25%;
+    width: clamp(695px, 54vw, 1054px);
+    height: clamp(424px, 32vw, 642px);
+    transform: rotate(-38.49deg);
+    opacity: 0.6;
+    z-index: 1;
+    background-size: contain; 
+    background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
+    background-position: center; /* 確保圖片縮窄後依然居中 */
+    background-image: url("./public/img/texture_bg_1.png"); /* fallback */
+    background-image: image-set(
+        url("./public/img/texture_bg_1.avif") type("image/avif"),
+        url("./public/img/texture_bg_1.webp") type("image/webp"),
+        url("./public/img/texture_bg_1.png") type("image/png")
+        );
     }
     #summary{
         height: 80vh;
