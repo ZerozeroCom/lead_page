@@ -664,10 +664,10 @@ position: absolute;
 }
 #logo-border{
     position: absolute;
-    top: 0;
+    top: -60%;
     left: 0;
     width: 110%;
-    height: 120%;
+    height: 180%;
     z-index: 5;
 }
 #logo-border img{
@@ -687,7 +687,14 @@ position: absolute;
 }
 .summary-info{
     border-radius: 16px;
-     flex: 1;
+     flex: 3;
+}
+.summary-box{
+    margin-top: 32px;
+    margin-left: 21px;
+    border-radius: 16px;
+     width: 579px;
+     height: 427px;
 }
 .price{
     color: #8163CE;
@@ -717,29 +724,36 @@ ul hr{
     #summary-cover{
          display: block;
          text-align: end;
-        width: 100%;
+        width: 427px;
+        aspect-ratio: 1 / 1;
+        height: auto;
+        overflow: hidden;
     }
     #summary-cover img{
-        width: clamp(349px, 20vw, 427px);
-        height: clamp(349px, 20vw, 427px);
-        background-size: cover;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: 60% center;
         position:relative;
         z-index: 2;
     }
     .summary-cover{
         position:relative;
-        flex: 1;
+        display: flex;
+    justify-content: flex-end;
+        flex: 2;
         min-width: 400px;
     }
     .summary-cover::before{
         content: '';
-        top: clamp(-10px, 20vw, -18px);
-        right: clamp(-10px, 20vw, -18px);
+        top: -17px;
+        right: -16px;
         position: absolute;
         z-index: 1;
         background-size: contain;
-        width: clamp(375px, 20vw, 459px);
-        height: clamp(374px, 20vw, 457px);
+        width: 450px;
+        aspect-ratio: 1 / 1;
+        height: auto;
         background-image: url("./public/img/preview_border.png"); /* fallback */
         background-image: image-set(
             url("./public/img/preview_border.avif") type("image/avif"),
@@ -747,20 +761,41 @@ ul hr{
             url("./public/img/preview_border.png") type("image/png")
         );
     }
+    .summary-cover::after{
+        content: '';
+        top: -18px;
+        right: -18px;
+        position: absolute;
+        z-index: 3;
+        background-position: 60% 95%;
+        background-size: 75% 35%;
+        background-repeat: no-repeat;
+        width: 459px;
+        height: 457px;
+        background-image: url("./public/img/logo-tc.png"); /* fallback */
+        background-image: image-set(
+            url("./public/img/logo-tc.avif") type("image/avif"),
+            url("./public/img/logo-tc.webp") type("image/webp"),
+            url("./public/img/logo-tc.png") type("image/png")
+        );
+    }
     #site-footer{
         background: linear-gradient(90deg, rgba(93, 95, 150, 0.3) 0%, #5D5F96 50%, rgba(93, 95, 150, 0.3) 100%);
         height: 164px;
-        gap: 24px;
         opacity: 1;
-        padding-top: 40px;
-        padding-bottom: 40px;
     box-sizing: border-box;
+    }
+    .footer{
+        max-width: 1180px;
+        height: 100%;
+        gap: 24px;
+        align-items: center;
     }
 .spec-list{
     display: flex;
     flex-direction:column;
-    gap:16px;
-    padding: 16px;
+    gap:8px;
+    padding: 32px;
 }
 .property-1{
     right:20%;
@@ -772,9 +807,24 @@ ul {
   color:  #561A71;
 
 }
+li span {
+    font-family: Georama;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 20px;
+    line-height: 34px;
+    letter-spacing: 1px;
+}
 li strong.border {
-     display: inline-block;
-     width: 136px;
+     font-family: Georama;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 20px;
+    line-height: 34px;
+    letter-spacing: 1px;
+    text-align: center;
+    display: inline-block;
+     width: 113px;
     height: 36px;
     line-height: 36px;
     text-align: center;
@@ -784,7 +834,7 @@ li strong.border {
         url("./public/img/info_list_border.webp") type("image/webp"),
         url("./public/img/info_list_border.png") type("image/png")
     );
-    background-size: 136px 36px;/* 調整圖大小 */
+    background-size: 113px 36px;/* 調整圖大小 */
     margin-right: 10px;
 }
     #age-warning img{
@@ -900,7 +950,7 @@ li strong.border {
 }
 #preview-cg1{
     width: clamp(235px, 44vw, 441px);
-    height: clamp(139px, 30vw, 286px);
+    height: auto;
     transform: rotate(10.96deg);
 }
 .preview-cg1{
@@ -911,7 +961,7 @@ li strong.border {
 }
 #preview-cg2{
     width: clamp(228px, 44vw, 428px);
-    height: clamp(134px, 30vw, 276px);
+    height: auto;
     transform: rotate(-8.24deg);
 }
 .preview-cg2{
@@ -922,9 +972,10 @@ li strong.border {
 
 #preview-cg3{
     width: clamp(235px, 44vw, 441px);
-    height: clamp(139px, 30vw, 286px);
+    height: auto;
     transform: rotate(10.79deg);
 }
+
 .preview-cg3{
     left:20%;
     top:45%;
@@ -933,7 +984,7 @@ li strong.border {
 }
 #preview-cg4{
     width: clamp(249px, 44vw, 516px);
-    height: clamp(149px, 30vw, 339px);
+    height: auto;
     
     transform: rotate(-7.79deg);
 }
@@ -947,7 +998,7 @@ li strong.border {
 #preview-cg5{
      
     width: clamp(224px, 44vw, 441px);
-    height: clamp(150px, 30vw, 321px);
+    height: auto;
     transform: rotate(-3.79deg);
 }
 .preview-cg5{
@@ -959,7 +1010,7 @@ li strong.border {
 }
 #preview-cg6{
     width: clamp(256px, 44vw, 479px);
-    height: clamp(154px, 30vw, 313px);
+    height: auto;
     transform: rotate(12.32deg);
 }
 .preview-cg6{
@@ -969,8 +1020,8 @@ li strong.border {
     z-index: 4;
 }
 #preview-cg7{
-     width: clamp(226px, 44vw, 441px);
-    height: clamp(154px, 30vw, 326px);
+    width: clamp(226px, 44vw, 441px);
+    height: auto;
     transform: rotate(-15.03deg);
     
 }
