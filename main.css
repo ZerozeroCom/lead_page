@@ -216,21 +216,24 @@ width: 177px;
     top: 0;
     left: 0;
     right: 0;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: 12px;
     z-index: 5;
 }
 .logo-inline{
     display: inline-block;
     width: auto;
-    margin: auto 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .akaerocore_logo img{
     display: block;
     padding-left: 56px;
-    height: clamp(27px, 5vw, 68px);
-     width:clamp(162px, 23vw, 402px);
+    aspect-ratio: 6 / 1;
     height: auto;
+    width:clamp(162px, 23vw, 402px);
+}
+.logo-inline:first-child{
+     transform: translateY(-45%);
 }
 .logo-inline:last-child{
     margin-left: auto;
@@ -238,10 +241,9 @@ width: 177px;
 }
 .logo-img img{
     display: block;
-    height: clamp(70px, 10vw, 178px);
-     width:clamp(148px, 21vw, 378px);
-    margin-left: auto;
+    aspect-ratio: 1235 / 582;
     height: auto;
+    width:clamp(148px, 21vw, 378px);
 }
 #game-section {
     position: relative;
@@ -326,7 +328,7 @@ margin: 0 auto;
 
 /* === 下排下載 === */
 .btn-download {
-     min-width: 288px;
+     min-width: 328px;
      max-width: 80vw;
   background: linear-gradient(180deg, #FFA552 0%, #FFCB3B 100%);
   box-shadow: 0px 5px 0px 0px #F58B1F;
@@ -894,12 +896,12 @@ position: absolute;
         );
     }
     #summary{
-        height: 80vh;
+        height: auto;
         margin-top: 15%;
-        margin-bottom: -94px;
     }
     #summary .btn-group{
-        margin-top: 32px;
+        margin-top: 20px;
+        margin-bottom: 32px;
     }
     .row{
         width: 100%;
@@ -1038,15 +1040,24 @@ ul hr{
         );
     }
     #site-footer{
+        scroll-snap-align: end;
         background: linear-gradient(90deg, rgba(93, 95, 150, 0.3) 0%, #5D5F96 50%, rgba(93, 95, 150, 0.3) 100%);
         height: 164px;
         opacity: 1;
-    box-sizing: border-box;
+        box-sizing: border-box;
+
+        .akaerocore_logo img{
+            aspect-ratio: 6 / 1;
+            height: auto;
+            width:clamp(201px, 5vw, 231px);
+            padding-left:0;
+        }    
     }
     .footer{
         max-width: 1180px;
         height: 100%;
         gap: 24px;
+        color: #FFFFFF;
         align-items: center;
     }
 .spec-list{
