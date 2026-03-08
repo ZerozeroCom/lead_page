@@ -63,3 +63,57 @@ body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helveti
 /* small utilities */
 .hidden{display:none!important}
 .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+.panel_border::after{
+    content: '';
+position: absolute;
+ height: 40%;
+    width: 40%;
+    left: 105px;
+    bottom: 120px;
+ background-image: image-set(
+        url("./public/img/sakura-L.avif") type("image/avif"),
+        url("./public/img/sakura-L.webp") type("image/webp"),
+        url("./public/img/sakura-L.png") type("image/png")
+    );
+    background-size: contain;
+    background-repeat: no-repeat;
+     rotate:-33.81deg;
+     z-index: 1;
+     }
+
+     .extra-deco::after{
+content: '';
+position: absolute;
+ height: 40%;
+    width: 40%;
+    right: 30px;
+    top:51px;
+ background-image: image-set(
+        url("./public/img/sakura-inside-R.avif") type("image/avif"),
+        url("./public/img/sakura-inside-R.webp") type("image/webp"),
+        url("./public/img/sakura-inside-R.png") type("image/png")
+    );
+    background-size: contain;
+    background-repeat: no-repeat;
+     rotate:49.89deg;
+}
+
+.panel_border::before{
+content: '';
+position: absolute;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    background-image: image-set(
+        url("./public/img/panel_border.avif") type("image/avif"),
+        url("./public/img/panel_border.webp") type("image/webp"),
+        url("./public/img/panel_border.png") type("image/png")
+    );
+    background-size: contain;
+    background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
+    background-position: center; /* 確保圖片縮窄後依然居中 */
+    left: 50%;
+     top: 50%;
+    transform: translateX(-50%) translatey(-50%); 
+    z-index: 1;
+}
