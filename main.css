@@ -2,11 +2,27 @@ html {
   height: 100%;
   overflow: hidden; /* 關鍵：這會隱藏系統預設的滾動條 */
 }
+
+a {
+    /* 去除底線 */
+    text-decoration: none;
+    
+    /* 繼承父元素的顏色，或是指定固定顏色（例如 #fff） */
+    color: inherit; 
+    
+    /* 防止點擊時出現的外框（選用） */
+    outline: none;
+}
+
+/* 確保滑鼠移上去時也不會出現底線或變色 */
+a:hover, a:active, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
 body {
   position: relative;
   margin: 0;
   font-family: 'Noto Sans TC', sans-serif;
-  
   height: 100%;
   overflow-y: auto;  /* 讓 body 在垂直內容溢出時產生滾動條 */
   overflow-x: hidden; /* 防止左右出現莫名的小抖動 */
@@ -153,19 +169,25 @@ section.page {
     display: none;
 }
 .mini_character_1{
-    margin-top: 35vh;
+    margin-top: 20vh;
     position:relative;
     display: block;
-    width: 273px;
+    /*width: 273px;*/
+    width:18vw;
     height: 315px;
     rotate:14.51deg;
     z-index: 30;
 }
+.mini_character_word{
+    height: auto !important;
+    rotate: none !important;
+}
+
 .mini_character_1 img{
     width: 100%;
   height: 100%;
 }
-#say_1{
+/* #say_1{
     position: absolute;
     rotate:-5.07deg;
     top:-20px;
@@ -178,12 +200,13 @@ section.page {
     top:100px;
     left:14%;
     z-index: 30;
-}
+} */
 .mini_character_2{
-    margin-top: 25vh;
+    margin-top: 20vh;
     position:relative;
     display: block;
-width: 177px;
+/* width: 177px; */
+    width:18vw;
     height: 329px;
     rotate:-36.44deg;
     z-index: 30;
@@ -192,7 +215,7 @@ width: 177px;
     width: 100%;
   height: 100%;
 }
-#say_3{
+/* #say_3{
     position: absolute;
     rotate:5.28deg;
     top:10px;
@@ -205,7 +228,7 @@ width: 177px;
     top:180px;
     left:56%;
     z-index: 30;
-}
+} */
 @media (min-width: 1600px) {
 .left-say{
     display: block;
@@ -221,7 +244,7 @@ width: 177px;
     height: 100%;
     width: 177px;
      top: 0;
-     right: 0;
+     right: 10%;
      pointer-events: none; /* 避免影響操作 */
 }
 }
@@ -232,6 +255,12 @@ width: 177px;
   left: 0;
   width: 100%;
   height: 100%;
+}
+.game-bg-wrapper img{
+    min-height: 100vh;
+    max-height: 110vh;
+    object-fit: cover;
+  object-position: top;
 }
 
 /* 讓圖片表現得像 background-size: cover */
@@ -306,14 +335,17 @@ margin: 0 auto;
 }
 
 .btn-group{
+    width: 100%;
     margin-top: -48px;
     display: flex;
     flex-direction: column;
-    align-items: center;       /* 下排按鈕置中 */
+    align-items: stretch;       /* 下排按鈕置中 */
     gap: 16px;
+
 }
 .btn-row {
   display: flex;
+  width: 100%;
   gap: 20px;                 /* 上排左右間距 */
   justify-content: center;
 }
@@ -344,10 +376,16 @@ margin: 0 auto;
   background: linear-gradient(180deg, #DF7797 0%, #F4B7C6 100%);
   box-shadow: 0px 5px 0px 0px #D9829D;
   border: 2px solid #FFB8CD;
-  -webkit-text-stroke: 2px #A3354B;
-  font-family: Inter;
-    
-
+  -webkit-text-stroke: 2px #A3354B; 
+}
+button picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button img{
+    width: 100%;
+    margin:auto 0 ;
 }
 
 /* === 右上 DLsite === */
@@ -358,15 +396,24 @@ margin: 0 auto;
     -webkit-text-stroke: 2px #9347B8;
 
 }
-
+.btn-dl img{
+    max-height: 38px;
+}
+.btn-download img{
+    max-height: 38px;
+}
 /* === 下排下載 === */
 .btn-download {
      min-width: 328px;
-     max-width: 80vw;
+    width: clamp(390px, 60vw, 760px);
   background: linear-gradient(180deg, #FFA552 0%, #FFCB3B 100%);
   box-shadow: 0px 5px 0px 0px #F58B1F;
   border: 2px solid #FFE2B8;
 -webkit-text-stroke: 2px #C55B0B;
+ @media (min-width: 1080px) {
+    width: auto;
+    max-width: 80vw;
+ }
 }
 
 /* === Hover 效果 === */
@@ -501,8 +548,8 @@ z-index: 2;
     position: absolute;
       margin-left: auto;
     margin-right: auto;
-    padding-top: 7%;
-    padding-bottom: 4%;
+    padding-top: 10%;
+    padding-bottom: 9%;
     display:flex;
     flex-direction: column;
     height:100%;
@@ -548,9 +595,7 @@ z-index: 2;
     margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
-    font-family: Inter;
     font-weight: 500;
-    font-style: medium;
     font-size: clamp(16px, 2vh, 20px);
     line-height:  clamp(24px, 3vh, 30px);
     letter-spacing: 1px;
@@ -583,7 +628,10 @@ z-index: 2;
         url("./public/img/section_bg.webp") type("image/webp"),
         url("./public/img/section_bg.png") type("image/png")
     );
-    background-size: contain; 
+    background-size: 200% auto ; 
+    @media (min-width: 720px) {
+        background-size: contain; 
+    }
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: bottom center; /* 確保圖片縮窄後依然居中 */
     pointer-events: none; /* 避免影響影片操作 */
@@ -762,6 +810,7 @@ position: absolute;
 .word_art_2{
   font-size: clamp(32px, 4vw, 46px);  
   height: clamp(40px, 4vw, 66px); 
+  font-family: "GenSenRounded2 JP", sans-serif;
 }
 
 #say_5{
@@ -903,9 +952,7 @@ position: absolute;
     }
     .introduce{
         padding: 32px;
-        font-family: Inter;
         font-weight: 500;
-        font-style: Medium;
         font-size: 20px;
         color: #3C2B51;
         line-height: 37px;
@@ -976,9 +1023,14 @@ position: absolute;
         margin:0px auto;
         gap:16px;
     }
-    .max-w-1064{
-    width: 1064px;
-}
+    #summary .row{
+        flex-direction:column;
+        width: auto;  
+        @media (min-width: 1080px) {
+            width: 1064px;  
+            flex-direction: row;
+        }
+    }
 
 .game-title{
     margin: 0;
@@ -1014,11 +1066,17 @@ position: absolute;
      flex: 3;
 }
 .summary-box{
-    margin-top: 32px;
+    
     margin-left: 21px;
     border-radius: 16px;
-     width: 579px;
+    margin-right: 21px;
+     width: auto;
      height: 427px;
+     @media (min-width: 1080px) {
+        margin-top: 32px;
+         width: 579px;
+         margin-right: 0;
+     }
 }
 .price{
     color: #8163CE;
@@ -1143,7 +1201,6 @@ ul {
 li span {
     font-family: Georama;
     font-weight: 500;
-    font-style: Medium;
     font-size: 20px;
     line-height: 34px;
     letter-spacing: 1px;
@@ -1151,7 +1208,6 @@ li span {
 li strong.border {
      font-family: Georama;
     font-weight: 500;
-    font-style: Medium;
     font-size: 20px;
     line-height: 34px;
     letter-spacing: 1px;
@@ -1422,9 +1478,7 @@ li strong.border {
 .chat-row{
     display: flex;
     flex-direction: row;
-    font-family: Inter;
     font-weight: 500;
-    font-style: Medium;
     font-size: 20px;
     line-height: 37px;
     letter-spacing: 1px;
