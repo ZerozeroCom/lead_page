@@ -207,8 +207,8 @@ section.page {
     display: block;
 /* width: 177px; */
     width:18vw;
-    height: 329px;
-    rotate:-36.44deg;
+    /* height: 329px;
+    rotate:-36.44deg; */
     z-index: 30;
 }
 .mini_character_2 img{
@@ -239,12 +239,14 @@ section.page {
      pointer-events: none; /* 避免影響操作 */
 }
 .right-say{
-    display: block;
     position: fixed;
     height: 100%;
     width: 177px;
      top: 0;
-     right: 10%;
+     display: flex;
+    flex-direction: column;
+    align-items: self-end;
+    right: 25px;
      pointer-events: none; /* 避免影響操作 */
 }
 }
@@ -639,16 +641,17 @@ z-index: 2;
 
 .video_container{
     position: relative;
-    max-height: 549px;
-    max-width: 986px;
-    width: 940px;
+    max-width: 1600px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
      display: flex;
      justify-content: center;
 }
 .video_container::before{
     content: '';
     height: 125%;
-    width: 125%;
+    width: 130%;
     position: absolute;
     background-image: url("./public/img/video_border.png"); /* fallback */
     background-image: image-set(
@@ -700,7 +703,9 @@ position: absolute;
     background-repeat: no-repeat;
 }
 .video_container video{
-    height: 100%;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
     z-index: 5;
     border-radius: 12px;
 }
@@ -774,16 +779,19 @@ position: absolute;
     );
 }
 .main_character img{
-    height: 85%;
+    height: 98%;
     margin-right: 13%;
     z-index:2;
 }
 .content-wrapper{
     position: absolute;
-    width: 464px;
-    height: 558px;
+    width: 44.5%;
+    max-width: 464px;
     top:50%;
     right: 0;
+    @media (min-width: 1080px) {
+        right: -8%;
+    }
     transform: translatey(-50%); 
     z-index: 2;
 }
@@ -815,10 +823,19 @@ position: absolute;
 
 #say_5{
     position: absolute;
-    rotate:11.18deg;
-    top:34%;
-    left:46%;
+    top:17%;
+    right:65%;
+    rotate: -17deg;
+    @media (min-width: 1080px) {
+       top:37%;
+       left:52%;
+    }
+    height: 50%;
     z-index: 30;
+}
+#character_name {
+    max-height: 66px;
+    height:12%;
 }
 .art-word{
     writing-mode: vertical-rl;
@@ -826,12 +843,13 @@ position: absolute;
     letter-spacing:-0.2em;
 }
 .summary-background{
-    top:50%;
+    top:45%;
     left: 50%;
     transform:translateX(-50%) translateY(-35%); 
     position: absolute;
-    width: 1486px;
-    height: 382px;
+    width: 100vw;
+    height: 28%;
+    aspect-ratio: 279 / 232;
     background: linear-gradient(90deg, rgba(110, 101, 150, 0) 0%, #6E6596 50%, rgba(110, 101, 150, 0) 100%);
     z-index: 0;
     border-width: 4px, 0px, 4px, 0px;
@@ -951,11 +969,17 @@ position: absolute;
         background: linear-gradient(180deg, #D49CFF 0%, #A56AFF 100%);
     }
     .introduce{
-        padding: 32px;
+        padding: 16px;
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 10px;
+        @media (min-width: 1080px) {
+            font-size: 20px;
+            padding: 32px;
+            line-height: 37px;
+        }
         font-weight: 500;
-        font-size: 20px;
         color: #3C2B51;
-        line-height: 37px;
         letter-spacing: 1px;
         border-radius: 16px;
     }
@@ -1234,8 +1258,20 @@ li strong.border {
 
     .photo {
         display: block;
-        width: 718px;
-        height: 509px;
+        width: 85vw;
+        @media (min-width: 1024px) {
+            width: 80vw;
+        }
+        @media (min-width: 1440px) {
+            width: 75vw;
+        }
+        @media (min-width: 1680px) {
+            width: 70vw;
+        }
+        @media (min-width: 1920px) {
+            width: 60vw;
+        }
+        height: auto;
         padding: 12px 12px 30px 12px;
         gap: 10px;
     }
@@ -1251,26 +1287,26 @@ li strong.border {
     #property-1{
         transform: rotate(5.93deg);
         top:-10vh;
-        right: -17vw;
+        left: 15%;
     }
 
     #property-2{
-        left: -17vw;
+        right: 15%;
         top:-10vh;
         transform: rotate(-5.93deg);
     }
     #property-3{
         transform: rotate(5.93deg);
-        right: -17vw;
+        left: 15%;
         top:-10vh;
     }
     #property-4{
         transform: rotate(-5.93deg);
-        left: -17vw;
+        right: 15%;
         top:-10vh;
     }
     #property-5{
-        right: -17vw;
+        left: 15%;
         top:-10vh;
         transform: rotate(5.93deg);
     }
@@ -1483,10 +1519,15 @@ li strong.border {
     line-height: 37px;
     letter-spacing: 1px;
     color: #3C2B51;
-    bottom:18vh;
+    top: 50svh;
     left:3%;
-
-
+    @media (min-aspect-ratio: 4/3) {
+    top: 65svh;
+    }
+    @media (min-aspect-ratio: 16/9) {
+    top: 75svh;
+    }
+    
 }
 .chat-row.reverse{
 flex-direction:row-reverse;

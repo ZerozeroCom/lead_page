@@ -11,9 +11,7 @@
         <header class="site-header">
 			<a class="logo-inline" href="https://www.akaerocore.com/" target="_blank">
                 <picture class="akaerocore_logo">
-                    <source srcset="./public/img/akaerocore_logo.avif" media="(min-width: 1024px)" type="image/avif">
-                    <source srcset="./public/img/akaerocore_logo.webp" type="image/webp">
-                    <img src="./public/img/akaerocore_logo.png" alt="Akarecore" >
+                    <img src="./public/img/aka-logo-1.webp" alt="Akarecore" >
                 </picture>
             </a>
             <h1 class="logo-inline">
@@ -74,7 +72,7 @@
                 <div class="left-say hide">
                     <picture aria-hidden="true" class="mini_character_1 mini_character_word">
                         <!-- <source srcset="./public/img/mini_character_1.avif" media="(min-width: 1024px)" type="image/avif"> -->
-                        <img src="./public/img/mini_character_1_2.webp" type="image/webp" alt="主主角Q版形象 台詞：家 に 一 人 で い る と す ご く 退 屈 だ な 。">
+                        <img src="./public/img/mini_character_1_2.webp" type="image/webp" alt="主主角Q版形象 台詞：家に一人でいるとすごく退屈だな。">
                         <!-- <img src="./public/img/mini_character_1.png" > -->
                     </picture>
                     <!-- <svg  id="say_1" width="55" height="612" viewBox="0 0 55 612" xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +99,7 @@
                 <div class="right-say hide">
                     <picture aria-hidden="true" class="mini_character_2 mini_character_word">
                         <!-- <source srcset="./public/img/mini_character_2.avif" media="(min-width: 1024px)" type="image/avif"> -->
-                        <img src="./public/img/mini_character_2_2.webp" type="image/webp"  alt="主主角Q版形象2 台詞：帰 っ て き た の ？ず っ と あ な た の そ ば に い た い">
+                        <img src="./public/img/mini_character_2_2.webp" type="image/webp"  alt="主主角Q版形象2 台詞：帰ってきたの？ずっとあなたのそばにいたい">
                         <!-- <img src="./public/img/mini_character_2.png" alt="主主角Q版形象2"> -->
                     </picture>
                     <!-- <svg  id="say_3" width="55" height="612" viewBox="0 0 55 612" xmlns="http://www.w3.org/2000/svg">
@@ -290,45 +288,14 @@
                         </div>
                         <picture class="main_character">
                             <source srcset="./public/img/main_character.avif" media="(min-width: 1024px)" type="image/avif">
-                            <source srcset="./public/img/main_character.webp" media="(min-width: 1024px)" type="image/webp">
-                            <source srcset="./public/img/main_character_m.webp" type="image/webp">
+                            <source srcset="./public/img/main_character.webp"  type="image/webp">
+                            <!-- <source srcset="./public/img/main_character_m.webp" type="image/webp"> -->
                             <img src="./public/img/main_character.png" alt="角色立繪：性格內向的少女 雫" itemprop="image">
                         </picture>
-                        <svg  id="say_5" width="55" height="612" viewBox="0 0 55 612" xmlns="http://www.w3.org/2000/svg">
-                             <defs>
-                                <linearGradient id="strokeGrad3" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="0%" stop-color="#FF2CA4"/>
-                                <stop offset="100%" stop-color="#731FBC"/>
-                                </linearGradient>
-                            </defs>
-                            <text class="art-word" x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
-                                    font-weight="900" font-size="38" letter-spacing="1"
-                                    fill="url(#fillGrad)" stroke="url(#strokeGrad3)" stroke-width="4" text-anchor="middle" dominant-baseline="middle">
-                                お 兄 ち ゃ ん ！ 一 緒 に い て ！
-                            </text>
-                        </svg>
+                        <img id="say_5" src="./public/img/say_5.webp" type="image/webp" alt="主主角台詞：お兄ちゃん！一緒にいて！">
                         <div class="content-wrapper">
                             <h3 class="visually-hidden" itemprop="name">雫<span itemprop="jobTitle" >(家里蹲少女)</span></h3>
-                             <svg aria-hidden="true" width="320" height="66" viewBox="0 0 320 60" xmlns="http://www.w3.org/2000/svg">
-                                 <defs>
-                                    <!-- 文字填色漸層 -->
-                                    <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stop-color="#FFEBA8"/>
-                                    <stop offset="100%" stop-color="#FFF5FA"/>
-                                    </linearGradient>
-
-                                    <!-- 文字描邊漸層 -->
-                                    <linearGradient id="strokeGrad" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stop-color="#590F5D"/>
-                                    <stop offset="100%" stop-color="#731FBC"/>
-                                    </linearGradient>
-                                </defs>
-                                <text class="word_art_2" x="50%" y="50%" font-family="GenSenRounded2 JP, sans-serif" 
-                                        font-weight="900" letter-spacing="1"
-                                        fill="url(#fillGrad)" stroke="url(#strokeGrad)" stroke-width="2" text-anchor="middle" dominant-baseline="middle">
-                                    雫(家里蹲少女)
-                                </text>
-                            </svg>
+                             <img aria-hidden="true" id="character_name" src="./public/img/character_name.webp" type="image/webp" alt="雫(家里蹲少女)">
                             <div class="gradient_Borden introduce" itemprop="description">
                                 <p>
                                     在一個寧靜的小鎮上，住著一位名叫雫的少女。她性格內向，對陌生人有些害羞，但與熟悉的人相處時卻非常真誠。雫的過去並不如意，曾經經歷過一些不幸的事件，這讓她對生活的理解變得格外稚嫩。她對於性知識幾乎一無所知，對於未來充滿了迷茫。
@@ -486,9 +453,7 @@
                         <p id="">© 2025 akaeroCore Co., Ltd. All rights reserved.</p>
                     </div>
                     <picture class="akaerocore_logo">
-                        <source srcset="./public/img/akaerocore_logo.avif" media="(min-width: 1024px)" type="image/avif">
-                        <source srcset="./public/img/akaerocore_logo.webp" type="image/webp">
-                        <img src="./public/img/akaerocore_logo.png" alt="發行商 Akarecore" >
+                        <img src="./public/img/aka-logo.webp" alt="發行商 Akarecore" >
                     </picture>
                 </div>
             </footer>
