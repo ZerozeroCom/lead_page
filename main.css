@@ -642,7 +642,7 @@ z-index: 2;
 .video_container{
     position: relative;
     max-width: 1600px;
-    width: 100%;
+    width: 70%;
     height: auto;
     aspect-ratio: 16 / 10;
      display: flex;
@@ -1033,6 +1033,7 @@ position: absolute;
     #summary{
         height: auto;
         margin-top: 15%;
+        margin-bottom: 5%;
     }
     #summary .btn-group{
         margin-top: 20px;
