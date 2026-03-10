@@ -292,7 +292,7 @@ section.page {
 .akaerocore_logo img{
     display: block;
     padding-left: 56px;
-    aspect-ratio: 6 / 1;
+    aspect-ratio: 210 / 43;
     height: auto;
     width:clamp(162px, 23vw, 402px);
 }
@@ -594,7 +594,11 @@ z-index: 2;
 }
 .intro-card p{
     max-width: 80vw;
-    margin-top: 0px;
+    margin-top: 5%;
+    @media (min-aspect-ratio: 4/3) {
+        margin-top: clamp(24px, 3vh, 30px);
+    }
+    
     margin-left: auto;
     margin-right: auto;
     font-weight: 500;
@@ -616,12 +620,13 @@ z-index: 2;
   align-items: center; /* 水平置中，如需拉滿改為 stretch */
   padding-top: 5%; /* 可依需求微調上方間距 */
 }
-#promo_video::after{
+#promo_video::before{
     content: '';
     height: 100%;
     width: 100%;
     z-index: 0;
-    bottom: 15%;
+    
+    bottom: 5%;
     left: 0;
     position: absolute;
     background-image: url("./public/img/section_bg.png"); /* fallback */
@@ -631,11 +636,14 @@ z-index: 2;
         url("./public/img/section_bg.png") type("image/png")
     );
     background-size: 200% auto ; 
+    background-position: bottom center; 
+    
     @media (min-width: 720px) {
+        top: 15%;
         background-size: contain; 
+        background-position: top; /* 確保圖片縮窄後依然居中 */
     }
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
-    background-position: bottom center; /* 確保圖片縮窄後依然居中 */
     pointer-events: none; /* 避免影響影片操作 */
 }
 
@@ -1194,7 +1202,7 @@ ul hr{
         box-sizing: border-box;
 
         .akaerocore_logo img{
-            aspect-ratio: 6 / 1;
+            aspect-ratio: 462 / 79;
             height: auto;
             width:clamp(201px, 5vw, 231px);
             padding-left:0;
@@ -1282,6 +1290,7 @@ li strong.border {
     }
     #game-system{
         max-width: 1268px;
+        margin-top: 80px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -1403,8 +1412,8 @@ li strong.border {
     transform: rotate(-7.79deg);
 }
 .preview-cg4{
-    left:18%;
-    transform: translateX(-50%);
+    left:12%;
+    transform: translateX(-35%);
     top:15%;
     z-index: 3;
 }
@@ -1417,8 +1426,9 @@ li strong.border {
 }
 .preview-cg5{
     
-    right:1%;
-    /* transform: translateX(50%); */
+    right:8%;
+    top:2.5%;
+    transform: translateX(20%) translateY(-5%);
     top:0;
     z-index: 3;
 }
@@ -1429,8 +1439,8 @@ li strong.border {
 }
 .preview-cg6{
     right:10%;
-    top:45%;
-    transform: translateX(30%);
+    top:42.5%;
+    transform: translateX(30%) translateY(5%);
     z-index: 4;
 }
 #preview-cg7{
