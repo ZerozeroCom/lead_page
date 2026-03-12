@@ -175,3 +175,21 @@ document.querySelectorAll('.chat-row').forEach(row => {
   row.classList.add('fade-in-hidden'); // 初始隱藏
   observer.observe(row);
 });
+
+
+let last = 0;
+document.addEventListener("wheel", function(e) {
+  e.preventDefault();
+  const now = Date.now();
+  if (now - last < 100) return;
+  last = now;
+
+  const direction = Math.sign(e.deltaY);
+
+  if (direction > 0) {
+    console.log("scroll down 1 step",direction);
+  } else if (direction < 0) {
+    console.log("scroll up 1 step",direction);
+  }
+  return direction;
+}, { passive: false });

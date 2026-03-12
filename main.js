@@ -192,11 +192,17 @@ if(document.readyState==='loading'){
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, index) => {
-    if (entry.isIntersecting) {
-      // 增加延遲感，讓對話框像是一個個跳出來
-      setTimeout(() => {
+    if (index != 0){
+      if (entry.isIntersecting) {
+          // 增加延遲感，讓對話框像是一個個跳出來
+          setTimeout(() => {
+            entry.target.classList.add('fade-in-visible');
+          }, index * 200); 
+      }
+    }else{
+      if (entry.isIntersecting) {
         entry.target.classList.add('fade-in-visible');
-      }, index * 200); 
+      }
     }
   });
 }, { threshold: 0.2 });
@@ -206,30 +212,38 @@ document.querySelectorAll('.chat-row').forEach(row => {
   row.classList.add('fade-in-hidden'); // 初始隱藏
   observer.observe(row);
 });
-
+let scrollLock = 0;
+let a = 0;
 document.addEventListener("DOMContentLoaded", () => {
 
   const track = document.getElementById('game-system');
   const cards = document.querySelectorAll('.intro-effect');
   function onScroll() {
+      const now = Date.now();
+      if (now - scrollLock < 300) return;
+      scrollLock = now;
+
     const rect = track.getBoundingClientRect();
-    console.log('rect',rect);
+    // console.log('rect',rect);
      console.log(window.innerHeight);
     const progress = -rect.top / (rect.height - window.innerHeight);
     const step = Math.floor(progress * 5);
     const clampedStep = Math.max(0, Math.min(step, 4));
- console.log(progress,step,clampedStep);
-    if(rect.top > 1){
+ console.log(rect.top,progress,step,clampedStep);
+console.log("動畫翻頁",clampedStep);
+    if(rect.top > window.innerHeight/2 ){
         cards[0].classList.remove('aos-animate');
         cards[1].classList.remove('aos-animate');
     }
-    if (rect.top < 1 && rect.bottom >= window.innerHeight && clampedStep > -1) {
+    if (rect.top < (window.innerHeight/2) && rect.bottom >= window.innerHeight && clampedStep > -1) {
 
       let index = clampedStep*2;
+      if (index < 0) index = 0;
       if (index>0){
         cards[index-1].classList.remove('aos-animate');
         cards[index-2].classList.remove('aos-animate');
       }
+      a = index;
       cards[index].classList.add('aos-animate');
       cards[index+1].classList.add('aos-animate');
       if(index<=6){
@@ -276,6 +290,41 @@ document.addEventListener("DOMContentLoaded", () => {
     .forEach(el => observer.observe(el));
 
 });
+
+const area = document.getElementById("app");
+const pages = area.querySelectorAll(".intro-effect");
+
+let lock = 0;
+const scrollStep = window.innerHeight; // 固定每次滾動 100vh
+
+function updatePage(scroll) {
+  console.log(area.scrollTop,scroll)
+  area.scrollTop = area.scrollTop + scroll;
+}
+
+function handleWheel(e) {
+   const target = document.getElementById("game-system");
+
+    if (target.contains(e.target)) {
+         e.preventDefault(); // 阻止原生滾動
+        const now = Date.now();
+        console.log("lock",lock)
+        if (now - lock < 300) return;
+        lock = now;
+
+        if (e.deltaY > 0 ) {
+          updatePage(window.innerHeight);
+        } else {
+          updatePage(window.innerHeight*-1);
+        }
+    }
+}
+
+// 監聽指定區塊滾輪
+area.addEventListener("wheel", handleWheel, { passive: false });
+
+// 初始化
+updatePage();
 
 
 // // 捲動效果控制

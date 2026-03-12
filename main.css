@@ -923,7 +923,6 @@ position: absolute;
     height: 101px;
     background-image: url("./public/img/coner.png"); /* fallback */
     background-image: image-set(
-        url("./public/img/coner.avif") type("image/avif"),
         url("./public/img/coner.webp") type("image/webp"),
         url("./public/img/coner.png") type("image/png")
     );
@@ -1645,7 +1644,7 @@ right:3%;
 }
 
 .scroll-track{
-    height: 400vh; /* 捲動長度：高度越高，動畫前進的速度越慢(越細膩) */
+    height: 600vh; /* 捲動長度：高度越高，動畫前進的速度越慢(越細膩) */
   position: relative;
     scroll-snap-align: none;
 }

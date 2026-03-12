@@ -7,7 +7,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400&family=GenSenRounded2+JP:wght@400;700&family=Georama:wght@500;&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body id="app">
         <header class="site-header">
 			<a class="logo-inline" href="https://www.akaerocore.com/" target="_blank">
                 <picture class="akaerocore_logo">
@@ -23,7 +23,7 @@
                 <span class="visually-hidden">幸福家裡蹲的養成方法 －遊戲介紹頁</span>
             </h1>
 		</header>
-        <main class="app" itemscope itemtype="https://schema.org/VideoGame">
+        <main itemscope itemtype="https://schema.org/VideoGame">
 			<section id="game-section" class=" page">
                 <picture class="game-bg-wrapper">
                     <source srcset="./public/img/main_bg_1.avif" media="(min-width: 1024px)" type="image/avif">
@@ -458,7 +458,7 @@
                 </div>
             </footer>
         </main>
-        <script src="./main.js?t=1" defer></script>
+        <script src="./main.js?t=2" defer></script>
         <div id="lightbox" class="lightbox" onclick="this.classList.remove('active')">
             <img id="lightbox-img" src="" alt="放大圖">
         </div>
