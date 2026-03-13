@@ -232,26 +232,36 @@ document.addEventListener("DOMContentLoaded", () => {
     const clampedStep = Math.max(0, Math.min(step, 4));
     console.log(rect.top,progress,step,clampedStep);
     console.log("動畫翻頁",clampedStep);
-    if(rect.top > startOffset ){
-        cards[0].classList.remove('aos-animate');
-        cards[1].classList.remove('aos-animate');
-    }
-    if (rect.top < (startOffset) && rect.bottom >= window.innerHeight ) {
+    
 
-      let index = clampedStep*2;
-      if (index < 0) index = 0;
-      if (index>0){
-        cards[index-1].classList.remove('aos-animate');
-        cards[index-2].classList.remove('aos-animate');
+    cards.forEach((card, index) => {
+      if (index === clampedStep*2 || index  === (clampedStep*2 + 1) ) {
+        card.classList.add('aos-animate');
+      }else{
+        card.classList.remove('aos-animate');
       }
-      a = index;
-      cards[index].classList.add('aos-animate');
-      cards[index+1].classList.add('aos-animate');
-      if(index<=6){
-        cards[index+2].classList.remove('aos-animate');
-        cards[index+3].classList.remove('aos-animate');
-      }
-  
+    });
+    // if(rect.top > startOffset ){
+    //     cards[0].classList.remove('aos-animate');
+    //     cards[1].classList.remove('aos-animate');
+    // }
+    // if (rect.top < (startOffset) && rect.bottom >= window.innerHeight ) {
+
+    //   let index = clampedStep*2;
+    //   if (index < 0) index = 0;
+    //   if (index>0){
+    //     cards[index-1].classList.remove('aos-animate');
+    //     cards[index-2].classList.remove('aos-animate');
+    //   }
+    //   a = index;
+    //   cards[index].classList.add('aos-animate');
+    //   cards[index+1].classList.add('aos-animate');
+    //   if(index<=6){
+    //     cards[index+2].classList.remove('aos-animate');
+    //     cards[index+3].classList.remove('aos-animate');
+    //   }
+  // }
+
       // cards.forEach((card, index) => {
       //   if (index === clampedStep || (index - 1)  === clampedStep ) {
       //     card.classList.add('active');
@@ -263,7 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
       //     card.classList.remove('active', 'exit');
       //   }
       // });
-    }
+    
   }
 
   const observer = new IntersectionObserver((entries) => {
