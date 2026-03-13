@@ -2,18 +2,14 @@ html {
   height: 100%;
   overflow: hidden; /* 關鍵：這會隱藏系統預設的滾動條 */
 }
-
 a {
     /* 去除底線 */
     text-decoration: none;
-    
     /* 繼承父元素的顏色，或是指定固定顏色（例如 #fff） */
     color: inherit; 
-    
     /* 防止點擊時出現的外框（選用） */
     outline: none;
 }
-
 /* 確保滑鼠移上去時也不會出現底線或變色 */
 a:hover, a:active, a:visited {
     text-decoration: none;
@@ -26,13 +22,10 @@ body {
   height: 100%;
   overflow-y: auto;  /* 讓 body 在垂直內容溢出時產生滾動條 */
   overflow-x: hidden; /* 防止左右出現莫名的小抖動 */
-  
   /* 如果你要搭配磁吸效果，這行必須跟著搬家 */
   scroll-snap-type: y mandatory;
-  
   /* 確保平滑滾動依然有效 */
   scroll-behavior: smooth;
-  
   /* 慣性滾動（針對 iOS Safari 優化） */
   -webkit-overflow-scrolling: touch;
 }
@@ -46,55 +39,22 @@ main{
             url("./public/img/texture_bg_2.png") type("image/png")
         );
     background-position: center;
-background-size: cover;
-background-attachment: fixed;
-
-}
-/* }
-main::after{
-    top:0;
-    left: 0;
-    content: '';
-    width: 100dvw;
-    height: 100dvh;
-    position: fixed;
-  background-image: url("./public/img/texture_bg_2.png"); 
-    background-image: image-set(
-            url("./public/img/texture_bg_2.avif") type("image/avif"),
-            url("./public/img/texture_bg_2.webp") type("image/webp"),
-            url("./public/img/texture_bg_2.png") type("image/png")
-        );
-    background-position: center;
     background-size: cover;
-    z-index: 1;
-    opacity: 0.9;
-    pointer-events: none;
+    background-attachment: fixed;
+}
 
-    clip-path: polygon(
-        /* 1. 先繞外框順時針跑一次 
-        0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 
-        /* 2. 繞回起點後，直接跳到內部菱形的起點，開始逆時針畫 
-        50% 0%,  /* 菱形頂點 
-        0% 50%,  /* 菱形左點 
-        50% 100%,/* 菱形底點 
-        100% 50%,/* 菱形右點 
-        50% 0%   /* 回到菱形頂點 
-    );
-} */
 section.page {
   /* 關鍵屬性：磁吸點設在元素中心 */
   scroll-snap-align: center;
-  
   /* 避免磁吸太敏感，可以增加停止點 */
   scroll-snap-stop: always;
-  
   width: 100%;
- 
   justify-content: center;
   align-items: center;
   position: relative;
   
 }
+/* 功能性css */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -107,10 +67,13 @@ section.page {
   white-space: nowrap;
   border: 0;
 }
+.hide {
+    display: none;
+}
+
 
 #game-section {
   position: relative;
-
 }
 .game_bg1{
     position: absolute;
@@ -165,9 +128,7 @@ section.page {
         );
 }
 
-.hide {
-    display: none;
-}
+
 .mini_character_1{
     margin-top: 20vh;
     position:relative;

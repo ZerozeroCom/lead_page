@@ -117,3 +117,35 @@ position: absolute;
     transform: translateX(-50%) translatey(-50%); 
     z-index: 1;
 }
+
+/* }
+main::after{
+    top:0;
+    left: 0;
+    content: '';
+    width: 100dvw;
+    height: 100dvh;
+    position: fixed;
+  background-image: url("./public/img/texture_bg_2.png"); 
+    background-image: image-set(
+            url("./public/img/texture_bg_2.avif") type("image/avif"),
+            url("./public/img/texture_bg_2.webp") type("image/webp"),
+            url("./public/img/texture_bg_2.png") type("image/png")
+        );
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+    opacity: 0.9;
+    pointer-events: none;
+
+    clip-path: polygon(
+        /* 1. 先繞外框順時針跑一次 
+        0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 
+        /* 2. 繞回起點後，直接跳到內部菱形的起點，開始逆時針畫 
+        50% 0%,  /* 菱形頂點 
+        0% 50%,  /* 菱形左點 
+        50% 100%,/* 菱形底點 
+        100% 50%,/* 菱形右點 
+        50% 0%   /* 回到菱形頂點 
+    );
+} */

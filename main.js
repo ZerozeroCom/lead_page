@@ -225,17 +225,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const rect = track.getBoundingClientRect();
     // console.log('rect',rect);
-     console.log(window.innerHeight);
-    const progress = -rect.top / (rect.height - window.innerHeight);
+    console.log(window.innerHeight);
+    const startOffset = window.innerHeight / 2; // 保留你的初始限制
+    const progress = (startOffset - rect.top) / (rect.height - startOffset );
     const step = Math.floor(progress * 5);
     const clampedStep = Math.max(0, Math.min(step, 4));
- console.log(rect.top,progress,step,clampedStep);
-console.log("動畫翻頁",clampedStep);
-    if(rect.top > window.innerHeight/2 ){
+    console.log(rect.top,progress,step,clampedStep);
+    console.log("動畫翻頁",clampedStep);
+    if(rect.top > startOffset ){
         cards[0].classList.remove('aos-animate');
         cards[1].classList.remove('aos-animate');
     }
-    if (rect.top < (window.innerHeight/2) && rect.bottom >= window.innerHeight && clampedStep > -1) {
+    if (rect.top < (startOffset) && rect.bottom >= window.innerHeight ) {
 
       let index = clampedStep*2;
       if (index < 0) index = 0;
