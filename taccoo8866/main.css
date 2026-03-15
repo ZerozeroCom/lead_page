@@ -267,6 +267,7 @@ section.page {
     padding-left: 24px;
     padding-bottom: 24px;
     width:45vw;
+    margin: 0 auto;
     @media (min-width: 1024px) {
         padding-bottom: 0;
         padding-left: 56px;
@@ -1301,14 +1302,27 @@ ul hr{
     }
     .footer{
         flex-direction:column;
+        gap: 0;
         @media (min-width: 1024px) {
             flex-direction:row;
+            gap: 24px;
         }
         max-width: 1180px;
         height: 100%;
-        gap: 24px;
         color: #FFFFFF;
         align-items: center;
+    }
+    .akaeroCore_Co{
+        display: none;
+        @media (min-width: 1024px) {
+            display: block;
+        }
+    }
+    .akaeroCore_Co.mobile{
+        display: block;
+        @media (min-width: 1024px) {
+            display: none;
+        }
     }
 .spec-list{
     display: flex;
@@ -1361,7 +1375,7 @@ li strong.border {
     #age-warning img{
     width: 84px;
     height: 84px;
-    padding: 0px 8px;
+    padding: 16px;
     @media (min-width: 1024px) {
         padding: 0px 32px;
     }

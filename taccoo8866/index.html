@@ -26,7 +26,7 @@
 		</header>
         <main itemscope itemtype="https://schema.org/VideoGame">
 			<section id="game-section" class=" page">
-                <picture class="game-bg-wrapper">
+                <picture class="game-bg-wrapper" aria-hidden="true">
                     <source srcset="./img/main_bg_1.avif" media="(min-width: 1024px)" type="image/avif">
                     <source srcset="./img/main_bg_1.webp" media="(min-width: 1024px)" type="image/webp">
                     <source srcset="./img/main_bg_1_m.webp" type="image/webp">
@@ -452,10 +452,11 @@
                         </picture>
                         <div>
                             <p id="footer-text">本網站與遊戲包含成人與限制級內容。所有角色皆為十八歲以上成年人。請注意遊玩時間，保持理性與節制。</p>
-                            <p id="">© 2025 akaeroCore Co., Ltd. All rights reserved.</p>
+                            <p class="akaeroCore_Co">© 2025 akaeroCore Co., Ltd. All rights reserved.</p>
                         </div>
                     </div>
                     <picture class="akaerocore_logo">
+                        <p class="akaeroCore_Co mobile" aria-hidden="true">© 2025 akaeroCore Co., Ltd. All rights reserved.</p>
                         <img src="./img/aka-logo.webp" alt="發行商 Akarecore" >
                     </picture>
                 </div>
@@ -463,7 +464,7 @@
         </main>
         <script src="./main.js?t=2" defer></script>
         <div id="lightbox" class="lightbox" onclick="this.classList.remove('active')">
-            <img id="lightbox-img" src="" alt="放大圖">
+            <img id="lightbox-img" src="" alt="放大圖" aria-hidden="true">
         </div>
     </body>
 </html>
