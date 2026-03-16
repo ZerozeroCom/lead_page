@@ -977,8 +977,14 @@ position: absolute;
 }
 .paper_clip{
     position: absolute;
-    width: 46px;
-    height: 76px;
+    width: 36px;
+    height: 66px;
+    background-size: 36px 66px;/* 調整圖大小 */
+    @media (min-width: 1024px) {
+        width: 46px;
+        height: 76px;
+        background-size: 46px 76px;/* 調整圖大小 */
+    }
     top: -15px;
     right: 15px;
     background-image: url("./img/paper_clip.png"); /* fallback */
@@ -987,7 +993,7 @@ position: absolute;
         url("./img/paper_clip.webp") type("image/webp"),
         url("./img/paper_clip.png") type("image/png")
     );
-    background-size: 46px 76px;/* 調整圖大小 */
+    
   }
 .corner{
     position: absolute;
@@ -1506,7 +1512,7 @@ li strong.border {
     width: 100%;
 }
 #preview-cg1{
-    width: 55vw;
+    width: 60vw;
     @media (min-width: 1024px) {
         width: clamp(235px, 44vw, 441px);
     }
@@ -1516,13 +1522,15 @@ li strong.border {
 .preview-cg1{
     left:30%;
     top:10%;
+    margin-left: 5px;
     @media (min-width: 1024px) {
+        margin-inline-start: 40px;
         transform: translateX(-20%) translateY(-20%);
     }
     z-index: 2;
 }
 #preview-cg2{
-    width: 55vw;
+    width: 60vw;
     @media (min-width: 1024px) {
         width: clamp(228px, 44vw, 428px);
     }
@@ -1533,10 +1541,16 @@ li strong.border {
     left: calc(50% - 150px);
     top:18%;
     z-index: 4;
+    margin-top: -26.2vw;
+    margin-right: 5px;
+    @media (min-width: 1024px) {
+        margin-inline-end: 40px;
+        margin-top: 0;
+    }
 }
 
 #preview-cg3{
-    width: 55vw;
+    width: 60vw;
     @media (min-width: 1024px) {
         width: clamp(235px, 44vw, 441px);
     }
@@ -1551,9 +1565,15 @@ li strong.border {
         transform: translateX(-40%) translateY(10%);
     }
     z-index: 6;
+    margin-top: -24.2vw;
+    margin-left: -10px;
+    @media (min-width: 1024px) {
+        margin-inline-start: 40px;
+        margin-top: 0;
+    }
 }
 #preview-cg4{
-    width: 55vw;
+    width: 60vw;
     @media (min-width: 1024px) {
         width: clamp(249px, 44vw, 516px);
     }
@@ -1568,10 +1588,16 @@ li strong.border {
     }
     top:15%;
     z-index: 3;
+    margin-top: -26.2vw;
+    margin-right: -25px;
+    @media (min-width: 1024px) {
+        margin-inline-end: 40px;
+        margin-top: 0;
+    }
 }
 
 #preview-cg5{
-    width: 55vw;
+    width: 60vw;
     @media (min-width: 1024px) {
         width: clamp(224px, 44vw, 441px);
     }
@@ -1586,6 +1612,12 @@ li strong.border {
         transform: translateX(20%) translateY(-5%);
     }
     z-index: 3;
+    margin-top: -26.2vw;
+    margin-left: 5px;
+    @media (min-width: 1024px) {
+        margin-inline-start: 40px;
+        margin-top: 0;
+    }
 }
 .mobi-left{
     margin-left: 2vw;
@@ -1600,7 +1632,7 @@ li strong.border {
     }
 }
 #preview-cg6{
-    width: 55vw;
+    width: 60vw;
     @media (min-width: 1024px) {
         width: clamp(256px, 44vw, 479px);
     }
@@ -1614,9 +1646,15 @@ li strong.border {
         transform: translateX(30%) translateY(5%);
     }
     z-index: 4;
+    margin-top: -26.2vw;
+    margin-right: 5px;
+    @media (min-width: 1024px) {
+        margin-inline-end: 40px;
+        margin-top: 0;
+    }
 }
 #preview-cg7{
-    width: 55vw;
+    width: 60vw;
     @media (min-width: 1024px) {
         width: clamp(226px, 44vw, 441px);
     }
@@ -1631,6 +1669,12 @@ li strong.border {
         transform: translateX(-5%) translateY(15%);
     }
     z-index: 5;
+    margin-top: -26.2vw;
+    margin-left: 5px;
+    @media (min-width: 1024px) {
+        margin-inline-start: 40px;
+        margin-top: 0;
+    }
 }
 
 /* 圖片預覽遮罩 */
