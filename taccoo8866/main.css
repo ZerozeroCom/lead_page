@@ -224,10 +224,14 @@ section.page {
 .game-bg-wrapper img{
     min-height: 100dvh;
     max-height: 110dvh;
-    @media (max-height: 768px) {
-        @media (orientation: landscape) {
-            min-height: 200dvh;
+    @media (orientation: landscape) {
+        @media (max-height: 768px) {
+            min-height:200dvh;
             max-height: 220dvh;
+        }
+        @media (max-height: 320px) {
+            min-height: 300dvh;
+            max-height: 230dvh;
         }
     }
     object-fit: cover;
@@ -424,17 +428,19 @@ button img{
 }
 /* === 下排下載 === */
 .btn-download {
-    min-width: 328px;
+    
     background: linear-gradient(180deg, #FFA552 0%, #FFCB3B 100%);
     width: 93vw;
-    height: clamp(42px, 5vw, 84px);
-    aspect-ratio:auto;
+    height: auto;
+    aspect-ratio: 190 / 21;
     border: 2px solid #FFE2B8; 
     -webkit-text-stroke: 2px #C55B0B;
     box-shadow: 0px 5px 0px 0px #F58B1F;
     @media (min-width: 1024px) {
         width: auto;
-        
+        height: clamp(42px, 5vw, 84px);
+        aspect-ratio:auto;
+        min-width: 328px;
         max-width: 80vw;
     }
 }
@@ -768,9 +774,12 @@ position: absolute;
 }
 .page{
     height:100dvh;
-    @media (max-height: 768px) {
-        @media (orientation: landscape) {
+    @media (orientation: landscape) {
+        @media (max-height: 768px) {
             height:200dvh;
+        }
+        @media (max-height: 320px) {
+            height: 300dvh;
         }
     }
 }
@@ -1132,9 +1141,12 @@ position: absolute;
     #summary .row{
         flex-direction:column;
         width: auto;  
+        @media (min-width: 1024px) {
+            flex-direction: row;
+        }
         @media (min-width: 1080px) {
             width: 1064px;  
-            flex-direction: row;
+
         }
     }
 
@@ -1176,23 +1188,23 @@ position: absolute;
 }
 .summary-info{
     border-radius: 16px;
-     flex: 3;
-     width: 45vh;
+    flex: 3;
+    width: 98vw;
     @media (min-width: 1024px) {
         width: auto;
     }
 }
 .summary-box{
-    
-    margin-left: 21px;
     border-radius: 16px;
-    margin-right: 21px;
+    margin: 0 2.5vw;
      width: auto;
-     height: 394px;
+     height: auto;
      @media (min-width: 1024px) {
-        margin-top: 32px;
-         width: 579px;
-         margin-right: 0;
+        height: 394px;
+        margin-top: -4px;
+        width: 579px;
+        margin-right: 0;
+        margin-left: 21px;
      }
 }
 .price{
@@ -1225,8 +1237,14 @@ ul hr{
          text-align: end;
         height: auto;
         width: 45vh;
+        max-width: 96vw;
         aspect-ratio: 1 / 1;
+        margin: 0 auto;
+        @media (orientation: landscape) and (max-height: 400px) {
+            width: 45vw;
+        }
         @media (min-width: 1024px) {
+            margin:0;
             width: 427px;
         }
         
@@ -1688,8 +1706,8 @@ li strong.border {
     display: flex;
     flex-direction: row;
     font-weight: 500;
-    font-size: 20px;
-    line-height: 37px;
+    font-size: clamp(16px, 2dvh, 20px);
+    line-height:  clamp(24px, 3.5dvh, 37px);
     letter-spacing: 1px;
     color: #3C2B51;
     top: 50svh;
