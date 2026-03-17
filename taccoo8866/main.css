@@ -1857,8 +1857,8 @@ right:3%;
 
 .scroll-track{
     height: 500dvh; /* 捲動長度：高度越高，動畫前進的速度越慢(越細膩) */
-  position: relative;
-    scroll-snap-align: none;
+    position: relative;
+    scroll-snap-align: center;
 }
 
 .sticky-content {
