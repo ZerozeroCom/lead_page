@@ -89,6 +89,17 @@ document.querySelectorAll('.chat-row').forEach(row => {
 });
 let scrollLock = 0;
 let a = 0;
+try {
+    //禁用
+    document.oncontextmenu = function() {
+        return false;
+    }
+    document.ondragstart = function() {
+        return false;
+    }
+} catch (e) {
+    console.error(e.message);
+}
 document.addEventListener("DOMContentLoaded", () => {
 
   const track = document.getElementById('game-system');
