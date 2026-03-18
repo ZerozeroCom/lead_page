@@ -26,18 +26,16 @@ body {
   scroll-snap-type: y mandatory;
   /* 確保平滑滾動依然有效 */
   scroll-behavior: smooth;
-  /* 慣性滾動（針對 iOS Safari 優化） */
-  -webkit-overflow-scrolling: touch;
 }
 
 main{
     background-color: #f5f5f5;
-  background-image: url("./img/texture_bg_2.png"); 
+    background-image: url("./img/texture_bg_2.png"); 
     background-image: image-set(
-            url("./img/texture_bg_2.avif") type("image/avif"),
-            url("./img/texture_bg_2.webp") type("image/webp"),
-            url("./img/texture_bg_2.png") type("image/png")
-        );
+        url("./img/texture_bg_2.avif") type("image/avif"),
+        url("./img/texture_bg_2.webp") type("image/webp"),
+        url("./img/texture_bg_2.png") type("image/png")
+    );
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -54,7 +52,6 @@ section.page {
   justify-content: center;
   align-items: center;
   position: relative;
-  
 }
 p{
     font-family: 'Inter';
@@ -399,11 +396,7 @@ button img{
     width: 100%;
     margin:auto 0 ;
 }
-/* button.btn-dl img{
-    width: 133.3333%;
-    object-fit: cover;
-    margin:auto 0 ;
-} */
+
 /* === 左上 STEAM === */
 .btn-steam {
     background: linear-gradient(180deg, #DF7797 0%, #F4B7C6 100%);
@@ -431,7 +424,6 @@ button img{
 }
 /* === 下排下載 === */
 .btn-download {
-    
     background: linear-gradient(180deg, #FFA552 0%, #FFCB3B 100%);
     width: 93vw;
     height: auto;
@@ -468,6 +460,10 @@ button img{
     min-height: 98dvh;
     margin-bottom: 2dvh;
     height: 200dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     @media (min-width: 300px) {
         max-height: 969px;
     }
@@ -476,11 +472,6 @@ button img{
         margin-bottom: 0;
         min-height: 80dvh;
     }
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 .panel_border{
      position: relative;
@@ -596,7 +587,7 @@ position: absolute;
 
 .panel_border_wrapper{
     position: absolute;
-      margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
     padding-top: 10%;
     padding-bottom: 9%;
@@ -787,15 +778,6 @@ position: absolute;
     border-radius: 12px;
 }
 
-/* 強制覆寫：若 header 內的圖片被其他規則（opacity/filter/mix-blend）影響，
-   先將其還原為完全不透明、正常混合模式以便檢查原因 */
-.site-header img,
-.site-header picture img{
-  opacity: 1 !important;
-  filter: none !important;
-  mix-blend-mode: normal !important;
-  -webkit-filter: none !important;
-}
 .page{
     height:100dvh;
     @media (orientation: landscape) {
@@ -1248,9 +1230,7 @@ letter-spacing: 1px;
 
 }
 ul hr{
-    width: 100%;
-    height: 1px;
-        font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Noto Sans TC', sans-serif;
     list-style: none;
     width: 100%;
     height: 1px;
@@ -1453,50 +1433,66 @@ li strong.border {
         transform: rotate(5.93deg);
     }
 
-    /* 定義基礎樣式與轉場速度 */
-[data-native-aos] {
-  transition-duration: 800ms;
-  transition-timing-function: ease-out;
-  transition-property: opacity, transform;
-}
 
-/* fade-up-left 的初始狀態：向下 30px，向右 30px */
-[data-native-aos="fade-up-left"] {
-  opacity: 0;
-  transform: translate(25vmin, 25vmin);
-  transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform; /* 告訴瀏覽器準備硬體加速 */
-}
-[data-native-aos="fade-left"] {
-  opacity: 0;
-  transform: translate(25vmin,0);
-  transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform; /* 告訴瀏覽器準備硬體加速 */
-}
-[data-native-aos="fade-right"] {
-  opacity: 0;
-  transform: translate(-25vmin, 0);
-  transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform; /* 告訴瀏覽器準備硬體加速 */
-}
-[data-native-aos="fade-up-right"] {
-  opacity: 0;
-  transform: translate(25vmin, -25vmin);
-  transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform; /* 告訴瀏覽器準備硬體加速 */
-}
-/* 當進入視窗後，加上這個類別來觸發動畫 */
-/* 啟動狀態：回到原位 */
-[data-native-aos].aos-animate {
-  opacity: 1;
-  transform: translate(0, 0);
-  transition-timing-function:cubic-bezier(.175, .885, .32, 1.275);
-}
+.js {
+        /* 定義基礎樣式與轉場速度 */
+    [data-native-aos] {
+    transition-duration: 800ms;
+    transition-timing-function: ease-out;
+    transition-property: opacity, transform;
+    }
+    /* fade-up-left 的初始狀態：向下 30px，向右 30px */
+    [data-native-aos="fade-up-left"] {
+    opacity: 0;
+    transform: translate(25vmin, 25vmin);
+    transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform; /* 告訴瀏覽器準備硬體加速 */
+    }
+    [data-native-aos="fade-left"] {
+    opacity: 0;
+    transform: translate(25vmin,0);
+    transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform; /* 告訴瀏覽器準備硬體加速 */
+    }
+    [data-native-aos="fade-right"] {
+    opacity: 0;
+    transform: translate(-25vmin, 0);
+    transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform; /* 告訴瀏覽器準備硬體加速 */
+    }
+    [data-native-aos="fade-up-right"] {
+    opacity: 0;
+    transform: translate(25vmin, -25vmin);
+    transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform; /* 告訴瀏覽器準備硬體加速 */
+    }
+    /* 當進入視窗後，加上這個類別來觸發動畫 */
+    /* 啟動狀態：回到原位 */
+    [data-native-aos].aos-animate {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition-timing-function:cubic-bezier(.175, .885, .32, 1.275);
+    }
 
+}
+.no-js{
+    .sticky-content {
+        position:relative;
+        flex-direction: column;
+        height:100%;
+    }
+    .chat-row {
+        top: auto;
+        bottom: 10svh;
+    }
+    .intro-effect{
+        position: relative;
+    }
+}
 
 /* 照片牆 */
 .gallery-section figure picture img {
@@ -1553,27 +1549,23 @@ li strong.border {
 .preview-cg3{
     left:20%;
     top:45%;
-    @media (min-width: 1024px) {
-        transform: translateX(-40%) translateY(10%);
-    }
     z-index: 6;
     margin-top: -22vw;
     margin-left: -10px;
     @media (min-width: 1024px) {
+        transform: translateX(-40%) translateY(10%);
         margin-inline-start: 40px;
         margin-top: 0;
     }
 }
 #preview-cg4{
+    height: auto;
     width: 58vw;
     transform: rotate(5.71deg);
     @media (min-width: 1024px) {
         width: clamp(249px, 44vw, 516px);
         transform: rotate(-7.79deg);
-    }
-    height: auto;
-    
-    
+    } 
 }
 .preview-cg4{
     left:12%;
@@ -1619,7 +1611,7 @@ li strong.border {
 }
 .mobi-right{
     margin-left: auto;
-        @media (min-width: 1024px) {
+    @media (min-width: 1024px) {
         margin-left: 0;
     }
 }
@@ -1671,7 +1663,8 @@ li strong.border {
 .lightbox {
     position: fixed;
     top: 0; left: 0;
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.85); /* 半透明黑 */
     backdrop-filter: blur(5px);      /* 背景模糊 */
     display: flex;
@@ -1876,7 +1869,6 @@ right:3%;
   align-items: center;
   overflow: visible;
 }
-
 
 .intro-effect {
   position: absolute; 
