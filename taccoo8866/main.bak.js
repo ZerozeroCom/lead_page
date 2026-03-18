@@ -193,3 +193,60 @@ document.addEventListener("wheel", function(e) {
   }
   return direction;
 }, { passive: false });
+
+
+
+let lastScrollTop = 0;
+let nowStep = -1;
+document.addEventListener("DOMContentLoaded", () => { 
+  const track = document.getElementById('game-system');
+  const cards = document.querySelectorAll('.intro-effect');
+  function onScroll() {
+    const now = Date.now();
+    const currentScroll = document.body.scrollTop; 
+    const isScrollingDown = currentScroll > lastScrollTop;
+    lastScrollTop = currentScroll;
+    const rect = track.getBoundingClientRect();
+    let startOffset = window.innerHeight / 2; // 保留你的初始限制
+    const stepHeight = track.offsetHeight / 5;
+    if(!isScrollingDown){
+      startOffset *= -1;
+    }
+    const targetScroll = track.offsetTop + startOffset + (stepHeight * nowStep);
+    if (now - scrollLock < 500) {
+      if (nowStep > 4) nowStep = 4;
+      if (nowStep < 0) nowStep = 0;
+      console.log("<300 track.offsetHeight:",track.offsetHeight);
+      console.log("stepHeight:",stepHeight,"targetScroll:",targetScroll);
+      document.body.scrollTo({ top: targetScroll - startOffset, behavior: 'smooth' });
+      return
+    };
+    scrollLock = now;
+    if(isScrollingDown){
+      if (nowStep < 4 ){
+        nowStep+=1;
+      }
+    }else{
+      if (nowStep >= 0){
+        nowStep-=1;
+      }
+    }
+    document.body.scrollTo({ top: targetScroll+startOffset, behavior: 'smooth' });
+    console.log("nowStep",nowStep);
+    const clampedStep = nowStep;
+    
+    console.log(window.innerHeight);
+    console.log(rect.top,nowStep,clampedStep);
+    console.log("動畫翻頁",clampedStep);
+
+    cards.forEach((card, index) => {
+      if (index === clampedStep*2 || index  === (clampedStep*2 + 1) ) {
+        card.classList.add('aos-animate');
+      }else{
+        card.classList.remove('aos-animate');
+      }
+      
+    });
+
+  }
+});

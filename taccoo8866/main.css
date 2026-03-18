@@ -17,7 +17,7 @@ a:hover, a:active, a:visited {
 }
 body {
   position: relative;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'Noto Sans TC', 'sans-serif';
   margin: 0;
   height: 100%;
   overflow-y: auto;  /* 讓 body 在垂直內容溢出時產生滾動條 */
@@ -54,7 +54,7 @@ section.page {
   position: relative;
 }
 p{
-    font-family: 'Inter';
+    font-family: 'Inter' ,'Noto Sans TC', 'sans-serif';;
 }
 /* 功能性css */
 .visually-hidden {
@@ -337,12 +337,13 @@ margin: 0 auto;
 
 .btn-group{
     width: 100%;
-    margin-top: -48px;
+    margin-top: -56px;
     display: flex;
     flex-direction: column;
     align-items: stretch;       /* 下排按鈕置中 */
-    gap: 3vw; 
+    gap: 3.5vw; 
     @media (min-width: 1024px) {
+        margin-top: -48px;
         gap: 16px;
     }
 }
@@ -362,7 +363,7 @@ margin: 0 auto;
     align-items: center;   /* 垂直置中：解決 SVG 偏上或偏下的問題 */
     justify-content: center; /* 水平置中：解決偏一邊的問題 */
     gap: 8px;
-    padding: 7px 18Px;
+    padding: 14px 18Px;
     border-radius: 14px;
     @media (min-width: 1024px) {
         padding: 14px 36px;
@@ -417,7 +418,6 @@ button img{
 }
 .btn-download img{
     max-height: 38px;
-    width: 60%;
     @media (min-width: 1024px) {
         width: auto;
     }
@@ -425,9 +425,6 @@ button img{
 /* === 下排下載 === */
 .btn-download {
     background: linear-gradient(180deg, #FFA552 0%, #FFCB3B 100%);
-    width: 93vw;
-    height: auto;
-    aspect-ratio: 190 / 21;
     border: 2px solid #FFE2B8; 
     -webkit-text-stroke: 2px #C55B0B;
     box-shadow: 0px 5px 0px 0px #F58B1F;
@@ -1230,7 +1227,6 @@ letter-spacing: 1px;
 
 }
 ul hr{
-    font-family: 'Noto Sans TC', sans-serif;
     list-style: none;
     width: 100%;
     height: 1px;
@@ -1336,14 +1332,14 @@ ul {
 
 }
 li span {
-    font-family:  'Georama','Chiron GoRound TC';/*'PingFang TC'*/
+    font-family:  'Georama','Chiron GoRound TC','sans-serif';/*'PingFang TC'*/
     font-weight: 500;
     font-size: 20px;
     line-height: 34px;
     letter-spacing: 1px;
 }
 li strong.border {
-     font-family:  'Georama','Chiron GoRound TC';/*'PingFang TC'*/
+     font-family:  'Georama','Chiron GoRound TC','sans-serif';/*'PingFang TC'*/
     font-weight: 500;
     font-size: 20px;
     line-height: 34px;
@@ -1858,7 +1854,11 @@ right:3%;
         scroll-snap-align: center;
     }
 }
-
+.mac .scroll-track{
+    @media (min-width: 1024px) {
+        height: 1500dvh;
+    }
+}
 .sticky-content {
   position: sticky;
   top: 0;
