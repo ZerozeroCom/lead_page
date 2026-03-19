@@ -30,11 +30,11 @@ body {
 
 main{
     background-color: #f5f5f5;
-    background-image: url("./img/texture_bg_2.png"); 
+    background-image: url("../img/texture_bg_2.png"); 
     background-image: image-set(
-        url("./img/texture_bg_2.avif") type("image/avif"),
-        url("./img/texture_bg_2.webp") type("image/webp"),
-        url("./img/texture_bg_2.png") type("image/png")
+        url("../img/texture_bg_2.avif") type("image/avif"),
+        url("../img/texture_bg_2.webp") type("image/webp"),
+        url("../img/texture_bg_2.png") type("image/png")
     );
     background-position: center;
     background-size: cover;
@@ -54,7 +54,7 @@ section.page {
   position: relative;
 }
 p{
-    font-family: 'Inter' ,'Noto Sans TC', 'sans-serif';;
+    font-family: 'Inter' ,'Noto Sans TC', 'sans-serif';
 }
 /* 功能性css */
 .visually-hidden {
@@ -72,7 +72,6 @@ p{
 .hide {
     display: none;
 }
-
 
 #game-section {
   position: relative;
@@ -96,11 +95,11 @@ p{
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("./img/texture_bg_1.png"); /* fallback */
+    background-image: url("../img/texture_bg_1.png"); /* fallback */
     background-image: image-set(
-        url("./img/texture_bg_1.avif") type("image/avif"),
-        url("./img/texture_bg_1.webp") type("image/webp"),
-        url("./img/texture_bg_1.png") type("image/png")
+        url("../img/texture_bg_1.avif") type("image/avif"),
+        url("../img/texture_bg_1.webp") type("image/webp"),
+        url("../img/texture_bg_1.png") type("image/png")
         );
 }
 .game_bg2{
@@ -122,11 +121,11 @@ p{
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("./img/texture_bg_1.png"); /* fallback */
+    background-image: url("../img/texture_bg_1.png"); /* fallback */
     background-image: image-set(
-        url("./img/texture_bg_1.avif") type("image/avif"),
-        url("./img/texture_bg_1.webp") type("image/webp"),
-        url("./img/texture_bg_1.png") type("image/png")
+        url("../img/texture_bg_1.avif") type("image/avif"),
+        url("../img/texture_bg_1.webp") type("image/webp"),
+        url("../img/texture_bg_1.png") type("image/png")
         );
 }
 
@@ -509,9 +508,9 @@ position: absolute;
     right: 30px;
     bottom:-13%;
  background-image: image-set(
-        url("./img/texture_bg_1.avif") type("image/avif"),
-        url("./img/texture_bg_1.webp") type("image/webp"),
-        url("./img/texture_bg_1.png") type("image/png")
+        url("../img/texture_bg_1.avif") type("image/avif"),
+        url("../img/texture_bg_1.webp") type("image/webp"),
+        url("../img/texture_bg_1.png") type("image/png")
     );
     background-size: contain;
     background-repeat: no-repeat;
@@ -527,9 +526,9 @@ position: absolute;
     left: 10%;
     top:0%;
  background-image: image-set(
-        url("./img/texture_bg_1.avif") type("image/avif"),
-        url("./img/texture_bg_1.webp") type("image/webp"),
-        url("./img/texture_bg_1.png") type("image/png")
+        url("../img/texture_bg_1.avif") type("image/avif"),
+        url("../img/texture_bg_1.webp") type("image/webp"),
+        url("../img/texture_bg_1.png") type("image/png")
     );
     background-size: contain;
     background-repeat: no-repeat;
@@ -544,9 +543,9 @@ position: absolute;
     width: 666.91px;
     bottom: 5%;
     background-image: image-set(
-        url("./img/sakura-L.avif") type("image/avif"),
-        url("./img/sakura-L.webp") type("image/webp"),
-        url("./img/sakura-L.png") type("image/png")
+        url("../img/sakura-L.avif") type("image/avif"),
+        url("../img/sakura-L.webp") type("image/webp"),
+        url("../img/sakura-L.png") type("image/png")
     );
     background-size: contain;
     background-repeat: no-repeat;
@@ -566,9 +565,9 @@ position: absolute;
     width: 548.83px;
     top:-3.5%;
     background-image: image-set(
-        url("./img/sakura-inside-R.avif") type("image/avif"),
-        url("./img/sakura-inside-R.webp") type("image/webp"),
-        url("./img/sakura-inside-R.png") type("image/png")
+        url("../img/sakura-inside-R.avif") type("image/avif"),
+        url("../img/sakura-inside-R.webp") type("image/webp"),
+        url("../img/sakura-inside-R.png") type("image/png")
     );
     background-size: contain;
     background-repeat: no-repeat;
@@ -670,11 +669,11 @@ position: absolute;
     
     left: 0;
     position: absolute;
-    background-image: url("./img/section_bg.png"); /* fallback */
+    background-image: url("../img/section_bg.png"); /* fallback */
     background-image: image-set(
-        url("./img/section_bg.avif") type("image/avif"),
-        url("./img/section_bg.webp") type("image/webp"),
-        url("./img/section_bg.png") type("image/png")
+        url("../img/section_bg.avif") type("image/avif"),
+        url("../img/section_bg.webp") type("image/webp"),
+        url("../img/section_bg.png") type("image/png")
     );
     bottom: -15dvh;
     background-size: cover; 
@@ -705,11 +704,11 @@ position: absolute;
     height: 125%;
     width: 130%;
     position: absolute;
-    background-image: url("./img/video_border.png"); /* fallback */
+    background-image: url("../img/video_border.png"); /* fallback */
     background-image: image-set(
-        url("./img/video_border.avif") type("image/avif"),
-        url("./img/video_border.webp") type("image/webp"),
-        url("./img/video_border.png") type("image/png")
+        url("../img/video_border.avif") type("image/avif"),
+        url("../img/video_border.webp") type("image/webp"),
+        url("../img/video_border.png") type("image/png")
     );
     top: 50%;
     background-size: 86% 100%; /* 寬度縮到 80%，高度維持 100% */
@@ -724,9 +723,9 @@ position: absolute;
     z-index: 5;
     position: absolute;
     background-image: image-set(
-        url("./img/sakura-inside-L.avif") type("image/avif"),
-        url("./img/sakura-inside-L.webp") type("image/webp"),
-        url("./img/sakura-inside-L.png") type("image/png")
+        url("../img/sakura-inside-L.avif") type("image/avif"),
+        url("../img/sakura-inside-L.webp") type("image/webp"),
+        url("../img/sakura-inside-L.png") type("image/png")
     );
     background-size: contain;
     background-repeat: no-repeat;
@@ -748,9 +747,9 @@ position: absolute;
     z-index: 5;
     position: absolute;
     background-image: image-set(
-        url("./img/sakura-inside-R.avif") type("image/avif"),
-        url("./img/sakura-inside-R.webp") type("image/webp"),
-        url("./img/sakura-inside-R.png") type("image/png")
+        url("../img/sakura-inside-R.avif") type("image/avif"),
+        url("../img/sakura-inside-R.webp") type("image/webp"),
+        url("../img/sakura-inside-R.png") type("image/png")
     );
     background-size: contain;
     background-repeat: no-repeat;
@@ -821,11 +820,11 @@ position: absolute;
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("./img/sakura-L.png"); /* fallback */
+    background-image: url("../img/sakura-L.png"); /* fallback */
     background-image: image-set(
-        url("./img/sakura-L.avif") type("image/avif"),
-        url("./img/sakura-L.webp") type("image/webp"),
-        url("./img/sakura-L.png") type("image/png")
+        url("../img/sakura-L.avif") type("image/avif"),
+        url("../img/sakura-L.webp") type("image/webp"),
+        url("../img/sakura-L.png") type("image/png")
     );
 }
 .main_character::after{
@@ -841,11 +840,11 @@ position: absolute;
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("./img/texture_bg_1.png"); /* fallback */
+    background-image: url("../img/texture_bg_1.png"); /* fallback */
     background-image: image-set(
-        url("./img/texture_bg_1.avif") type("image/avif"),
-        url("./img/texture_bg_1.webp") type("image/webp"),
-        url("./img/texture_bg_1.png") type("image/png")
+        url("../img/texture_bg_1.avif") type("image/avif"),
+        url("../img/texture_bg_1.webp") type("image/webp"),
+        url("../img/texture_bg_1.png") type("image/png")
     );
 }
 .main_character img{
@@ -886,11 +885,11 @@ position: absolute;
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("./img/sakura-L.png"); /* fallback */
+    background-image: url("../img/sakura-L.png"); /* fallback */
     background-image: image-set(
-        url("./img/sakura-L.avif") type("image/avif"),
-        url("./img/sakura-L.webp") type("image/webp"),
-        url("./img/sakura-L.png") type("image/png")
+        url("../img/sakura-L.avif") type("image/avif"),
+        url("../img/sakura-L.webp") type("image/webp"),
+        url("../img/sakura-L.png") type("image/png")
     );
 }
 .word_art_2{
@@ -950,11 +949,11 @@ position: absolute;
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("./img/texture_bg_1.png"); /* fallback */
+    background-image: url("../img/texture_bg_1.png"); /* fallback */
     background-image: image-set(
-        url("./img/texture_bg_1.avif") type("image/avif"),
-        url("./img/texture_bg_1.webp") type("image/webp"),
-        url("./img/texture_bg_1.png") type("image/png")
+        url("../img/texture_bg_1.avif") type("image/avif"),
+        url("../img/texture_bg_1.webp") type("image/webp"),
+        url("../img/texture_bg_1.png") type("image/png")
     );
 }
 .summary-background::after{
@@ -969,11 +968,11 @@ position: absolute;
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("./img/sakura-L.png"); /* fallback */
+    background-image: url("../img/sakura-L.png"); /* fallback */
     background-image: image-set(
-        url("./img/sakura-L.avif") type("image/avif"),
-        url("./img/sakura-L.webp") type("image/webp"),
-        url("./img/sakura-L.png") type("image/png")
+        url("../img/sakura-L.avif") type("image/avif"),
+        url("../img/sakura-L.webp") type("image/webp"),
+        url("../img/sakura-L.png") type("image/png")
     );
 }
 .paper_clip{
@@ -988,11 +987,11 @@ position: absolute;
     }
     top: -15px;
     right: 15px;
-    background-image: url("./img/paper_clip.png"); /* fallback */
+    background-image: url("../img/paper_clip.png"); /* fallback */
     background-image: image-set(
-        url("./img/paper_clip.avif") type("image/avif"),
-        url("./img/paper_clip.webp") type("image/webp"),
-        url("./img/paper_clip.png") type("image/png")
+        url("../img/paper_clip.avif") type("image/avif"),
+        url("../img/paper_clip.webp") type("image/webp"),
+        url("../img/paper_clip.png") type("image/png")
     );
     
   }
@@ -1000,10 +999,10 @@ position: absolute;
     position: absolute;
     width: 101px;
     height: 101px;
-    background-image: url("./img/coner.png"); /* fallback */
+    background-image: url("../img/coner.png"); /* fallback */
     background-image: image-set(
-        url("./img/coner.webp") type("image/webp"),
-        url("./img/coner.png") type("image/png")
+        url("../img/coner.webp") type("image/webp"),
+        url("../img/coner.png") type("image/png")
     );
     background-size: 101px 101px;/* 調整圖大小 */
   }
@@ -1095,11 +1094,11 @@ position: absolute;
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("./img/texture_bg_1.png"); /* fallback */
+    background-image: url("../img/texture_bg_1.png"); /* fallback */
     background-image: image-set(
-        url("./img/texture_bg_1.avif") type("image/avif"),
-        url("./img/texture_bg_1.webp") type("image/webp"),
-        url("./img/texture_bg_1.png") type("image/png")
+        url("../img/texture_bg_1.avif") type("image/avif"),
+        url("../img/texture_bg_1.webp") type("image/webp"),
+        url("../img/texture_bg_1.png") type("image/png")
         );
 }
 #gallery::after{
@@ -1120,11 +1119,11 @@ position: absolute;
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("./img/texture_bg_1.png"); /* fallback */
+    background-image: url("../img/texture_bg_1.png"); /* fallback */
     background-image: image-set(
-        url("./img/texture_bg_1.avif") type("image/avif"),
-        url("./img/texture_bg_1.webp") type("image/webp"),
-        url("./img/texture_bg_1.png") type("image/png")
+        url("../img/texture_bg_1.avif") type("image/avif"),
+        url("../img/texture_bg_1.webp") type("image/webp"),
+        url("../img/texture_bg_1.png") type("image/png")
         );
 }
     #summary{
@@ -1348,11 +1347,11 @@ li strong.border {
     height: 36px;
     line-height: 36px;
     text-align: center;
-    background-image: url("./img/info_list_border.png"); /* fallback */
+    background-image: url("../img/info_list_border.png"); /* fallback */
     background-image: image-set(
-        url("./img/info_list_border.avif") type("image/avif"),
-        url("./img/info_list_border.webp") type("image/webp"),
-        url("./img/info_list_border.png") type("image/png")
+        url("../img/info_list_border.avif") type("image/avif"),
+        url("../img/info_list_border.webp") type("image/webp"),
+        url("../img/info_list_border.png") type("image/png")
     );
     background-size: 113px 36px;/* 調整圖大小 */
     margin-right: 10px;
@@ -1698,6 +1697,7 @@ li strong.border {
     @media (min-width: 1024px) {
         position: absolute;
     }
+    cursor: pointer;
 }
 /* 懸停狀態 */
 .cg:hover {

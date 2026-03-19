@@ -207,7 +207,6 @@ let lock = 0;
 const scrollStep = window.innerHeight; // 固定每次滾動 100vh
 
 function updatePage(scroll) {
-  console.log(area.scrollTop,scroll)
   area.scrollTop = area.scrollTop + scroll;
 }
 
