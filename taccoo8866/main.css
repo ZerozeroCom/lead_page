@@ -84,7 +84,7 @@ position: absolute;
         url("../img/panel_border.png") type("image/png")
     );
     background-position: center;
-    background-size: cover;
+    background-size: auto 100%;
 }
 .panel_border_img
 .extra-deco{
