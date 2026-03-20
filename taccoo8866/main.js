@@ -97,7 +97,6 @@ try {
 function addMacClass() {
   // 偵測 Mac 電腦，不包含 iPhone / iPad
   const isMac = /Mac/i.test(navigator.platform) && !/iPhone|iPad|iPod/i.test(navigator.userAgent);
-  console.log
   if (isMac) {
     document.documentElement.classList.add('mac');
   }
@@ -140,8 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const step = Array.from(sections).indexOf(entry.target);
-        
-        console.log("目前 step:", step,entry.target);
         updateStep(step);
       }
           //  character-info 控制「清空」

@@ -22,10 +22,11 @@
         <meta name="twitter:description" content="在偶然之間，我居然與她相遇了，那個小小的她，是我從來沒想過能夠相遇的對象!從交流開始,逐漸培養關係,再教導家里蹲醬人生的喜悅,兩人幸福生活下去。">
         <!-- <meta name="twitter:image" content="https://i.akaerocore.com/RaisingAHappyNEET/tw/img/seo-cover.jpg"> -->
 
-        <link rel="stylesheet" href="./css/main_b.css?t=1" />
+        <link rel="stylesheet" href="./css/main_b.css" />
+        <link rel="preload" as="image" href="./img/main_slogan_tc.webp">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@500;900&family=Georama:wght@500;900&family=Inter:wght@500&family=Noto+Sans+TC:wght@500;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@500;900&family=Georama:wght@500;900&family=Inter:wght@500&family=Noto+Sans+TC:wght@500;900&display=swap" media="print" crossorigin onload="this.media='all'">
         <link rel="icon" sizes="192x192" href="https://static.wixstatic.com/media/70c0a6_1ec758843a874ffaaab065105e33e863%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/70c0a6_1ec758843a874ffaaab065105e33e863%7Emv2.png" type="image/png">
         <script>
             document.documentElement.classList.remove('no-js');
@@ -81,7 +82,7 @@
                         <picture aria-hidden="true" class="slogan_img">
                             <source srcset="./img/main_slogan_tc.avif" media="(min-width: 1024px)" type="image/avif">
                             <source srcset="./img/main_slogan_tc.webp" type="image/webp">
-                            <img src="./img/main_slogan_tc.png" alt="遊戲標語藝術字">
+                            <img fetchpriority="high" loading="eager" src="./img/main_slogan_tc.png" alt="遊戲標語藝術字">
                         </picture>
                         <span class="visually-hidden">把人生的喜悅教給無知的尼特醬吧</span>
                     </h2>
@@ -130,7 +131,7 @@
                 <picture aria-hidden="true" class="panel_border_img">
                     <div class="extra-deco"><div class="extra-deco2"></div><div class="extra-deco3"></div>
                     <source srcset="./img/panel_border.avif" media="(min-width: 1024px)" type="image/avif">
-                    <source srcset="./img/panel_border.webp" media="(min-width: 1024px)" type="image/webp">
+                    <source srcset="./img/panel_border.webp" type="image/webp">
                     <img loading="lazy" id="panel_border_img" src="./img/panel_border.png" alt="裝飾邊框" itemprop="image">
                 
                     <div class="panel_border_wrapper">
@@ -472,9 +473,9 @@
                 </div>
             </footer>
         </main>
-        <script src="./js/link-for-ano.js"></script>
+        <!-- <script src="./js/link-for-ano.js"></script> -->
         <!-- <script src="./js/main_b.js" defer></script> -->
-        <script src="./js/main_b.js?t=1" defer></script>
+        <script src="./js/main_b.js" defer></script>
         <div id="lightbox" class="lightbox" onclick="this.classList.remove('active')">
             <img id="lightbox-img" src="" alt="放大圖" aria-hidden="true">
         </div>
