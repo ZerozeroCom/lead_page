@@ -1,7 +1,4 @@
-html {
-  height: 100%;
-  overflow: hidden; /* 關鍵：這會隱藏系統預設的滾動條 */
-}
+
 a {
     /* 去除底線 */
     text-decoration: none;
@@ -15,18 +12,7 @@ a:hover, a:active, a:visited {
     text-decoration: none;
     color: inherit;
 }
-body {
-  position: relative;
-  font-family: 'Noto Sans TC', 'sans-serif';
-  margin: 0;
-  height: 100%;
-  overflow-y: auto;  /* 讓 body 在垂直內容溢出時產生滾動條 */
-  overflow-x: hidden; /* 防止左右出現莫名的小抖動 */
-  /* 如果你要搭配磁吸效果，這行必須跟著搬家 */
-  scroll-snap-type: y mandatory;
-  /* 確保平滑滾動依然有效 */
-  scroll-behavior: smooth;
-}
+
 .no-js body{
     scroll-snap-type: y proximity;
 }
@@ -371,17 +357,7 @@ position: absolute;
     border-radius: 12px;
 }
 
-.page{
-    height:100dvh;
-    @media (orientation: landscape) {
-        @media (max-height: 768px) {
-            height:200dvh;
-        }
-        @media (max-height: 320px) {
-            height: 300dvh;
-        }
-    }
-}
+
 #character-info {
     margin-top: -80px;
     margin-bottom: 80px;

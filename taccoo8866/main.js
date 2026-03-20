@@ -108,8 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll('.intro-effect');
   const characterInfo = document.getElementById('character-info');
   //  const promoVideo = document.getElementById('promo_video');
-  
-  let isInOutside = false; //  是否進入 character 區
 
   function updateStep(step) {
     if (step == -1) {
@@ -144,11 +142,8 @@ document.addEventListener("DOMContentLoaded", () => {
           //  character-info 控制「清空」
       if (entry.target.id === 'character-info' ) {
         if (entry.isIntersecting) {
-          isInOutside = true;
           clearAll(); // 進入時清掉
-        } else {
-          isInOutside = false;
-        }
+        } 
       }
     });
 
