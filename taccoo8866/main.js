@@ -67,18 +67,12 @@ if(document.readyState==='loading'){
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, index) => {
-    if (index != 0){
-      if (entry.isIntersecting) {
+     if (entry.isIntersecting) {
           // 增加延遲感，讓對話框像是一個個跳出來
           setTimeout(() => {
             entry.target.classList.add('fade-in-visible');
           }, index * 200); 
       }
-    }else{
-      if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in-visible');
-      }
-    }
   });
 }, { threshold: 0.2 });
 
@@ -108,44 +102,27 @@ function addMacClass() {
     document.documentElement.classList.add('mac');
   }
 }
-
+let nowStep = 0;
 document.addEventListener("DOMContentLoaded", () => {
   addMacClass();
-  // const track = document.getElementById('game-system');
-  // const cards = document.querySelectorAll('.intro-effect');
-  // function onScroll() {
-  //     const now = Date.now();
-  //     if (now - scrollLock < 300) return;
-  //     scrollLock = now;
-
-  //   const rect = track.getBoundingClientRect();
-  //   // console.log('rect',rect);
-  //   console.log(window.innerHeight);
-  //   const startOffset = window.innerHeight / 2; // 保留你的初始限制
-  //   const progress = (startOffset - rect.top) / (rect.height - startOffset );
-  //   const step = Math.floor(progress * 5);
-  //   const clampedStep = Math.max(0, Math.min(step, 4));
-  //   console.log(rect.top,progress,step,clampedStep);
-  //   console.log("動畫翻頁",clampedStep);
-    
-
-  //   cards.forEach((card, index) => {
-  //     if (index === clampedStep*2 || index  === (clampedStep*2 + 1) ) {
-  //       card.classList.add('aos-animate');
-  //     }else{
-  //       card.classList.remove('aos-animate');
-  //     }
-  //   });
   const sections = document.querySelectorAll('.game-system'); // 每個 100vh
   const cards = document.querySelectorAll('.intro-effect');
   const characterInfo = document.getElementById('character-info');
-   const promoVideo = document.getElementById('promo_video');
+  //  const promoVideo = document.getElementById('promo_video');
   
-
   let isInOutside = false; //  是否進入 character 區
 
   function updateStep(step) {
-    if (isInOutside) return;
+    if (step == -1) {
+      if (nowStep == 1) {
+        step = 0;
+      }else{
+        step = nowStep;
+      }
+    }
+    if (step >= 0 || step <= 4){
+      nowStep = step;
+    }
     cards.forEach((card, index) => {
       if (index === step * 2 || index === step * 2 + 1) {
         card.classList.add('aos-animate');
@@ -163,11 +140,12 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const step = Array.from(sections).indexOf(entry.target);
-        console.log("目前 step:", step);
+        
+        console.log("目前 step:", step,entry.target);
         updateStep(step);
       }
           //  character-info 控制「清空」
-      if (entry.target.id === 'character-info' || entry.target.id === 'promo_video') {
+      if (entry.target.id === 'character-info' ) {
         if (entry.isIntersecting) {
           isInOutside = true;
           clearAll(); // 進入時清掉
@@ -189,9 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('[data-native-aos]')
     .forEach(el => observer.observe(el));
 
-  // 觀察 character-info promo_video
+  // 觀察 character-info
   if (characterInfo) observer.observe(characterInfo);
-  if (promoVideo) observer.observe(promoVideo);
 });
 
 const area = document.getElementById("app");
