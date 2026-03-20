@@ -103,12 +103,9 @@ try {
 function addMacClass() {
   // 偵測 Mac 電腦，不包含 iPhone / iPad
   const isMac = /Mac/i.test(navigator.platform) && !/iPhone|iPad|iPod/i.test(navigator.userAgent);
-
+  console.log
   if (isMac) {
-    const el = document.getElementById("game-system");
-    if (el) {
-      el.classList.add("mac"); // 追加 mac class
-    }
+    document.documentElement.classList.add('mac');
   }
 }
 

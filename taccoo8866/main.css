@@ -27,7 +27,11 @@ body {
   /* 確保平滑滾動依然有效 */
   scroll-behavior: smooth;
 }
-
+.mac body {
+    scroll-snap-type: y proximity;
+    /* 確保平滑滾動依然有效 */
+    scroll-behavior: auto;
+}
 main{
     background-color: #f5f5f5;
     background-image: url("../img/texture_bg_2.png"); 
@@ -52,6 +56,10 @@ section.page {
   justify-content: center;
   align-items: center;
   position: relative;
+}
+.mac section.page {
+    scroll-margin-top: 24dvh;
+    scroll-margin-bottom: 24dvh;
 }
 p{
     font-family: 'Inter' ,'Noto Sans TC', 'sans-serif';
@@ -1393,6 +1401,11 @@ li strong.border {
         margin-top: 80px;
         margin-left: auto;
         margin-right: auto;
+        
+    }
+    .mac #game-system{
+        scroll-margin-top: 0;
+        scroll-margin-bottom: 0;
     }
     #property-1{
         transform: rotate(5.93deg);
@@ -1850,11 +1863,6 @@ right:3%;
     position: relative;
     @media (min-width: 1024px) {
         scroll-snap-align: center;
-    }
-}
-.mac .scroll-track{
-    @media (min-width: 1024px) {
-        height: 1500dvh;
     }
 }
 .sticky-content {
