@@ -1,0 +1,399 @@
+section.page {
+    @media (min-width: 1024px) {
+        /* 關鍵屬性：磁吸點設在元素中心 */
+        scroll-snap-align: center;
+        /* 避免磁吸太敏感，可以增加停止點 */
+        scroll-snap-stop: always;
+    }
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+/* 功能性css */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0); /* 針對舊版瀏覽器 */
+  clip-path: inset(50%);  /* 現代瀏覽器標準 */
+  white-space: nowrap;
+  border: 0;
+}
+.hide {
+    display: none;
+}
+
+.game_bg1{
+    position: absolute;
+    width: 100%;
+    height: 133dvh;
+}
+.game_bg1::after{
+    position: absolute;
+    content: '';
+    top:75dvh;
+    left: -25%;
+    width: clamp(695px, 90vw, 1728px);
+    aspect-ratio: 16 / 9;
+    height: auto;
+    transform: rotate(59.18deg);
+    opacity: 0.6;
+    z-index: 0;
+    background-size: contain; 
+    background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
+    background-position: center; /* 確保圖片縮窄後依然居中 */
+    background-image: url("../img/texture_bg_1.png"); /* fallback */
+    background-image: image-set(
+        url("../img/texture_bg_1.avif") type("image/avif"),
+        url("../img/texture_bg_1.webp") type("image/webp"),
+        url("../img/texture_bg_1.png") type("image/png")
+        );
+}
+.game_bg2{
+    position: absolute;
+    width: 100%;
+    height: 133dvh;
+}
+.game_bg2::after{
+    position: absolute;
+    content: '';
+    top:250dvh;
+    left: 0%;
+    width: clamp(695px, 90vw, 1728px);
+    aspect-ratio: 16 / 9;
+    height: auto;
+    transform: rotate(-38.49deg);
+    opacity: 0.6;
+    z-index: 0;
+    background-size: contain; 
+    background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
+    background-position: center; /* 確保圖片縮窄後依然居中 */
+    background-image: url("../img/texture_bg_1.png"); /* fallback */
+    background-image: image-set(
+        url("../img/texture_bg_1.avif") type("image/avif"),
+        url("../img/texture_bg_1.webp") type("image/webp"),
+        url("../img/texture_bg_1.png") type("image/png")
+        );
+}
+
+
+.mini_character_1{
+    margin-top: 20dvh;
+    position:relative;
+    display: block;
+    /*width: 273px;*/
+    width:18vw;
+    height: 315px;
+    rotate:14.51deg;
+    z-index: 30;
+}
+.mini_character_word{
+    height: auto !important;
+    rotate: none !important;
+}
+
+.mini_character_1 img{
+    width: 100%;
+  height: 100%;
+}
+/* #say_1{
+    position: absolute;
+    rotate:-5.07deg;
+    top:-20px;
+    left:25%;
+    z-index: 30;
+}
+#say_2{
+    position: absolute;
+    rotate:-11.55deg;
+    top:100px;
+    left:14%;
+    z-index: 30;
+} */
+.mini_character_2{
+    margin-top: 20dvh;
+    position:relative;
+    display: block;
+/* width: 177px; */
+    width:18vw;
+    /* height: 329px;
+    rotate:-36.44deg; */
+    z-index: 30;
+}
+.mini_character_2 img{
+    width: 100%;
+  height: 100%;
+}
+/* #say_3{
+    position: absolute;
+    rotate:5.28deg;
+    top:10px;
+    left:45%;
+    z-index: 30;
+}
+#say_4{
+    position: absolute;
+    rotate:9.3deg;
+    top:180px;
+    left:56%;
+    z-index: 30;
+} */
+@media (min-width: 1600px) {
+.left-say{
+    display: block;
+    position: fixed;
+     height: 100%;
+     top: 0;
+     left: 0;
+     pointer-events: none; /* 避免影響操作 */
+}
+.right-say{
+    position: fixed;
+    height: 100%;
+    width: 177px;
+     top: 0;
+     display: flex;
+    flex-direction: column;
+    align-items: self-end;
+    right: 25px;
+     pointer-events: none; /* 避免影響操作 */
+}
+}
+/* 讓 picture 容器填滿背景 */
+.game-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.game-bg-wrapper img{
+    min-height: 100dvh;
+    max-height: 110dvh;
+    @media (orientation: landscape) {
+        @media (max-height: 768px) {
+            min-height:200dvh;
+            max-height: 220dvh;
+        }
+        @media (max-height: 320px) {
+            min-height: 300dvh;
+            max-height: 230dvh;
+        }
+    }
+    object-fit: cover;
+  object-position: top;
+}
+
+/* 讓圖片表現得像 background-size: cover */
+.game-bg-img {
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.site-header{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    @media (min-width: 1024px) {
+        padding-top: 12px;
+    }
+    z-index: 5;
+}
+.logo-inline{
+    display: inline-block;
+    width: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.akaerocore_logo img{
+    display: block;
+    aspect-ratio: 210 / 43;
+    height: auto;
+    padding-left: 24px;
+    padding-bottom: 24px;
+    width:45vw;
+    margin: 0 auto;
+    @media (min-width: 1024px) {
+        padding-bottom: 0;
+        padding-left: 56px;
+        width:clamp(162px, 23vw, 402px);
+    }
+}
+.logo-inline:first-child{
+    @media (min-width: 1024px) {
+        transform: translateY(-45%);
+    }
+}
+.logo-inline:last-child{
+    margin-left: auto;
+    @media (min-width: 1024px) {
+        padding-right: 56px;
+    }
+}
+.logo-img img{
+    display: block;
+    aspect-ratio: 1235 / 582;
+    height: auto;
+    width:37.5vw;
+    @media (min-width: 1024px) {
+        width:clamp(148px, 21vw, 378px);
+    }
+}
+#game-section {
+    position: relative;
+    pointer-events: none;
+}
+
+#game-section button {
+  pointer-events: auto;
+}
+
+.slogan-block{
+    position: absolute;
+    left: 50%;
+    display: block;
+    text-align: center;
+    bottom: 5dvh;
+    transform: translateX(-50%); 
+    @media (min-width: 1024px) {
+        bottom: 50%;
+        transform: translateX(-50%) translateY(75%); 
+    }
+}
+
+.slogan_img{
+margin: 0 auto;
+}
+
+.slogan_img img{
+    height:auto;
+    width:100vw;
+    margin-bottom: 4dvh;
+    @media (min-width: 1024px) {
+        margin-bottom: 0;
+        height: clamp(161px, 22vw, 328px);
+        width:clamp(395px, 48vw, 800px);
+    }
+}
+
+.btn-group{
+    width: 100%;
+    margin-top: -56px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;       /* 下排按鈕置中 */
+    gap: 3.5vw; 
+    @media (min-width: 1024px) {
+        margin-top: -48px;
+        gap: 16px;
+    }
+}
+.btn-row {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 3vw;                 /* 上排左右間距 */
+    @media (min-width: 1024px) {
+        gap: 20px;
+    }
+}
+
+/* === 共用按鈕樣式 === */
+.btn {
+    display: inline-flex;  /* 讓按鈕寬度隨內容縮放，同時啟用 Flex */
+    align-items: center;   /* 垂直置中：解決 SVG 偏上或偏下的問題 */
+    justify-content: center; /* 水平置中：解決偏一邊的問題 */
+    gap: 8px;
+    padding: 12px 12px;
+    border-radius: 14px;
+  /* font-weight: 700;
+    font-style: Bold;
+    font-size: clamp(18px, 4vw, 32px);
+    line-height: clamp(20px, 4vw, 36px);
+    letter-spacing: 1px;
+    color: #fff; */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    aspect-ratio: 185 / 53;
+    height: 100%;
+    width:45vw;
+    @media (min-width: 1024px) {
+        aspect-ratio: 185 / 42;
+        padding: 14px 36px;
+        height: clamp(42px, 5vw, 84px);
+        width:clamp(185px, 22vw, 370px);
+    }
+}
+
+button picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button img{
+    width: 100%;
+    height: auto;
+    margin:auto 0 ;
+}
+
+/* === 左上 STEAM === */
+.btn-steam {
+    background: linear-gradient(180deg, #DF7797 0%, #F4B7C6 100%);
+    box-shadow: 0px 5px 0px 0px #D9829D;
+    border: 2px solid #FFB8CD;
+    -webkit-text-stroke: 2px #A3354B; 
+}
+
+/* === 右上 DLsite === */
+.btn-dl {
+    background: linear-gradient(180deg, #8E7EBD 0%, #B6A2D5 100%);
+    box-shadow: 0px 5px 0px 0px #9281BF;
+    border: 2px solid #E9B6FF;
+    -webkit-text-stroke: 2px #9347B8;
+}
+.btn-dl img{
+    max-height: 38px;
+}
+.btn-download img{
+    max-height: 38px;
+    @media (min-width: 1024px) {
+        width: auto;
+    }
+}
+/* === 下排下載 === */
+.btn-download {
+    background: linear-gradient(180deg, #FFA552 0%, #FFCB3B 100%);
+    border: 2px solid #FFE2B8; 
+    -webkit-text-stroke: 2px #C55B0B;
+    box-shadow: 0px 5px 0px 0px #F58B1F;
+    @media (min-width: 1024px) {
+        width: auto;
+        height: clamp(42px, 5vw, 84px);
+        aspect-ratio:auto;
+        min-width: 328px;
+        max-width: 80vw;
+    }
+}
+
+/* === Hover 效果 === */
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+/* === Active 點擊 === */
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
