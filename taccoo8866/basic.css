@@ -10,7 +10,7 @@ body {
   overflow-y: auto;  /* 讓 body 在垂直內容溢出時產生滾動條 */
   overflow-x: hidden; /* 防止左右出現莫名的小抖動 */
   /* 如果你要搭配磁吸效果，這行必須跟著搬家 */
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   /* 確保平滑滾動依然有效 */
   scroll-behavior: smooth;
 }

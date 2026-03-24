@@ -13,9 +13,9 @@ a:hover, a:active, a:visited {
     color: inherit;
 }
 
-.no-js body{
+/* .no-js body{
     scroll-snap-type: y proximity;
-}
+} */
 main{
     background-color: #f5f5f5;
     background-image: url("../img/texture_bg_2.png"); 
@@ -368,10 +368,8 @@ position: absolute;
 
 
 #character-info {
-    margin-top: -80px;
     margin-bottom: 80px;
     @media (min-width: 1024px) {
-        margin-top:0;
         margin-bottom: 0;
     }
 }
@@ -652,11 +650,25 @@ position: absolute;
         letter-spacing: 1px;
         border-radius: 16px;
     }
+
+    .art_title{
+        text-align: center;
+        img{
+            height: 32px;
+            @media (min-width: 1024px) {
+                max-height: 60px;
+                height:10%;
+            }
+        }
+        @media (min-width: 1024px) {
+            margin-bottom: 46px;
+        }
+        @media (min-width: 1440px) {
+            margin-bottom: 60px;
+        }
+    }
 #gallery{
     height: auto;
-    @media (min-width: 1024px) {
-        height: 80dvh;
-    }
     position: relative;
     max-width: 1440px;
     margin-left: auto;
@@ -672,9 +684,7 @@ position: absolute;
     transform: rotate(-128.49deg);
     opacity: 0.6;
     z-index: 0;
-    @media (min-width: 1024px) {
-        z-index: 1;
-    }
+    
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
@@ -693,7 +703,7 @@ position: absolute;
     @media (min-width: 1024px) {
         top:10%;
         bottom: 0;
-        z-index: 1;
+        z-index: -1;
     }
     left: 25%;
     width: clamp(695px, 54vw, 1054px);
@@ -712,7 +722,7 @@ position: absolute;
 }
     #summary{
         height: auto;
-        margin-top: 15%;
+        margin-top: 10%;
         margin-bottom: 5%;
     }
     #summary .btn-group{
@@ -953,24 +963,26 @@ li strong.border {
         padding: 0px 32px;
     }
 }
-
+    .property-left{
+        text-align: start;
+        picture {
+            margin-left:auto ;
+            margin-right: 6px;
+        }
+    }
+    .property-right{
+        text-align: end;
+         picture {
+            margin-right:auto ;
+            margin-left: 6px;
+        }
+    }
     .photo {
         display: block;
-        width: 85vw;
-        @media (min-width: 1024px) {
-            width: 80vw;
-        }
-        @media (min-width: 1440px) {
-            width: 75vw;
-        }
-        @media (min-width: 1680px) {
-            width: 70vw;
-        }
-        @media (min-width: 1920px) {
-            width: 60vw;
-        }
-        height: auto;
-        padding: 12px 12px 30px 12px;
+        margin: 0;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 10px 10px 26px 10px;
         gap: 10px;
     }
     .photo img {
@@ -978,37 +990,6 @@ li strong.border {
         height: 100%;
     }
 
-    #property-1{
-        transform: rotate(5.93deg);
-        top:-10dvh;
-        left: 15%;
-    }
-    .property-left{
-        right:20%;
-    }
-    .property-right{
-        left:20%;
-    }
-    #property-2{
-        right: 15%;
-        top:-10dvh;
-        transform: rotate(-5.93deg);
-    }
-    #property-3{
-        transform: rotate(5.93deg);
-        left: 15%;
-        top:-10dvh;
-    }
-    #property-4{
-        transform: rotate(-5.93deg);
-        right: 15%;
-        top:-10dvh;
-    }
-    #property-5{
-        left: 15%;
-        top:-10dvh;
-        transform: rotate(5.93deg);
-    }
 
 .game_bg1{
     position: absolute;
@@ -1064,246 +1045,73 @@ li strong.border {
 }
 
 
-.js {
-    #game-system{
-        margin-top: -50dvh;
-        @media (max-width: 1023px) {
-            margin-top: -100dvh;
+.sticky-content {
+    position:relative;
+    flex-direction: column;
+    height:100%;
+    scroll-snap-align: none;
+    scroll-snap-type: none;
+    scroll-snap-stop:normal;
+}
+.intro-effect{
+    position:relative;
+    max-width: 1056px;
+}
+.gallery-content{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    @media (min-width: 1024px) {
+        gap: 16px;
+    }
+    @media (min-width: 1440px) {
+        gap: 24px;
+    }
+    .photo {
+        margin-bottom: 8px;
+        @media (min-width: 1440px) {
+            margin-bottom: 0;
+        }
+        img {
+            max-width: 428px;
+            min-width: 170px;
+            width: 40vw;
+            align-self: stretch;
+            object-fit: cover;
+            object-position:center;
         }
     }
-    .game-system{
-        @media (max-width: 1023px) {
-            @media (orientation: portrait) {
-                height: 75dvh;
-            }
+}
+#game-system {
+    margin-top: 18dvh;
+    @media (min-width: 1024px) {
+        margin-top:0;
+
+    }
+    .photo{
+        max-width: 886px;
+        img {
+            width: 100%;
+            align-self: stretch;
+            object-fit: cover;
+            object-position:center;
         }
     }
-        /* 定義基礎樣式與轉場速度 */
-    [data-native-aos] {
-    transition-duration: 800ms;
-    transition-timing-function: ease-out;
-    transition-property: opacity, transform;
-    }
-    /* fade-up-left 的初始狀態：向下 30px，向右 30px */
-    [data-native-aos="fade-up-left"] {
-    opacity: 0;
-    transform: translate(25vmin, 25vmin);
-    transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform; /* 告訴瀏覽器準備硬體加速 */
-    }
-    [data-native-aos="fade-left"] {
-    opacity: 0;
-    transform: translate(25vmin,0);
-    transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform; /* 告訴瀏覽器準備硬體加速 */
-    }
-    [data-native-aos="fade-right"] {
-    opacity: 0;
-    transform: translate(-25vmin, 0);
-    transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform; /* 告訴瀏覽器準備硬體加速 */
-    }
-    [data-native-aos="fade-up-right"] {
-    opacity: 0;
-    transform: translate(25vmin, -25vmin);
-    transition: opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform; /* 告訴瀏覽器準備硬體加速 */
-    }
-    /* 當進入視窗後，加上這個類別來觸發動畫 */
-    /* 啟動狀態：回到原位 */
-    [data-native-aos].aos-animate {
-    opacity: 1;
-    transform: translate(0, 0);
-    transition-timing-function:cubic-bezier(.175, .885, .32, 1.275);
-    }
-
-}
-.no-js{
-    .sticky-content {
-        position:relative;
-        flex-direction: column;
-        height:100%;
-    }
-    .chat-row {
-        top: auto;
-        bottom: 10svh;
-    }
-    .intro-effect{
-        position: relative;
-    }
-    .game-system{
-        height: 0 !important;
+    .content{
+         max-width: 1056px;
+         margin: 0 auto;
     }
 }
-
 /* 照片牆 */
 .gallery-section figure picture img {
     height: 100%;
     width: 100%;
 }
-#preview-cg1{
-    width: 60vw;
-    @media (min-width: 1024px) {
-        width: clamp(235px, 44vw, 441px);
-    }
-    height: auto;
-    transform: rotate(10.96deg);
-}
-.preview-cg1{
-    left:30%;
-    top:10%;
-    margin-left: 5px;
-    @media (min-width: 1024px) {
-        margin-inline-start: 40px;
-        transform: translateX(-20%) translateY(-20%);
-    }
-    z-index: 2;
-}
-#preview-cg2{
-    width: 60vw;
-    @media (min-width: 1024px) {
-        width: clamp(228px, 44vw, 428px);
-    }
-    height: auto;
-    transform: rotate(-8.24deg);
-}
-.preview-cg2{
-    left: calc(50% - 150px);
-    top:18%;
-    z-index: 4;
-    margin-top: -26.2vw;
-    margin-right: 5px;
-    @media (min-width: 1024px) {
-        margin-inline-end: 40px;
-        margin-top: 0;
-    }
-}
 
-#preview-cg3{
-    width: 60vw;
-    @media (min-width: 1024px) {
-        width: clamp(235px, 44vw, 441px);
-    }
-    height: auto;
-    transform: rotate(10.79deg);
-}
 
-.preview-cg3{
-    left:20%;
-    top:45%;
-    z-index: 6;
-    margin-top: -22vw;
-    margin-left: -10px;
-    @media (min-width: 1024px) {
-        transform: translateX(-40%) translateY(10%);
-        margin-inline-start: 40px;
-        margin-top: 0;
-    }
-}
-#preview-cg4{
-    height: auto;
-    width: 58vw;
-    transform: rotate(5.71deg);
-    @media (min-width: 1024px) {
-        width: clamp(249px, 44vw, 516px);
-        transform: rotate(-7.79deg);
-    } 
-}
-.preview-cg4{
-    left:12%;
-    top:15%;
-    z-index: 3;
-    margin-top: -20.2vw;
-    margin-right: -20px;
-    @media (min-width: 1024px) {
-        transform: translateX(-35%);
-        margin-inline-end: 40px;
-        margin-top: 0;
-    }
-}
 
-#preview-cg5{
-    width: 60vw;
-    height: auto;
-    transform: rotate(-12.21deg) translateY(-50%);
-    padding-bottom: 24px;
-    @media (min-width: 1024px) {
-        padding-bottom: 30px;
-        width: clamp(224px, 44vw, 441px);
-        transform: rotate(-3.79deg);
-    }
-}
-.preview-cg5{ 
-    right:8%;
-    top:2.5%;
-    z-index: 3;
-    margin-top: -30.2vw;
-    margin-left: 20px;
-    @media (min-width: 1024px) {
-        transform: translateX(20%) translateY(-5%);
-        margin-inline-start: 40px;
-        margin-top: 0;
-    }
-}
-.mobi-left{
-    margin-left: 2vw;
-    @media (min-width: 1024px) {
-        margin-left: 0;
-    }
-}
-.mobi-right{
-    margin-left: auto;
-    @media (min-width: 1024px) {
-        margin-left: 0;
-    }
-}
-#preview-cg6{
-    width: 60vw;
-    height: auto;
-    transform: rotate(12.32deg) translateX(30%) translateY(50%);
-    @media (min-width: 1024px) {
-        transform: rotate(12.32deg);
-        width: clamp(256px, 44vw, 479px);
-    }
-}
-.preview-cg6{
-    right:0%;
-    top:42.5%;
-    z-index: 4;
-    margin-top: -20.2vw;
-    margin-right: 15vw;
-    @media (min-width: 1024px) {
-        right:10%;
-        transform: translateX(30%) translateY(5%);
-        margin-inline-end: 40px;
-        margin-top: 0;
-    }
-}
-#preview-cg7{
-    height: auto;
-    width: 60vw;
-    transform: rotate(6.64deg);
-    @media (min-width: 1024px) {
-        transform: rotate(-15.03deg);
-        width: clamp(226px, 44vw, 441px);
-    }
-}
-.preview-cg7{
-    left:30%;
-    top:50%;
-    z-index: 5;
-    margin-top: -8vw;
-    margin-left: 5px;
-    @media (min-width: 1024px) {
-        transform: translateX(-5%) translateY(15%);
-        margin-inline-start: 40px;
-        margin-top: 0;
-    }
-}
 
 /* 圖片預覽遮罩 */
 
@@ -1334,9 +1142,8 @@ li strong.border {
                 box-shadow 0.6s ease;
     backface-visibility: hidden;
     will-change: transform;
-    @media (min-width: 1024px) {
-        position: absolute;
-    }
+    margin: 0;
+  
     cursor: pointer;
 }
 /* 懸停狀態 */
@@ -1358,33 +1165,40 @@ li strong.border {
   transform: scale(0.98);
   transition: transform 0.1s ease;
 }
-
+/* 對話框 */
 .avatar{
     width: clamp(86px, 10vw, 123px);
     height: clamp(86px, 10vw, 123px);
 }
 .chat-row{
+    max-width: 1056px;
     display: flex;
     flex-direction: row;
     font-weight: 500;
-    font-size: clamp(16px, 2dvh, 20px);
-    line-height:  clamp(24px, 3.5dvh, 37px);
+    font-size: 16px;
+    line-height: 24px;
     letter-spacing: 1px;
     color: #3C2B51;
-    top: 50svh;
-    left:3%;
+    margin-left: 8px;
+    margin-top: -10%;
+    margin-bottom: 32px;
     @media (min-aspect-ratio: 4/3) {
-    top: 65svh;
+        font-size: 18px ;
+        line-height:31px;
+        margin-top: -8%;
+        margin-bottom: 46px;
     }
     @media (min-aspect-ratio: 16/9) {
-    top: 75svh;
+        font-size: 20px ;
+        line-height:37px;
+        margin-top: -6%;
+        margin-bottom: 60px;
     }
     
 }
 .chat-row.reverse{
-flex-direction:row-reverse;
-left:0;
-right:3%;
+    flex-direction:row-reverse;
+    margin-right:8px ;
 }
 .round{
     display:block;
@@ -1403,20 +1217,26 @@ right:3%;
     border-radius:50%;
 }
 .bubble{
-    max-width: 50%;
-    margin-top: 29px;
+    max-width: 60%;
+    margin-top: 10px;
     margin-left: 29px;
     margin-right: 29px;
     background: #F1E9FF;
     box-shadow: 0px 2px 0px 0px #4D374F,0px 2px 0px 0px #FFFFFF inset;
-    padding: 16px;
+    padding: 0 16px;
     gap: 10px;
     opacity: 1;
     border-radius: 16px;
     position:relative;
     @media (max-height: 768px) {
-        max-width: 75%;
-        margin-top: 0;
+        max-width: 85%;
+        margin-top: 15px;
+    }
+    @media (min-aspect-ratio: 4/3) {
+       margin-top: 15px;
+    }
+    @media (min-aspect-ratio: 16/9) {
+        margin-top: 20px;
     }
 }
 /* .bubble-left{
@@ -1489,30 +1309,3 @@ right:3%;
   );
 }
 
-.scroll-track{
-    height: 500dvh; /* 捲動長度：高度越高，動畫前進的速度越慢(越細膩) */
-    position: relative;
-    @media (min-width: 1024px) {
-        scroll-snap-align: center;
-    }
-}
-.sticky-content {
-    position: sticky;
-    top: 0;
-    height: 100dvh;
-    max-width: 1268px;
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: visible;
-    @media (max-width: 1023px) {
-        overflow: hidden;
-    }
-}
-
-.intro-effect {
-  position: absolute; 
-}
