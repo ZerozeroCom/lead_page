@@ -252,7 +252,7 @@ position: absolute;
     @media (min-width: 1024px) {
         height: 100vh;
         min-height: max-content;
-        margin: 10vh 0;
+        margin: 3vh 0;
     }
 }
 #promo_video::before{
@@ -655,6 +655,7 @@ position: absolute;
 
     .art_title{
         text-align: center;
+        padding-bottom: 2dvh;
         img{
             height: 32px;
             @media (min-width: 1024px) {
@@ -664,6 +665,7 @@ position: absolute;
         }
         @media (min-width: 1024px) {
             margin-bottom: 46px;
+            padding-bottom: 2vh;
         }
         @media (min-width: 1440px) {
             margin-bottom: 60px;
@@ -1087,7 +1089,7 @@ li strong.border {
     }
 }
 #game-system {
-    margin-top: 18dvh;
+    margin-top: 20dvh;
     @media (min-width: 1024px) {
         margin-top:0;
 
