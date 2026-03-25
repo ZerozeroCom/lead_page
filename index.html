@@ -18,7 +18,8 @@ body { font-family: sans-serif; text-align: center; margin-top: 50px; }
 
 <script>
 
-const PASSWORD = "ff804467aea395c049d5c2bdca6373dc87ed3afa20259938b097972c182cca0b"; 
+const PASSWORD1 = "ca8626e735684207ea5c17e9868beccc1808ac60d8c70b06c8c4766227180422"; 
+const PASSWORD2 = "246c042d8fb9be883ef7195bd5aa0b5c167002f4ab731bd89f64e032acecaa10"; 
 
 document.getElementById("enterBtn").addEventListener("click",async  ()=>{
     const input = document.getElementById("pwdInput").value;
@@ -26,7 +27,7 @@ document.getElementById("enterBtn").addEventListener("click",async  ()=>{
     // 驗證密碼
     let str = await sha256(input);
     console.log(str,PASSWORD)
-    if( str == PASSWORD){
+    if( str == PASSWORD1 || str ==PASSWORD2){
          console.log(123)
         loadSite(input);
     } else {
