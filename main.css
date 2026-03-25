@@ -655,6 +655,11 @@ position: absolute;
 
     .art_title{
         text-align: center;
+        .absolute{
+            left: 0;
+            right: 0;
+            z-index: 5;
+        }
         img{
             height: 32px;
             @media (min-width: 1024px) {
@@ -830,6 +835,10 @@ ul hr{
 }
 .absolute{
     position: absolute;
+}
+.shadow {
+    visibility: hidden;
+    position: relative;
 }
     #summary-cover{
          display: block;
