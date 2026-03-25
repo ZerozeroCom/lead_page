@@ -655,7 +655,6 @@ position: absolute;
 
     .art_title{
         text-align: center;
-        padding-bottom: 2dvh;
         img{
             height: 32px;
             @media (min-width: 1024px) {
@@ -665,7 +664,6 @@ position: absolute;
         }
         @media (min-width: 1024px) {
             margin-bottom: 46px;
-            padding-bottom: 2vh;
         }
         @media (min-width: 1440px) {
             margin-bottom: 60px;
