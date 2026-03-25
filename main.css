@@ -250,7 +250,9 @@ position: absolute;
     padding-top: 5%; /* 可依需求微調上方間距 */
     height: auto;
     @media (min-width: 1024px) {
-        height: 100dvh;
+        height: 100vh;
+        min-height: max-content;
+        margin: 10vh 0;
     }
 }
 #promo_video::before{
