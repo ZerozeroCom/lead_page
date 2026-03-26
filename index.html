@@ -26,7 +26,6 @@ document.getElementById("enterBtn").addEventListener("click",async  ()=>{
 
     // 驗證密碼
     let str = await sha256(input);
-    console.log(str,PASSWORD)
     if( str == PASSWORD1 || str ==PASSWORD2){
          console.log(123)
         loadSite(input);
