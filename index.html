@@ -19,14 +19,16 @@ body { font-family: sans-serif; text-align: center; margin-top: 50px; }
 <script>
 
 const PASSWORD1 = "ca8626e735684207ea5c17e9868beccc1808ac60d8c70b06c8c4766227180422"; 
-const PASSWORD2 = "246c042d8fb9be883ef7195bd5aa0b5c167002f4ab731bd89f64e032acecaa10"; 
+const PASSWORD2 = "246c042d8fb9be883ef7195bd5aa0b5c167002f4ab731bd89f64e032acecaa10";
+const PASSWORD3 = "3f6b01d231fecba3a44fffc21100f1a67fd75e39b511d5c55d1db05e118aa27f";
+const PASSWORD4 = "09c39150e5a410a7865afb87b8bf454aa96144d3b857899d21cb93926cdeb2d0"; 
 
 document.getElementById("enterBtn").addEventListener("click",async  ()=>{
     const input = document.getElementById("pwdInput").value;
 
     // 驗證密碼
     let str = await sha256(input);
-    if( str == PASSWORD1 || str ==PASSWORD2){
+    if( str == PASSWORD1 || str ==PASSWORD2 || str == PASSWORD3 || str == PASSWORD4){
          console.log(123)
         loadSite(input);
     } else {
