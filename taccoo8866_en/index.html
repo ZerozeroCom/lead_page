@@ -151,7 +151,7 @@
                             </article>
                             <article class="intro-card intro-card2" itemprop="description">
                                 <h3>
-                                    <img loading="lazy" class="word_art_img" src="../img/panel_2_en.webp" alt="An Unfortunate Girl Crashes into Your Life." itemprop="image">
+                                    <img loading="lazy" id="word_art_img2x" class="word_art_img" src="../img/panel_2_en.webp" alt="An Unfortunate Girl Crashes into Your Life." itemprop="image">
                                 </h3>
                                 <p>After her parents went missing, Shizuku was left alone. With no other relatives to turn to, she ended up in your care. This girl, who suddenly appeared at your doorstep, seems to have lived a life shadowed by misfortune.</p>
                             </article>
@@ -325,6 +325,16 @@
                 </article>
             </section>
             <section id="gallery" class="page gallery-section">
+                <div id="hidden_text" >
+                    <div aria-hidden="true" >
+                        <p>
+                            In a quiet, peaceful town lived a young girl named Shizuku. Introverted by nature, she shies away from strangers but shows a pure and genuine heart to those she trusts. Shizuku’s past was unkind; she carried the weight of unfortunate events that left her understanding of life extraordinarily naive. Knowing almost nothing of the adult world and filled with uncertainty about the future, she isolated herself.
+                        </p>
+                        <p>
+                            Recently, Shizuku’s life took an unexpected turn. Due to family circumstances, she began living with you. Sharing the same space, day and night, you embark together on a journey into the unknown.
+                        </p>
+                    </div>
+                </div>
                 <h2 class="art_title">
                     <picture  class="shadow" aria-hidden="true" >
                         <source srcset="../img/gallery_view_en.webp" media="(min-width: 1024px)" type="image/webp">
@@ -424,7 +434,7 @@
                                 <li><strong class="border">Publisher</strong> <span>akaeroCore</span></li>
                                 <li><strong class="border">Languages</strong> <span>English, Simplified Chinese, Traditional Chinese, Japanese, Korean</span></li>
                                 <li><strong class="border">Voiceover</strong> <span>Japanese (Full Audio)</span></li>
-                                <li class="game-tags"><strong class="border">Genre</strong><span><span class="tag">Casual</span>,<span class="tag">Indie</span>,<span class="tag">RPG</span>,<span class="tag">Simulation</span></span></li>
+                                <li class="game-tags"><strong class="border">Genre</strong><span><span class="tag">Casual</span>, <span class="tag">Indie</span>, <span class="tag">RPG</span>, <span class="tag">Simulation</span></span></li>
                             </ul>
                         </div>
                     </div>
@@ -500,8 +510,92 @@
 .spec-list li .border {
   display: block; /* 強制 strong 在第一列 */
 }
+li strong.border {
+    width: 125px;
+    background-size: 125px 36px;
+}
 .spec-list li span {
   grid-column: 2; /* span 在第二列，允許換行 */
   word-wrap: break-word;
-}</style>
+  padding-left: 6px;
+}
+.intro-card p:lang(en){
+    max-width: 90vw;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    @media (min-width: 1024px) {
+        margin-top: 4px;
+    }
+    @media (min-aspect-ratio: 4/3) {
+        margin-top: 8px;
+    }
+    font-size: clamp(14px, 2dvh, 18px);
+    line-height:  clamp(19px, 3dvh, 23px);
+}
+.word_art_img:lang(en) {
+    max-width: 95vw;
+    height:34px;
+    @media (min-width: 1024px) {
+        padding:  0;
+        height:57px;
+    };
+}
+
+.content-wrapper{
+    @media (max-width: 1023px) {
+        z-index: 30;
+        transform: translatey(95%);
+        margin-bottom: 75vw;
+    }
+}
+.content-wrapper:before {
+    z-index: -1;
+}
+#word_art_img2x {
+    height:58px;
+    @media (min-width: 1024px) {
+        padding: 0;
+        height:104px;
+    };
+}
+#hidden_text{
+    visibility: hidden;
+    padding: 12px;
+    div{
+        margin-bottom: -50%;
+        padding: 16px;
+    }
+}
+.spec-list{
+    @media (min-width: 1024px) {
+        gap:6px;
+        padding-bottom: 16px;
+    }
+}
+.content-wrapper{
+    @media (min-width: 1024px) {
+        padding: 12px;
+    }
+}
+#say_5 {
+    @media (min-width: 1024px) {
+        right: 47%;
+    }
+    @media (min-width: 1080px) {
+        right: 40%;
+    }
+}
+.extra-deco:after {
+    right:0%;
+    @media (min-width: 1024px) {
+        right: -9.5%;
+    }
+}
+.extra-deco3 {
+    left: 2%;
+    @media (min-width: 1024px) {
+        left: -8.5%;
+    }
+}
+</style>
 </html>
