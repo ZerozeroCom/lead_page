@@ -424,7 +424,7 @@
                                 <li><strong class="border">Publisher</strong> <span>akaeroCore</span></li>
                                 <li><strong class="border">Languages</strong> <span>English, Simplified Chinese, Traditional Chinese, Japanese, Korean</span></li>
                                 <li><strong class="border">Voiceover</strong> <span>Japanese (Full Audio)</span></li>
-                                <li class="game-tags"><strong class="border">Genre</strong><span class="tag">Casual</span>,<span class="tag">Indie</span>,<span class="tag">RPG</span>,<span class="tag">Simulation</span></li>
+                                <li class="game-tags"><strong class="border">Genre</strong><span><span class="tag">Casual</span>,<span class="tag">Indie</span>,<span class="tag">RPG</span>,<span class="tag">Simulation</span></span></li>
                             </ul>
                         </div>
                     </div>
@@ -469,10 +469,7 @@
             <footer id="site-footer">
                 <div class="row footer">
                     <div class="row">
-                        <picture id="age-warning">
-                            <source srcset="../img/18x.avif"  type="image/avif">
-                            <img loading="lazy" src="../img/18x.png" alt="Adults only (18+) warning icon" itemprop="image">
-                        </picture>
+                        <div> </div>
                         <div>
                             <p id="footer-text">Adult Content Warning: This game contains mature themes. <br>All characters are 18+. Please play responsibly and in moderation.</p>
                             <p class="akaeroCore_Co">© 2025 akaeroCore Co., Ltd. All rights reserved.</p>
@@ -491,4 +488,20 @@
             <img height="100" width="100" id="lightbox-img" src="" alt="Enlarged image preview" aria-hidden="true">
         </div>
     </body>
+    <style>.spec-list li {
+  display: grid;
+  grid-template-columns: 113px 1fr; /* 第一列固定113px給 strong，第二列自動填充 */
+  align-items: start; /* 對齊頂部 */
+  gap: 10px; /* 可選：間距 */
+}
+#has_hr {
+   display: inline; /* 在 "Estimated Playtime" 項目上方增加額外空間 */
+}
+.spec-list li .border {
+  display: block; /* 強制 strong 在第一列 */
+}
+.spec-list li span {
+  grid-column: 2; /* span 在第二列，允許換行 */
+  word-wrap: break-word;
+}</style>
 </html>
