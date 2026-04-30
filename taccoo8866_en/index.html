@@ -514,6 +514,9 @@ li strong.border {
     width: 125px;
     background-size: 125px 36px;
 }
+li strong{
+    line-height: 34px;
+}
 .spec-list li span {
   grid-column: 2; /* span 在第二列，允許換行 */
   word-wrap: break-word;
@@ -540,7 +543,12 @@ li strong.border {
         height:57px;
     };
 }
-
+#logo-title-art:lang(en) {
+    height:29px;
+    @media (min-width: 1024px) {
+        height:46px;
+    }
+}
 .content-wrapper{
     @media (max-width: 1023px) {
         z-index: 30;
