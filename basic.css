@@ -275,8 +275,10 @@ margin: 0 auto;
 }
 .btn-row {
     display: flex;
-    width: 100%;
-    justify-content: center;
+    width: 94vw;
+    justify-content: start;
+    margin-left: 3vw;
+    margin-right: 3vw;
     gap: 3vw;                 /* 上排左右間距 */
     @media (min-width: 1024px) {
         gap: 20px;
