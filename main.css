@@ -737,6 +737,8 @@ position: absolute;
         margin-bottom: 32px;
         @media (min-width: 1024px) {
              margin-top: 40px;
+             margin-right: auto;
+             margin-left: auto;
         }
     }
     .row{
