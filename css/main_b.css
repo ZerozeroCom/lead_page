@@ -37,3 +37,39 @@ img[width="1"][height="1"]{position:absolute;}a{text-decoration:none;color:inher
 @media(min-width:1024px){.character-item--reverse #say_5{right:auto;left:40%}}
 @media(min-width:1024px){.character-item--reverse .content-wrapper{right:auto;left:0}}
 @media(min-width:1080px){.character-item--reverse .content-wrapper{right:auto;left:-8%}}
+
+/* ========== SEVEN DAYS 素材接線後樣式 ========== */
+/* 頁面底背景換新素材 */
+main{background-image:url(../img/sd-page-bg.webp)}
+/* 社群圖示：改用提供的 SVG（移除原本的白圓底） */
+.social-bar{background:none}
+.social-link{background:transparent;border:none;box-shadow:none;width:48px;height:48px}
+.social-link:hover{transform:translateY(-2px);box-shadow:none}
+.social-link img{width:100%;height:100%;display:block}
+/* 純文字區塊標題（好評推薦 / 遊戲特色介紹 / 精彩畫面搶先看） */
+.section-text-title,.reviews-title{font-family:Noto Sans TC,sans-serif;font-weight:900;color:#2b2b2b}
+/* 劇情三段純文字標題 */
+.intro-card .intro-title{font-size:clamp(20px,3vw,34px);font-weight:900;color:#2b2b2b;margin:0 0 6px;font-family:Noto Sans TC,sans-serif}
+/* 特色介紹：側邊立繪取代原圓形頭像 */
+.feature-char-pic{display:block;width:100%;height:100%;background:none;border-radius:0}
+.feature-char-pic:before{display:none}
+.feature-char-pic img{width:100%;height:100%;object-fit:contain;object-position:bottom center}
+/* 角色名字（純文字） */
+.char-name{font-family:Noto Sans TC,sans-serif;font-weight:900;color:#2b2b2b;font-size:clamp(28px,4vw,46px);margin:0 0 10px;line-height:1.2}
+.char-name small{display:block;font-size:clamp(14px,1.6vw,20px);font-weight:500;color:#6b5b7a;margin-top:4px}
+/* monitor 展示元素（畫廊與產品資訊之間） */
+#monitor-showcase{display:flex;justify-content:center;align-items:center;padding:4dvh 4vw;position:relative;z-index:2}
+.monitor-pic{display:block;width:min(520px,80vw)}
+.monitor-pic img{width:100%;height:auto;display:block}
+/* 影片框 / 影片區背景換 SEVEN DAYS 素材 */
+#promo_video:before{background-image:url(../img/sd-video-bg.webp)}
+.video_container:before{background-image:url(../img/sd-video-frame.webp)}
+
+/* CTA 按鈕：用手繪布標底圖 + 文字（移除舊漸層） */
+.btn.btn-steam,.btn.btn-dl,.btn.btn-download{border:none;box-shadow:none;-webkit-text-stroke:0;background-repeat:no-repeat;background-position:center;background-size:100% 100%}
+.btn.btn-steam{background-image:url(../img/sd-btn-steam.webp)}
+.btn.btn-dl{background-image:url(../img/sd-btn-dlsite.webp)}
+.btn.btn-download{background-image:url(../img/sd-btn-patch.webp)}
+.btn.btn-steam:hover,.btn.btn-dl:hover,.btn.btn-download:hover{filter:brightness(1.04);transform:translateY(-2px);box-shadow:none}
+.btn.btn-steam:active,.btn.btn-dl:active,.btn.btn-download:active{transform:translateY(1px)}
+.btn .btn-label{font-family:Noto Sans TC,sans-serif;font-weight:900;font-size:clamp(15px,2.2vw,22px);color:#2b2b2b;letter-spacing:1px;white-space:nowrap}
