@@ -144,3 +144,5 @@ vite.config.ts.timestamp-*
 # Git metadata and recovery artifacts
 .git.backup/
 page_temp/
+
+new img
