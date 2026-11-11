@@ -57,6 +57,59 @@ section.page {
     display: none;
 }
 
+.btn-label {
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
+  gap: 2px;
+}
+.btn-icon { /*steam icon*/
+  width: auto;
+  height: 85%;
+  flex-shrink: 0;
+}
+.btn-dl .btn-icon { /*dlsite icon*/
+    height: 66%;
+   aspect-ratio: 67 / 19;
+}
+
+.sd-theme .social-link{
+    background-image:url(./img/sd-social-bg.webp);
+    background-repeat:no-repeat;background-position:center;background-size:100% 100%;
+}
+
+.sd-theme .social-bar{
+    position:fixed;
+    width: 100%;
+    left:0%;
+    bottom: 0%;
+    padding-bottom: 14px;
+    z-index:60;background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(180, 180, 180, 0.1) 1%,
+    rgba(80, 80, 80, 0.65) 50%,
+    rgba(0, 0, 0, 0.95) 95%
+  );
+  
+}
+.sd-theme .social-bar-inner{
+    display:flex;flex-direction:row;gap:14px;
+    justify-content:center;
+
+}
+@media(min-width:1024px){
+    .sd-theme .social-bar{left:auto;bottom:auto;flex-direction:column;width: auto;}
+    .sd-theme .social-bar-inner{
+        right:16px;
+        top:50%;transform:translateY(-50%);
+        gap:18px;
+    }
+}
+.sd-theme .social-link{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border:none;box-shadow:none;transition:transform .2s ease}
+.sd-theme .social-link:hover{transform:translateY(-2px);box-shadow:none}
+.sd-theme .social-link img{width:50%;height:50%;display:block}
+
 .mini_character_1{
     margin-top: 20dvh;
     position:relative;
@@ -194,8 +247,8 @@ section.page {
     display: block;
     aspect-ratio: 210 / 43;
     height: auto;
-    padding-left: 24px;
-    padding-bottom: 24px;
+    padding-left: 8px;
+    padding-top: 0px;
     width:45vw;
     margin: 0 auto;
     @media (min-width: 1024px) {
@@ -404,3 +457,16 @@ button img{
     transition: opacity 0.3s ease;
     cursor: zoom-out;
 }
+/* CTA 按鈕：SEVEN DAYS 手繪布標底圖（覆蓋漸層基底；icon/label 已於上方定義） */
+.sd-theme .btn.btn-steam,
+.sd-theme .btn.btn-dl,
+.sd-theme .btn.btn-download{ background-repeat:no-repeat; background-position:center; background-size:100% 100%; border:none; box-shadow:none; -webkit-text-stroke:0; }
+.sd-theme .btn.btn-steam{ background-image:url(./img/sd-btn-steam.webp); }
+.sd-theme .btn.btn-dl{ background-image:url(./img/sd-btn-dlsite.webp); }
+.sd-theme .btn.btn-download{ background-image:url(./img/sd-btn-patch.webp); }
+.sd-theme .btn.btn-steam:hover,
+.sd-theme .btn.btn-dl:hover,
+.sd-theme .btn.btn-download:hover{ filter:brightness(1.04); transform:translateY(-2px); box-shadow:none; }
+.sd-theme .btn.btn-steam:active,
+.sd-theme .btn.btn-dl:active,
+.sd-theme .btn.btn-download:active{ transform:translateY(1px); }

@@ -18,11 +18,11 @@ a:hover, a:active, a:visited {
 } */
 main{
     background-color: #f5f5f5;
-    background-image: url("../img/texture_bg_2.png"); 
+    background-image: url("./img/texture_bg_2.png"); 
     background-image: image-set(
-        url("../img/texture_bg_2.avif") type("image/avif"),
-        url("../img/texture_bg_2.webp") type("image/webp"),
-        url("../img/texture_bg_2.png") type("image/png")
+        url("./img/texture_bg_2.avif") type("image/avif"),
+        url("./img/texture_bg_2.webp") type("image/webp"),
+        url("./img/texture_bg_2.png") type("image/png")
     );
     background-position: center;
     background-size: cover;
@@ -77,11 +77,11 @@ position: absolute;
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url("../img/panel_border.png"); 
+    background-image: url("./img/panel_border.png"); 
     background-image: image-set(
-        url("../img/panel_border.avif") type("image/avif"),
-        url("../img/panel_border.webp") type("image/webp"),
-        url("../img/panel_border.png") type("image/png")
+        url("./img/panel_border.avif") type("image/avif"),
+        url("./img/panel_border.webp") type("image/webp"),
+        url("./img/panel_border.png") type("image/png")
     );
     background-position: center;
     background-size: auto 100%;
@@ -102,9 +102,9 @@ position: absolute;
     right: 30px;
     bottom:-13%;
  background-image: image-set(
-        url("../img/texture_bg_1.avif") type("image/avif"),
-        url("../img/texture_bg_1.webp") type("image/webp"),
-        url("../img/texture_bg_1.png") type("image/png")
+        url("./img/texture_bg_1.avif") type("image/avif"),
+        url("./img/texture_bg_1.webp") type("image/webp"),
+        url("./img/texture_bg_1.png") type("image/png")
     );
     background-size: contain;
     background-repeat: no-repeat;
@@ -120,9 +120,9 @@ position: absolute;
     left: 10%;
     top:0%;
  background-image: image-set(
-        url("../img/texture_bg_1.avif") type("image/avif"),
-        url("../img/texture_bg_1.webp") type("image/webp"),
-        url("../img/texture_bg_1.png") type("image/png")
+        url("./img/texture_bg_1.avif") type("image/avif"),
+        url("./img/texture_bg_1.webp") type("image/webp"),
+        url("./img/texture_bg_1.png") type("image/png")
     );
     background-size: contain;
     background-repeat: no-repeat;
@@ -137,9 +137,9 @@ position: absolute;
     width: 666.91px;
     bottom: 5%;
     background-image: image-set(
-        url("../img/sakura-L.avif") type("image/avif"),
-        url("../img/sakura-L.webp") type("image/webp"),
-        url("../img/sakura-L.png") type("image/png")
+        url("./img/sakura-L.avif") type("image/avif"),
+        url("./img/sakura-L.webp") type("image/webp"),
+        url("./img/sakura-L.png") type("image/png")
     );
     background-size: contain;
     background-repeat: no-repeat;
@@ -159,9 +159,9 @@ position: absolute;
     width: 548.83px;
     top:-3.5%;
     background-image: image-set(
-        url("../img/sakura-inside-R.avif") type("image/avif"),
-        url("../img/sakura-inside-R.webp") type("image/webp"),
-        url("../img/sakura-inside-R.png") type("image/png")
+        url("./img/sakura-inside-R.avif") type("image/avif"),
+        url("./img/sakura-inside-R.webp") type("image/webp"),
+        url("./img/sakura-inside-R.png") type("image/png")
     );
     background-size: contain;
     background-repeat: no-repeat;
@@ -265,11 +265,11 @@ position: absolute;
     
     left: 0;
     position: absolute;
-    background-image: url("../img/section_bg.png"); /* fallback */
+    background-image: url("./img/section_bg.png"); /* fallback */
     background-image: image-set(
-        url("../img/section_bg.avif") type("image/avif"),
-        url("../img/section_bg.webp") type("image/webp"),
-        url("../img/section_bg.png") type("image/png")
+        url("./img/section_bg.avif") type("image/avif"),
+        url("./img/section_bg.webp") type("image/webp"),
+        url("./img/section_bg.png") type("image/png")
     );
     bottom: -15dvh;
     background-size: cover; 
@@ -300,11 +300,11 @@ position: absolute;
     height: 125%;
     width: 130%;
     position: absolute;
-    background-image: url("../img/video_border.png"); /* fallback */
+    background-image: url("./img/video_border.png"); /* fallback */
     background-image: image-set(
-        url("../img/video_border.avif") type("image/avif"),
-        url("../img/video_border.webp") type("image/webp"),
-        url("../img/video_border.png") type("image/png")
+        url("./img/video_border.avif") type("image/avif"),
+        url("./img/video_border.webp") type("image/webp"),
+        url("./img/video_border.png") type("image/png")
     );
     top: 50%;
     background-size: 86% 100%; /* 寬度縮到 80%，高度維持 100% */
@@ -319,9 +319,9 @@ position: absolute;
     z-index: 5;
     position: absolute;
     background-image: image-set(
-        url("../img/sakura-inside-L.avif") type("image/avif"),
-        url("../img/sakura-inside-L.webp") type("image/webp"),
-        url("../img/sakura-inside-L.png") type("image/png")
+        url("./img/sakura-inside-L.avif") type("image/avif"),
+        url("./img/sakura-inside-L.webp") type("image/webp"),
+        url("./img/sakura-inside-L.png") type("image/png")
     );
     background-size: contain;
     background-repeat: no-repeat;
@@ -343,9 +343,9 @@ position: absolute;
     z-index: 5;
     position: absolute;
     background-image: image-set(
-        url("../img/sakura-inside-R.avif") type("image/avif"),
-        url("../img/sakura-inside-R.webp") type("image/webp"),
-        url("../img/sakura-inside-R.png") type("image/png")
+        url("./img/sakura-inside-R.avif") type("image/avif"),
+        url("./img/sakura-inside-R.webp") type("image/webp"),
+        url("./img/sakura-inside-R.png") type("image/png")
     );
     background-size: contain;
     background-repeat: no-repeat;
@@ -404,11 +404,11 @@ position: absolute;
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("../img/sakura-L.png"); /* fallback */
+    background-image: url("./img/sakura-L.png"); /* fallback */
     background-image: image-set(
-        url("../img/sakura-L.avif") type("image/avif"),
-        url("../img/sakura-L.webp") type("image/webp"),
-        url("../img/sakura-L.png") type("image/png")
+        url("./img/sakura-L.avif") type("image/avif"),
+        url("./img/sakura-L.webp") type("image/webp"),
+        url("./img/sakura-L.png") type("image/png")
     );
 }
 .main_character::after{
@@ -424,11 +424,11 @@ position: absolute;
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("../img/texture_bg_1.png"); /* fallback */
+    background-image: url("./img/texture_bg_1.png"); /* fallback */
     background-image: image-set(
-        url("../img/texture_bg_1.avif") type("image/avif"),
-        url("../img/texture_bg_1.webp") type("image/webp"),
-        url("../img/texture_bg_1.png") type("image/png")
+        url("./img/texture_bg_1.avif") type("image/avif"),
+        url("./img/texture_bg_1.webp") type("image/webp"),
+        url("./img/texture_bg_1.png") type("image/png")
     );
 }
 .main_character img{
@@ -469,11 +469,11 @@ position: absolute;
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("../img/sakura-L.png"); /* fallback */
+    background-image: url("./img/sakura-L.png"); /* fallback */
     background-image: image-set(
-        url("../img/sakura-L.avif") type("image/avif"),
-        url("../img/sakura-L.webp") type("image/webp"),
-        url("../img/sakura-L.png") type("image/png")
+        url("./img/sakura-L.avif") type("image/avif"),
+        url("./img/sakura-L.webp") type("image/webp"),
+        url("./img/sakura-L.png") type("image/png")
     );
 }
 .word_art_2{
@@ -533,11 +533,11 @@ position: absolute;
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("../img/texture_bg_1.png"); /* fallback */
+    background-image: url("./img/texture_bg_1.png"); /* fallback */
     background-image: image-set(
-        url("../img/texture_bg_1.avif") type("image/avif"),
-        url("../img/texture_bg_1.webp") type("image/webp"),
-        url("../img/texture_bg_1.png") type("image/png")
+        url("./img/texture_bg_1.avif") type("image/avif"),
+        url("./img/texture_bg_1.webp") type("image/webp"),
+        url("./img/texture_bg_1.png") type("image/png")
     );
 }
 .summary-background::after{
@@ -552,11 +552,11 @@ position: absolute;
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("../img/sakura-L.png"); /* fallback */
+    background-image: url("./img/sakura-L.png"); /* fallback */
     background-image: image-set(
-        url("../img/sakura-L.avif") type("image/avif"),
-        url("../img/sakura-L.webp") type("image/webp"),
-        url("../img/sakura-L.png") type("image/png")
+        url("./img/sakura-L.avif") type("image/avif"),
+        url("./img/sakura-L.webp") type("image/webp"),
+        url("./img/sakura-L.png") type("image/png")
     );
 }
 .paper_clip{
@@ -571,11 +571,11 @@ position: absolute;
     }
     top: -15px;
     right: 15px;
-    background-image: url("../img/paper_clip.png"); /* fallback */
+    background-image: url("./img/paper_clip.png"); /* fallback */
     background-image: image-set(
-        url("../img/paper_clip.avif") type("image/avif"),
-        url("../img/paper_clip.webp") type("image/webp"),
-        url("../img/paper_clip.png") type("image/png")
+        url("./img/paper_clip.avif") type("image/avif"),
+        url("./img/paper_clip.webp") type("image/webp"),
+        url("./img/paper_clip.png") type("image/png")
     );
     
   }
@@ -583,10 +583,10 @@ position: absolute;
     position: absolute;
     width: 101px;
     height: 101px;
-    background-image: url("../img/coner.png"); /* fallback */
+    background-image: url("./img/coner.png"); /* fallback */
     background-image: image-set(
-        url("../img/coner.webp") type("image/webp"),
-        url("../img/coner.png") type("image/png")
+        url("./img/coner.webp") type("image/webp"),
+        url("./img/coner.png") type("image/png")
     );
     background-size: 101px 101px;/* 調整圖大小 */
   }
@@ -695,11 +695,11 @@ position: absolute;
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("../img/texture_bg_1.png"); /* fallback */
+    background-image: url("./img/texture_bg_1.png"); /* fallback */
     background-image: image-set(
-        url("../img/texture_bg_1.avif") type("image/avif"),
-        url("../img/texture_bg_1.webp") type("image/webp"),
-        url("../img/texture_bg_1.png") type("image/png")
+        url("./img/texture_bg_1.avif") type("image/avif"),
+        url("./img/texture_bg_1.webp") type("image/webp"),
+        url("./img/texture_bg_1.png") type("image/png")
         );
 }
 #gallery::after{
@@ -720,11 +720,11 @@ position: absolute;
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("../img/texture_bg_1.png"); /* fallback */
+    background-image: url("./img/texture_bg_1.png"); /* fallback */
     background-image: image-set(
-        url("../img/texture_bg_1.avif") type("image/avif"),
-        url("../img/texture_bg_1.webp") type("image/webp"),
-        url("../img/texture_bg_1.png") type("image/png")
+        url("./img/texture_bg_1.avif") type("image/avif"),
+        url("./img/texture_bg_1.webp") type("image/webp"),
+        url("./img/texture_bg_1.png") type("image/png")
         );
 }
     #summary{
@@ -962,11 +962,11 @@ li strong.border {
     height: 36px;
     line-height: 36px;
     text-align: center;
-    background-image: url("../img/info_list_border.png"); /* fallback */
+    background-image: url("./img/info_list_border.png"); /* fallback */
     background-image: image-set(
-        url("../img/info_list_border.avif") type("image/avif"),
-        url("../img/info_list_border.webp") type("image/webp"),
-        url("../img/info_list_border.png") type("image/png")
+        url("./img/info_list_border.avif") type("image/avif"),
+        url("./img/info_list_border.webp") type("image/webp"),
+        url("./img/info_list_border.png") type("image/png")
     );
     background-size: 113px 36px;/* 調整圖大小 */
     margin-right: 10px;
@@ -1026,11 +1026,11 @@ li strong.border {
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("../img/texture_bg_1.png"); /* fallback */
+    background-image: url("./img/texture_bg_1.png"); /* fallback */
     background-image: image-set(
-        url("../img/texture_bg_1.avif") type("image/avif"),
-        url("../img/texture_bg_1.webp") type("image/webp"),
-        url("../img/texture_bg_1.png") type("image/png")
+        url("./img/texture_bg_1.avif") type("image/avif"),
+        url("./img/texture_bg_1.webp") type("image/webp"),
+        url("./img/texture_bg_1.png") type("image/png")
         );
 }
 .game_bg2{
@@ -1052,11 +1052,11 @@ li strong.border {
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("../img/texture_bg_1.png"); /* fallback */
+    background-image: url("./img/texture_bg_1.png"); /* fallback */
     background-image: image-set(
-        url("../img/texture_bg_1.avif") type("image/avif"),
-        url("../img/texture_bg_1.webp") type("image/webp"),
-        url("../img/texture_bg_1.png") type("image/png")
+        url("./img/texture_bg_1.avif") type("image/avif"),
+        url("./img/texture_bg_1.webp") type("image/webp"),
+        url("./img/texture_bg_1.png") type("image/png")
         );
 }
 
@@ -1325,3 +1325,99 @@ li strong.border {
   );
 }
 
+
+/* ========================================================================== */
+/* SEVEN DAYS 專屬樣式（限定 body.sd-theme = 繁中頁，避免影響其他語系）        */
+/* 註：首屏會用到的（社群列、CTA 按鈕）放 basic.css，此處只放第二屏以後       */
+/* ========================================================================== */
+
+/* 頁面底背景換 SEVEN DAYS 水墨紙質 */
+.sd-theme main{ background-image:url(./img/sd-page-bg.webp); }
+
+/* 好評推薦：手機堆疊、桌機 4 欄 + 區塊底圖 + 手繪名牌 */
+.sd-theme #reviews{ height:auto; min-height:auto; scroll-snap-align:none; display:flex; flex-direction:column; align-items:center; padding:6dvh 4vw; box-sizing:border-box; background:url(./img/sd-reviews-bg.webp) center/cover no-repeat; }
+.sd-theme .reviews-title,
+.sd-theme .section-text-title{ font-family:'Noto Sans TC',sans-serif; font-weight:900; color:#2b2b2b; }
+.sd-theme .reviews-title{ font-size:clamp(28px,5vw,46px); margin:0 0 24px; }
+.sd-theme .reviews-content{ width:100%; max-width:1268px; display:flex; flex-direction:column; gap:16px; }
+@media (min-width:1024px){ .sd-theme .reviews-content{ flex-direction:row; align-items:stretch; gap:20px; } }
+.sd-theme .review-card{ flex:1; background:#faf8f3; border:1px solid #d3cabf; border-radius:16px; padding:20px; box-shadow:0 4px 14px #0000001a; box-sizing:border-box; }
+.sd-theme .review-name{ display:inline-block; background:url(./img/sd-review-tag-m.webp) center/100% 100% no-repeat; border:none; color:#2b2b2b; padding:4px 18px; font-size:14px; font-weight:700; margin-bottom:10px; }
+.sd-theme .review-stars{ color:#f5a623; font-size:18px; letter-spacing:2px; margin-bottom:8px; }
+.sd-theme .review-headline{ margin:0 0 10px; font-size:clamp(16px,2vw,18px); font-weight:900; color:#3c2b51; line-height:1.45; }
+.sd-theme .review-body{ margin:0; font-size:14px; line-height:1.7; color:#6b5b7a; font-family:Inter,'Noto Sans TC',sans-serif; }
+
+/* 夢境區標題（影片上方） */
+.sd-theme .dream-heading{ text-align:center; position:relative; z-index:5; margin-bottom:3vh; padding:0 4vw; }
+.sd-theme .dream-title{ color:#2b2b2b; font-weight:900; font-size:clamp(26px,4vw,44px); margin:0 0 10px; font-family:'Noto Sans TC',sans-serif; }
+.sd-theme .dream-subtitle{ color:#3c2b51; font-size:clamp(14px,2dvh,18px); line-height:1.7; max-width:720px; margin:0 auto; font-weight:500; }
+
+/* 劇情三段純文字標題 */
+.sd-theme .intro-card .intro-title{ font-size:clamp(20px,3vw,34px); font-weight:900; color:#2b2b2b; margin:0 0 6px; font-family:'Noto Sans TC',sans-serif; }
+
+/* 角色區：兩位角色各占一屏、第二位左右鏡像 */
+.sd-theme #character-info{ height:auto; display:flex; flex-direction:column; }
+.sd-theme #character-info .character-item{ position:relative; min-height:88dvh; display:flex; align-items:center; }
+@media (min-width:1024px){ .sd-theme #character-info .character-item{ min-height:100vh; scroll-snap-align:center; } }
+.sd-theme #character-info .character-item figure{ width:100%; height:80dvh; }
+@media (min-width:1024px){ .sd-theme #character-info .character-item figure{ height:88vh; } }
+.sd-theme .character-item--reverse .main_character img{ margin-right:0; margin-left:13%; }
+@media (min-width:1024px){ .sd-theme .character-item--reverse .content-wrapper{ right:auto; left:0; } }
+@media (min-width:1080px){ .sd-theme .character-item--reverse .content-wrapper{ right:auto; left:-8%; } }
+.sd-theme .char-name{ font-family:'Noto Sans TC',sans-serif; font-weight:900; color:#2b2b2b; font-size:clamp(28px,4vw,46px); margin:0 0 10px; line-height:1.2; }
+.sd-theme .char-name small{ display:block; font-size:clamp(14px,1.6vw,20px); font-weight:500; color:#6b5b7a; margin-top:4px; }
+
+/* 遊戲特色介紹：側邊立繪取代原圓形頭像 */
+.sd-theme .feature-char-pic{ display:block; width:100%; height:100%; background:none; border-radius:0; }
+.sd-theme .feature-char-pic:before{ display:none; }
+.sd-theme .feature-char-pic img{ width:100%; height:100%; object-fit:contain; object-position:bottom center; }
+
+/* monitor 展示元素（畫廊與產品資訊之間） */
+.sd-theme #monitor-showcase{ display:flex; justify-content:center; align-items:center; padding:4dvh 4vw; position:relative; z-index:2; }
+.sd-theme .monitor-pic{ display:block; width:min(520px,80vw); }
+.sd-theme .monitor-pic img{ width:100%; height:auto; display:block; }
+
+/* 影片框 / 影片區背景換 SEVEN DAYS 素材 */
+.sd-theme #promo_video:before{ background-image:url(./img/sd-video-bg.webp); }
+.sd-theme .video_container:before{ background-image:url(./img/sd-video-frame.webp); }
+
+/* ===== 水墨風：停用模板粉色/櫻花裝飾（SEVEN DAYS 用不到） ===== */
+.sd-theme .extra-deco3,
+.sd-theme .extra-deco:after,
+.sd-theme .video_container:after,
+.sd-theme .sakura,
+.sd-theme .main_character:before,
+.sd-theme .content-wrapper:before,
+.sd-theme .summary-background:after,
+.sd-theme #panel_border_img{ display:none !important; }
+/* 粉紫漸層描邊 → 灰階 */
+.sd-theme .gradient_Borden:before{ background:linear-gradient(180deg,#d0d0d0,#9c9c9c); border-color:#8a8a8a; }
+.sd-theme .photo.gradient_Borden:before{ background:linear-gradient(180deg,#c2c2c2,#8c8c8c); }
+/* 對話泡泡：粉 → 灰白 */
+.sd-theme .bubble{ background:#f3f3f3; box-shadow:0 2px #6a6a6a,0 2px #fff inset; }
+.sd-theme .bubble:before{ background:#6a6a6a; }
+.sd-theme .bubble:after{ background:#f3f3f3; }
+.sd-theme .arrow-inner{ background:#fff; }
+/* 角色區底色條：紫 → 灰 */
+.sd-theme .summary-background{ background:linear-gradient(90deg,#8a8a8a00,#8f8f8f,#8a8a8a00); }
+/* 模板水彩 texture_bg_1 本身為粉調 → 套灰階濾鏡 */
+.sd-theme .extra-deco:before,
+.sd-theme .extra-deco2,
+.sd-theme .main_character:after,
+.sd-theme .summary-background:before,
+.sd-theme #gallery:before,
+.sd-theme #gallery:after,
+.sd-theme .game_bg1:after,
+.sd-theme .game_bg2:after{ filter:grayscale(1); }
+/* 內容圖統一灰階：立繪素材帶洋紅潑墨，Figma 為純黑白水墨 */
+.sd-theme .main_character img,
+.sd-theme .photo img,
+.sd-theme .cg img,
+.sd-theme .feature-char-pic img,
+.sd-theme .monitor-pic img,
+.sd-theme #summary-cover img{ filter:grayscale(1); }
+/* 產品資訊 / 頁尾殘留粉紫 → 灰階 */
+.sd-theme #logo-border img{ filter:grayscale(1); }
+.sd-theme li strong.border{ filter:grayscale(1); }
+.sd-theme .price{ color:#2b2b2b; }
+.sd-theme #site-footer{ background:linear-gradient(90deg,#5a5a5a4d,#5a5a5a,#5a5a5a4d); }
