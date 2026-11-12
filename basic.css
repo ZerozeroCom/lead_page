@@ -77,8 +77,8 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 
 @media (min-width:1024px){
     .slogan-block{
-        left:auto; right:5%; bottom:auto; top:48%; width:min(44vw,720px);
-        transform:translateY(-50%);
+        left:50%; right:auto; top:auto; bottom:18%; width:min(52vw,820px);
+        transform:translateX(-50%);
     }
     .slogan_img img{ max-width:none; }
 }
@@ -120,11 +120,11 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 
 @media (min-width:1024px){
     .btn-group{
-        left:46px; right:auto; bottom:52px;
-        width:min(40vw,600px); transform:none;
+        left:50%; right:auto; bottom:6%;
+        width:min(40vw,560px); transform:translateX(-50%);
     }
     .btn-row{ gap:16px; }
-    .btn-row:last-child > a{ max-width:calc(50% - 8px); margin:0; }
+    .btn-row:last-child > a{ max-width:calc(50% - 8px); margin:0 auto; }
     .btn{ aspect-ratio:185 / 48; }
     .btn-label{ font-size:clamp(15px,1.1vw,20px); }
 }
