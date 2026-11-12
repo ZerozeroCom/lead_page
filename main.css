@@ -65,13 +65,13 @@ main > section{
 }
 .review-name-box{
     position: absolute; 
-    top: -8px;
+    top: -10px;
 }
 
 .review-name{
     position:relative;
-    display:inline-block; min-width:120px;
-    padding:6px 20px; margin:0 0 12px;
+    display:inline-block; min-width:88px;
+    padding:12px 6px 12px 12px; 
     background:url(./img/sd-review-tag-m.webp) center/100% 100% no-repeat;
     font-weight:700; font-size:14px; color:var(--ink); text-align:center;
 }
@@ -99,10 +99,15 @@ main > section{
     background:url(./img/sd-review-tag-r.webp) center/100% 100% no-repeat;
     
 }
-/* 5 顆星：用單一 SVG 以 background 平鋪（space 自動分配間距），HTML 不需重複星星 */
+/* 5 顆星：單一 SVG 以 background 平鋪，HTML 不需重複星星
+   格子 28px 寬、星星維持 20px（SVG 自動置中，兩側留白＝間距）；width = 5×格子寬
+   想拉大間距：把 28px 與 width 一起等比加大（例如 32px + width:160px） */
 .review-stars{
-    width:112px; height:20px; margin-bottom:10px; font-size:0;
-    background:url(./img/sd-star.svg) left center / 20px 20px space;
+    margin-top:22px;
+    margin-left: -2px;
+    margin-bottom: 12px;
+    width:145px; height:23px; font-size:0;
+    background:url(./img/sd-star.svg) left center / 29px 23px repeat-x;
 }
 .review-headline{
     margin:0 0 12px; font-weight:900; line-height:1.4; color:var(--ink);
