@@ -1,0 +1,317 @@
+/* ==========================================================================
+   SEVEN DAYS 未知的密室生活 — 第二屏以後 (css/main.css)
+   由繁中頁以 <link ../css/main.css> 載入；打包成 css/main_b.css。
+   圖片路徑相對本檔（css/）→ ../img/
+   基準：mobile 314x650 / desktop 1920x1080
+   ========================================================================== */
+
+:root{
+    --ink:#2b2b2b;
+    --ink-soft:#5a5a5a;
+    --paper:#f7f3ea;
+    --line:#c9c1b4;
+    --maxw:1280px;
+}
+
+/* 整頁底：水墨紙質 */
+main{
+    display:block;
+    background:url(./img/sd-page-bg.webp) center top / cover;
+    background-color:#ebe8e1;
+    color:var(--ink);
+    font-family:'Noto Sans TC',sans-serif;
+}
+
+/* 內容圖統一灰階（素材帶洋紅潑墨，Figma 為純黑白水墨） */
+#reviews img,#game-system img,#character-info img,#gallery img,
+#monitor-showcase img,#summary img,#promo_video video{ filter:grayscale(1); }
+
+/* 區塊通用節奏 */
+main > section{
+    position:relative;
+    width:100%;
+    padding:clamp(46px,8vw,110px) 16px;
+}
+.section-text-title{
+    margin:0 0 clamp(24px,4vw,48px);
+    text-align:center;
+    font-weight:900;
+    font-size:clamp(26px,4.4vw,46px);
+    letter-spacing:2px;
+    color:var(--ink);
+}
+
+/* ==========================================================================
+   好評推薦  #reviews
+   ========================================================================== */
+#reviews{
+    background:url(./img/sd-reviews-bg.webp) center/cover no-repeat;
+}
+.reviews-title{
+    margin:0 0 clamp(24px,4vw,48px);
+    text-align:center; font-weight:900; letter-spacing:2px; color:var(--ink);
+    font-size:clamp(26px,4.4vw,46px);
+}
+.reviews-content{
+    max-width:var(--maxw); margin:0 auto;
+    display:flex; flex-direction:column; gap:18px;
+}
+.review-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:20px 20px 24px;
+    box-shadow:2px 4px 14px rgba(0,0,0,.12);
+}
+.review-name{
+    display:inline-block; min-width:120px;
+    padding:6px 20px; margin:0 0 12px;
+    background:url(./img/sd-review-tag-m.webp) center/100% 100% no-repeat;
+    font-weight:700; font-size:14px; color:var(--ink); text-align:center;
+}
+.review-stars{ color:#f3a81e; font-size:17px; letter-spacing:2px; margin-bottom:10px; }
+.review-headline{
+    margin:0 0 12px; font-weight:900; line-height:1.4; color:var(--ink);
+    font-size:clamp(16px,2.4vw,19px);
+}
+.review-body{
+    margin:0; color:var(--ink-soft); line-height:1.75;
+    font-size:14px; font-family:Inter,'Noto Sans TC',sans-serif;
+}
+@media (min-width:1024px){
+    .reviews-content{ flex-direction:row; align-items:stretch; gap:22px; }
+    .review-card{ flex:1 1 0; min-width:0; }
+    .review-card:nth-child(odd){ transform:rotate(-.8deg); }
+    .review-card:nth-child(even){ transform:rotate(.8deg); }
+}
+
+/* ==========================================================================
+   劇情（鎖鏈框）  #game-intro-card
+   ========================================================================== */
+#game-intro-card{ padding-top:clamp(20px,3vw,40px); }
+.story-frame{
+    position:relative;
+    max-width:960px; margin:0 auto;
+    aspect-ratio:1430 / 1100;
+    background:url(./img/sd-story-frame.webp) center/100% 100% no-repeat;
+    display:flex; align-items:center; justify-content:center;
+}
+.story-inner{
+    width:66%;
+    display:flex; flex-direction:column; align-items:center;
+    gap:clamp(14px,2.4vw,30px);
+    text-align:center;
+}
+.intro-card{ margin:0; }
+.intro-card .intro-title{
+    margin:0 0 6px; font-weight:900; color:var(--ink);
+    font-size:clamp(15px,2.5vw,30px); letter-spacing:1px;
+}
+.intro-card p{
+    margin:0; color:var(--ink-soft); line-height:1.7;
+    font-size:clamp(10px,1.5vw,16px);
+}
+@media (max-width:640px){
+    .story-frame{ aspect-ratio:auto; min-height:92vw; padding:14vw 0; }
+    .story-inner{ width:72%; }
+}
+
+/* ==========================================================================
+   虛實交錯的夢境（影片）  #promo_video
+   ========================================================================== */
+#promo_video{
+    padding-top:0;
+    background:url(./img/sd-video-bg.webp) center bottom / cover no-repeat;
+}
+.dream-heading{ text-align:center; margin-bottom:clamp(20px,3vw,40px); }
+.dream-title{
+    margin:0 0 10px; font-weight:900; letter-spacing:2px; color:var(--ink);
+    font-size:clamp(24px,4vw,44px);
+}
+.dream-subtitle{
+    margin:0 auto; max-width:720px; color:var(--ink-soft);
+    line-height:1.7; font-size:clamp(13px,1.6vw,18px);
+}
+.video_container{
+    position:relative; max-width:900px; margin:0 auto;
+    padding:clamp(18px,2.6vw,34px);
+}
+.video_container::before{
+    content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
+    background:url(./img/sd-video-frame.webp) center/100% 100% no-repeat;
+}
+.video_container video{
+    display:block; width:100%; aspect-ratio:16 / 10;
+    object-fit:cover; border-radius:6px; background:#000;
+}
+.sakura{ display:none; }
+
+/* ==========================================================================
+   遊戲特色介紹  #game-system
+   截圖（紙膠框）＋下方深色字幕條＋側邊立繪
+   ========================================================================== */
+#game-system .content{ max-width:var(--maxw); margin:0 auto; display:flex; flex-direction:column; gap:clamp(40px,7vw,96px); }
+.feature-item{
+    position:relative;
+    display:flex; flex-direction:column;
+    max-width:760px; width:100%;
+}
+.feature-item.reverse{ align-self:flex-end; }
+.feature-shot{
+    position:relative;
+    background:#fff; padding:10px; border:1px solid var(--line);
+    box-shadow:3px 6px 18px rgba(0,0,0,.16);
+    transform:rotate(-.6deg);
+}
+.feature-item.reverse .feature-shot{ transform:rotate(.6deg); }
+.feature-shot img{ width:100%; height:auto; display:block; }
+.feature-cap{
+    position:relative; z-index:2;
+    margin:-6px 10px 0 10px;
+    background:rgba(20,20,20,.9); color:#f3f3f3;
+    padding:14px 18px; border-radius:2px;
+    font-size:clamp(13px,1.5vw,16px); line-height:1.6;
+}
+.feature-cap p{ margin:0; }
+.feature-side{
+    position:absolute; z-index:3; bottom:-6%;
+    width:clamp(74px,12vw,150px); height:auto;
+    left:-8%;
+}
+.feature-item.reverse .feature-side{ left:auto; right:-8%; }
+@media (min-width:1024px){
+    #game-system .content{ gap:clamp(70px,7vw,120px); }
+    .feature-item{ max-width:680px; }
+}
+
+/* ==========================================================================
+   角色介紹  #character-info
+   大立繪 ＋ 大粗體名字 + 描述，左右交錯
+   ========================================================================== */
+#character-info{ display:flex; flex-direction:column; gap:clamp(40px,6vw,80px); }
+.character-item{ margin:0; }
+.character-item h2{ margin:0; }
+.character-item figure{
+    position:relative; margin:0;
+    max-width:var(--maxw); margin:0 auto;
+    display:flex; flex-direction:column; align-items:center; gap:12px;
+}
+.summary-background{ display:none; }
+.main_character{ display:block; width:min(78%,420px); }
+.main_character img{ width:100%; height:auto; }
+.content-wrapper{ width:100%; max-width:480px; text-align:center; }
+.char-name{
+    margin:0 0 14px; font-weight:900; color:var(--ink); line-height:1.1;
+    font-size:clamp(34px,6vw,60px); letter-spacing:2px;
+}
+.char-name small{ display:block; margin-top:6px; font-size:clamp(14px,2vw,20px); font-weight:500; color:var(--ink-soft); letter-spacing:1px; }
+.introduce{ position:relative; }
+.introduce p{ margin:0 0 10px; color:var(--ink-soft); line-height:1.8; font-size:clamp(14px,1.6vw,17px); }
+.corner{ display:none; }
+
+@media (min-width:1024px){
+    .character-item figure{ flex-direction:row; align-items:center; justify-content:center; gap:clamp(20px,3vw,60px); }
+    .character-item--reverse figure{ flex-direction:row-reverse; }
+    .main_character{ width:min(42%,480px); flex-shrink:0; }
+    .content-wrapper{ text-align:left; max-width:440px; }
+    .char-name small{ margin-top:10px; }
+}
+
+/* ==========================================================================
+   精彩畫面搶先看  #gallery
+   ========================================================================== */
+.gallery-content{
+    max-width:var(--maxw); margin:0 auto;
+    display:grid; grid-template-columns:repeat(2,1fr);
+    gap:clamp(12px,2vw,26px);
+}
+.cg{ margin:0; cursor:pointer; }
+.cg .photo{
+    display:block; background:#fff; padding:8px; border:1px solid var(--line);
+    box-shadow:2px 4px 14px rgba(0,0,0,.14);
+    transition:transform .3s ease, box-shadow .3s ease;
+}
+.cg:nth-child(3n+1) .photo{ transform:rotate(-1deg); }
+.cg:nth-child(3n+2) .photo{ transform:rotate(.8deg); }
+.cg:nth-child(3n) .photo{ transform:rotate(-.4deg); }
+.cg .photo img{ width:100%; height:100%; aspect-ratio:16 / 10; object-fit:cover; display:block; }
+.cg:hover .photo{ transform:scale(1.03) rotate(0); box-shadow:4px 8px 24px rgba(0,0,0,.24); z-index:2; }
+.paper_clip{ display:none; }
+@media (min-width:1024px){
+    .gallery-content{ grid-template-columns:repeat(3,1fr); }
+}
+
+/* ==========================================================================
+   monitor 展示  #monitor-showcase
+   ========================================================================== */
+#monitor-showcase{ display:flex; justify-content:center; align-items:center; }
+.monitor-pic{ display:block; width:min(560px,86%); }
+.monitor-pic img{ width:100%; height:auto; }
+
+/* ==========================================================================
+   產品資訊  #summary
+   左封面 + 右便條卡 + 置中按鈕
+   ========================================================================== */
+#summary .row{
+    max-width:1080px; margin:0 auto;
+    display:flex; flex-direction:column; align-items:center; gap:clamp(20px,3vw,40px);
+}
+.summary-cover{ flex-shrink:0; width:min(320px,80%); }
+#summary-cover img{ width:100%; height:auto; border-radius:4px; box-shadow:2px 6px 18px rgba(0,0,0,.18); }
+.summary-info{ width:100%; max-width:560px; }
+.summary-box{
+    position:relative;
+    background:var(--paper);
+    border:1px solid var(--line); border-radius:4px;
+    padding:clamp(20px,3vw,34px);
+    box-shadow:2px 6px 18px rgba(0,0,0,.12);
+}
+.game-title{ margin:0 0 16px; }
+#logo-border{ display:none; }                 /* 舊裝飾邊框圖已刪 */
+#logo-title-art{ display:block; width:min(90%,420px); height:auto; }
+.spec-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+.spec-list li{ display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; font-size:clamp(14px,1.5vw,17px); color:var(--ink); line-height:1.5; }
+.spec-list strong{ font-weight:700; }
+.spec-list strong.border{
+    flex-shrink:0; display:inline-block; min-width:92px; text-align:center;
+    padding:3px 10px; border:1.5px solid var(--ink-soft); border-radius:20px;
+    font-size:13px; font-weight:700;
+}
+#has_hr{ padding-bottom:12px; margin-bottom:4px; border-bottom:1px dashed var(--line); }
+.price{ font-weight:900; font-size:clamp(18px,2vw,24px); color:var(--ink); font-family:Georama,'Noto Sans TC',sans-serif; }
+.game-tags .tag{ font-weight:500; }
+
+#summary .btn-group{
+    position:static; transform:none; width:100%; max-width:620px;
+    margin:clamp(26px,4vw,44px) auto 0; z-index:auto;
+}
+
+@media (min-width:1024px){
+    #summary .row{ flex-direction:row; align-items:center; justify-content:center; }
+    .summary-cover{ width:min(360px,34%); }
+    .summary-info{ max-width:560px; }
+}
+
+/* ==========================================================================
+   頁尾  #site-footer
+   ========================================================================== */
+#site-footer{
+    padding:clamp(20px,2.4vw,30px) 16px;
+    background:#3a3a3a; color:#eee;
+}
+#site-footer .footer{
+    max-width:1180px; margin:0 auto;
+    display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center;
+}
+#site-footer .row{ display:flex; align-items:center; gap:16px; justify-content:center; }
+#age-warning img{ width:66px; height:auto; flex-shrink:0; }
+#footer-text{ margin:0 0 6px; font-size:12px; line-height:1.6; color:#cfcfcf; }
+.akaeroCore_Co{ margin:0; font-size:12px; color:#bdbdbd; }
+.akaeroCore_Co.mobile{ display:block; }
+.akaerocore_logo img{ width:clamp(170px,14vw,210px); height:auto; }
+@media (min-width:1024px){
+    #site-footer .footer{ flex-direction:row; justify-content:space-between; text-align:left; gap:24px; }
+    #site-footer .footer > .row{ text-align:left; }
+    #footer-text{ font-size:13px; }
+    .akaeroCore_Co.mobile{ display:none; }
+}
