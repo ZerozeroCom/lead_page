@@ -83,6 +83,18 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
     .slogan_img img{ max-width:none; }
 }
 
+/* 散佈直書標語碎片（圖片物件先保留，位置可待素材到位後微調） */
+.slogan-frags{ position:absolute; inset:0; z-index:3; pointer-events:none; }
+.slogan-frag{ position:absolute; height:auto; filter:grayscale(1); }
+.frag-left{ left:3%; top:34%; width:15%; }
+.frag-top-1{ right:5%; top:13%; width:11%; }
+.frag-top-2{ right:17%; top:15%; width:9%; }
+@media (min-width:1024px){
+    .frag-left{ left:17%; top:28%; width:7%; }
+    .frag-top-1{ right:21%; top:11%; width:6%; }
+    .frag-top-2{ right:28%; top:15%; width:5%; }
+}
+
 /* ==========================================================================
    CTA 按鈕 — 手繪布標底圖 + 文字/icon
    ========================================================================== */

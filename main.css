@@ -97,9 +97,9 @@ main > section{
     display:flex; align-items:center; justify-content:center;
 }
 .story-inner{
-    width:66%;
+    width:70%;
     display:flex; flex-direction:column; align-items:center;
-    gap:clamp(14px,2.4vw,30px);
+    gap:clamp(10px,1.8vw,22px);
     text-align:center;
 }
 .intro-card{ margin:0; }
@@ -120,17 +120,7 @@ main > section{
    虛實交錯的夢境（影片）  #promo_video
    ========================================================================== */
 #promo_video{
-    padding-top:0;
     background:url(./img/sd-video-bg.webp) center bottom / cover no-repeat;
-}
-.dream-heading{ text-align:center; margin-bottom:clamp(20px,3vw,40px); }
-.dream-title{
-    margin:0 0 10px; font-weight:900; letter-spacing:2px; color:var(--ink);
-    font-size:clamp(24px,4vw,44px);
-}
-.dream-subtitle{
-    margin:0 auto; max-width:720px; color:var(--ink-soft);
-    line-height:1.7; font-size:clamp(13px,1.6vw,18px);
 }
 .video_container{
     position:relative; max-width:900px; margin:0 auto;
