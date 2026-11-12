@@ -124,15 +124,13 @@ main > section{
 }
 .video_container{
     position:relative; max-width:900px; margin:0 auto;
-    padding:clamp(18px,2.6vw,34px);
-}
-.video_container::before{
-    content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
+    aspect-ratio:1300 / 770;
     background:url(./img/sd-video-frame.webp) center/100% 100% no-repeat;
 }
+/* 影片嵌在紙框中央白色區內（框為背景，非覆蓋層） */
 .video_container video{
-    display:block; width:100%; aspect-ratio:16 / 10;
-    object-fit:cover; border-radius:6px; background:#000;
+    position:absolute; top:12.5%; left:7%; width:86%; height:75%;
+    object-fit:cover; background:#000;
 }
 .sakura{ display:none; }
 
