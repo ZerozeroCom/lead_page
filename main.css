@@ -45,7 +45,7 @@ main > section{
    好評推薦  #reviews
    ========================================================================== */
 #reviews{
-    background:url(./img/sd-reviews-bg.webp) center/cover no-repeat;
+    padding:20px 2vw;
 }
 .reviews-title{
     margin:0 0 clamp(24px,4vw,48px);
@@ -55,21 +55,55 @@ main > section{
 .reviews-content{
     max-width:var(--maxw); margin:0 auto;
     display:flex; flex-direction:column; gap:18px;
+    overflow: visible;
 }
 .review-card{
-    background:var(--paper);
-    border:1px solid var(--line);
-    border-radius:4px;
+    position:relative;
+    background:url(./img/sd-reviews-bg.webp) center/100% 100% no-repeat;
     padding:20px 20px 24px;
-    box-shadow:2px 4px 14px rgba(0,0,0,.12);
+    /* box-shadow:2px 4px 14px rgba(0,0,0,.12); */
 }
+.review-name-box{
+    position: absolute; 
+    top: -8px;
+}
+
 .review-name{
+    position:relative;
     display:inline-block; min-width:120px;
     padding:6px 20px; margin:0 0 12px;
     background:url(./img/sd-review-tag-m.webp) center/100% 100% no-repeat;
     font-weight:700; font-size:14px; color:var(--ink); text-align:center;
 }
-.review-stars{ color:#f3a81e; font-size:17px; letter-spacing:2px; margin-bottom:10px; }
+.review-name::before{
+    content: '';
+    width: auto;
+    height: 100%;
+    transform: translateX(-50%) ; 
+    aspect-ratio: 19 / 60;
+    position: absolute;   
+    top: 0px;
+    left: 0px;
+    background:url(./img/sd-review-tag-l.webp) center/100% 100% no-repeat;
+    
+}
+.review-name::after{
+    content: '';
+    width: auto;
+    height: 100%;
+    transform: translateX(100%) ; 
+    aspect-ratio: 19 / 60;
+    position: absolute;   
+    top: 0px;
+    right:  0px;
+    background:url(./img/sd-review-tag-r.webp) center/100% 100% no-repeat;
+    
+}
+/* 5 顆星：用單一 SVG 以 background 平鋪（space 自動分配間距），HTML 不需重複星星 */
+.review-stars{
+    width:112px; height:20px; margin-bottom:10px; font-size:0;
+    background:url(./img/sd-star.svg) left center / 20px 20px space;
+}
 .review-headline{
     margin:0 0 12px; font-weight:900; line-height:1.4; color:var(--ink);
     font-size:clamp(16px,2.4vw,19px);
