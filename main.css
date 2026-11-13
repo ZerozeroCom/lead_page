@@ -30,10 +30,10 @@ main{
 main > section{
     position:relative;
     width:100%;
-    padding:clamp(46px,8vw,110px) 16px;
+    padding:clamp(30px,8vw,110px) 16px;
 }
 .section-text-title{
-    margin:0 0 clamp(24px,4vw,48px);
+    margin:0 0 clamp(20px,4vw,48px);
     text-align:center;
     font-weight:900;
     font-size:clamp(26px,4.4vw,46px);
@@ -48,7 +48,7 @@ main > section{
     padding:20px 2vw;
 }
 .reviews-title{
-    margin:0 0 clamp(24px,4vw,48px);
+    margin:0 0 clamp(20px,4vw,48px);
     text-align:center; font-weight:900; letter-spacing:2px; color:var(--ink);
     font-size:clamp(26px,4.4vw,46px);
 }
@@ -109,6 +109,20 @@ main > section{
     width:145px; height:23px; font-size:0;
     background:url(./img/sd-star.svg) left center / 29px 23px repeat-x;
 }
+/* 手機（高 DPR）下 repeat-x 平鋪會因次像素捨入造成星距不均。
+   改用 5 層同一張 SVG、以百分比定位，間距完全均等且不受 DPR 影響；
+   星星維持 23px（大小與桌面一致，無跳動）。
+   想微調間距：改 width（框寬），間距 =(width-5×23)/4；桌面版不受影響 */
+@media (max-width:1023px){
+    .review-stars{
+        background:
+            url(./img/sd-star.svg) left   center / 23px 23px no-repeat,
+            url(./img/sd-star.svg) 25%    center / 23px 23px no-repeat,
+            url(./img/sd-star.svg) 50%    center / 23px 23px no-repeat,
+            url(./img/sd-star.svg) 75%    center / 23px 23px no-repeat,
+            url(./img/sd-star.svg) right  center / 23px 23px no-repeat;
+    }
+}
 .review-headline{
     margin:0 0 12px; font-weight:900; line-height:1.4; color:var(--ink);
     font-size:clamp(16px,2.4vw,19px);
@@ -126,58 +140,123 @@ main > section{
 
 /* ==========================================================================
    劇情（鎖鏈框）  #game-intro-card
+   布局與元素關係對齊 neet_bak 分支 tw 版（css/main_b.css）。
+   圖片路徑改為本檔相對（./img/）；文案維持目前 SEVEN DAYS 內容。
    ========================================================================== */
-#game-intro-card{ padding-top:clamp(20px,3vw,40px); }
-.story-frame{
-    position:relative;
-    max-width:960px; margin:0 auto;
-    aspect-ratio:1430 / 1100;
-    background:url(./img/sd-story-frame.webp) center/100% 100% no-repeat;
-    display:flex; align-items:center; justify-content:center;
+#game-intro-card{
+    min-height:98dvh; margin-bottom:2dvh; height:200dvh;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    @media(min-width:300px){ max-height:969px }
+    @media(min-width:1024px){ margin-bottom:0; min-height:80dvh; max-height:100dvh; }
 }
-.story-inner{
-    width:70%;
-    display:flex; flex-direction:column; align-items:center;
-    gap:clamp(10px,1.8vw,22px);
-    text-align:center;
+.panel_border{
+    position:relative; height:auto;
+    @media(min-width:300px){ height:85dvh }
+    display:block; width:100%; max-width:1268px; display:contents;
 }
-.intro-card{ margin:0; }
-.intro-card .intro-title{
-    margin:0 0 6px; font-weight:900; color:var(--ink);
-    font-size:clamp(15px,2.5vw,30px); letter-spacing:1px;
+.panel_border_img{
+    content:""; 
+    position:absolute; 
+    aspect-ratio:4 / 3;
+    left:50%; top:50%; transform:translate(-50%) translatey(-50%); z-index:1;
+    height: 100dvh;
+    @media(min-width:1024px){ 
+        height: 100%; 
+    }
 }
+
+#panel_border_img{
+    position:relative; width:100%; height:100%;
+    background-image:url(./img/panel_border.webp);
+    /* background-image:image-set(url(./img/panel_border.avif) type("image/avif"),url(./img/panel_border.webp) type("image/webp"),url(./img/panel_border.png) type("image/png")); */
+    background-position:center; 
+    background-size:auto 100%;
+    background-repeat:no-repeat;
+
+}
+
+.panel_border_wrapper{
+    position:absolute; margin-left:auto; margin-right:auto;
+    padding-top:10%; padding-bottom:9%;
+    display:flex; flex-direction:column; height:100%; aspect-ratio:4 / 3; width:auto; top:0%;
+    text-align:center; justify-content:center; z-index:20; box-sizing:border-box;
+     @media(min-width:1600px){
+        padding-top:15%;
+     }
+}
+.intro-card{ padding:0 28%; 
+    /* @media(min-aspect-ratio:4/3){ flex:1 1 auto; } */
+    @media(min-width:1600px){
+        flex:1 1 auto;
+    }
+}
+.intro-card1{ padding:0 31%; }
+.intro-card2{ padding:0 32%; }
+.intro-card3{ padding:0 24%; }
+.word_art_img{
+    padding:6px 0; max-width:100vw; font-size:24px; height:30px;
+    @media(min-width:1024px){ padding:10px 0; font-size:28px; height:50px }
+    @media(min-width:1600px){ .word_art{ font-size:42px; height:60px } }
+}
+.word_art{ max-width:60vw; font-size:clamp(24px,4vw,42px); height:clamp(45px,5vw,60px); }
 .intro-card p{
-    margin:0; color:var(--ink-soft); line-height:1.7;
-    font-size:clamp(10px,1.5vw,16px);
+    max-width:91vw;
+    margin-top:8px;
+    /* @media(min-width:1024px){  } */
+    @media(min-aspect-ratio:4/3){ margin-bottom:30px; }
+    margin-left:auto; margin-right:auto;
+    font-weight:500; 
+    font-size:clamp(14px,2dvh,20px); line-height:clamp(22px,3dvh,30px);
+    letter-spacing:1px; text-align:center; color:#8a8a8a;
 }
-@media (max-width:640px){
-    .story-frame{ aspect-ratio:auto; min-height:92vw; padding:14vw 0; }
-    .story-inner{ width:72%; }
+.intro-card h3{ 
+    font-size: 1.17em;
+    margin:0; 
+    @media(min-width:1024px){ 
+        font-size: clamp(24px,3vw,32px); 
+    }
 }
 
 /* ==========================================================================
    虛實交錯的夢境（影片）  #promo_video
+   布局與元素關係對齊 neet_bak 分支 tw 版（css/main_b.css）。
+   圖片路徑改為本檔相對（./img/）；影片維持目前來源。
    ========================================================================== */
 #promo_video{
-    background:url(./img/sd-video-bg.webp) center bottom / cover no-repeat;
+    display:flex; flex-direction:column; justify-content:flex-start; align-items:center;
+    padding-top:5%; height:auto;
+    @media(min-width:1024px){ height:100vh; min-height:max-content; margin:3vh 0 }
+}
+#promo_video:before{
+    content:""; height:100%; width:100%; z-index:0; left:0; position:absolute;
+    background-image:url(./img/sd-video-bg.webp);
+    /* background-image:image-set(url(./img/section_bg.avif) type("image/avif"),url(./img/section_bg.webp) type("image/webp"),url(./img/section_bg.png) type("image/png")); */
+    bottom:-15dvh; background-size:cover; background-position:bottom center;
+    @media(min-width:1024px){ bottom:5%; background-size:200% auto; background-position:bottom center }
+    background-repeat:no-repeat; pointer-events:none;
 }
 .video_container{
-    position:relative; max-width:900px; margin:0 auto;
-    aspect-ratio:1300 / 770;
-    background:url(./img/sd-video-frame.webp) center/100% 100% no-repeat;
+    position:relative; max-width:1600px; width:85vw; height:auto; aspect-ratio:16 / 10;
+    display:flex; justify-content:center;
+    @media(min-width:1024px){ width:70% }
 }
-/* 影片嵌在紙框中央白色區內（框為背景，非覆蓋層） */
+.video_container:before{
+    content:""; height:125%; width:130%; position:absolute;
+    background-image:url(./img/sd-video-frame.webp);
+    /* background-image:image-set(url(./img/video_border.avif) type("image/avif"),url(./img/video_border.webp) type("image/webp"),url(./img/video_border.png) type("image/png")); */
+    top:50%; background-size:86% 100%; background-repeat:no-repeat; background-position:center;
+    left:50%; transform:translate(-50%) translatey(-50%); pointer-events:none;
+}
+
 .video_container video{
-    position:absolute; top:12.5%; left:7%; width:86%; height:75%;
-    object-fit:cover; background:#000;
+    width:100%; height:auto; aspect-ratio:16 / 10; z-index:5; border-radius:12px;
 }
-.sakura{ display:none; }
 
 /* ==========================================================================
    遊戲特色介紹  #game-system
    截圖（紙膠框）＋下方深色字幕條＋側邊立繪
    ========================================================================== */
-#game-system .content{ max-width:var(--maxw); margin:0 auto; display:flex; flex-direction:column; gap:clamp(40px,7vw,96px); }
+#game-system .content{ max-width:var(--maxw); margin:0 auto; display:flex; flex-direction:column; gap:clamp(30px,7vw,96px); }
 .feature-item{
     position:relative;
     display:flex; flex-direction:column;
@@ -215,7 +294,7 @@ main > section{
    角色介紹  #character-info
    大立繪 ＋ 大粗體名字 + 描述，左右交錯
    ========================================================================== */
-#character-info{ display:flex; flex-direction:column; gap:clamp(40px,6vw,80px); }
+#character-info{ display:flex; flex-direction:column; gap:clamp(30px,6vw,80px); }
 .character-item{ margin:0; }
 .character-item h2{ margin:0; }
 .character-item figure{
@@ -310,7 +389,7 @@ main > section{
 
 #summary .btn-group{
     position:static; transform:none; width:100%; max-width:620px;
-    margin:clamp(26px,4vw,44px) auto 0; z-index:auto;
+    margin:clamp(20px,4vw,44px) auto 0; z-index:auto;
 }
 
 @media (min-width:1024px){
