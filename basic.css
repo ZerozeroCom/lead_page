@@ -73,7 +73,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 /* ---------- Slogan（手寫標語圖） ---------- */
 .slogan-block{
     position:absolute; z-index:3;
-    left:50%; bottom:21svh; width:94%;
+    left:50%; bottom:21svh; width:84%;
     transform:translateX(-50%);
     text-align:center;
 }
@@ -92,7 +92,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 .slogan-frags{ position:absolute; inset:0; z-index:3; pointer-events:none; }
 .slogan-frag{
     position:absolute; display:block;
-    top:8%; left:50%; width:86%; transform:translateX(-50%);
+    top:20%; left:-10%; width:110%; transform:none;
 }
 .slogan-frag img{ width:100%; height:auto; display:block; filter:grayscale(1); }
 
