@@ -81,24 +81,26 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 
 @media (min-width:1024px){
     .slogan-block{
-        left:50%; right:auto; top:auto; bottom:18%; width:min(52vw,820px);
+        left:50%; right:auto; top:auto; bottom:22%; width:clamp(360px,34vw,680px);
         transform:translateX(-50%);
     }
     .slogan_img img{ max-width:none; }
 }
 
-/* 散佈直書標語碎片（圖片物件先保留，位置可待素材到位後微調） */
-.slogan-frags{ position:absolute; inset:0; z-index:3; pointer-events:none;display:flex;
-  justify-content:center; }
-.slogan-frag{ position:absolute; height:auto; filter:grayscale(1); }
-/* .frag-left{ left:3%; top:34%; width:15%; }
-.frag-top-1{ right:5%; top:13%; width:11%; }
-.frag-top-2{ right:17%; top:15%; width:9%; }
+/* 散佈直書標語碎片：單張合成覆蓋圖（手機 mobile-TC / 桌機 desktop-TC）
+   以百分比定位覆蓋在主視覺上，碎片的相對位置已由圖內排版決定。 */
+.slogan-frags{ position:absolute; inset:0; z-index:3; pointer-events:none; }
+.slogan-frag{
+    position:absolute; display:block;
+    top:8%; left:50%; width:86%; transform:translateX(-50%);
+}
+.slogan-frag img{ width:100%; height:auto; display:block; filter:grayscale(1); }
+
 @media (min-width:1024px){
-    .frag-left{ left:17%; top:28%; width:7%; }
-    .frag-top-1{ right:21%; top:11%; width:6%; }
-    .frag-top-2{ right:28%; top:15%; width:5%; }
-} */
+    /* 對照 Figma 桌面稿：碎片群集中於畫面中段（什麼都可以約 25%、催眠/認知改寫約 58-69%），
+       故合成圖置中、寬約 50%，而非全幅 */
+    .slogan-frag{ top:17%; left:47%; width:50%; transform:translateX(-50%); }
+}
 
 /* ==========================================================================
    CTA 按鈕 — 手繪布標底圖 + 文字/icon

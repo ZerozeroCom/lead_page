@@ -94,10 +94,12 @@
                         <span class="visually-hidden">與她一同解開謎團，逃出未知的密室 ──懸疑解謎 ADV</span>
                     </h2>
                 </div>
-                <!-- 散佈直書標語碎片：圖片物件先保留，之後補圖（左：什麼都可以！？／右上：認知改寫！、催眠！）
-                     素材到位後把 src 換成實際檔名即可；載不到會自動隱藏 -->
+                <!-- 散佈直書標語碎片（認知改寫！／催眠！／什麼都可以す!?）：單張合成覆蓋圖，桌機與手機各一版 -->
                 <div class="slogan-frags" aria-hidden="true">
-                    <img class="slogan-frag frag-left" src="../img/desktop-TC.webp" alt="" onerror="this.style.visibility='hidden'">
+                    <picture class="slogan-frag">
+                        <source srcset="../img/desktop-TC.webp" media="(min-width:1024px)" type="image/webp">
+                        <img src="../img/mobile-TC.webp" alt="" onerror="this.closest('.slogan-frag').style.visibility='hidden'">
+                    </picture>
                 </div>
                 <!-- TODO: 以下三個外部連結（Steam / DLsite / Patch下載）待換成 SEVEN DAYS 正式網址 -->
                 <nav class="btn-group">
