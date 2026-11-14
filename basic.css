@@ -76,20 +76,6 @@ section.page {
     width: 100%;
   height: 100%;
 }
-/* #say_1{
-    position: absolute;
-    rotate:-5.07deg;
-    top:-20px;
-    left:25%;
-    z-index: 30;
-}
-#say_2{
-    position: absolute;
-    rotate:-11.55deg;
-    top:100px;
-    left:14%;
-    z-index: 30;
-} */
 .mini_character_2{
     margin-top: 20dvh;
     position:relative;
@@ -104,20 +90,6 @@ section.page {
     width: 100%;
   height: 100%;
 }
-/* #say_3{
-    position: absolute;
-    rotate:5.28deg;
-    top:10px;
-    left:45%;
-    z-index: 30;
-}
-#say_4{
-    position: absolute;
-    rotate:9.3deg;
-    top:180px;
-    left:56%;
-    z-index: 30;
-} */
 @media (min-width: 1600px) {
 .left-say{
     display: block;

@@ -13,9 +13,11 @@ a:hover, a:active, a:visited {
     color: inherit;
 }
 
-/* .no-js body{
-    scroll-snap-type: y proximity;
-} */
+:root{
+    --ink: #3C2B51;
+    --arrow-clip-r: polygon(0% 0%, 0% 100%, 100% 50%);
+    --arrow-clip-l: polygon(0% 50%, 100% 0%, 100% 100%);
+}
 main{
     background-color: #f5f5f5;
     background-image: url("../img/texture_bg_2.png"); 
@@ -58,13 +60,11 @@ p{
     @media (min-width: 300px) {
         height: 85dvh;
     }
-    display: block;
     width: 100%;
     max-width:1268px ;
     display: contents;
 }
 .panel_border_img{
-content: '';
 position: absolute;
     height: 100%;
     aspect-ratio: 4 / 3;
@@ -131,7 +131,6 @@ position: absolute;
      rotate:-5.4deg;
 }
 .extra-deco3{
-    content: '';
     position: absolute;
     height: 485.83px;
     width: 666.91px;
@@ -208,17 +207,6 @@ position: absolute;
         font-size:28px;
     height:50px;
     };
-   @media (min-width: 1600px) {
-    .word_art{
-   font-size:42px;
-   height:60px;
-    };
-}
-}
-.word_art{
-  max-width: 60vw;
-  font-size: clamp(24px, 4vw, 42px);  
-  height: clamp(45px, 5vw, 60px); 
 }
 .intro-card p{
     max-width: 80vw;
@@ -235,7 +223,7 @@ position: absolute;
     line-height:  clamp(24px, 3dvh, 30px);
     letter-spacing: 1px;
     text-align: center;
-    color: #3C2B51;
+    color: var(--ink);
 }
 .intro-card h3{
     margin:0;
@@ -476,12 +464,6 @@ position: absolute;
         url("../img/sakura-L.png") type("image/png")
     );
 }
-.word_art_2{
-  font-size: clamp(32px, 4vw, 46px);  
-  height: clamp(40px, 4vw, 66px); 
-  font-family: "GenSenRounded2 JP", sans-serif;
-}
-
 #say_5{
     position: absolute;
     top:10%;
@@ -500,11 +482,6 @@ position: absolute;
         max-height: 66px;
         height:12%;
     }
-}
-.art-word{
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    letter-spacing:-0.2em;
 }
 .summary-background{
     top:45%;
@@ -594,16 +571,6 @@ position: absolute;
     top: -12px;
     left: -12px;
   }
-  .corner-img1 {
-    top: -12px;
-    right: -12px;
-    transform: scaleX(-1);
-  }
-  .corner-img2 {
-    bottom: -12px;
-    left: -12px;
-    transform: scaleY(-1);
-  }
   .corner-img3 {
     bottom: -12px;
     right: -12px;
@@ -648,7 +615,7 @@ position: absolute;
             line-height: 37px;
         }
         font-weight: 500;
-        color: #3C2B51;
+        color: var(--ink);
         letter-spacing: 1px;
         border-radius: 16px;
     }
@@ -829,15 +796,6 @@ line-height: 34px;
 letter-spacing: 1px;
 
 }
-ul hr{
-    list-style: none;
-    width: 100%;
-    height: 1px;
-    border-bottom: 1px solid #A08383;
-    border-top-width: 0px;
-    border-right-width: 0px;
-    border-left-width: 0px;
-}
 .absolute{
     position: absolute;
 }
@@ -954,9 +912,7 @@ li strong.border {
      font-family:  'Georama','Chiron GoRound TC','sans-serif';/*'PingFang TC'*/
     font-weight: 500;
     font-size: 20px;
-    line-height: 34px;
     letter-spacing: 1px;
-    text-align: center;
     display: inline-block;
      width: 113px;
     height: 36px;
@@ -1194,7 +1150,7 @@ li strong.border {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 1px;
-    color: #3C2B51;
+    color: var(--ink);
     margin-left: 8px;
     margin-top: -10%;
     margin-bottom: 32px;
@@ -1255,10 +1211,6 @@ li strong.border {
         margin-top: 20px;
     }
 }
-/* .bubble-left{
-    
-    margin-right: 0;
-} */
 .bubble::before{
     content: '';
       position: absolute;
@@ -1267,11 +1219,7 @@ li strong.border {
      background: #4D374F;
     width: 25px;
     height: 22px;
- clip-path: polygon(
-    0% 0%,    /* 左上 */
-    0% 100%,  /* 左下 */
-    100% 50%  /* 右中 */
-  );
+ clip-path: var(--arrow-clip-r);
 }
 .arrow-inner {
   position: absolute;
@@ -1280,11 +1228,7 @@ li strong.border {
   width: 25px;
   height: 22px;
   background: #FFFFFF;
- clip-path: polygon(
-    0% 0%,    /* 左上 */
-    0% 100%,  /* 左下 */
-    100% 50%  /* 右中 */
-  );
+ clip-path: var(--arrow-clip-r);
 }
 .bubble::after{
       content: '';
@@ -1294,34 +1238,18 @@ li strong.border {
      background: #F1E9FF;
  width: 23px;
   height: 20px;
- clip-path: polygon(
-    0% 0%,    /* 左上 */
-    0% 100%,  /* 左下 */
-    100% 50%  /* 右中 */
-  );
+ clip-path: var(--arrow-clip-r);
 }
 .bubble-left .arrow-inner {
   left: -24px;
-  clip-path: polygon(
-    0% 50%,   /* 左中 */
-    100% 0%,  /* 右上 */
-    100% 100% /* 右下 */
-  );
+  clip-path: var(--arrow-clip-l);
 }
 .bubble.bubble-left::after{
      left: -22px;
-  clip-path: polygon(
-    0% 50%,   /* 左中 */
-    100% 0%,  /* 右上 */
-    100% 100% /* 右下 */
-  );
+  clip-path: var(--arrow-clip-l);
 }
 .bubble.bubble-left::before{
   left: -24px;
-  clip-path: polygon(
-    0% 50%,   /* 左中 */
-    100% 0%,  /* 右上 */
-    100% 100% /* 右下 */
-  );
+  clip-path: var(--arrow-clip-l);
 }
 
