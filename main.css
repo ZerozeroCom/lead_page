@@ -16,7 +16,13 @@
 /* 整頁底：水墨紙質 */
 main{
     display:block;
-    background:url(./img/sd-page-bg.webp) center top / cover;
+    background-image:url(./img/sd-page-bg-m.webp);
+    @media(min-aspect-ratio:4/3){ 
+        background-image:url(./img/sd-page-bg.webp);
+    }
+    background-position:center; 
+    background-size:cover;
+    background-attachment: fixed;
     background-color:#ebe8e1;
     color:var(--ink);
     font-family:'Noto Sans TC',sans-serif;
@@ -224,32 +230,47 @@ main > section{
    ========================================================================== */
 #promo_video{
     display:flex; flex-direction:column; justify-content:flex-start; align-items:center;
-    padding-top:5%; height:auto;
+     height:auto;
     @media(min-width:1024px){ height:100vh; min-height:max-content; margin:3vh 0 }
 }
 #promo_video:before{
     content:""; height:100%; width:100%; z-index:0; left:0; position:absolute;
     background-image:url(./img/sd-video-bg.webp);
     /* background-image:image-set(url(./img/section_bg.avif) type("image/avif"),url(./img/section_bg.webp) type("image/webp"),url(./img/section_bg.png) type("image/png")); */
-    bottom:-15dvh; background-size:cover; background-position:bottom center;
-    @media(min-width:1024px){ bottom:5%; background-size:200% auto; background-position:bottom center }
+    bottom:-15dvh; background-size:auto; background-position:bottom center;
+    @media(min-width:1024px){ bottom:3%; background-size:100%; background-position:bottom center }
     background-repeat:no-repeat; pointer-events:none;
 }
 .video_container{
-    position:relative; max-width:1600px; width:85vw; height:auto; aspect-ratio:16 / 10;
-    display:flex; justify-content:center;
+    /* padding-top:5%;
+    @media(min-width:1024px){
+        padding:64px;
+    } */
+    position:relative; max-width:1600px; width:85vw; height:auto; aspect-ratio:1777 / 1000;
+    display:flex; justify-content:center;align-items:center;
     @media(min-width:1024px){ width:70% }
+    @media(min-width:1440px){ width:65% }
+    @media(min-width:1920px){ width:60% }
 }
 .video_container:before{
-    content:""; height:125%; width:130%; position:absolute;
+    content:""; height:135%; width:125%; position:absolute;
+    /* @media(min-width:1024px){
+        height:120%; width:120%;
+    }
+    @media(min-width:1440px){
+        height:115%; width:115%;
+    }
+    @media(min-width:1920px){
+        height:110%; width:110%;
+    } */
     background-image:url(./img/sd-video-frame.webp);
     /* background-image:image-set(url(./img/video_border.avif) type("image/avif"),url(./img/video_border.webp) type("image/webp"),url(./img/video_border.png) type("image/png")); */
-    top:50%; background-size:86% 100%; background-repeat:no-repeat; background-position:center;
+    top:50%; background-size:contain; background-repeat:no-repeat; background-position:center;
     left:50%; transform:translate(-50%) translatey(-50%); pointer-events:none;
 }
 
 .video_container video{
-    width:100%; height:auto; aspect-ratio:16 / 10; z-index:5; border-radius:12px;
+    width:95%; height:95%; z-index:5; border-radius:32px;
 }
 
 /* ==========================================================================

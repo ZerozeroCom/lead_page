@@ -20,6 +20,34 @@ body{
     background:#e9e7e2;
     scroll-behavior:smooth;
 }
+
+.page{
+    height:100dvh;
+    @media (orientation: landscape) {
+        @media (max-height: 768px) {
+            height:200dvh;
+        }
+        @media (max-height: 320px) {
+            height: 300dvh;
+        }
+    }
+    @media (min-width: 1440px) {
+        height:100vh;
+    }
+}
+section.page {
+    @media (min-width: 1024px) {
+        /* 關鍵屬性：磁吸點設在元素中心 */
+        scroll-snap-align: center;
+        /* 避免磁吸太敏感，可以增加停止點 */
+        scroll-snap-stop: always;
+    }
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
 a{ text-decoration:none; color:inherit; outline:none; }
 a:hover,a:active,a:visited{ text-decoration:none; color:inherit; }
 img,picture,svg,video{ display:block; max-width:100%; }
