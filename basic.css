@@ -83,10 +83,10 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
     width:100%; height:100%;
     background-image:url(./img/sd-hero-bg-m.webp);
     background-position:center top;
-    background-size:contain;
+    background-size:cover;
     background-repeat:no-repeat;
     filter:grayscale(1);
-    @media (min-width:1024px){
+    @media(min-aspect-ratio:3/4){
         background-image:url(./img/sd-hero-bg.webp);
         background-size:contain;
         background-position:center top; 
@@ -97,11 +97,11 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 .site-header{
     position:absolute; top:0; left:0; right:0; z-index:5;
     display:flex; align-items:flex-start; justify-content:space-between;
-    padding:14px 16px;
+    padding:0px;
 }
 .logo-inline{ display:block; margin:0; line-height:0; }
-.akaerocore_logo img{ width:38vw; max-width:170px; height:auto; }
-.logo-img img{ width:34vw; max-width:148px; height:auto; }
+.akaerocore_logo img{ width:38vw; max-width:170px; height:auto;margin-left: 3vw;margin-top: 4vw; }
+.logo-img img{ width:34vw; max-width:148px; height:auto;margin-right: 1vw; }
 
 @media (min-width:1024px){
     .site-header{ padding:26px 46px; align-items:center; }
@@ -112,7 +112,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 /* ---------- Slogan（手寫標語圖） ---------- */
 .slogan-block{
     position:absolute; z-index:3;
-    left:50%; bottom:18svh; width:92%;
+    left:50%; bottom: calc(22% + env(safe-area-inset-bottom)); width:92%;
     transform:translateX(-50%);
     text-align:center;
 }
@@ -147,9 +147,12 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
    ========================================================================== */
 .btn-group{
     position:absolute; z-index:4;
-    left:50%; bottom:calc(74px + env(safe-area-inset-bottom));
+    left:50%; bottom:calc(10% + env(safe-area-inset-bottom));
     width:92%; transform:translateX(-50%);
     display:flex; flex-direction:column;
+    @media (min-width:1024px){
+        bottom:10%;
+    }
 }
 .btn-row{ display:flex; gap:10px; }
 .btn-row > a{ flex:1 1 0; display:block; min-width:0; }
@@ -205,7 +208,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 }
 .social-link{
     display:flex; align-items:center; justify-content:center;
-    width:46px; height:46px;
+    width:70px; height:70px;
     background-image:url(./img/sd-social-bg.webp);
     background-repeat:no-repeat; background-position:center; background-size:100% 100%;
     transition:transform .2s ease;

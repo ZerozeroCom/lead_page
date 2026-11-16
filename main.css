@@ -23,7 +23,7 @@
 main{
     display:block;
     background-image:url(./img/sd-page-bg-m.webp);
-    @media(min-aspect-ratio:4/3){ 
+    @media(min-aspect-ratio:3/4){
         background-image:url(./img/sd-page-bg.webp);
     }
     background-position:center; 
