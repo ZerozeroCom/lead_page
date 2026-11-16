@@ -74,12 +74,23 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 #game-section a,#game-section button{ pointer-events:auto; }
 
 /* 背景角色主視覺（滿版、黑白） */
-.game-bg-wrapper{ position:absolute; inset:0; z-index:0; width:100%; height:100%; }
-.game-bg-wrapper img,
+.game-bg-wrapper{ position:absolute; inset:0; z-index:0; 
+    width:100dvw; height:100dvh;
+}
+
+/* 保留兼容舊寫法，避免 HTML 仍有 .game-bg-img 被選到 */
 .game-bg-img{
     width:100%; height:100%;
-    object-fit:cover; object-position:center top;
+    background-image:url(./img/sd-hero-bg-m.webp);
+    background-position:center top;
+    background-size:contain;
+    background-repeat:no-repeat;
     filter:grayscale(1);
+    @media (min-width:1024px){
+        background-image:url(./img/sd-hero-bg.webp);
+        background-size:contain;
+        background-position:center top; 
+    }
 }
 
 /* ---------- Header（左 akaeroCore / 右 SEVEN DAYS logo） ---------- */
@@ -101,7 +112,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 /* ---------- Slogan（手寫標語圖） ---------- */
 .slogan-block{
     position:absolute; z-index:3;
-    left:50%; bottom:21svh; width:84%;
+    left:50%; bottom:18svh; width:92%;
     transform:translateX(-50%);
     text-align:center;
 }
@@ -120,14 +131,15 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 .slogan-frags{ position:absolute; inset:0; z-index:3; pointer-events:none; }
 .slogan-frag{
     position:absolute; display:block;
-    top:20%; left:-10%; width:110%; transform:none;
+    top:11%; left:-16%; width:115%; transform:none;
+    max-width: none;
 }
 .slogan-frag img{ width:100%; height:auto; display:block; filter:grayscale(1); }
 
 @media (min-width:1024px){
     /* 對照 Figma 桌面稿：碎片群集中於畫面中段（什麼都可以約 25%、催眠/認知改寫約 58-69%），
        故合成圖置中、寬約 50%，而非全幅 */
-    .slogan-frag{ top:17%; left:47%; width:50%; transform:translateX(-50%); }
+    .slogan-frag{ left:45%; width:47%; transform:translateX(-50%); }
 }
 
 /* ==========================================================================
@@ -137,11 +149,11 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
     position:absolute; z-index:4;
     left:50%; bottom:calc(74px + env(safe-area-inset-bottom));
     width:92%; transform:translateX(-50%);
-    display:flex; flex-direction:column; gap:10px;
+    display:flex; flex-direction:column;
 }
-.btn-row{ display:flex; gap:10px; justify-content:center; }
+.btn-row{ display:flex; gap:10px; }
 .btn-row > a{ flex:1 1 0; display:block; min-width:0; }
-.btn-row:last-child > a{ max-width:calc(50% - 5px); margin:0 auto; }
+.btn-row:last-child > a{ max-width:calc(50% - 5px); }
 
 .btn{
     position:relative;
