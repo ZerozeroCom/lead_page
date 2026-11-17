@@ -45,7 +45,7 @@ main > section{
     /* padding:clamp(30px,8vw,110px) 16px; */
 }
 .section-text-title{
-    margin:0 0 clamp(20px,4vw,48px);
+    margin:0 0 clamp(20px,4vw,56px);
     text-align:center;
     font-weight:900;
     font-size:clamp(26px,4.4vw,46px);
@@ -63,7 +63,7 @@ main > section{
 .reviews-title{
     margin:0 0 clamp(20px,4vw,48px);
     text-align:center; font-weight:900; letter-spacing:2px; color:var(--ink);
-    font-size:clamp(26px,4.4vw,46px);
+    font-size:clamp(26px,4.4vw,56px);
 }
 .reviews-content{
     max-width:var(--maxw); margin:0 auto;
@@ -86,7 +86,7 @@ main > section{
     display:inline-block; min-width:88px;
     padding:12px 6px 12px 12px; 
     background:url(./img/sd-review-tag-m.webp) center/100% 100% no-repeat;
-    font-weight:700; font-size:14px; color:var(--ink); text-align:center;
+    font-size:14px; color:var(--ink); text-align:center;
 }
 .review-name::before{
     content: '';
@@ -118,7 +118,7 @@ main > section{
 .review-stars{
     margin-top:22px;
     margin-left: -2px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     width:145px; height:23px; font-size:0;
     background:url(./img/sd-star.svg) left center / 29px 23px repeat-x;
 }
@@ -137,15 +137,15 @@ main > section{
     }
 }
 .review-headline{
-    margin:0 0 12px; font-weight:900; line-height:1.4; color:var(--ink);
+    margin:0 0 16px; font-weight:900; line-height:1.4; color:var(--ink);
     font-size:clamp(16px,2.4vw,19px);
 }
 .review-body{
-    margin:0; color:var(--ink-soft); line-height:1.75;
+    margin:0; color:var(--ink-soft2); line-height:2.5;
     font-size:14px; font-family:Inter,'Noto Sans TC',sans-serif;
 }
 @media (min-width:1024px){
-    .reviews-content{ flex-direction:row; align-items:stretch; gap:22px; }
+    .reviews-content{ flex-direction:row; align-items:flex-start; gap:22px; }
     .review-card{ flex:1 1 0; min-width:0; }
     .review-card:nth-child(odd){ transform:rotate(-.8deg); }
     .review-card:nth-child(even){ transform:rotate(.8deg); }
@@ -221,12 +221,18 @@ main > section{
     font-weight:500; 
     font-size:clamp(14px,2dvh,20px); line-height:clamp(22px,3dvh,30px);
     letter-spacing:1px; text-align:center; color:var(--ink-soft2);
+    @media(min-width:1024px){ 
+        font-size:clamp(20px,2dvh,26px); 
+        line-height:clamp(26px,3dvh,36px);
+        margin-top: 1.5dvh;
+    }
 }
 .intro-card h3{ 
     font-size: 1.17em;
     margin:0; 
     @media(min-width:1024px){ 
-        font-size: clamp(24px,3vw,32px); 
+        /* font-size: clamp(24px,3vw,32px);  */
+         font-size:clamp(26px, 4.4vw, 46px);
     }
 }
 
@@ -244,18 +250,18 @@ main > section{
     content:""; height:100%; width:100%; z-index:0; left:0; position:absolute;
     background-image:url(./img/sd-video-bg.webp);
     /* background-image:image-set(url(./img/section_bg.avif) type("image/avif"),url(./img/section_bg.webp) type("image/webp"),url(./img/section_bg.png) type("image/png")); */
-    bottom:-15dvh; background-size:auto; background-position:bottom center;
-    @media(min-width:1024px){ bottom:12vh; background-size:120%; background-position:bottom center }
+    bottom:-7dvh; background-size:cover; background-position:bottom center;
+    @media(min-width:1024px){ 
+        bottom:12vh; background-size:120%; background-position:bottom center 
+    }
     background-repeat:no-repeat; pointer-events:none;
 }
 .video_container{
-    /* padding-top:5%;
-    @media(min-width:1024px){
-        padding:64px;
-    } */
+    margin-bottom: 30%;
+    margin-top: -5%;
     position:relative; max-width:1600px; width:85vw; height:auto; aspect-ratio:1777 / 1000;
     display:flex; justify-content:center;align-items:center;
-    @media(min-width:1024px){ width:70% }
+    @media(min-width:1024px){ width:70%;margin-bottom:0; margin-top: 0; }
     @media(min-width:1440px){ width:65% }
     @media(min-width:1920px){ width:60% }
 }
@@ -284,15 +290,25 @@ main > section{
    遊戲特色介紹  #game-system
    截圖（紙膠框）＋下方深色字幕條＋側邊立繪
    ========================================================================== */
-#game-system .content{ max-width:var(--maxw); margin:0 auto; display:flex; flex-direction:column; gap:clamp(30px,7vw,96px); }
-.feature-item{
-    position:relative;
-    border:2px solid var(--frame);
-    display:flex; flex-direction:column;
-    max-width:760px; width:100%;
+#game-system{
+   margin-top: 25%;
+}
+    
+#game-system .content{ 
+    padding: 3vw;
+    max-width:var(--maxw); margin:0 auto; display:flex; flex-direction:column; gap:clamp(30px,7vw,96px); 
 }
 
-.feature-item.reverse{ align-self:flex-end; }
+.feature-item{
+    position:relative;
+    padding-bottom: 2vw;
+    border:2px solid var(--frame);
+    display:flex; flex-direction:column;
+    max-width:760px; width:90vw;
+    align-self: flex-end;
+}
+
+.feature-item.reverse{ align-self:flex-start; }
 
 /* .feature-shot{
     position:relative;
@@ -304,16 +320,30 @@ main > section{
 
 .feature-cap{
     position:absolute; z-index:2;
-    width: 108%;
-    height: 14%;
-    bottom: 0;
-    left: 10%;
+
+    width: 104%;
+    height: 20%;
+    bottom: -4vw;
+    left: -6vw;
     margin:0 10px 0 10px;
     background:var(--feature-cap1); color:#f3f3f3;
-    padding:14px 18px; border-radius:2px;
+    padding:7px 18px; border-radius:2px;
     font-size:clamp(13px,1.5vw,16px); line-height:1.6;
 }
-.feature-item.reverse .feature-cap{ right:10%;left: auto;background:var(--feature-cap2); }
+.feature-cap p{ margin:0; }
+.feature-item.reverse .feature-cap.thereline {
+    height: 25%;
+    bottom: -7vw;
+}
+.feature-item.reverse.thereline{
+    margin-bottom: 3%;
+}
+
+.feature-item.reverse .feature-cap{ 
+    right:-6vw;
+    left: auto;
+    background:var(--feature-cap2); 
+}
 /* .feature-shot::before{
   content: '';
   background-image:url(./img/sd-feature-char-1.webp);
@@ -326,39 +356,91 @@ main > section{
 .arrow-inner::before {
   content: '';
   position: absolute;
-  right: 3.8vw;
+  right: auto;
+  left: 0;
   top: -3vw;
   width: 3.6vw;
   height: 3vw;
   background: var(--feature-cap1);
  clip-path: polygon(
-    0 0,
-    100% 100%,
-    100% 100%,
-    0 100%
-  );
-}
-.reverse .arrow-inner::before {
-  left: 3.8vw;
-  right:auto;
-  background:var(--feature-cap2);
-  clip-path: polygon(
     100% 0,
     0 100%,
     100% 100%
   );
 }
+.reverse .arrow-inner::before {
+  left:auto;
+  right:0;
+  background:var(--feature-cap2);
+ clip-path: polygon(
+    0 0,
+    100% 100%,
+    100% 100%,
+    0 100%
+  ); 
+}
 
-.feature-cap p{ margin:0; }
+
 .feature-side{
     position:absolute; z-index:1; bottom:12%;
     width:auto; height:55%;
     right:-17%;
+    display: none;
 }
 .feature-item.reverse .feature-side{ right:auto; left:-15.7%; }
 @media (min-width:1024px){
-    #game-system .content{ gap:clamp(70px,7vw,120px); }
-    .feature-item{ max-width:var(--maxgamepicw); }
+    #game-system{
+        margin-top: 0;
+    }
+    #game-system .content{ gap:clamp(70px,7vw,120px);padding: 0; }
+    .feature-item{ max-width:var(--maxgamepicw);width:100%;
+        align-self: flex-start;
+        padding-bottom: 0;
+     }
+    .feature-item.reverse{
+        align-self:flex-end;
+    }
+    .feature-side{
+        display: block;
+    }
+    .feature-cap{
+        padding: 14px 18px;
+        bottom: 0;
+        right: 0;
+        left: 10%;
+        width: 108%;
+        height: 14%;
+    }
+    .feature-item.reverse .feature-cap.thereline {
+        height: 14%;
+        bottom: 0;
+    }
+    .feature-item.reverse.thereline{
+        margin-bottom: 0;
+    }
+    .feature-item.reverse .feature-cap{ 
+        right:10%;left: auto; 
+    }
+
+    .arrow-inner::before {
+        right: 3.8vw;
+        left: auto;
+        clip-path: polygon(
+            0 0,
+            100% 100%,
+            100% 100%,
+            0 100%
+        );
+    }
+    .reverse .arrow-inner::before {        
+         clip-path: polygon(
+            100% 0,
+            0 100%,
+            100% 100%
+        );
+        left: 3.8vw;
+        right:auto;
+    }
 }
 
 /* ==========================================================================
@@ -455,20 +537,30 @@ main > section{
 /* ==========================================================================
    精彩畫面搶先看  #gallery
    ========================================================================== */
+#gallery{
+    height: auto;
+}
+
 .gallery-content{
     max-width:var(--maxw); margin:0 auto;
     display:grid; grid-template-columns:repeat(2,1fr);
     gap:clamp(12px,2vw,26px);
+    padding: 2px;
 }
 .cg{ margin:0; cursor:pointer; }
 .cg .photo{
-    display:block; background:#fff; padding:8px; border:1px solid var(--line);
+    display:block; background:#fff; padding:8px; border:2px solid var(--ink-soft2);
+    border-radius:4px;
     box-shadow:2px 4px 14px rgba(0,0,0,.14);
-    transition:transform .3s ease, box-shadow .3s ease;
+
 }
-.cg:nth-child(3n+1) .photo{ transform:rotate(-1deg); }
-.cg:nth-child(3n+2) .photo{ transform:rotate(.8deg); }
-.cg:nth-child(3n) .photo{ transform:rotate(-.4deg); }
+.cg:last-child{
+    margin-bottom: 8vh;
+    @media (max-width:1023px){
+        transform: translate(-52%);
+    }
+}
+
 .cg .photo img{ width:100%; height:100%; aspect-ratio:16 / 10; object-fit:cover; display:block; }
 .cg:hover .photo{ transform:scale(1.03) rotate(0); box-shadow:4px 8px 24px rgba(0,0,0,.24); z-index:2; }
 .paper_clip{ display:none; }
@@ -476,12 +568,6 @@ main > section{
     .gallery-content{ grid-template-columns:repeat(3,1fr); }
 }
 
-/* ==========================================================================
-   monitor 展示  #monitor-showcase
-   ========================================================================== */
-#monitor-showcase{ display:flex; justify-content:center; align-items:center; }
-.monitor-pic{ display:block; width:min(560px,86%); }
-.monitor-pic img{ width:100%; height:auto; }
 
 /* ==========================================================================
    產品資訊  #summary
