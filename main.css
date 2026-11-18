@@ -230,7 +230,15 @@ main > section{
     font-size:clamp(26px, min(2.4vw, 4cqh), 46px);
     margin:0; 
 }
-
+@media(min-width:1920px){
+/* 處理巨大版面的排版問題 */
+    #game-intro-card { max-height: 1080px;
+        min-height: auto;
+    }
+    .panel_border_img {
+        max-height: 1080px;
+    }
+}
 /* ==========================================================================
    虛實交錯的夢境（影片）  #promo_video
    布局與元素關係對齊 neet_bak 分支 tw 版（css/main_b.css）。
