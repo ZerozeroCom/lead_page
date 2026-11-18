@@ -463,7 +463,8 @@ main > section{
      @media (min-width:1024px){
         width:auto; 
         height:114dvh; 
-        margin: auto;
+        margin-right: auto;
+        margin-left: 8%;
      }
 }
 
@@ -472,7 +473,8 @@ main > section{
         margin-top: -10%;
     }
     .character-item--reverse figure .main_character img{ 
-        margin-left: auto;  
+        margin-left: auto;
+        margin-right: 7.7%; 
     }
 }
 
@@ -489,17 +491,17 @@ main > section{
     bottom: -8%;
     @media(min-aspect-ratio:4/3){ 
         margin: 0;
-        width: 30%;
+        width: 24.8%;
         top:40%;
         bottom:auto;
-        left: 62%;
+        left: 53.4%;
         max-height: 360px;
     }
 }
 .character-item--reverse .content-wrapper{ 
     @media(min-aspect-ratio:4/3){ 
         left: auto;
-        right: 62%;
+        right: 53.2%;
     }
 }
 .content-wrapper .content{
@@ -730,6 +732,7 @@ strong.border {
 .game-tags .tag{ font-weight:500; }
 
 #summary .btn-group{
+    width:92%; 
     margin-top:24px; 
     margin-bottom:24px; 
     @media (min-width:1024px){
@@ -749,7 +752,7 @@ strong.border {
         height:auto;
         aspect-ratio: 579 / 427;
     }
-   
+   #summary .btn-group{width:39.8vw;}
 }
 @media (min-width:2560px){
  .spec-list{

@@ -168,7 +168,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
    CTA 按鈕 — 手繪布標底圖 + 文字/icon
    ========================================================================== */
 .btn-group{
-    width:92%; 
+    width:100%; 
     margin: auto;
     display:flex; flex-direction:column;
 }
@@ -195,7 +195,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
     font-weight:900; letter-spacing:1px; white-space:nowrap;
     font-size:min(4.3vw , 4.3vh);
 }
-.btn-download .btn-label{ font-size:1.8vw; }
+.btn-download .btn-label{  font-size:min(4vw , 4vh) }
 .btn-icon{ width:auto; height:min(7vw, 7vh); flex-shrink:0; }           /* steam icon */
 .btn-dl .btn-icon{ height:min(4vw, 4vh); aspect-ratio:67 / 19; }          /* dlsite logo */
 
@@ -211,7 +211,9 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
     .btn-row{ gap:16px; }
     .btn-row:last-child > a{ max-width:calc(50% - 8px); }
     .btn{ aspect-ratio:179 / 48; gap:6px; }
-    .btn-label{ font-size: 2vw;line-height: 2vw; }
+    .btn-label{font-size:2vw ;}
+    .btn-download .btn-label{  font-size:1.8vw;}
+
 }
 
 /* ==========================================================================
