@@ -447,14 +447,13 @@ main > section{
 .character-item{ margin:0; }
 .character-item h2{ margin:0; }
 .character-item figure{
-    position:relative; margin:0;
-    max-width:var(--maxw); margin:0 auto;
-   
+    position:relative; 
+    margin:0 auto;
 }
 .summary-background{ display:none; }
 .main_character{ display:block; width:100%;flex-shrink:0;
  @media (min-width:1024px){
-        width:auto; height:100%; 
+        width:auto; height:100%;
     } 
 }
 .main_character img{ 
@@ -464,6 +463,7 @@ main > section{
      @media (min-width:1024px){
         width:auto; 
         height:114dvh; 
+        margin: auto;
      }
 }
 
@@ -492,13 +492,14 @@ main > section{
         width: 30%;
         top:40%;
         bottom:auto;
-        left: 48.5%;
+        left: 62%;
+        max-height: 360px;
     }
 }
 .character-item--reverse .content-wrapper{ 
     @media(min-aspect-ratio:4/3){ 
         left: auto;
-        right: 48.5%;
+        right: 62%;
     }
 }
 .content-wrapper .content{
@@ -513,6 +514,8 @@ main > section{
     padding:14px;
     @media (min-width:1024px){
         padding:24px;
+        width: 100%;
+        height: 100%;
     }
 }
 
@@ -526,7 +529,9 @@ main > section{
 }
 .introduce{ position:relative; }
 .introduce p{ margin:0 0 8px; color:var(--ink-soft2);text-align: left;
- line-height:1.8; font-size:clamp(14px,1.6vw,17px); }
+ line-height:clamp(24px,1.8cqh,37px); 
+ font-size:clamp(16px,1.5em,20px); 
+}
 .corner{ display:none; }
 
 /* ==========================================================================
@@ -591,7 +596,8 @@ main > section{
         }
         @media (min-width: 1024px) {
             margin:0;
-            width: 427px;
+            /* width: 427px; */
+            width: 100%;
         }
         
         overflow: hidden;
@@ -625,7 +631,11 @@ main > section{
  .word_art_img{
     padding:6px 0; max-width:130vw; font-size:24px; height:30px;
     @media(min-width:1024px){ padding:10px 0; font-size:28px; height:50px }
-    @media(min-width:1600px){ .word_art{ font-size:42px; height:60px } }
+    
+    /* @media(min-width:1920px){ font-size:1.7vw; height:3.5vw; } */
+}
+.summary-box .game-title span{
+    @media(min-width:1600px){ font-size:1.7vw; line-height:3.5vw; }
 }
 .summary-box{
     background:var(--paper);
@@ -656,7 +666,7 @@ ul hr{
 
     position:relative;
     @media (min-width: 1024px) {
-        height: 66px;
+        height: 15.5%;
     } }
 #logo-border{ position: absolute;
     top: -50%;
@@ -678,7 +688,7 @@ ul hr{
     width: 125%;
     height: auto;
     @media (min-width: 1024px) {
-        top: 55%;
+        top: 55%;width: 113%;
     }
     left: 50%;
     transform: translateX(-50%) translateY(-45%);
@@ -707,7 +717,7 @@ strong.border {
     height: 100%;
     text-align: center;
     font-weight: 900;
-    font-size: clamp(18px, 5vw, 36px);
+    font-size: clamp(18px, 1.8vw, 36px);
     letter-spacing: 2px;
     color: var(--ink);
     z-index: 10;
@@ -720,25 +730,32 @@ strong.border {
 .game-tags .tag{ font-weight:500; }
 
 #summary .btn-group{
-    position:static; transform:none; width:92vw; max-width:620px;
-    margin:3vw; z-index:auto;
+    margin-top:24px; 
+    margin-bottom:24px; 
     @media (min-width:1024px){
-        margin-left:auto;
-        margin-right:auto;
+        margin-top:2vw; 
+        margin-bottom:2vw; 
     }
-}
+} 
 
 @media (min-width:1024px){
-    #summary .row{ flex-direction:row; align-items:center; justify-content:center; }
-    .summary-cover{ width:min(360px,34%); }
-    .summary-info{ width: auto;max-width:560px; }
+    #summary .row{ flex-direction:row; align-items:center; justify-content:center;        max-width: 53.6vw; }
+    .summary-cover{ width: 24vw; height: auto; }
+    .summary-info{ width: auto;max-width:30.1vw;width: 30.1vw; }
 
     .summary-box{
-        height: 400px;
-        width: 552px;
+        /* height: 400px; */
+        width: 30.1vw;
+        height:auto;
+        aspect-ratio: 579 / 427;
     }
+   
 }
-
+@media (min-width:2560px){
+ .spec-list{
+        zoom: calc(100vw / 1920px);
+  }
+}
 /* ==========================================================================
    頁尾  #site-footer
    ========================================================================== */

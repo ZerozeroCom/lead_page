@@ -34,7 +34,7 @@ body{
 .page{
     height:100dvh;
     @media (orientation: landscape) {
-        @media (max-height: 768px) {
+        @media (max-height: 767px) {
             height:200dvh;
             .panel_border_img{
                 height:200dvh;
@@ -112,11 +112,9 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 /* ---------- Header（左 akaeroCore / 右 SEVEN DAYS logo） ---------- */
 .site-header{
     position:absolute; top:0; left:0; right:0; z-index:5;
-    display:flex; align-items:flex-start; justify-content:space-between;
+    display:flex; align-items:center; justify-content:space-between;
     padding:0px;
-.akaerocore_logo img{
-margin-left: 3vw;margin-top: 4vw;
-}
+    margin-left: 3vw;
 
 }
 .logo-inline{ display:block; margin:0; line-height:0; }
@@ -124,8 +122,9 @@ margin-left: 3vw;margin-top: 4vw;
 .logo-img img{ width:34vw; max-width:148px; height:auto;margin-right: 1vw; }
 
 @media (min-width:1024px){
-    .site-header{ padding:26px 46px; align-items:center; }
-    .akaerocore_logo img{ width: 20vw; max-width:none; }
+    .site-header{ padding:26px 46px; align-items:center;margin-left:0;
+    .akaerocore_logo img{ width: 20vw; max-width:none; } }
+    
     .logo-img img{ width: 20vw; max-width:none; }
 }
 
@@ -143,7 +142,7 @@ margin-left: 3vw;margin-top: 4vw;
 
 @media (min-width:1024px){
     .slogan-block{
-        width:34vw;
+        width:30.6vw;
         bottom:3%;
     }
     .slogan_img img{ max-width:none; }
@@ -196,20 +195,22 @@ margin-left: 3vw;margin-top: 4vw;
     font-weight:900; letter-spacing:1px; white-space:nowrap;
     font-size:min(4.3vw , 4.3vh);
 }
-.btn-download .btn-label{ font-size:min(3.3vw , 3.3vh); }
+.btn-download .btn-label{ font-size:1.8vw; }
 .btn-icon{ width:auto; height:min(7vw, 7vh); flex-shrink:0; }           /* steam icon */
 .btn-dl .btn-icon{ height:min(4vw, 4vh); aspect-ratio:67 / 19; }          /* dlsite logo */
 
 @media (min-width:1024px){
     .btn-group{
-        width:46vw; 
-        margin-left: -6vw;
+        width:39.8vw;
+    }
+    .slogan-block .btn-group{ 
+        margin-left: -4.8vw;
     }
     .btn-icon{  height:3vw; }           /* steam icon */
     .btn-dl .btn-icon{ height:1.8vw;  margin-left: 14px; }
     .btn-row{ gap:16px; }
     .btn-row:last-child > a{ max-width:calc(50% - 8px); }
-    .btn{ aspect-ratio:185 / 48; gap:6px; }
+    .btn{ aspect-ratio:179 / 48; gap:6px; }
     .btn-label{ font-size: 2vw;line-height: 2vw; }
 }
 
