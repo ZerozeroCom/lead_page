@@ -146,4 +146,5 @@ vite.config.ts.timestamp-*
 .git.backup/
 page_temp/
 
-new img
+new img/
+未使用/

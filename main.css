@@ -766,8 +766,7 @@ strong.border {
 .price{ font-weight:900; font-size:clamp(18px,2vw,24px); color:var(--ink-soft); font-family:Georama,'Noto Sans TC',sans-serif; }
 .game-tags .tag{ font-weight:500; }
 
-#summary .btn-group{
-    width:92%; 
+#summary .btn-group{ 
     margin-top:24px; 
     margin-bottom:24px; 
     @media (min-width:1024px){
