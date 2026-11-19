@@ -250,6 +250,19 @@ main > section{
         max-height: 1080px;
     }
 }
+@media (min-width:1024px) and (max-aspect-ratio:1/1){
+    /* 處理過高平板問題 */
+    #game-intro-card { max-height: 75vw;
+        min-height: auto;
+    }
+    .panel_border_img {
+        max-height: 75vw;
+    }
+
+    #promo_video.page{
+        height: 75vw;
+    }
+}
 /* ==========================================================================
    虛實交錯的夢境（影片）  #promo_video
    布局與元素關係對齊 neet_bak 分支 tw 版（css/main_b.css）。

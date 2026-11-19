@@ -145,6 +145,30 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
         margin-left: -15%;
     }
     .slogan_img img{ max-width:none; }
+
+/* 對照 Figma 桌面稿：碎片群集中於畫面中段（什麼都可以約 25%、催眠/認知改寫約 58-69%），
+       故合成圖置中、寬約 50%，而非全幅 */
+    .slogan-frag{ left:45%; width:47%; transform:translateX(-50%); }
+
+    @media (min-width:1024px) and (max-aspect-ratio:1/1){
+  /* 背景：高螢幕改對位，避免桌機橫裁被切（或直接換直式圖） */
+  #game-section .game-bg-img{ object-position:center 12%; }
+
+  /* slogan / 按鈕：vw 在 1024 窄寬會縮太小 → 改 min(px,vw) 與較大 % */
+  #game-section .slogan-block{ width:min(560px,62vw); bottom:9%; }
+  #game-section .btn-group{ width:min(620px,70vw); }
+  #game-section .slogan-block .btn-group{ margin-left:min(-30px,-5.7%); }      /* 取消寬螢幕的 -15% 回正 */
+  #game-section .btn-label{ font-size:min(2.3vw,2.4vh); }
+  #game-section .btn-download .btn-label{ font-size:min(2vw,2.1vh); }
+  #game-section .btn-icon{ height:min(3.6vw,3.4vh); }
+  #game-section .btn-dl .btn-icon{ height:min(2.2vw,2vh); }
+
+  /* 直書碎片：放大並對準中段 */
+  #game-section .slogan-frag{ left: -1vh; width:72%; top:14%; }
+
+  /* 社群右欄：5vw≈51px 偏小 */
+  #game-section .social-link{ width:60px; height:60px; }
+}
 }
 
 /* 散佈直書標語碎片：單張合成覆蓋圖（手機 mobile-TC / 桌機 desktop-TC）
@@ -156,12 +180,6 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
     max-width: none;
 }
 .slogan-frag img{ width:100%; height:auto; display:block; filter:grayscale(1); }
-
-@media (min-width: 1024px){
-    /* 對照 Figma 桌面稿：碎片群集中於畫面中段（什麼都可以約 25%、催眠/認知改寫約 58-69%），
-       故合成圖置中、寬約 50%，而非全幅 */
-    .slogan-frag{ left:45%; width:47%; transform:translateX(-50%); }
-}
 
 /* ==========================================================================
    CTA 按鈕 — 手繪布標底圖 + 文字/icon
