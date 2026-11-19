@@ -34,13 +34,13 @@ body{
 .page{
     height:100dvh;
     @media (orientation: landscape) {
-        @media (max-height: 767px) {
+        @media (max-height: 767px) and (max-width: 1024px) {
             height:200dvh;
             .panel_border_img{
                 height:200dvh;
             }
         }
-        @media (max-height: 320px) {
+        @media (max-height: 320px) and (max-width: 1024px){
             height: 300dvh;
             .panel_border_img{
                 height:300dvh;
@@ -81,8 +81,8 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 #game-section{
     position:relative;
     width:100%;
-    height:100svh;
-    min-height:560px;
+    /* height:100svh;
+    min-height:560px; */
     overflow:hidden;
     isolation:isolate;
     pointer-events:none;
@@ -91,22 +91,14 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 
 /* 背景角色主視覺（滿版、黑白） */
 .game-bg-wrapper{ position:absolute; inset:0; z-index:0; 
-    width:100dvw; height:100dvh;
+    width:100%; height:100%;
 }
 
 /* 保留兼容舊寫法，避免 HTML 仍有 .game-bg-img 被選到 */
 .game-bg-img{
     width:100%; height:100%;
-    background-image:url(./img/sd-hero-bg-m.webp);
-    background-position:center top;
-    background-size:cover;
-    background-repeat:no-repeat;
     filter:grayscale(1);
-    @media(min-width:600px){
-        background-image:url(./img/sd-hero-bg.webp);
-        background-size:cover;
-        background-position:center top; 
-    }
+     object-fit:cover; object-position:center 15%;
 }
 
 /* ---------- Header（左 akaeroCore / 右 SEVEN DAYS logo） ---------- */
@@ -122,6 +114,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 .logo-img img{ width:34vw; max-width:148px; height:auto;margin-right: 1vw; }
 
 @media (min-width:1024px){
+    .game-bg-img{object-position:center top;}
     .site-header{ padding:26px 46px; align-items:center;margin-left:0;
     .akaerocore_logo img{ width: 20vw; max-width:none; } }
     
@@ -140,7 +133,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 }
 .slogan_img img{ width:100%; max-width:540px; height:auto; margin:0 auto; filter:grayscale(1); }
 
-@media(min-width: 600px){
+@media(min-width: 1024px){
     .slogan-block{
         width:30.6vw;
         bottom:3%;
@@ -149,7 +142,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
         width:39.8vw;
     }
     .slogan-block .btn-group{ 
-        margin-left: -4.8vw;
+        margin-left: -15%;
     }
     .slogan_img img{ max-width:none; }
 }
@@ -164,7 +157,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 }
 .slogan-frag img{ width:100%; height:auto; display:block; filter:grayscale(1); }
 
-@media (min-width: 600px){
+@media (min-width: 1024px){
     /* 對照 Figma 桌面稿：碎片群集中於畫面中段（什麼都可以約 25%、催眠/認知改寫約 58-69%），
        故合成圖置中、寬約 50%，而非全幅 */
     .slogan-frag{ left:45%; width:47%; transform:translateX(-50%); }
