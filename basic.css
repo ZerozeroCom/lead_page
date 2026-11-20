@@ -17,7 +17,8 @@ body{
     -webkit-overflow-scrolling:touch;
     font-family:'Noto Sans TC','sans-serif';
     color:#2b2b2b;
-    background:#e9e7e2;
+    /* background:#e9e7e2; */
+    background:#eeeeee;
     scroll-behavior:smooth;
 }
 @font-face {
