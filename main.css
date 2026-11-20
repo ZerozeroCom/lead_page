@@ -22,17 +22,28 @@
 /* 整頁底：水墨紙質 */
 main{
     display:block;
+    isolation: isolate;
+    background-color:#ebe8e1;
+    color:var(--ink);
+    font-family:'Noto Sans TC',sans-serif;
+}
+/* 整頁底圖改用「固定定位圖層」。
+   原本用 background-attachment:fixed，但 iOS Safari / Telegram 等手機內建瀏覽器
+   並未正確支援：它會依「整頁高度」去算 background-size:cover，導致圖被放大、位移，
+   看起來就是使用者回報的「背景跑掉」。改用 position:fixed 的獨立圖層在手機才穩定。 */
+main::before{
+    content: "";
+    position:fixed;
+    inset:0;
+    z-index: -1;
+    pointer-events: none;
     background-image:url(./img/sd-page-bg-m.webp);
     @media(min-aspect-ratio:3/4){
         background-image:url(./img/sd-page-bg.webp);
     }
     background-position:center; 
     background-size:cover;
-    background-attachment: fixed;
-    /* background-color:#ebe8e1; */
-    background-color:#ffffff;
-    color:var(--ink);
-    font-family:'Noto Sans TC',sans-serif;
+    background-color:#ebe8e1;
 }
 
 /* 內容圖統一灰階（素材帶洋紅潑墨，Figma 為純黑白水墨） */
