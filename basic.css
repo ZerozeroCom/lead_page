@@ -32,26 +32,7 @@ body{
     font-family: 'GenSenRounded2TW', sans-serif;
     font-weight: 900;
 }
-.page{
-    /* height:100dvh;
-    @media (orientation: landscape) {
-        @media (max-height: 767px) and (max-width: 1024px) {
-            height:200dvh;
-            .panel_border_img{
-                height:200dvh;
-            }
-        }
-        @media (max-height: 320px) and (max-width: 1024px){
-            height: 300dvh;
-            .panel_border_img{
-                height:300dvh;
-            }
-        }
-    }
-    @media (min-width: 1440px) {
-        height:100vh;
-    } */
-}
+
 section.page {
     @media (min-width: 1024px) {
         /* 關鍵屬性：磁吸點設在元素中心 */
@@ -162,24 +143,24 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
     .slogan-frag{ left:45%; width:47%; transform:translateX(-50%); }
 
     @media (min-width:1024px) and (max-aspect-ratio:1/1){
-  /* 背景：高螢幕改對位，避免桌機橫裁被切（或直接換直式圖） */
-  #game-section .game-bg-img{ object-position:center 12%; }
+    /* 背景：高螢幕改對位，避免桌機橫裁被切（或直接換直式圖） */
+    #game-section .game-bg-img{ object-position:center 12%; }
 
-  /* slogan / 按鈕：vw 在 1024 窄寬會縮太小 → 改 min(px,vw) 與較大 % */
-  /* #game-section .slogan-block{ width:min(560px,62vw); bottom:9%; } */
-  #game-section .btn-group h{ width:min(620px,70vw); }
-  /* #game-section .slogan-block .btn-group{ margin-left:min(-30px,-5.7%); }      取消寬螢幕的 -15% 回正 */
-  #game-section .btn-label{ font-size:min(2.3vw,2.4vh); }
-  #game-section .btn-download .btn-label{ font-size:min(2vw,2.1vh); }
-  #game-section .btn-icon{ height:min(3.6vw,3.4vh); }
-  #game-section .btn-dl .btn-icon{ height:min(2.2vw,2vh); }
+    /* slogan / 按鈕：vw 在 1024 窄寬會縮太小 → 改 min(px,vw) 與較大 % */
+    /* #game-section .slogan-block{ width:min(560px,62vw); bottom:9%; } */
+    #game-section .btn-group h{ width:min(620px,70vw); }
+    /* #game-section .slogan-block .btn-group{ margin-left:min(-30px,-5.7%); }      取消寬螢幕的 -15% 回正 */
+    /* #game-section .btn-label{ font-size:min(2.3vw,2.4vh); }
+    #game-section .btn-download .btn-label{ font-size:min(2vw,2.1vh); } */
+    #game-section .btn-icon{ height:min(3.6vw,3.4vh); }
+    #game-section .btn-dl .btn-icon{ height:min(2.2vw,2vh); }
 
-  /* 直書碎片：放大並對準中段 */
-  #game-section .slogan-frag{ left: -1vh; width:72%; top:14%; }
+    /* 直書碎片：放大並對準中段 */
+    #game-section .slogan-frag{ left: -1vh; width:72%; top:14%; }
 
-  /* 社群右欄：5vw≈51px 偏小 */
-  #game-section .social-link{ width:60px; height:60px; }
-}
+    /* 社群右欄：5vw≈51px 偏小 */
+    #game-section .social-link{ width:60px; height:60px; }
+    }
 }
 
 /* 散佈直書標語碎片：單張合成覆蓋圖（手機 mobile-TC / 桌機 desktop-TC）
@@ -197,10 +178,6 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
    ========================================================================== */
 .btn-group{
     width:92%;
-   @media(min-width: 761px){
-    max-width: min(540px, 40vh);
-   }
-
     margin: auto;
     display:flex; flex-direction:column;
 }
@@ -231,6 +208,14 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 .btn-download .btn-label{  font-size:clamp(12px, 2.4cqi, 30px) }
 .btn-icon{ width:auto; height:min(4.5vw, 4.5vh); flex-shrink:0; }           /* steam icon */
 .btn-dl .btn-icon{ height:min(3vw, 3vh); aspect-ratio:67 / 19; }          /* dlsite logo */
+
+@media(min-width: 761px){
+    .btn-group{
+        max-width: min(540px, 40vh);
+    }
+    .btn-label{ font-size: clamp(16px, 2.8cqi, 20px)}
+    .btn-download .btn-label{  font-size:clamp(12px, 2.4cqi, 16px) }
+}
 
 @media (min-width:1024px){
     .btn-group{
