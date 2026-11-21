@@ -46,9 +46,7 @@ main::before{
     background-color:#ebe8e1;
 }
 
-/* 內容圖統一灰階（素材帶洋紅潑墨，Figma 為純黑白水墨） */
-#reviews img,#game-system img,#character-info img,#gallery img,
-#monitor-showcase img,#summary img,#promo_video video{ filter:grayscale(1); }
+
 
 /* 區塊通用節奏 */
 main > section{
@@ -65,6 +63,19 @@ main > section{
     color:var(--ink);
 }
 
+#panel_border_img, .video_container:before , strong.border {
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+.content-wrapper , .summary-info {
+    border: 1px solid var(--box-line);
+    box-shadow: 1px 1px 0 var(--box-ink);
+    background-color: #e0e0e0;
+    padding:3px;
+    width:94vw; 
+    max-width:480px;
+}
 /* ==========================================================================
    好評推薦  #reviews
    ========================================================================== */
@@ -180,7 +191,7 @@ main > section{
    圖片路徑改為本檔相對（./img/）；文案維持目前 SEVEN DAYS 內容。
    ========================================================================== */
 #game-intro-card{
-    min-height:98dvh; margin-bottom:2dvh; height:200dvh;
+    margin-bottom:2dvh; height:200dvh;
     display:flex; flex-direction:column; justify-content:center; align-items:center;
     @media(min-width:300px){ max-height:650px }
     @media(min-width:1024px){ margin-bottom:0; min-height:80dvh; max-height:100dvh; }
@@ -188,17 +199,15 @@ main > section{
 .panel_border{
     position:relative; height:auto;
     @media(min-width:300px){ height:85dvh }
-    display:block; width:100%; max-width:1268px; display:contents;
+    width:100%; max-width:1268px; display:contents;
 }
 .panel_border_img{
     content:""; 
     position:absolute; 
     aspect-ratio:4 / 3;
     left:50%; top:50%; transform:translate(-50%) translatey(-50%); z-index:1;
-    height: 100dvh;
-    @media(min-width:1024px){ 
-        height: 100%; 
-    }
+    height: 100%; 
+
 }
 .no-wrap {
     white-space: nowrap;
@@ -206,11 +215,8 @@ main > section{
 #panel_border_img{
     position:relative; width:100%; height:100%;
     background-image:url(./img/panel_border.webp);
-    /* background-image:image-set(url(./img/panel_border.avif) type("image/avif"),url(./img/panel_border.webp) type("image/webp"),url(./img/panel_border.png) type("image/png")); */
-    background-position:center; 
+    /* background-image:image-set(url(./img/panel_border.avif) type("image/avif"),url(./img/panel_border.webp) type("image/webp"),url(./img/panel_border.png) type("image/png")); */ 
     background-size:auto 100%;
-    background-repeat:no-repeat;
-
 }
 
 .panel_border_wrapper{
@@ -319,7 +325,7 @@ main > section{
     } */
     background-image:url(./img/sd-video-frame.webp);
     /* background-image:image-set(url(./img/video_border.avif) type("image/avif"),url(./img/video_border.webp) type("image/webp"),url(./img/video_border.png) type("image/png")); */
-    top:50%; background-size:contain; background-repeat:no-repeat; background-position:center;
+    top:50%; background-size:contain;
     left:50%; transform:translate(-50%) translatey(-50%); pointer-events:none;
 }
 
@@ -581,12 +587,8 @@ main > section{
 
 .content-wrapper{ 
     position:absolute; 
-    border: 1px solid var(--line);
-    box-shadow: 1px 1px 0 var(--ink);
-    background-color: #e0e0e0;
-    padding:3px;
-    width:94vw; 
-    max-width:480px; 
+    --box-line:  var(--line);
+    --box-ink: var(--ink);
     margin: 3vw;
     z-index: 1;
     bottom: -8%;
@@ -726,16 +728,12 @@ main > section{
         position:relative;
         z-index: 2;
     }
+
 .summary-info{   
     position:relative;
-    border: 1px solid var(--ink);
-    box-shadow: 1px 1px 0 var(--ink-soft);
-    background-color: #e0e0e0;
-    padding: 3px;
-    width: 94vw;
-    max-width: 480px;
+    --box-line:  var(--ink);
+    --box-ink: var(--ink-soft);
     flex: 3;
-
  }
  .word_art_img{
     padding:6px 0; max-width:130vw; font-size:24px; height:30px;
@@ -747,7 +745,6 @@ main > section{
     @media(min-width:1600px){ font-size:1.7vw; line-height:3.5vw; }
 }
 .summary-box{
-    background:var(--paper);
     border: 1px solid var(--line);
     box-shadow: 1px 1px 0 var(--ink-soft2);
     background-color: #ffffff;
@@ -814,8 +811,7 @@ ul hr{
 }
 strong.border {
     background-image:url(./img/sd-info-heading.webp);
-    background-position:center; 
-    background-size:120%; background-repeat:no-repeat;
+    background-size:120%; 
 }
 .game-title span{
     

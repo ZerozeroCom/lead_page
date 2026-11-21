@@ -15,7 +15,7 @@ body{
     overflow-y:auto;
     overflow-x:hidden;
     -webkit-overflow-scrolling:touch;
-    font-family:'Noto Sans TC','sans-serif';
+    font-family:'Noto Sans TC',sans-serif;
     color:#2b2b2b;
     /* background:#e9e7e2; */
     background:#eeeeee;
@@ -47,7 +47,6 @@ section.page {
 }
 
 a{ text-decoration:none; color:inherit; outline:none; }
-a:hover,a:active,a:visited{ text-decoration:none; color:inherit; }
 img,picture,svg,video{ display:block; max-width:100%; }
 button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointer; }
 
@@ -57,6 +56,9 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 }
 .hide{ display:none !important; }
 
+.btn , .social-link {
+    background-repeat:no-repeat; background-position:center; background-size:100% 100%;
+}
 /* ==========================================================================
    HERO ( #game-section ) — 滿版角色主視覺（第一屏）
    ========================================================================== */
@@ -76,7 +78,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
     width:100%; height:100%;
 }
 
-/* 保留兼容舊寫法，避免 HTML 仍有 .game-bg-img 被選到 */
+
 .game-bg-img{
     width:100%; height:100%;
     
@@ -138,9 +140,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
     } */
     .slogan_img img{ max-width:none; }
 
-/* 對照 Figma 桌面稿：碎片群集中於畫面中段（什麼都可以約 25%、催眠/認知改寫約 58-69%），
-       故合成圖置中、寬約 50%，而非全幅 */
-    .slogan-frag{ left:45%; width:47%; transform:translateX(-50%); }
+
 
     @media (min-width:1024px) and (max-aspect-ratio:1/1){
     /* 背景：高螢幕改對位，避免桌機橫裁被切（或直接換直式圖） */
@@ -148,30 +148,17 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 
     /* slogan / 按鈕：vw 在 1024 窄寬會縮太小 → 改 min(px,vw) 與較大 % */
     /* #game-section .slogan-block{ width:min(560px,62vw); bottom:9%; } */
-    #game-section .btn-group h{ width:min(620px,70vw); }
     /* #game-section .slogan-block .btn-group{ margin-left:min(-30px,-5.7%); }      取消寬螢幕的 -15% 回正 */
     /* #game-section .btn-label{ font-size:min(2.3vw,2.4vh); }
     #game-section .btn-download .btn-label{ font-size:min(2vw,2.1vh); } */
     #game-section .btn-icon{ height:min(3.6vw,3.4vh); }
     #game-section .btn-dl .btn-icon{ height:min(2.2vw,2vh); }
 
-    /* 直書碎片：放大並對準中段 */
-    #game-section .slogan-frag{ left: -1vh; width:72%; top:14%; }
 
     /* 社群右欄：5vw≈51px 偏小 */
     #game-section .social-link{ width:60px; height:60px; }
     }
 }
-
-/* 散佈直書標語碎片：單張合成覆蓋圖（手機 mobile-TC / 桌機 desktop-TC）
-   以百分比定位覆蓋在主視覺上，碎片的相對位置已由圖內排版決定。 */
-.slogan-frags{ position:absolute; inset:0; z-index:5; pointer-events:none; }
-.slogan-frag{
-    position:absolute; display:block;
-    top:11%; left:-16%; width:115%; transform:none;
-    max-width: none;
-}
-.slogan-frag img{ width:100%; height:auto; display:block; filter:grayscale(1); }
 
 /* ==========================================================================
    CTA 按鈕 — 手繪布標底圖 + 文字/icon
@@ -189,7 +176,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
     position:relative;
     display:flex; align-items:center; justify-content:center; gap:2px;
     width:100%; aspect-ratio:82 / 19;
-    background-repeat:no-repeat; background-position:center; background-size:100% 100%;
+    
     color:#2b2b2b;
     transition:transform .15s ease, filter .15s ease;
 }
@@ -251,7 +238,6 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
     display:flex; align-items:center; justify-content:center;
     width:70px; height:70px;
     background-image:url(./img/sd-social-bg.webp);
-    background-repeat:no-repeat; background-position:center; background-size:100% 100%;
     transition:transform .2s ease;
 }
 .social-link:hover{ transform:translateY(-2px); }
