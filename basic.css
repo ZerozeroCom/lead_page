@@ -197,7 +197,10 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
    ========================================================================== */
 .btn-group{
     width:92%;
+   @media(min-width: 761px){
     max-width: min(540px, 40vh);
+   }
+
     margin: auto;
     display:flex; flex-direction:column;
 }
