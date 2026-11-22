@@ -802,11 +802,11 @@ ul hr{
     padding:0; }
 .spec-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
 .spec-list li{ display:flex; align-items:baseline; gap:2px; flex-wrap:wrap; font-size:clamp(14px,1.5vw,17px); color:var(--ink-soft); line-height:1.5; }
-.spec-list strong{ font-weight:700; }
+.spec-list strong{ font-weight:500; }
 .spec-list strong.border{
     flex-shrink:0; display:inline-block; min-width:92px; text-align:center;
     padding:3px 10px;  border-radius:20px;
-    font-size:15px; font-weight:100;
+    font-size:15px;
     color: #fff;
 }
 strong.border {

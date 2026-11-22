@@ -31,7 +31,6 @@ body{
 /* 自架 Noto Sans TC 子集（繁中內文，取代 Google Fonts）。
    依實際使用的 5 個字重分檔；font-display:optional 以避免換字造成 CLS。
    ⚠️ 繁中專用：簡中/韓文頁應改用 Noto Sans SC / KR 的對應子集，勿沿用此段。 */
-@font-face { font-family: 'Noto Sans TC'; font-style: normal; font-weight: 100; font-display: optional; src: url('../fonts/noto-tc-100.woff2') format('woff2'); }
 @font-face { font-family: 'Noto Sans TC'; font-style: normal; font-weight: 400; font-display: optional; src: url('../fonts/noto-tc-400.woff2') format('woff2'); }
 @font-face { font-family: 'Noto Sans TC'; font-style: normal; font-weight: 500; font-display: optional; src: url('../fonts/noto-tc-500.woff2') format('woff2'); }
 @font-face { font-family: 'Noto Sans TC'; font-style: normal; font-weight: 700; font-display: optional; src: url('../fonts/noto-tc-700.woff2') format('woff2'); }
