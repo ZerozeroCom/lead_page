@@ -1,0 +1,85 @@
+/* ==========================================================================
+   SEVEN DAYS 未知的密室生活 — 多語系字體管理 (fonts.css)
+   --------------------------------------------------------------------------
+   這是「字體設定的總表」，本身不被任何頁面 <link> 載入。
+   用法：每個語系頁只取「自己語系」那一段（@font-face + :root 變數），
+         貼進該頁 index.html <head> 內一個獨立的 <style>（放在 critical CSS 之前）。
+         版型用的 basic.css / main.css 只引用下列變數，換語系不必動版型 CSS。
+
+   變數（basic.css / main.css 皆以 var(--x, 繁中fallback) 形式引用）：
+     --font-body    內文／預設字（body、main）
+     --font-main    主標題裝飾字（.main_font，字重固定 900）
+     --font-review  評價區 .review-body（拉丁字 Inter + 內文 fallback）
+     --font-price   售價 .price（數字 Georama + 內文 fallback）
+
+   注意：Inter 500 / Georama 900 為拉丁字（數字/英文），各語系共用，
+         由 <head> 的 Google Fonts <link> 載入，與語系無關，不列入下方 @font-face。
+   ========================================================================== */
+
+
+/* ======================= 繁體中文 tw =======================
+   自架 Noto Sans TC 子集（400 內文／500 介紹卡·規格·tag／900 按鈕·標題），
+   主標用思源圓體 GenSenRounded2TW 900。font-display:optional 以避免換字 CLS。
+   字元清單由 font-text/tw-w*.txt 產生（已排除 .visually-hidden）。 */
+@font-face{ font-family:'GenSenRounded2TW'; src:url('../fonts/GenSenRounded2TW-H-subset.woff2') format('woff2'); font-weight:900; font-style:normal; font-display:swap; }
+@font-face{ font-family:'Noto Sans TC'; font-style:normal; font-weight:400; font-display:optional; src:url('../fonts/noto-tc-400.woff2') format('woff2'); }
+@font-face{ font-family:'Noto Sans TC'; font-style:normal; font-weight:500; font-display:optional; src:url('../fonts/noto-tc-500.woff2') format('woff2'); }
+@font-face{ font-family:'Noto Sans TC'; font-style:normal; font-weight:900; font-display:optional; src:url('../fonts/noto-tc-900.woff2') format('woff2'); }
+:root{
+    --font-body:'Noto Sans TC',sans-serif;
+    --font-main:'GenSenRounded2TW',sans-serif;
+    --font-review:Inter,'Noto Sans TC',sans-serif;
+    --font-price:Georama,'Noto Sans TC',sans-serif;
+}
+
+
+/* ======================= 簡體中文 cn =======================
+   思源（GenSen）無完整簡中字庫 → 主標 .main_font 改用自架 Noto Sans SC 900 子集；
+   內文等其餘一律用系統預設字體（lang="zh-Hans" 時 sans-serif 會對應到系統簡中字型）。
+   子集字集：font-text/cn-w900.txt（取自 .main_font 實際渲染的字，已排除 .visually-hidden）。
+   head 的 Google Fonts <link> 只留 Georama/Inter，不需再載 Noto Sans SC。
+   若日後改動主標文字 → 依檔尾「SC 子集重建」重跑即可。 */
+@font-face{ font-family:'Noto Sans SC'; font-style:normal; font-weight:900; font-display:swap; src:url('../fonts/noto-sc-900.woff2') format('woff2'); }
+:root{
+    --font-body:sans-serif;
+    --font-main:'Noto Sans SC',sans-serif;
+    --font-review:Inter,sans-serif;
+    --font-price:Georama,sans-serif;
+}
+
+
+/* ======================= English en（待在地化，尚未套用） =======================
+   en 頁目前仍為繁中版型，尚未在地化；完成後取下列區塊，並在 head 保留 Inter/Georama。
+   英文無 CJK 需求，內文用系統拉丁字即可（Inter 可作內文）。 */
+/*
+:root{
+    --font-body:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    --font-main:Inter,system-ui,sans-serif;       <- 主標若要裝飾字再換
+    --font-review:Inter,system-ui,sans-serif;
+    --font-price:Georama,system-ui,sans-serif;
+}
+*/
+
+
+/* ======================= 한국어 kr（待在地화，尚未套用） =======================
+   kr 頁目前仍為繁中版型，尚未在地化；完成後取下列區塊。
+   韓文建議用 Noto Sans KR（Google Fonts 或自架子集 ../fonts/noto-kr-*.woff2）。 */
+/*
+:root{
+    --font-body:'Noto Sans KR',sans-serif;
+    --font-main:'Noto Sans KR',sans-serif;        <- 900 由 .main_font 套用
+    --font-review:Inter,'Noto Sans KR',sans-serif;
+    --font-price:Georama,'Noto Sans KR',sans-serif;
+}
+*/
+
+
+/* ======================= SC 子集重建（cn 主標改字時用）=======================
+   與 TC 同一套流程（下載變量字型 → 抽字成 txt → instance+子集成 woff2）：
+     1) 抽字：於 cn 頁瀏覽器收集 .main_font 實際渲染字元（排除 .visually-hidden），
+        寫入 font-text/cn-w900.txt。
+     2) 取 Noto Sans SC 變量字型（wght 軸）：
+        google/fonts repo → ofl/notosanssc/NotoSansSC[wght].ttf
+     3) 子集：python tools/subset-font.py <NotoSansSC[wght].ttf> cn noto-sc
+        → 產出 fonts/noto-sc-900.woff2（instance 到 900 後只留 txt 內字元）。
+   TC 為多字重（400/500/900，body 也自架）；cn 只有主標自架故單一 900，body 用系統字。 */

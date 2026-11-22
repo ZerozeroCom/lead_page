@@ -25,7 +25,7 @@ main{
     isolation: isolate;
     background-color:#ebe8e1;
     color:var(--ink);
-    font-family:'Noto Sans TC',sans-serif;
+    font-family:var(--font-body,sans-serif);
 }
 /* 整頁底圖改用「固定定位圖層」。
    原本用 background-attachment:fixed，但 iOS Safari / Telegram 等手機內建瀏覽器
@@ -176,7 +176,7 @@ main > section{
 }
 .review-body{
     margin:0; color:var(--ink-soft2); line-height:2.5;
-    font-size:14px; font-family:Inter,'Noto Sans TC',sans-serif;
+    font-size:14px; font-family:var(--font-review,Inter,sans-serif);
 }
 @media (min-width:1024px){
     /* .reviews-content{ flex-direction:row; align-items:flex-start; gap:22px; } */
@@ -831,7 +831,7 @@ strong.border {
     margin-left: 4px;
 }
 #has_hr{ padding-bottom:12px; margin-bottom:4px; border-bottom:1px solid var(--line); }
-.price{ font-weight:900; font-size:clamp(18px,2vw,24px); color:var(--ink-soft); font-family:Georama,'Noto Sans TC',sans-serif; }
+.price{ font-weight:900; font-size:clamp(18px,2vw,24px); color:var(--ink-soft); font-family:var(--font-price,Georama,sans-serif); }
 .game-tags .tag{ font-weight:500; }
 
 #summary .btn-group{ 

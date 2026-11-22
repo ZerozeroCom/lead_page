@@ -15,28 +15,20 @@ body{
     overflow-y:auto;
     overflow-x:hidden;
     -webkit-overflow-scrolling:touch;
-    font-family:'Noto Sans TC',sans-serif;
+    font-family:var(--font-body,sans-serif);
     color:#2b2b2b;
     /* background:#e9e7e2; */
     background:#eeeeee;
     scroll-behavior:smooth;
 }
-@font-face {
-    font-family: 'GenSenRounded2TW';
-    src: url('../fonts/GenSenRounded2TW-H-subset.woff2') format('woff2');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
-/* 自架 Noto Sans TC 子集（繁中內文，取代 Google Fonts）。
-   依實際使用的 3 個字重（400 內文／500 介紹卡·規格·tag／900 按鈕·標題）分檔；
-   font-display:optional 以避免換字造成 CLS。字元清單由 font-text/tw-w*.txt 產生（已排除 .visually-hidden）。
-   ⚠️ 繁中專用：簡中/韓文頁應改用 Noto Sans SC / KR 的對應子集，勿沿用此段。 */
-@font-face { font-family: 'Noto Sans TC'; font-style: normal; font-weight: 400; font-display: optional; src: url('../fonts/noto-tc-400.woff2') format('woff2'); }
-@font-face { font-family: 'Noto Sans TC'; font-style: normal; font-weight: 500; font-display: optional; src: url('../fonts/noto-tc-500.woff2') format('woff2'); }
-@font-face { font-family: 'Noto Sans TC'; font-style: normal; font-weight: 900; font-display: optional; src: url('../fonts/noto-tc-900.woff2') format('woff2'); }
+/* ---------- 字體 ----------
+   @font-face 與字型變數（--font-body / --font-main / --font-review / --font-price）
+   不寫在這裡，改由各語系頁 inline 貼上 fonts.css 內「該語系」那一段 <style>。
+   本檔只引用變數，換語系不必動版型；var() 第二參數僅為中性 fallback（sans-serif），
+   不放任何語系專屬字體，避免未貼區塊的頁去叫對該語系無用的字型。
+   變數清單與各語系區塊見根目錄 fonts.css。 */
 .main_font{
-    font-family: 'GenSenRounded2TW', sans-serif;
+    font-family: var(--font-main,sans-serif);
     font-weight: 900;
 }
 
