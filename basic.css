@@ -1,7 +1,7 @@
 /* ==========================================================================
    SEVEN DAYS 未知的密室生活 — 首屏 critical CSS (basic.css)
    基準：mobile 314x650 / desktop 1920x1080。打包成 basic_b.css 後內嵌進 HTML。
-   圖片路徑相對本檔（根目錄）→ ./img/
+   圖片路徑相對本檔（根目錄）→ ../img/
    ========================================================================== */
 
 /* ---------- Reset ---------- */
@@ -23,7 +23,7 @@ body{
 }
 @font-face {
     font-family: 'GenSenRounded2TW';
-    src: url('./fonts/GenSenRounded2TW-H-subset.woff2') format('woff2');
+    src: url('../fonts/GenSenRounded2TW-H-subset.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -180,9 +180,9 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
     color:#2b2b2b;
     transition:transform .15s ease, filter .15s ease;
 }
-.btn-steam{ background-image:url(./img/sd-btn-steam.webp); }
-.btn-dl{ background-image:url(./img/sd-btn-dlsite.webp); }
-.btn-download{ background-image:url(./img/sd-btn-patch.webp); }
+.btn-steam{ background-image:url(../img/sd-btn-steam.webp); }
+.btn-dl{ background-image:url(../img/sd-btn-dlsite.webp); }
+.btn-download{ background-image:url(../img/sd-btn-patch.webp); }
 .btn:hover{ transform:translateY(-2px); filter:brightness(1.04); }
 .btn:active{ transform:translateY(1px); }
 
@@ -237,7 +237,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 .social-link{
     display:flex; align-items:center; justify-content:center;
     width:70px; height:70px;
-    background-image:url(./img/sd-social-bg.webp);
+    background-image:url(../img/sd-social-bg.webp);
     transition:transform .2s ease;
 }
 .social-link:hover{ transform:translateY(-2px); }
