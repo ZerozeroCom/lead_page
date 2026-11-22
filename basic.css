@@ -73,8 +73,9 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 #game-section{
     position:relative;
     width:100%;
-    /* height:100svh;
-    min-height:560px; */
+    height:100vh;            /* 舊瀏覽器 fallback */
+    height:100svh;           /* 預留首屏高度：避免 hero 圖載入前塌陷、載入後撐開，把下方評價區往下推造成 CLS */
+    min-height:560px;
     overflow:hidden;
     isolation:isolate;
     pointer-events:none;
