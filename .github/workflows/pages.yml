@@ -36,10 +36,16 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Prune non-public files (keep video/ img/ fonts/ css/ js/ pages)
+        run: |
+          # 排除：工具、子集字料、未使用與暫存目錄
+          rm -rf tools font-text "未使用" "new img"
+          # 排除：備份、未壓縮原始碼與打包中間檔（頁面皆未引用）
+          rm -f *.bak.* main.js basic_b.css tw_font.txt readme.md
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
+          # 上傳整個 repo（已於上一步移除非公開檔；video/ 保留）
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
