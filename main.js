@@ -38,3 +38,35 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     }
   });
 });
+
+// 促銷影片延遲載入：使用者一捲動就抓影片並播放，首屏不下載（IntersectionObserver 為保險）
+(() => {
+  const video = document.querySelector('video[data-lazy-video]');
+  if (!video) return;
+  let loaded = false;
+  const targets = [window, document, document.body];
+  const loadVideo = () => {
+    if (loaded) return;
+    loaded = true;
+    video.querySelectorAll('source[data-src]').forEach(s => { s.src = s.dataset.src; });
+    video.load();
+    const p = video.play();
+    if (p && p.catch) p.catch(() => {}); // 忽略自動播放被拒
+    targets.forEach(t => {
+      t.removeEventListener('scroll', loadVideo);
+      t.removeEventListener('touchmove', loadVideo);
+    });
+  };
+  // 一捲動就載入（body 是本頁捲動容器，三個目標都掛以涵蓋滾輪與觸控）
+  targets.forEach(t => {
+    t.addEventListener('scroll', loadVideo, { passive: true });
+    t.addEventListener('touchmove', loadVideo, { passive: true });
+  });
+  // 保險：影片若已在視窗內（未捲動）也會載入
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => { if (e.isIntersecting) { loadVideo(); obs.disconnect(); } });
+    }, { rootMargin: '300px 0px' });
+    io.observe(video);
+  }
+})();

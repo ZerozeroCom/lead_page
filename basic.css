@@ -264,3 +264,10 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 }
 .lightbox.active{ opacity:1; pointer-events:auto; }
 .lightbox img{ max-width:90vw; max-height:90vh; width:auto; height:auto; filter:grayscale(1); }
+
+/* ==========================================================================
+   促銷影片延遲載入 fallback
+   JS 啟用時影片靠 main.js 捲動觸發載入；JS 停用（html.no-js）時隱藏 lazy 版，
+   改由 HTML 內的 <noscript> 影片（帶真實 src）播放，避免兩個影片框並存。
+   ========================================================================== */
+html.no-js video[data-lazy-video]{ display:none; }
