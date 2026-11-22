@@ -37,9 +37,9 @@ main::before{
     inset:0;
     z-index: -1;
     pointer-events: none;
-    background-image:url(./img/sd-page-bg-m.webp);
+    background-image:url(../img/sd-page-bg-m.webp);
     @media(min-aspect-ratio:3/4){
-        background-image:url(./img/sd-page-bg.webp);
+        background-image:url(../img/sd-page-bg.webp);
     }
     background-position:center; 
     background-size:cover;
@@ -106,7 +106,7 @@ main > section{
 }
 .review-card{
     position:relative;
-    background:url(./img/sd-reviews-bg.webp) center/100% 100% no-repeat;
+    background:url(../img/sd-reviews-bg.webp) center/100% 100% no-repeat;
     padding:20px 20px 24px;
     /* box-shadow:2px 4px 14px rgba(0,0,0,.12); */
 }
@@ -119,7 +119,7 @@ main > section{
     position:relative;
     display:inline-block; min-width:88px;
     padding:12px 6px 12px 12px; 
-    background:url(./img/sd-review-tag-m.webp) center/100% 100% no-repeat;
+    background:url(../img/sd-review-tag-m.webp) center/100% 100% no-repeat;
     font-size:14px; color:var(--ink); text-align:center;
 }
 .review-name::before{
@@ -131,7 +131,7 @@ main > section{
     position: absolute;   
     top: 0px;
     left: 0px;
-    background:url(./img/sd-review-tag-l.webp) center/100% 100% no-repeat;
+    background:url(../img/sd-review-tag-l.webp) center/100% 100% no-repeat;
     
 }
 .review-name::after{
@@ -143,7 +143,7 @@ main > section{
     position: absolute;   
     top: 0px;
     right:  0px;
-    background:url(./img/sd-review-tag-r.webp) center/100% 100% no-repeat;
+    background:url(../img/sd-review-tag-r.webp) center/100% 100% no-repeat;
     
 }
 /* 5 顆星：單一 SVG 以 background 平鋪，HTML 不需重複星星
@@ -154,7 +154,7 @@ main > section{
     margin-left: -2px;
     margin-bottom: 10px;
     width:145px; height:23px; font-size:0;
-    background:url(./img/sd-star.svg) left center / 29px 23px repeat-x;
+    background:url(../img/sd-star.svg) left center / 29px 23px repeat-x;
 }
 /* 手機（高 DPR）下 repeat-x 平鋪會因次像素捨入造成星距不均。
    改用 5 層同一張 SVG、以百分比定位，間距完全均等且不受 DPR 影響；
@@ -163,11 +163,11 @@ main > section{
 @media (max-width:1023px){
     .review-stars{
         background:
-            url(./img/sd-star.svg) left   center / 23px 23px no-repeat,
-            url(./img/sd-star.svg) 25%    center / 23px 23px no-repeat,
-            url(./img/sd-star.svg) 50%    center / 23px 23px no-repeat,
-            url(./img/sd-star.svg) 75%    center / 23px 23px no-repeat,
-            url(./img/sd-star.svg) right  center / 23px 23px no-repeat;
+            url(../img/sd-star.svg) left   center / 23px 23px no-repeat,
+            url(../img/sd-star.svg) 25%    center / 23px 23px no-repeat,
+            url(../img/sd-star.svg) 50%    center / 23px 23px no-repeat,
+            url(../img/sd-star.svg) 75%    center / 23px 23px no-repeat,
+            url(../img/sd-star.svg) right  center / 23px 23px no-repeat;
     }
 }
 .review-headline{
@@ -188,7 +188,7 @@ main > section{
 /* ==========================================================================
    劇情（鎖鏈框）  #game-intro-card
    布局與元素關係對齊 neet_bak 分支 tw 版（css/main_b.css）。
-   圖片路徑改為本檔相對（./img/）；文案維持目前 SEVEN DAYS 內容。
+   圖片路徑改為本檔相對（../img/）；文案維持目前 SEVEN DAYS 內容。
    ========================================================================== */
 #game-intro-card{
     margin-bottom:2dvh; height:200dvh;
@@ -214,8 +214,8 @@ main > section{
 }
 #panel_border_img{
     position:relative; width:100%; height:100%;
-    background-image:url(./img/panel_border.webp);
-    /* background-image:image-set(url(./img/panel_border.avif) type("image/avif"),url(./img/panel_border.webp) type("image/webp"),url(./img/panel_border.png) type("image/png")); */ 
+    background-image:url(../img/panel_border.webp);
+    /* background-image:image-set(url(../img/panel_border.avif) type("image/avif"),url(../img/panel_border.webp) type("image/webp"),url(../img/panel_border.png) type("image/png")); */ 
     background-size:auto 100%;
 }
 
@@ -286,7 +286,7 @@ main > section{
 /* ==========================================================================
    虛實交錯的夢境（影片）  #promo_video
    布局與元素關係對齊 neet_bak 分支 tw 版（css/main_b.css）。
-   圖片路徑改為本檔相對（./img/）；影片維持目前來源。
+   圖片路徑改為本檔相對（../img/）；影片維持目前來源。
    ========================================================================== */
 #promo_video{
     display:flex; flex-direction:column; justify-content:flex-start; align-items:center;
@@ -295,8 +295,8 @@ main > section{
 }
 #promo_video:before{
     content:""; height:100%; width:100%; z-index:0; left:0; position:absolute;
-    background-image:url(./img/sd-video-bg.webp);
-    /* background-image:image-set(url(./img/section_bg.avif) type("image/avif"),url(./img/section_bg.webp) type("image/webp"),url(./img/section_bg.png) type("image/png")); */
+    background-image:url(../img/sd-video-bg.webp);
+    /* background-image:image-set(url(../img/section_bg.avif) type("image/avif"),url(../img/section_bg.webp) type("image/webp"),url(../img/section_bg.png) type("image/png")); */
     bottom:-7dvh; background-size:cover; background-position:bottom center;
     @media(min-width:1024px){ 
         bottom:12vh; background-size:120%; background-position:bottom center 
@@ -323,8 +323,8 @@ main > section{
     @media(min-width:1920px){
         height:110%; width:110%;
     } */
-    background-image:url(./img/sd-video-frame.webp);
-    /* background-image:image-set(url(./img/video_border.avif) type("image/avif"),url(./img/video_border.webp) type("image/webp"),url(./img/video_border.png) type("image/png")); */
+    background-image:url(../img/sd-video-frame.webp);
+    /* background-image:image-set(url(../img/video_border.avif) type("image/avif"),url(../img/video_border.webp) type("image/webp"),url(../img/video_border.png) type("image/png")); */
     top:50%; background-size:contain;
     left:50%; transform:translate(-50%) translatey(-50%); pointer-events:none;
 }
@@ -393,7 +393,7 @@ main > section{
 }
 /* .feature-shot::before{
   content: '';
-  background-image:url(./img/sd-feature-char-1.webp);
+  background-image:url(../img/sd-feature-char-1.webp);
   background-size:50% auto;
   position: absolute;
   right: -24px;
@@ -446,7 +446,7 @@ main > section{
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("./img/texture_bg_1.webp"); /* fallback */
+    background-image: url("../img/texture_bg_1.webp"); /* fallback */
 }
 
 .game_bg2::after{
@@ -464,7 +464,7 @@ main > section{
     background-size: contain; 
     background-repeat: no-repeat; /* 防止縮小後出現重複圖片 */
     background-position: center; /* 確保圖片縮窄後依然居中 */
-    background-image: url("./img/texture_bg_1.webp"); /* fallback */
+    background-image: url("../img/texture_bg_1.webp"); /* fallback */
 }
 
 .feature-side{
@@ -810,7 +810,7 @@ ul hr{
     color: #fff;
 }
 strong.border {
-    background-image:url(./img/sd-info-heading.webp);
+    background-image:url(../img/sd-info-heading.webp);
     background-size:120%; 
 }
 .game-title span{

@@ -29,11 +29,11 @@ body{
     font-display: swap;
 }
 /* 自架 Noto Sans TC 子集（繁中內文，取代 Google Fonts）。
-   依實際使用的 5 個字重分檔；font-display:optional 以避免換字造成 CLS。
+   依實際使用的 3 個字重（400 內文／500 介紹卡·規格·tag／900 按鈕·標題）分檔；
+   font-display:optional 以避免換字造成 CLS。字元清單由 font-text/tw-w*.txt 產生（已排除 .visually-hidden）。
    ⚠️ 繁中專用：簡中/韓文頁應改用 Noto Sans SC / KR 的對應子集，勿沿用此段。 */
 @font-face { font-family: 'Noto Sans TC'; font-style: normal; font-weight: 400; font-display: optional; src: url('../fonts/noto-tc-400.woff2') format('woff2'); }
 @font-face { font-family: 'Noto Sans TC'; font-style: normal; font-weight: 500; font-display: optional; src: url('../fonts/noto-tc-500.woff2') format('woff2'); }
-@font-face { font-family: 'Noto Sans TC'; font-style: normal; font-weight: 700; font-display: optional; src: url('../fonts/noto-tc-700.woff2') format('woff2'); }
 @font-face { font-family: 'Noto Sans TC'; font-style: normal; font-weight: 900; font-display: optional; src: url('../fonts/noto-tc-900.woff2') format('woff2'); }
 .main_font{
     font-family: 'GenSenRounded2TW', sans-serif;
