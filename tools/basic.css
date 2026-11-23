@@ -228,10 +228,8 @@ html[lang="en"] .btn-download .btn-label{  font-size:clamp(9px, 2cqi, 20px);}
     .btn{ aspect-ratio:123 / 28; gap:6px; }
     .btn-label{font-size:2vw ;}
     .btn-download .btn-label{  font-size:1.8vw;}
-    html[lang="en"] .btn-label{font-size:1.7cqi ;}
-    html[lang="en"] .btn-download .btn-label{  font-size:1cqi;}
-    html[lang="ko"] .btn-label{ font-size:1.7vw ;}
-    html[lang="ko"] .btn-download .btn-label{  font-size:1.35vw;}
+     html[lang="en"] .btn-label, html[lang="ko"] .btn-label{ font-size:1.7vw ;}
+   html[lang="en"] .btn-download .btn-label, html[lang="ko"] .btn-download .btn-label{  font-size:1.35vw;}
 }
 
 /* ==========================================================================
