@@ -85,7 +85,7 @@ main > section{
 }
 .reviews-title{
     margin:0 0 clamp(20px,4vw,48px);
-    text-align:center; font-weight:900; letter-spacing:2px; color:var(--ink);
+    text-align:center; font-weight:900; letter-spacing:1px; color:var(--ink);
     font-size:clamp(26px,4.4vw,56px);
 }
 .reviews-content{
@@ -262,7 +262,7 @@ html[lang="en"] #game-intro-card{min-height:840px; }
 }
 
 html[lang="en"] .intro-card { padding:0 18%;width: 100vw;box-sizing: content-box;margin: auto;@media(min-width:640px){margin:0;width:auto} }
-html[lang="en"] .intro-card h3{ white-space: break-spaces;width: 100%; @media(min-width:640px){width: auto;} }
+html[lang="en"] .intro-card h3{ width: 100%; @media(min-width:640px){width: auto;} }
 html[lang="en"] .intro-card p { line-height:1.5;@media(min-aspect-ratio:4/3){ margin-bottom:1em; } }
 
 .intro-card h3{ 
@@ -637,7 +637,7 @@ html[lang="en"] .intro-card p { line-height:1.5;@media(min-aspect-ratio:4/3){ ma
 
 .char-name{
     margin:0 0 15px; font-weight:900; color:var(--ink); line-height:1.1;
-    font-size:clamp(18px,6vw,60px); letter-spacing:2px;
+    font-size:clamp(18px,6vw,60px); letter-spacing:1px;
      @media(min-aspect-ratio:4/3){ 
         text-align:left;
         font-size:clamp(18px,6vh,60px);
@@ -743,12 +743,7 @@ html[lang="en"] .intro-card p { line-height:1.5;@media(min-aspect-ratio:4/3){ ma
     --box-ink: var(--ink-soft);
     flex: 3;
  }
- .word_art_img{
-    padding:6px 0; max-width:130vw; font-size:24px; height:30px;
-    @media(min-width:1024px){ padding:10px 0; font-size:28px; height:50px }
-    
-    /* @media(min-width:1920px){ font-size:1.7vw; height:3.5vw; } */
-}
+
 
 @media(min-width:1600px){ 
     html:not([lang="en"]) .summary-box .game-title span{
@@ -778,11 +773,16 @@ ul hr{
     border-left-width: 0px;
 }
 
-.game-title{  margin: 0;
+.game-title{  
+    margin: 0;
     /* width: 389; */
     height: 48px;
     
     margin-bottom: 15%;
+text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     position:relative;
     @media (min-width: 1024px) {
@@ -803,17 +803,20 @@ ul hr{
     background-repeat: no-repeat;
 }
               /* 舊裝飾邊框圖已刪 */
+     .word_art_img{
+    padding:6px 0; max-width:110vw; font-size:24px; height:30px;
+    @media(min-width:1024px){ padding:10px 0; font-size:28px; height:50px }
+    
+    /* @media(min-width:1920px){ font-size:1.7vw; height:3.5vw; } */
+}
 #logo-title-art{  position: absolute;
-    top: 55%;
-    width: 125%;
+  transform-origin: center;
     height: auto;
     @media (min-width: 1024px) {
-        top: 55%;width: 113%;
+        width: 113%;
     }
-    left: 50%;
-    transform: translateX(-50%) translateY(-45%);
-    z-index: 8;
-    padding:0; }
+    padding:0; 
+}
 .spec-list{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
 .spec-list li{ display:flex; align-items:baseline; gap:2px; flex-wrap:wrap; font-size:clamp(14px,1.5vw,17px); color:var(--ink-soft); line-height:1.5; }
 .spec-list strong{ font-weight:500; }
@@ -828,18 +831,24 @@ strong.border {
     background-size:120%; 
 }
 .game-title span{
-    
+/*     
     position: absolute;
     top: 45%;
     left: 0;
     width: 100%;
-    height: 100%;
-    text-align: center;
+    height: 100%; */
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     font-weight: 900;
     font-size: clamp(18px, 1.8vw, 36px);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: var(--ink);
-    z-index: 10;
+    /* z-index: 10; */
 }
 html[lang="en"] .game-title span{ @media (min-width:1024px){ top: 10%; } }
 .margin-lefti{
