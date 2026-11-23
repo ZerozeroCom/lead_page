@@ -48,30 +48,19 @@
 }
 
 
-/* ======================= English en（待在地化，尚未套用） =======================
-   en 頁目前仍為繁中版型，尚未在地化；完成後取下列區塊，並在 head 保留 Inter/Georama。
-   英文無 CJK 需求，內文用系統拉丁字即可（Inter 可作內文）。 */
-/*
-:root{
-    --font-body:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-    --font-main:Inter,system-ui,sans-serif;       <- 主標若要裝飾字再換
-    --font-review:Inter,system-ui,sans-serif;
-    --font-price:Georama,system-ui,sans-serif;
-}
-*/
+/* ======================= English en =======================
+   en 頁main_font使用思源日文內之英文 內文用原本使用字體即可（Inter 可作內文）。 */
 
+@font-face{font-family:'GenSenRounded2JP';src:url('../fonts/GenSenRounded2JP-H-en-subset.woff2') format('woff2');font-weight:900;font-style:normal;font-display:swap}
+:root{--font-body:Inter,sans-serif;--font-main:'GenSenRounded2JP',Georama,sans-serif;--font-review:Inter,sans-serif;--font-price:Georama,sans-serif}
 
-/* ======================= 한국어 kr（待在地화，尚未套用） =======================
-   kr 頁目前仍為繁中版型，尚未在地化；完成後取下列區塊。
-   韓文建議用 Noto Sans KR（Google Fonts 或自架子集 ../fonts/noto-kr-*.woff2）。 */
-/*
-:root{
-    --font-body:'Noto Sans KR',sans-serif;
-    --font-main:'Noto Sans KR',sans-serif;        <- 900 由 .main_font 套用
-    --font-review:Inter,'Noto Sans KR',sans-serif;
-    --font-price:Georama,'Noto Sans KR',sans-serif;
-}
-*/
+/* ======================= 한국어 kr =======================
+   韓文附在思源日文內 故與繁中邏輯相同 */
+@font-face{font-family:'GenSenRounded2JP';src:url('../fonts/GenSenRounded2JP-H-subset.woff2') format('woff2');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:400;font-display:optional;src:url('../fonts/noto-kr-400.woff2') format('woff2')}
+@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:500;font-display:optional;src:url('../fonts/noto-kr-500.woff2') format('woff2')}
+@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:900;font-display:optional;src:url('../fonts/noto-kr-900.woff2') format('woff2')}
+:root{--font-body:'Noto Sans KR',sans-serif;--font-main:'GenSenRounded2JP','Noto Sans KR',sans-serif;--font-review:Inter,'Noto Sans KR',sans-serif;--font-price:Georama,'Noto Sans KR',sans-serif}
 
 
 /* ======================= SC 子集重建（cn 主標改字時用）=======================
