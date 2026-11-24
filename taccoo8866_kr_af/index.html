@@ -1,188 +1,272 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="no-js" lang="ko">
 	<head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 行銷落地頁：允許索引並放寬預覽；若此頁不想被收錄，改成 content="noindex, follow" -->
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
-        <title id="meta-title">《행복한 니트 키우기》 순진한 니트장에게 인생의 행복을 가르쳐 주세요!</title>
-        <meta name="title" content="《행복한 니트 키우기》 순진한 니트장에게 인생의 행복을 가르쳐 주세요!">
-        <meta name="keywords" content="행복한 니트 키우기,Raising A Happy NEET,akaeroCore,Simulation,るりり">
-        <meta name="description" content="일본어 풀 보이스를 지원하는 동거 시뮬레이션 게임. 니트짱과의 일상 속에서 대화를 나누며 관계를 쌓아가고, 인생의 기쁨을 함께 발견하며 행복하게 살아가는 이야기입니다.">
-        <link rel="canonical" href="https://i.akaerocore.com/RaisingAHappyNEET/kr_af/">
+        <title id="meta-title">SEVEN DAYS 미지의 밀실 생활｜그녀와 함께 수수께끼를 풀어가는 서스펜스 퍼즐 ADV</title>
+        <meta name="title" content="SEVEN DAYS 미지의 밀실 생활｜그녀와 함께 수수께끼를 풀어가는 서스펜스 퍼즐 ADV">
+        <meta name="keywords" content="SEVEN DAYS,미지의 밀실 생활,akaeroCore,H Game,Mystery,ADV,밀실,서스펜스">
+        <meta name="description" content="흑백 성인 서스펜스 퍼즐 ADV. 눈을 떠 보니 제약회사 재벌가의 영애와 함께 밀폐된 방에 갇혀 있다—배후의 흑막이 내리는 명령에 따르거나 벌을 받으며, 제한된 시간 안에 협력해 살아남고 진실을 밝혀 탈출하라.">
+         <!-- ⚠️ 殘留 未確定網址 https://i.akaerocore.com/seven-days 部署前務必全部取代成 SEVEN DAYS 正式網址 -->
+        <link rel="canonical" href="https://i.akaerocore.com/seven-days/kr/">
+
+        <!-- hreflang：四語互相宣告＋x-default。⚠️ 網址沿用目前 seven-days 路徑（與 canonical 一致）；
+             待產品資料夾改名為 SEVEN DAYS 正式路徑時，canonical 與下列五條要一起換。每個語系頁都要放同一組（含指向自己）。 -->
+        <link rel="alternate" hreflang="zh-Hant"   href="https://i.akaerocore.com/seven-days/tw/">
+        <link rel="alternate" hreflang="zh-Hans"   href="https://i.akaerocore.com/seven-days/cn/">
+        <link rel="alternate" hreflang="en"        href="https://i.akaerocore.com/seven-days/en/">
+        <link rel="alternate" hreflang="ko"        href="https://i.akaerocore.com/seven-days/kr/">
+        <link rel="alternate" hreflang="x-default" href="https://i.akaerocore.com/seven-days/en/">
+
         <meta property="og:type" content="website">
-        <meta property="og:url" content="https://i.akaerocore.com/RaisingAHappyNEET/kr_af/">
-        <meta property="og:title" content="《행복한 니트 키우기》 순진한 니트장에게 인생의 행복을 가르쳐 주세요! 일본어 풀 보이스를 지원하는 동거 시뮬레이션 게임.">
-        <meta property="og:description" content="우연히, 당신은 그녀와 마주쳤다. 일상 속 대화를 통해 관계를 쌓고, 시즈쿠에게 인생의 기쁨을 가르치며 함께 행복을 찾아가세요.">
-        <meta property="og:image" content="https://i.akaerocore.com/RaisingAHappyNEET/img/seo-cover.jpg">
+        <meta property="og:url" content="https://i.akaerocore.com/seven-days/kr_af/">
+        <meta property="og:title" content="SEVEN DAYS 미지의 밀실 생활｜서스펜스 퍼즐 ADV">
+        <meta property="og:description" content="눈을 떠 보니 제약회사 영애와 함께 밀폐된 방에 갇혀 있다—흑막의 명령에 따르거나 벌을 받으며, 압박 속에서 협력해 살아남고 진실을 밝혀 밀실을 탈출하라.">
+        <meta property="og:image" content="https://i.akaerocore.com/seven-days/img/seo-cover.jpg">
         <meta property="og:site_name" content="akaerocore">
 
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@akaerocore">
-        <meta name="twitter:title" content="《행복한 니트 키우기》 순진한 니트장에게 인생의 행복을 가르쳐 주세요!">
-        <meta name="twitter:description" content="우연히, 당신은 그녀와 마주쳤다. 그 작은 소녀는, 당신이 상상조차 하지 못했던 존재였다. 일상 속 대화를 나누고, 시즈쿠에게 인생의 기쁨을 가르치며 둘만의 행복을 찾아가세요.">
-        <meta name="twitter:image" content="https://i.akaerocore.com/RaisingAHappyNEET/img/seo-cover.jpg">
+        <meta name="twitter:title" content="SEVEN DAYS 미지의 밀실 생활｜서스펜스 퍼즐 ADV">
+        <meta name="twitter:description" content="눈을 떠 보니 제약회사 영애와 함께 밀폐된 방에 갇혀 있다—흑막의 명령에 따르거나 벌을 받으며, 압박 속에서 협력해 살아남고 진실을 밝혀 밀실을 탈출하라.">
+        <meta name="twitter:image" content="https://i.akaerocore.com/seven-days/img/seo-cover.jpg">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Georama:wght@500;900&family=Inter:wght@500&family=Noto+Sans+KR:wght@500;900&display=swap" media="print" crossorigin onload="this.media='all'">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Georama:wght@900&family=Inter:wght@500&display=swap" media="print" crossorigin onload="this.media='all'">
         <link rel="icon" sizes="192x192" href="https://static.wixstatic.com/media/70c0a6_1ec758843a874ffaaab065105e33e863%7Emv2.png/v1/fill/w_192%2Ch_192%2Clg_1%2Cusm_0.66_1.00_0.01/70c0a6_1ec758843a874ffaaab065105e33e863%7Emv2.png" type="image/png">
         <script>
             document.documentElement.classList.remove('no-js');
             document.documentElement.classList.add('js');
         </script>
         <!--directing tracking code-->
-        <meta http-equiv="delegate-ch" content="sec-ch-ua https://t.doujindomain.com; sec-ch-ua-mobile https://t.doujindomain.com; sec-ch-ua-arch https://t.doujindomain.com; sec-ch-ua-model https://t.doujindomain.com; sec-ch-ua-platform https://t.doujindomain.com; sec-ch-ua-platform-version https://t.doujindomain.com; sec-ch-ua-bitness https://t.doujindomain.com; sec-ch-ua-full-version-list https://t.doujindomain.com; sec-ch-ua-full-version https://t.doujindomain.com"><style>.dtpcnt{opacity: 0;}</style>
-        <script>
-            (function(c,d,f,h,t,b,n,u,k,l,m,e,p,v,q){function r(a){var c=d.cookie.match(new RegExp("(^| )"+a+"=([^;]+)"));return c?c.pop():f.getItem(a+"-expires")&&+f.getItem(a+"-expires")>(new Date).getTime()?f.getItem(a):null}q="https:"===c.location.protocol?"secure; ":"";c[b]||(c[b]=function(a){c[b].state.callbackQueue.push(a)},c[b].state={callbackQueue:[]},c[b].registerConversion=function(a){c[b].state.callbackQueue.push(a)},function(){(m=/[?&]cpid(=([^&#]*)|&|#|$)/.exec(c.location.href))&&m[2]&&(e=m[2],
-        p=r("vl-"+e));var a=r("vl-cid"),b;"savedCid"!==u||!a||e&&"undefined"!==typeof e||(b=a);k=d.createElement("script");l=d.scripts[0];k.src=n+(-1===n.indexOf("?")?"?":"&")+"oref="+h(d.referrer)+"&ourl="+h(location[t])+"&opt="+h(d.title)+"&vtm="+(new Date).getTime()+(b?"&cid="+b:"")+(p?"&uw=no":"");l.parentNode.insertBefore(k,l);if(e){a="vl-"+e;b=q;var g=new Date;g.setTime(g.getTime()+864E5);d.cookie=a+"=1; "+b+"samesite=Strict; expires="+g.toGMTString()+"; path=/";f.setItem(a,"1");f.setItem(a+"-expires",
-        g.getTime())}}())})(window,document,localStorage,encodeURIComponent,"href","dtpCallback","https://t.doujindomain.com/d/.js","savedCid");
-        </script>
-        <noscript><link href="https://t.doujindomain.com/d/.js?noscript=true&ourl=" rel="stylesheet"/></noscript>
+        
         <!--directing tracking code-->
         <!-- Google Tag Manager 本地專用 -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-PXXHRZMP');</script>
-        <!-- End Google Tag Manager 本地專用 -->
-         <style>img[width="1"][height="1"]{position:absolute;}html{height:100%;overflow:hidden}body{position:relative;font-family:Noto Sans KR,"sans-serif";margin:0;height:100%;overflow-y:auto;overflow-x:hidden;scroll-snap-type:y proximity;scroll-behavior:smooth}.page{height:100dvh;@media (orientation: landscape){@media (max-height: 768px){height:200dvh}@media (max-height: 320px){height:300dvh}}@media (min-width: 1440px){height:100vh}}section.page{@media (min-width: 1024px){scroll-snap-align:center;scroll-snap-stop:always}width:100%;justify-content:center;align-items:center;position:relative}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap;border:0}.hide{display:none}.mini_character_1{margin-top:20dvh;position:relative;display:block;width:18vw;height:315px;rotate:14.51deg;z-index:30}.mini_character_word{height:auto!important;rotate:none!important}.mini_character_1 img{width:100%;height:100%}.mini_character_2{margin-top:20dvh;position:relative;display:block;width:18vw;z-index:30}.mini_character_2 img{width:100%;height:100%}@media (min-width: 1600px){.left-say{display:block;position:fixed;height:100%;top:0;left:0;pointer-events:none}.right-say{position:fixed;height:100%;width:177px;top:0;display:flex;flex-direction:column;align-items:self-end;right:25px;pointer-events:none}}.game-bg-wrapper{position:absolute;top:0;left:0;width:100%;height:100%}.game-bg-wrapper img{height:100dvh;@media (orientation: landscape){@media (max-height: 768px){height:200dvh;}@media (max-height: 320px){min-height:250dvh;max-height:300dvh}}object-fit:cover;object-position:top}.game-bg-img{width:100%;min-height:100%;object-fit:cover;object-position:center}.site-header{position:absolute;display:flex;align-items:center;top:0;left:0;right:0;@media (min-width: 1024px){padding-top:12px}z-index:5}.logo-inline{display:inline-block;width:auto;margin-top:0;margin-bottom:0}.akaerocore_logo img{display:block;aspect-ratio:210 / 43;height:auto;padding-left:24px;padding-bottom:24px;width:45vw;margin:0 auto;@media (min-width: 1024px){padding-bottom:0;padding-left:56px;width:clamp(162px,23vw,402px)}}.logo-inline:first-child{@media (min-width: 1024px){transform:translateY(-45%)}}.logo-inline:last-child{margin-left:auto;@media (min-width: 1024px){padding-right:56px}}.logo-img img{display:block;aspect-ratio:1235 / 582;height:auto;width:37.5vw;@media (min-width: 1024px){width:clamp(148px,21vw,378px)}}#game-section{position:relative;pointer-events:none}#game-section button{pointer-events:auto}.slogan-block{position:absolute;left:50%;display:block;text-align:center;bottom:5dvh;transform:translate(-50%);@media (min-width: 1024px){bottom:50%;transform:translate(-50%) translateY(75%)}}.slogan_img{margin:0 auto}.slogan_img img{height:auto;width:100vw;margin-bottom:4dvh;@media (min-width: 1024px){margin-bottom:0;height:clamp(161px,22vw,328px);width:clamp(395px,48vw,800px)}}.btn-group{width:100%;margin-top:-56px;display:flex;flex-direction:column;align-items:stretch;gap:3vw;@media (min-width: 1024px){margin-top: -48px;gap:16px;width:clamp(395px, 48vw, 800px);}}.btn-row{display:flex;width:94vw;justify-content:start;margin-left:3vw;margin-right:3vw;gap:3vw;@media (min-width: 1024px){gap:20px;margin-left:1.5vw;margin-right:1.5vw;}}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:14px;cursor:pointer;transition:all .2s ease;white-space:nowrap;aspect-ratio:185 / 60;height:100%;width:45vw;@media (min-width: 1024px){aspect-ratio:185 / 42;padding:0px;height:clamp(42px,5vw,84px);width:clamp(185px,22vw,370px)}}button picture{@media (min-width: 1024px) {height:100%;width:100%;}display:flex;justify-content:center;align-items:center}button img{width:100%;height:auto;margin:auto 0}.btn-steam img{max-height:38px;@media (min-width: 720px){width:96%;max-height:100%;}}.btn-steam{background:linear-gradient(180deg,#df7797,#f4b7c6);box-shadow:0 5px #d9829d;border:2px solid #FFB8CD;-webkit-text-stroke:2px #A3354B}.btn-dl{background:linear-gradient(180deg,#8e7ebd,#b6a2d5);box-shadow:0 5px #9281bf;border:2px solid #E9B6FF;-webkit-text-stroke:2px #9347B8}.btn-dl img{max-height:38px;@media (min-width: 720px){width:96%;max-height:100%;}}.btn-download img{max-height:38px;@media (min-width: 720px){width:96%;max-height:100%;}}.btn-download{background:linear-gradient(180deg,#ffa552,#ffcb3b);border:2px solid #FFE2B8;-webkit-text-stroke:2px #C55B0B;box-shadow:0 5px #f58b1f;}.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}.btn:active{transform:translateY(1px);box-shadow:none}.lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:#000000d9;backdrop-filter:blur(5px);display:flex;justify-content:center;align-items:center;z-index:9999;opacity:0;pointer-events:none;transition:opacity .3s ease;cursor:zoom-out}</style>
+
+         <!-- End Google Tag Manager 本地專用 -->
+        <style>
+        /* 폰트 설정: 한국어 (kr). 제목 .main_font = GenSen Rounded 2 JP(源真ゴシック, Hangul 포함) 서브셋; 본문 = 자체 호스팅 Noto Sans KR(400/500/900) 서브셋; 가격/리뷰 숫자는 Georama/Inter(위 Google Fonts). 繁中(tw) 모델과 동일 구조. */
+@font-face{font-family:'GenSenRounded2JP';src:url('../fonts/GenSenRounded2JP-H-subset.woff2') format('woff2');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:400;font-display:optional;src:url('../fonts/noto-kr-400.woff2') format('woff2')}
+@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:500;font-display:optional;src:url('../fonts/noto-kr-500.woff2') format('woff2')}
+@font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:900;font-display:optional;src:url('../fonts/noto-kr-900.woff2') format('woff2')}
+:root{--font-body:'Noto Sans KR',sans-serif;--font-main:'GenSenRounded2JP','Noto Sans KR',sans-serif;--font-review:Inter,'Noto Sans KR',sans-serif;--font-price:Georama,'Noto Sans KR',sans-serif}</style>
+         <style>
+         *,*:before,*:after{box-sizing:border-box}html{height:100%;overflow:hidden;-webkit-text-size-adjust:100%}body{position:relative;margin:0;height:100%;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;font-family:var(--font-body,sans-serif);color:#2b2b2b;background:#eee;scroll-behavior:smooth}.main_font{font-family:var(--font-main,sans-serif);font-weight:900}section.page{@media (min-width: 1024px){scroll-snap-align:center;scroll-snap-stop:always}width:100%;justify-content:center;align-items:center;position:relative}a{text-decoration:none;color:inherit;outline:none}img,picture,svg,video{display:block;max-width:100%}button{font-family:inherit;border:0;background:none;padding:0;cursor:pointer}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap;border:0}.hide{display:none!important}.btn,.social-link{background-repeat:no-repeat;background-position:center;background-size:100% 100%}#game-section{position:relative;width:100%;height:auto;min-height:560px;overflow:hidden;isolation:isolate;pointer-events:none}#game-section a,#game-section button{pointer-events:auto}.game-bg-wrapper{width:100%;height:100%}.game-bg-img{width:100%;height:100%;min-height:min(100vw,100vh);filter:grayscale(1);object-fit:cover;object-position:center 15%}@media (max-width:760px){.game-bg-img{height:auto;min-height:0}}.site-header{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:0;margin-left:3vw}.logo-inline{display:block;margin:0;line-height:0}.akaerocore_logo img{width:38vw;max-width:170px;height:auto}.logo-img img{width:34vw;max-width:148px;height:auto;margin-right:1vw}@media (min-width:1024px){.game-bg-img{object-position:center top}.site-header{padding:26px 46px;align-items:center;margin-left:0;.akaerocore_logo img{width:20vw;max-width:none}}.logo-img img{width:20vw;max-width:none}}.slogan-block{position:absolute;z-index:3;width:100%;text-align:center;top:59%}.slogan-block h2{margin-top:0;margin-bottom:1vh;margin-left:3.18vw;margin-right:3.18vw}.slogan_img img{width:100%;height:auto;margin:0 auto;filter:grayscale(1)}@media (min-width: 1024px){.slogan-block{top:57%;bottom:auto}.slogan-block h2{width:max(30.6vw,33vh);margin-left:auto;margin-right:auto}h2 .slogan_img img{max-width:none}@media (min-width:1024px) and (max-aspect-ratio:1/1){#game-section .game-bg-img{object-position:center 12%}#game-section .btn-icon{height:min(3.6vw,3.4vh)}#game-section .btn-dl .btn-icon{height:min(2.2vw,2vh)}#game-section .social-link{width:60px;height:60px}}}.btn-group{width:92%;margin:auto;display:flex;flex-direction:column}.btn-row{display:flex;gap:10px}.btn-row>a{flex:1 1 0;display:block;min-width:0}.btn-row:last-child>a{max-width:calc(50% - 5px)}.btn{position:relative;display:flex;align-items:center;justify-content:center;gap:2px;width:100%;aspect-ratio:82 / 19;color:#2b2b2b;transition:transform .15s ease,filter .15s ease}.btn-steam{background-image:url(../img/sd-btn-steam.webp)}.btn-dl{background-image:url(../img/sd-btn-dlsite.webp)}.btn-download{background-image:url(../img/sd-btn-patch.webp)}.btn:hover{transform:translateY(-2px);filter:brightness(1.04)}.btn:active{transform:translateY(1px)}.btn-label{display:inline-flex;align-items:center;gap:2px;font-weight:900;letter-spacing:1px;white-space:nowrap;font-size:clamp(16px,2.8cqi,32px)}.btn-download .btn-label{font-size:clamp(12px,2.4cqi,30px)}html[lang=en] .btn-label,html[lang=ko] .btn-label{letter-spacing:0}.btn-icon{width:auto;height:min(4.5vw,4.5vh);flex-shrink:0}.btn-dl .btn-icon{height:min(3vw,3vh);aspect-ratio:67 / 19}@media (min-width: 761px){.btn-group,.slogan_img img{max-width:min(540px,40vh)}.btn-label{font-size:clamp(16px,2.8cqi,20px)}.btn-download .btn-label{font-size:clamp(12px,2.4cqi,16px)}}@media (min-width:1024px){.btn-group{width:39.8vw;max-width:none}.btn-icon{height:3vw}.btn-dl .btn-icon{height:1.8vw;margin-left:14px}.btn-row{gap:16px}.btn-row:last-child>a{max-width:calc(50% - 8px)}.btn{aspect-ratio:123 / 28;gap:6px}.btn-label{font-size:2vw}.btn-download .btn-label,html[lang=en] .btn-label,html[lang=ko] .btn-label{font-size:1.8vw}html[lang=en] .btn-download .btn-label,html[lang=ko] .btn-download .btn-label{font-size:1.4vw}}.social-bar{position:fixed;z-index:60;left:0;right:0;bottom:0;padding:10px 0 calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to bottom,#b4b4b400,#5a5a5a59 38%,#000000eb);pointer-events:none}.social-bar-inner{display:flex;flex-direction:row;justify-content:center;gap:14px;pointer-events:auto}.social-link{display:flex;align-items:center;justify-content:center;width:70px;height:70px;background-image:url(../img/sd-social-bg.webp);transition:transform .2s ease}.social-link:hover{transform:translateY(-2px)}.social-link img{width:52%;height:52%;filter:grayscale(1) brightness(6)}@media (min-width:1024px){.social-bar{inset:50% 0 auto auto;width:auto;padding:0 3vw;background:none;transform:translateY(-50%)}.social-bar-inner{flex-direction:column;gap:16px}.social-link{width:5vw;height:5vw}}.lightbox{position:fixed;inset:0;z-index:9999;display:flex;justify-content:center;align-items:center;background:#000000d9;backdrop-filter:blur(5px);opacity:0;pointer-events:none;transition:opacity .3s ease;cursor:zoom-out}.lightbox.active{opacity:1;pointer-events:auto}.lightbox img{max-width:90vw;max-height:90vh;width:auto;height:auto;filter:grayscale(1)}html.no-js video[data-lazy-video]{display:none}
+
+         </style>
+
+        <!-- 結構化資料：VideoGame ＋ DLsite 人氣評論家的 Review。
+             待補／待確認：
+               1) url / image 仍沿用舊作占位，與上方 canonical、og:image 一起換成 SEVEN DAYS 正式網址與專用圖。
+               2) 未放 offers（售價）；售價確定後可加入 offers 區塊（priceCurrency / price / availability）。
+               3) aggregateRating 目前僅反映下列 4 則精選評論，建議改用 DLsite 實際總評分與則數，避免被視為刻意挑選。 -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoGame",
+          "name": "SEVEN DAYS 미지의 밀실 생활",
+          "alternateName": "SEVEN DAYS",
+          "url": "https://i.akaerocore.com/seven-days/kr/",
+          "image": "https://i.akaerocore.com/seven-days/img/seo-cover.jpg",
+          "description": "흑백 성인 서스펜스 퍼즐 ADV. 눈을 떠 보니 제약회사 재벌가의 영애와 함께 밀폐된 방에 갇혀 있다—배후의 흑막이 내리는 명령에 따르거나 벌을 받으며, 제한된 시간 안에 협력해 살아남고 진실을 밝혀 탈출하라.",
+          "inLanguage": "ko",
+          "genre": ["미스터리", "퍼즐", "어드벤처", "ADV"],
+          "contentRating": "Adult 18+",
+          "applicationCategory": "Game",
+          "operatingSystem": "Windows",
+          "gamePlatform": ["PC", "Steam"],
+          "author": { "@type": "Organization", "name": "akaeroCore", "url": "https://www.akaerocore.com/" },
+          "publisher": { "@type": "Organization", "name": "akaeroCore", "url": "https://www.akaerocore.com/" },
+          "sameAs": [
+            "https://store.steampowered.com/app/4996610/",
+            "https://www.dlsite.com/maniax/work/=/product_id/RJ01333591.html"
+          ],
+          "character": [
+            { "@type": "Person", "name": "릴라" },
+            { "@type": "Person", "name": "루나" }
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "ratingCount": "4"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "하세가와 신사" },
+              "publisher": { "@type": "Organization", "name": "DLsite", "url": "https://www.dlsite.com/" },
+              "url": "https://www.dlsite.com/maniax/work/=/product_id/RJ01333591.html",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "name": "구매를 강력히 추천하는 수작",
+              "reviewBody": "분위기를 연출하는 솜씨가 매우 노련해서 데뷔작이라는 생각이 전혀 들지 않습니다. 스토리 전개도 정말 훌륭합니다. 미스터리에서 SF로, 마지막에는 수수께끼 풀이와 달콤한 사랑으로 이어지죠. 끝까지 플레이하고 나면 영화 한 편을 본 듯한 기분입니다. 작가의 다음 작품도 기대됩니다!"
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "ROKO／ロコ" },
+              "publisher": { "@type": "Organization", "name": "DLsite", "url": "https://www.dlsite.com/" },
+              "url": "https://www.dlsite.com/maniax/work/=/product_id/RJ01333591.html",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "name": "관능적인 분위기 연출과 독특한 화풍, 흑백 작품 중에서도 단연 최고",
+              "reviewBody": "대본의 표현과 BGM 선곡이 모두 절묘합니다. 플레이어가 상황에 빠르게 몰입할 수 있고, 서로 완전히 달라 보이는 세 가지 상황도 플레이 중에는 전혀 끊기는 느낌이 없습니다. 전체적인 스토리 흐름이 아주 매끄러워 완벽하다고 해도 과언이 아닙니다."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Parish" },
+              "publisher": { "@type": "Organization", "name": "DLsite", "url": "https://www.dlsite.com/" },
+              "url": "https://www.dlsite.com/maniax/work/=/product_id/RJ01333591.html",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "name": "뛰어난 완성도와 강렬한 임팩트의 CG 연출",
+              "reviewBody": "본격적인 성인 장면은 많지 않지만, 점진적으로 전개되는 성적 장면과 뛰어난 텍스트가 관능적인 분위기를 훌륭하게 살려 만족감이 큽니다. 전체적으로 매우 몰입해서 즐긴 훌륭한 작품으로, 강력히 추천합니다."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Cap13" },
+              "publisher": { "@type": "Organization", "name": "DLsite", "url": "https://www.dlsite.com/" },
+              "url": "https://www.dlsite.com/maniax/work/=/product_id/RJ01333591.html",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "name": "분명 명작입니다. 여운이 오래 남지만 후일담을 정말 보고 싶어요",
+              "reviewBody": "그림 실력이 뛰어나고 1인칭과 3인칭 시점을 적절하게 활용해 보기에도 편안합니다. 작품이 워낙 완벽해서 더 어떻게 칭찬해야 할지 모르겠습니다. 물론 이 가격이라면 충분히 값어치가 있습니다. 꼭 사세요!"
+            }
+          ]
+        }
+        </script>
     </head>
-    <body id="app">
-        <!--  Google Tag Manager (noscript)本地專用 -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXXHRZMP"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager  (noscript) 本地專用 -->
+    <body id="app" class="sd-theme">
+        <!--  Google Tag Manager (noscript) (로컬 전용) -->
+
+        <!-- End Google Tag Manager  (noscript) (로컬 전용) -->
         <header class="site-header">
 			<a class="logo-inline" href="https://www.akaerocore.com/" target="_blank">
                 <picture class="akaerocore_logo">
-                    <img src="../img/aka-logo-1.webp" alt="Akarecore" >
+                    <img src="../img/sd-aka-logo.webp" width="420" height="86" alt="akaeroCore" >
                 </picture>
             </a>
             <h1 class="logo-inline">
                 <picture class="logo-img" aria-hidden="true">
-                    <source srcset="../img/logo-kr.webp" type="image/webp">
-                    <img src="../img/logo-kr.png" alt="게임 타이틀 - 행복한 니트 키우기" class="logo-img">
+                    <img src="../img/sd-logo-kr.webp" width="343" height="162" alt="게임 타이틀 - SEVEN DAYS 미지의 밀실 생활" class="logo-img">
                 </picture>
-                <span class="visually-hidden">행복한 니트 키우기 — 게임 소개 페이지</span>
+                <span class="visually-hidden">SEVEN DAYS 미지의 밀실 생활 – 게임 소개 페이지</span>
             </h1>
 		</header>
+        <nav class="social-bar" aria-label="소셜 링크">
+            <div class="social-bar-inner">
+                <a class="social-link social-x" href="https://x.com/akaerocore" target="_blank" rel="noopener" aria-label="X (Twitter)">
+                    <img src="../img/sd-social-01.svg" width="80" height="80" alt="X (Twitter) 로고" aria-hidden="true">
+                </a>
+                <a class="social-link social-youtube" href="https://www.youtube.com/@akaerocore" target="_blank" rel="noopener" aria-label="YouTube">
+                    <img src="../img/sd-social-02.svg" width="80" height="80" alt="YouTube 로고" aria-hidden="true">
+                </a>
+                <a class="social-link social-steam" href="https://store.steampowered.com/publisher/akaeroCore" target="_blank" rel="noopener" aria-label="Steam">
+                    <img src="../img/sd-social-03.svg" width="80" height="80" alt="Steam 로고" aria-hidden="true">
+                </a>
+                <a class="social-link social-discord" href="https://discord.com/invite/bA2VnbKUCp" target="_blank" rel="noopener" aria-label="Discord">
+                    <img src="../img/sd-social-04.svg" width="80" height="80" alt="Discord 로고" aria-hidden="true">
+                </a>
+            </div>
+        </nav>
         <main itemscope itemtype="https://schema.org/VideoGame">
 			<section id="game-section" class=" page">
                 <picture class="game-bg-wrapper" aria-hidden="true">
-                    <source srcset="../img/main_bg_1.avif" media="(min-width: 1024px)" type="image/avif">
-                    <source srcset="../img/main_bg_1.webp" media="(min-width: 1024px)" type="image/webp">
-                    <source srcset="../img/main_bg_1_m.webp" type="image/webp">
-                    <img src="../img/main_bg_1.png" alt="배경 일러스트" class="game-bg-img">
+                    <source height="1080px" width="2242px" srcset="../img/sd-hero-bg-KR.webp" media="(min-width:761px)" type="image/webp">
+                    <img  height="1582px" width="786px" fetchpriority="high" loading="eager" src="../img/sd-hero-bg-m-KR.webp"class="game-bg-img">
                 </picture>
+    
                 <div class="slogan-block">
                     <h2>
                         <picture aria-hidden="true" class="slogan_img" fetchpriority="high">
-                            <source srcset="../img/main_slogan_kr.webp" type="image/webp">
-                            <img height="160px" width="390px" fetchpriority="high" loading="eager" src="../img/main_slogan_kr.png" alt="게임 슬로건 아트워크">
+                            <img height="707px" width="1942px" fetchpriority="high" loading="eager" src="../img/sd-slogan-KR.webp" alt="천재의 유혹적인 계획에 맞서고, 긴장감 넘치는 어드벤처 게임에서 JK와 함께 미스터리를 풀어보세요!">
                         </picture>
-                        <span class="visually-hidden">순진한 니트장에게 인생의 행복을 가르쳐 주세요!</span>
                     </h2>
                     <nav class="btn-group">
                         <div class="btn-row">
-                            <a href="https://store.steampowered.com/app/4321500/_/?cc=kr&l=koreana" target="_blank">
+                            <a href="https://store.steampowered.com/app/4996610/SEVEN_DAYS_%E6%9C%AA%E7%9F%A5%E7%9A%84%E5%AF%86%E5%AE%A4%E7%94%9F%E6%B4%BB/?l=koreana" target="_blank">
                                 <button class="target-element btn btn-steam ">
-                                    <picture >
-                                        <source srcset="../img/linkbtn_1_KR.webp" media="(min-width: 1024px)" type="image/webp">
-                                        <source srcset="../img/linkbtn_1_KR_m.webp" type="image/webp">
-                                        <source srcset="../img/linkbtn_1_KR.png" media="(min-width: 1024px)" type="image/png">
-                                        <img height="76px" width="382px" src="../img/linkbtn_1_KR_m.png" alt="Steam 게임 페이지 링크" type="image/png" >
-                                    </picture>
+                                    <span class="btn-label">바로가기<img class="btn-icon" src="../img/steam.svg" width="20" height="20" alt="Steam 로고" aria-hidden="true">
+                                         STEAM</span>
                                 </button>
                             </a>
-                            <a href="https://www.dlsite.com/maniax/work/=/product_id/RJ01177602.html/?locale=ko_KR" target="_blank">
+                            <a href="https://www.dlsite.com/maniax/work/=/product_id/RJ01333591.html/?utm_medium=affiliate&utm_campaign=sns_link&utm_content=RJ01333591&utm_source=www.akaerocore.com/&locale=ko_KR" target="_blank">
                                 <button class="target-element btn btn-dl">
-                                    <picture >
-                                        <source srcset="../img/linkbtn_2_KR.webp" media="(min-width: 1024px)" type="image/webp">
-                                        <source srcset="../img/linkbtn_2_KR_m.webp" type="image/webp">
-                                        <source srcset="../img/linkbtn_2_KR.png" media="(min-width: 1024px)" type="image/png">
-                                        <img height="76px" width="382px" src="../img/linkbtn_2_KR_m.png" alt="DLsite 게임 페이지 링크" type="image/png" >
-                                    </picture>
+                                    <span class="btn-label">바로가기
+                                        <img class="btn-icon" src="../img/dlsite.svg"  width="67" height="19" alt="DLsite 로고" aria-hidden="true">
+                                    </span>
                                 </button>
                             </a>
                         </div>
                         <div class="btn-row">
-                            <a href="https://www.akaerocore.com/en/game/raising-a-happy-neet" target="_blank">
+                            <a href="https://www.akaerocore.com/game/seven-days" target="_blank">
                                 <button class="target-element btn btn-download">
-                                    <picture >
-                                        <source srcset="../img/linkbtn_3_KR.webp" media="(min-width: 1024px)" type="image/webp">
-                                        <source srcset="../img/linkbtn_3_KR_m.webp" type="image/webp">
-                                        <source srcset="../img/linkbtn_3_KR.png" media="(min-width: 1024px)" type="image/png">
-                                        <img height="76px" width="382px" src="../img/linkbtn_3_KR_m.png" alt="Steam 패치 다운로드 링크" type="image/png" >
-                                    </picture>
+                                    <span class="btn-label">STEAM 버전 패치 다운로드</span>
                                 </button>
                             </a>
                         </div>
                     </nav>
-                </div>
-                <div class="left-say hide">
-                    <picture aria-hidden="true" class="mini_character_1 mini_character_word">
-                        <img src="../img/mini_character_1_2.webp" type="image/webp" alt="SD 캐릭터: '혼자 집에 있으니 너무 심심해...'">
-                    </picture>
-                </div>
-                <div class="right-say hide">
-                    <picture aria-hidden="true" class="mini_character_2 mini_character_word">
-                        <img src="../img/mini_character_2_2.webp" type="image/webp"  alt="SD 캐릭터 2: '돌아왔어요? 항상 곁에 있고 싶어요.'">
-                    </picture>
-                </div>
+                </div> 
             </section>
             <footer id="site-footer">
                 <div class="row footer">
                     <div class="row">
+                        <div></div>
                         <div>
-                            <p class="akaeroCore_Co">© 2025 akaeroCore Co., Ltd. All rights reserved.</p>
+                            <p class="akaeroCore_Co desktop">© 2025 akaeroCore Co., Ltd. All rights reserved.</p>
                         </div>
                     </div>
+                    <picture class="akaerocore_logo">
+                        <p class="akaeroCore_Co mobile" aria-hidden="true">© 2025 akaeroCore Co., Ltd. All rights reserved.</p>
+                        <img loading="lazy" src="../img/aka-logo.webp" width="462" height="79" alt="퍼블리셔 akaeroCore" >
+                    </picture>
                 </div>
             </footer>
         </main>
-        <script src="../js/link-for-ano.js"></script>
+        <!-- <script src="../js/link-for-ano.js"></script> -->
     </body>
-        <style>#site-footer{
-        height: 48px;
-        position: relative;
-        @media (min-width: 1024px) {
-            scroll-snap-align: end;
-            height: 64px;
+    <style>#site-footer{
+    height: 158px;
+    position: relative;
+    @media (min-width: 1024px) {
+        scroll-snap-align: end;
+        height: 64px;
+    }
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, #000000 50%, rgba(0, 0, 0, 0.3) 100%);
+    opacity: 1;
+    box-sizing: border-box;
+}
+.row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* 水平平均分配 */
+    align-items: center; /* 水平置中，如需拉滿改為 stretch */
+    margin:0px auto;
+    gap:16px;
+}
+.footer{
+    position: absolute;
+    bottom: 0%;
+    flex-direction:column;
+    z-index: 30;
+    gap: 0;
+    padding-bottom: 90px;
+    @media (min-width: 1024px) {
+        flex-direction:row;
+        gap: 24px;
+        padding-bottom: 0;
+    }
+    height: 100%;
+    color: #FFFFFF;
+    align-items: center;
+}
+.akaeroCore_Co{
+    margin: auto;
+        @media (max-width: 450px) {
+        font-size: 12px;
         }
-        background: linear-gradient(90deg, rgba(93, 95, 150, 0.3) 0%, #5D5F96 50%, rgba(93, 95, 150, 0.3) 100%);
-        opacity: 1;
-        box-sizing: border-box;
-    }
-    .row{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center; /* 水平平均分配 */
-        align-items: center; /* 水平置中，如需拉滿改為 stretch */
-        margin:0px auto;
-        gap:16px;
-    }
-    .footer{
-        position: absolute;
-        bottom: 0%;
-        flex-direction:column;
-        z-index: 30;
-        gap: 0;
-        @media (min-width: 1024px) {
-            flex-direction:row;
-            gap: 24px;
-        }
-        height: 100%;
-        color: #FFFFFF;
-        align-items: center;
-    }
-    .akaeroCore_Co{
-        margin: auto;
-         @media (max-width: 450px) {
-            font-size: 12px;
-         }
-    }
-    
+}
 a {
     /* 去除底線 */
     text-decoration: none;

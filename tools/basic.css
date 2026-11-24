@@ -143,7 +143,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
     /* .slogan-block .btn-group{ 
         margin-left: -15%;
     } */
-    .slogan_img img{ max-width:none; }
+    h2 .slogan_img img{ max-width:none; }
 
 
 
@@ -204,10 +204,7 @@ html[lang="en"] .btn-label , html[lang="ko"] .btn-label{  letter-spacing:0;}
 .btn-dl .btn-icon{ height:min(3vw, 3vh); aspect-ratio:67 / 19; }          /* dlsite logo */
 
 @media(min-width: 761px){
-    .btn-group{
-        max-width: min(540px, 40vh);
-    }
-    .slogan_img img {
+    .btn-group ,.slogan_img img{
         max-width: min(540px, 40vh);
     }
     .btn-label{ font-size: clamp(16px, 2.8cqi, 20px)}
