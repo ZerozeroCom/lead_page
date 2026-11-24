@@ -125,7 +125,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
     margin-left: 3.18vw;
     margin-right: 3.18vw;
 }
-.slogan_img img{ width:100%; max-width:min(540px, 40vh); height:auto; margin:0 auto; filter:grayscale(1); }
+.slogan_img img{ width:100%; height:auto; margin:0 auto; filter:grayscale(1); }
 
 @media(min-width: 1024px){
     .slogan-block{
@@ -198,8 +198,8 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 }
 /* min(4.3vw , 4.3vh)  min(4vw , 4vh) */
 .btn-download .btn-label{  font-size:clamp(12px, 2.4cqi, 30px) }
-html[lang="en"] .btn-download .btn-label{  font-size:clamp(9px, 2cqi, 20px);}
- html[lang="ko"] .btn-download .btn-label{ font-size: clamp(11px, 2.4cqi, 30px); }
+/* html[lang="en"] .btn-download .btn-label{  letter-spacing:0;font-size:clamp(9px, 2cqi, 20px);}
+ html[lang="ko"] .btn-download .btn-label{ font-size: clamp(11px, 2.4cqi, 30px); } */
 .btn-icon{ width:auto; height:min(4.5vw, 4.5vh); flex-shrink:0; }           /* steam icon */
 .btn-dl .btn-icon{ height:min(3vw, 3vh); aspect-ratio:67 / 19; }          /* dlsite logo */
 
@@ -207,13 +207,16 @@ html[lang="en"] .btn-download .btn-label{  font-size:clamp(9px, 2cqi, 20px);}
     .btn-group{
         max-width: min(540px, 40vh);
     }
+    .slogan_img img {
+        max-width: min(540px, 40vh);
+    }
     .btn-label{ font-size: clamp(16px, 2.8cqi, 20px)}
     .btn-download .btn-label{  font-size:clamp(12px, 2.4cqi, 16px) }
-    html[lang="en"] .btn-label{ font-size: clamp(13px, 2cqi, 18px)}
+    /* html[lang="en"] .btn-label{ font-size: clamp(13px, 2cqi, 18px)}
     html[lang="en"] .btn-download .btn-label{ font-size: clamp(10px, 1.3cqi, 16px); }
 
     html[lang="ko"] .btn-label{ font-size: clamp(14px, 2.3cqi, 19px)}
-    html[lang="ko"] .btn-download .btn-label{ font-size: clamp(10px, 1.8cqi, 14px); }
+    html[lang="ko"] .btn-download .btn-label{ font-size: clamp(10px, 1.8cqi, 14px); } */
 }
 
 @media (min-width:1024px){
@@ -228,8 +231,8 @@ html[lang="en"] .btn-download .btn-label{  font-size:clamp(9px, 2cqi, 20px);}
     .btn{ aspect-ratio:123 / 28; gap:6px; }
     .btn-label{font-size:2vw ;}
     .btn-download .btn-label{  font-size:1.8vw;}
-     html[lang="en"] .btn-label, html[lang="ko"] .btn-label{ font-size:1.7vw ;}
-   html[lang="en"] .btn-download .btn-label, html[lang="ko"] .btn-download .btn-label{  font-size:1.35vw;}
+     /* html[lang="en"] .btn-label, html[lang="ko"] .btn-label{ font-size:1.7vw ;}
+   html[lang="en"] .btn-download .btn-label, html[lang="ko"] .btn-download .btn-label{  font-size:1.35vw;} */
 }
 
 /* ==========================================================================
