@@ -54,7 +54,11 @@
 @font-face{font-family:'GenSenRounded2JP';src:url('../fonts/GenSenRounded2JP-H-en-subset.woff2') format('woff2');font-weight:900;font-style:normal;font-display:swap}
 :root{--font-body:Inter,sans-serif;--font-main:'GenSenRounded2JP',Georama,sans-serif;--font-review:Inter,sans-serif;--font-price:Georama,sans-serif}
 /* ======================= 한국어 kr =======================
-   韓文附在思源日文內 故與繁中邏輯相同 */
+   韓文附在思源日文內，故與繁中(tw)邏輯相同，分兩群字各自子集：
+     · 主標 .main_font(900) → GenSenRounded2JP 圓體，取字清單 kr_font.txt（≈119 字，對應 tw_font.txt）。
+     · 其餘 font-weight:900（.btn-label/各標題等，非 .main_font）→ Noto Sans KR 900，
+       取字清單 font-text/kr-w900.txt（body 專用，≈16 字，對應 tw-w900.txt）。
+   注意：兩群是不同字集，改主標動 kr_font.txt、改按鈕/標題動 kr-w900.txt，改完各自重跑（見 readme）。 */
 @font-face{font-family:'GenSenRounded2JP';src:url('../fonts/GenSenRounded2JP-H-subset.woff2') format('woff2');font-weight:900;font-style:normal;font-display:swap}
 @font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:400;font-display:optional;src:url('../fonts/noto-kr-400.woff2') format('woff2')}
 @font-face{font-family:'Noto Sans KR';font-style:normal;font-weight:500;font-display:optional;src:url('../fonts/noto-kr-500.woff2') format('woff2')}
