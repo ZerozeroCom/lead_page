@@ -762,11 +762,9 @@ ul hr{
 }
 
 .game-title{  
-    margin: 0;
     /* width: 389; */
     height: 48px;
-    
-    margin-bottom: 15%;
+    margin: 0 20px 15% 20px;
 text-align: center;
     display: flex;
     align-items: center;
