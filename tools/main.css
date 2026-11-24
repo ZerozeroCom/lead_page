@@ -735,7 +735,7 @@ html[lang="en"] .intro-card p { line-height:1.5;@media(min-aspect-ratio:4/3){ ma
         font-size:1.7vw; line-height:3.5vw; }
 
     html[lang="en"] .summary-box .game-title span {
-        font-size:1.7vw;line-height:1.9vw;
+        font-size:1.5vw;line-height:1.9vw;
     }
 }
 .summary-box{
