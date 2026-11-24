@@ -495,7 +495,7 @@ html[lang="en"] .intro-card p { line-height:1.5;@media(min-aspect-ratio:4/3){ ma
     #game-system{
         margin-top: 0;
     }
-    #game-system .content{ gap:clamp(70px,7vw,120px);padding: 0; }
+    #game-system .content{ max-width:min(70vw, var(--maxw)); gap:clamp(70px,7vw,120px);padding: 0; }
     .feature-item{ max-width:var(--maxgamepicw);width:100%;
         align-self: flex-start;
         padding-bottom: 0;
@@ -518,8 +518,11 @@ html[lang="en"] .intro-card p { line-height:1.5;@media(min-aspect-ratio:4/3){ ma
     }
 
     .arrow-inner::before {
-        right: 3.8vw;
+        right: 5%w;
         left: auto;
+        top: -42px;
+        width: 42px;
+        height: 45px;
         clip-path: polygon(
             0 0,
             100% 100%,
@@ -533,7 +536,7 @@ html[lang="en"] .intro-card p { line-height:1.5;@media(min-aspect-ratio:4/3){ ma
             0 100%,
             100% 100%
         );
-        left: 3.8vw;
+        left: 5%;
         right:auto;
     }
 }
@@ -824,11 +827,7 @@ strong.border {
     height: 100%; */
     position: relative;
     z-index: 1;
-
-    display: flex;
     align-items: center;
-    justify-content: center;
-
     font-weight: 900;
     font-size: clamp(18px, 1.8vw, 36px);
     letter-spacing: 1px;
