@@ -193,7 +193,7 @@ button{ font-family:inherit; border:0; background:none; padding:0; cursor:pointe
 
 .btn-label{
     display:inline-flex; align-items:center; gap:2px;
-    font-weight:900; letter-spacing:1px; white-space:nowrap;
+    font-weight:900;white-space:nowrap;
     font-size:clamp(16px, 2.8cqi, 32px);
 }
 /* min(4.3vw , 4.3vh)  min(4vw , 4vh) */
@@ -206,9 +206,10 @@ html[lang="en"] .btn-label , html[lang="ko"] .btn-label{  letter-spacing:0;}
 @media(min-width: 761px){
     .btn-group ,.slogan_img img{
         max-width: min(540px, 40vw);
+        min-width: 320px;
     }
-    .btn-label{ font-size: clamp(16px, 2.8cqi, 20px)}
-    .btn-download .btn-label{  font-size:clamp(12px, 2.4cqi, 16px) }
+    .btn-label{ font-size: clamp(16px, 2.8cqi, 18px)}
+    .btn-download .btn-label{  font-size:clamp(12px, 2.4cqi, 15px) }
     html[lang="en"] .btn-label, html[lang="ko"] .btn-label{ font-size: clamp(15px, 2.2cqi, 17px)}
     html[lang="en"] .btn-download .btn-label,html[lang="ko"] .btn-download .btn-label{ font-size: clamp(11px, 1.7cqi, 13px); }
 }
