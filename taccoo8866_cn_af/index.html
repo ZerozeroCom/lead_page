@@ -166,22 +166,10 @@
                     </nav>
                 </div> 
             </section>
-            <section id="game-intro">
-                <div class="sd-intro-inner">
-                <h2 class="sd-intro-title main_font">在密室中的离奇相遇</h2>
-                <p class="sd-intro-text">《SEVEN DAYS 未知的密室生活》是黑白系的悬疑解谜 ADV。与制药公司千金一同被困密室，依幕后黑手透过屏幕下达的神秘指令行动，在有限时间内合作求生、揭开真相，逃出密室。</p>
-                </div>
-            </section>
             <footer id="site-footer">
                 <div class="row footer">
-                    <div class="row">
-                        <div></div>
-                        <div>
-                            <p class="akaeroCore_Co desktop">© 2026 akaeroCore Co., Ltd. All rights reserved.</p>
-                        </div>
-                    </div>
                     <picture class="akaerocore_logo">
-                        <p class="akaeroCore_Co mobile" aria-hidden="true">© 2026 akaeroCore Co., Ltd. All rights reserved.</p>
+                        <p class="akaeroCore_Co" aria-hidden="true">© 2026 akaeroCore Co., Ltd. All rights reserved.</p>
                         <img loading="lazy" src="../img/aka-logo.webp" width="462" height="79" alt="퍼블리셔 akaeroCore" >
                     </picture>
                 </div>
@@ -190,7 +178,7 @@
         <script src="../js/link-for-ano.js"></script>
     </body>
     <style>
-    body {background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, #000000 50%, rgba(0, 0, 0, 0.3) 100%);}
+    body {background:#3a3a3a;}
 #game-intro{display:none}
 @media (min-width:761px) and (max-width:1023px){#game-intro{display:block;height:calc(100vh - min(100vw,100vh));min-height:0;container-type:size;overflow:hidden}}
 #game-intro .sd-intro-inner{display:none;flex-direction:column;justify-content:center;align-items:center;height:100%;max-width:760px;margin:0 auto;padding:12px 7vw;box-sizing:border-box;text-align:center}
@@ -228,7 +216,7 @@
 .akaeroCore_Co.desktop{ display:none; }
 .akaerocore_logo img{ width:clamp(170px,14vw,210px); height:auto; }
 @media (min-width:1024px){
-    #site-footer .footer{ flex-direction:row; justify-content:space-between; text-align:left; gap:24px; }
+    #site-footer .footer{ flex-direction:row; text-align:left; gap:24px; }
     #site-footer .footer > .row{ text-align:left; }
     #footer-text{ font-size:13px; }
     .akaeroCore_Co.mobile{ display:none; }
