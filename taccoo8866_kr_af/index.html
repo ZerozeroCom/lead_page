@@ -177,28 +177,19 @@
                     <div class="row">
                         <div></div>
                         <div>
-                            <p class="akaeroCore_Co">© 2026 akaeroCore Co., Ltd. All rights reserved.</p>
+                            <p class="akaeroCore_Co desktop">© 2026 akaeroCore Co., Ltd. All rights reserved.</p>
                         </div>
-                        <picture class="akaerocore_logo" style="margin-right: 16px;">
-                            <img loading="lazy" src="../img/aka-logo.webp" width="462" height="79" alt="퍼블리셔 akaeroCore" >
-                        </picture>
                     </div>
+                    <picture class="akaerocore_logo">
+                        <p class="akaeroCore_Co mobile" aria-hidden="true">© 2026 akaeroCore Co., Ltd. All rights reserved.</p>
+                        <img loading="lazy" src="../img/aka-logo.webp" width="462" height="79" alt="퍼블리셔 akaeroCore" >
+                    </picture>
                 </div>
             </footer>
         </main>
         <script src="../js/link-for-ano.js"></script>
     </body>
-    <style>#site-footer{
-    height: 158px;
-    position: relative;
-    @media (min-width: 1024px) {
-        scroll-snap-align: end;
-        height: 64px;
-    }
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, #000000 50%, rgba(0, 0, 0, 0.3) 100%);
-    opacity: 1;
-    box-sizing: border-box;
-}
+    <style>
 body {background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, #000000 50%, rgba(0, 0, 0, 0.3) 100%);}
 #game-intro{display:none}
 @media (min-width:761px) and (max-width:1023px){#game-intro{display:block;height:calc(100vh - min(100vw,100vh));min-height:0;container-type:size;overflow:hidden}}
@@ -215,27 +206,33 @@ body {background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, #000000 50%, rgb
     margin:0px auto;
     gap:16px;
 }
-.footer{
-    position: absolute;
-    bottom: 0%;
-    flex-direction:column;
-    z-index: 30;
-    gap: 0;
-    padding-bottom: 90px;
-    @media (min-width: 1024px) {
-        flex-direction:row;
-        gap: 24px;
-        padding-bottom: 0;
+#site-footer{
+    padding-top:clamp(20px,2.4vw,30px);
+    padding-left:16px;
+    padding-right:16px;
+    padding-bottom:clamp(102px,2.4vw,110px);
+    background:#3a3a3a; color:#eee;
+    @media (min-width:1024px){
+        padding-bottom:clamp(20px,2.4vw,30px);
     }
-    height: 100%;
-    color: #FFFFFF;
-    align-items: center;
 }
-.akaeroCore_Co{
-    margin: auto;
-        @media (max-width: 450px) {
-        font-size: 12px;
-        }
+#site-footer .footer{
+    max-width:1180px; margin:0 auto;
+    display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center;
+}
+#site-footer .row{ display:flex; align-items:center; gap:16px; justify-content:center; }
+#footer-text{ margin:0 0 6px; font-size:12px; line-height:1.6; color:#cfcfcf; }
+.akaeroCore_Co{ margin:0; font-size:12px; color:#bdbdbd; }
+.akaeroCore_Co.mobile{ display:block; }
+#site-footer .akaerocore_logo img{ margin: 6px auto 0 auto; }
+.akaeroCore_Co.desktop{ display:none; }
+.akaerocore_logo img{ width:clamp(170px,14vw,210px); height:auto; }
+@media (min-width:1024px){
+    #site-footer .footer{ flex-direction:row; justify-content:space-between; text-align:left; gap:24px; }
+    #site-footer .footer > .row{ text-align:left; }
+    #footer-text{ font-size:13px; }
+    .akaeroCore_Co.mobile{ display:none; }
+    .akaeroCore_Co.desktop{ display:block; }
 }
 a {
     /* 去除底線 */
