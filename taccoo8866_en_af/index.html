@@ -167,8 +167,10 @@
                 </div> 
             </section>
             <section id="game-intro">
+                <div class="sd-intro-inner">
                 <h2 class="sd-intro-title main_font">A Strange Encounter in a Locked Room</h2>
-                <p class="sd-intro-text">SEVEN DAYS: Strange Locked Room Life is a monochrome mystery-puzzle ADV. You wake up trapped in a sealed room with the heiress of a pharmaceutical company. Each day, a mysterious mastermind delivers cryptic "orders" through a screen, steering the fate of them both. As a reporter chasing the truth, you must work together with her to solve the puzzles, uncover the truth, and escape the room within the time limit.</p>
+                <p class="sd-intro-text">SEVEN DAYS: Strange Locked Room Life is a monochrome mystery-puzzle ADV. Trapped in a sealed room with a pharmaceutical heiress, follow the mastermind's cryptic on-screen orders and cooperate to uncover the truth and escape in time.</p>
+                </div>
             </section>
             <footer id="site-footer">
                 <div class="row footer">
@@ -199,10 +201,12 @@
         box-sizing: border-box;
     }
     body {background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, #000000 50%, rgba(0, 0, 0, 0.3) 100%);}
-#game-intro{display:none;max-width:820px;margin:0 auto;padding:40px 7vw 64px;color:#fff;text-align:center}
-@media (min-width:761px) and (max-width:1023px) and (max-aspect-ratio:1/1){#game-intro{display:block}}
-#game-intro .sd-intro-title{font-size:clamp(20px,4.2vw,30px);margin:0 0 18px;color:#fff}
-#game-intro .sd-intro-text{font-size:clamp(14px,2.4vw,17px);line-height:1.95;max-width:680px;margin:0 auto;color:#e8e8e8;text-align:justify}
+#game-intro{display:none}
+@media (min-width:761px) and (max-width:1023px){#game-intro{display:block;height:calc(100vh - min(100vw,100vh));min-height:0;container-type:size;overflow:hidden}}
+#game-intro .sd-intro-inner{display:none;flex-direction:column;justify-content:center;align-items:center;height:100%;max-width:760px;margin:0 auto;padding:12px 7vw;box-sizing:border-box;text-align:center}
+#game-intro .sd-intro-title{font-size:clamp(18px,3.4vw,26px);margin:0 0 10px;color:var(--ink,#2b2b2b)}
+#game-intro .sd-intro-text{font-size:clamp(13px,1.9vw,16px);line-height:1.65;max-width:640px;margin:0 auto;color:var(--ink-soft,#5a5a5a);text-align:justify}
+@container (min-height:200px){#game-intro .sd-intro-inner{display:flex}}
     .row{
         width: 100%;
         display: flex;

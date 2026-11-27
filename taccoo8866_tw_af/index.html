@@ -172,8 +172,10 @@
                 </div> 
             </section>
             <section id="game-intro">
+                <div class="sd-intro-inner">
                 <h2 class="sd-intro-title main_font">在密室中的離奇相遇</h2>
-                <p class="sd-intro-text">《SEVEN DAYS 未知的密室生活》是一款黑白系的懸疑解謎 ADV。一覺醒來，你與製藥公司的千金一同被困於封閉的密室。每天，神秘的幕後黑手都會透過螢幕下達謎樣的「指令」，一步步牽動兩人的命運。身為追查真相的記者，你必須在有限的時間內與她攜手合作，解開謎團、揭開真相，逃出密室。</p>
+                <p class="sd-intro-text">《SEVEN DAYS 未知的密室生活》是黑白系的懸疑解謎 ADV。與製藥公司千金一同被困密室，依幕後黑手透過螢幕下達的神秘指令行動，在有限時間內合作求生、揭開真相，逃出密室。</p>
+                </div>
             </section>
             <footer id="site-footer">
                 <div class="row footer">
@@ -203,10 +205,12 @@
     box-sizing: border-box;
 }
 body {background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, #000000 50%, rgba(0, 0, 0, 0.3) 100%);}
-#game-intro{display:none;max-width:820px;margin:0 auto;padding:40px 7vw 64px;color:#fff;text-align:center}
-@media (min-width:761px) and (max-width:1023px) and (max-aspect-ratio:1/1){#game-intro{display:block}}
-#game-intro .sd-intro-title{font-size:clamp(20px,4.2vw,30px);margin:0 0 18px;color:#fff}
-#game-intro .sd-intro-text{font-size:clamp(14px,2.4vw,17px);line-height:1.95;max-width:680px;margin:0 auto;color:#e8e8e8;text-align:justify}
+#game-intro{display:none}
+@media (min-width:761px) and (max-width:1023px){#game-intro{display:block;height:calc(100vh - min(100vw,100vh));min-height:0;container-type:size;overflow:hidden}}
+#game-intro .sd-intro-inner{display:none;flex-direction:column;justify-content:center;align-items:center;height:100%;max-width:760px;margin:0 auto;padding:12px 7vw;box-sizing:border-box;text-align:center}
+#game-intro .sd-intro-title{font-size:clamp(18px,3.4vw,26px);margin:0 0 10px;color:var(--ink,#2b2b2b)}
+#game-intro .sd-intro-text{font-size:clamp(13px,1.9vw,16px);line-height:1.65;max-width:640px;margin:0 auto;color:var(--ink-soft,#5a5a5a);text-align:justify}
+@container (min-height:200px){#game-intro .sd-intro-inner{display:flex}}
 .row{
     width: 100%;
     display: flex;
