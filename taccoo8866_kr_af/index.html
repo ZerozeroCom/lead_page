@@ -179,21 +179,6 @@
     </body>
     <style>
 .slogan-block{top:65%} body {background:#3a3a3a;}
-#game-intro{display:none}
-@media (min-width:761px) and (max-width:1023px){#game-intro{display:block;height:calc(100vh - min(100vw,100vh));min-height:0;container-type:size;overflow:hidden}}
-#game-intro .sd-intro-inner{display:none;flex-direction:column;justify-content:center;align-items:center;height:100%;max-width:760px;margin:0 auto;padding:12px 7vw;box-sizing:border-box;text-align:center}
-#game-intro .sd-intro-title{font-size:clamp(18px,3.4vw,26px);margin:0 0 10px;color:var(--ink,#2b2b2b)}
-#game-intro .sd-intro-text{font-size:clamp(13px,1.9vw,16px);line-height:1.65;max-width:640px;margin:0 auto;color:var(--ink-soft,#5a5a5a);text-align:justify}
-@container (min-height:200px){#game-intro .sd-intro-inner{display:flex}}
-.row{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center; /* 水平平均分配 */
-    align-items: center; /* 水平置中，如需拉滿改為 stretch */
-    margin:0px auto;
-    gap:16px;
-}
 #site-footer{
     padding-top:clamp(20px,2.4vw,30px);
     padding-left:16px;
@@ -220,7 +205,7 @@
     #site-footer .footer > .row{ text-align:left; }
     #footer-text{ font-size:13px; }
     .akaeroCore_Co.mobile{ display:none; }
-    .akaeroCore_Co.desktop{ display:block; }
+    .akaeroCore_Co.desktop{ display:block; }.slogan-block{top:59%}
 }
 a {
     /* 去除底線 */
